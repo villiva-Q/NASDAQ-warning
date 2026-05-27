@@ -1,40 +1,170 @@
-const statusMeta = {
-  Green: {
-    color: "#26734d",
-    title: "Green - 正常",
-    copy: "泡沫压力没有形成系统性高危组合，维持常规监控。"
+const translations = {
+  en: {
+    overallLabel: "Overall Bubble Score",
+    priceLabel: "QQQ Price",
+    conceptEyebrow: "Concept",
+    conceptTitle: "Model Sources & Principle",
+    warningsLabel: "Warnings",
+    warningsTitle: "Active Signals",
+    metricsLabel: "Signal Details",
+    metricsTitle: "Indicator Details",
+    methodLabel: "Method",
+    methodCopy:
+      "This dashboard monitors NASDAQ bubble pressure. It compresses valuation, liquidity, leverage/derivatives, breadth/concentration, and price confirmation into a 0-100 score. A high score means top fragility is rising, not that an exact top date has been predicted.",
+    loading: "Loading the latest data snapshot.",
+    noWarning: "No active warning.",
+    noData: "No data",
+    dataLoadFailed: "Data load failed",
+    metricHeaders: ["Indicator", "Value", "Score", "Source"],
+    moduleLabels: {
+      valuation: "Valuation",
+      liquidity: "Liquidity",
+      leverage_derivatives: "Leverage / Derivatives",
+      breadth_concentration: "Breadth / Concentration",
+      price_confirmation: "Price Confirmation"
+    },
+    statusMeta: {
+      Green: {
+        title: "Green - Normal",
+        copy: "Bubble pressure has not formed a systemic high-risk combination. Keep routine monitoring."
+      },
+      Yellow: {
+        title: "Yellow - Watch",
+        copy: "The market is heating up. Track flows, breadth, and leverage more closely."
+      },
+      Orange: {
+        title: "Orange - De-risk",
+        copy: "Late-cycle bubble risk is rising. Avoid adding leverage and reduce high-beta concentration."
+      },
+      Red: {
+        title: "Red - High Alert",
+        copy: "Multiple modules are high-risk at the same time. Prioritize hedging, profit-taking, and concentration control."
+      }
+    },
+    decisions: [
+      ["Green", "Normal allocation", "Routine rebalancing and monitoring."],
+      ["Yellow", "Stop chasing", "Watch flows and market breadth."],
+      ["Orange", "Reduce risk", "Cut leverage and high-beta concentration."],
+      ["Red", "High alert", "Hedge, take profits, and enforce stops."]
+    ],
+    conceptCards: [
+      {
+        title: "Minsky: Ponzi Finance",
+        body:
+          "The model borrows from Minsky's financial instability hypothesis: long expansions encourage risk-taking, financing shifts from stable cash-flow support toward speculative and Ponzi-like structures, and the system becomes more fragile."
+      },
+      {
+        title: "Kindleberger: Bubble Stages",
+        body:
+          "The dashboard treats bubbles as a staged process: new narrative, boom, euphoria, funding stress, and reversal. The aim is to detect the transition from healthy momentum to late-cycle fragility."
+      },
+      {
+        title: "LPPL / Critical Point Logic",
+        body:
+          "If a model claims to identify a top window, it resembles log-periodic power law thinking: prices accelerate faster than fundamentals and instability concentrates near a critical zone. This dashboard does not make exact date predictions."
+      },
+      {
+        title: "Funding-valuation tension",
+        body:
+          "The operating principle is simple: when valuation expansion needs more marginal capital, but visible inflows weaken and leverage/speculation rises, the market becomes dependent on fragile buyers."
+      }
+    ],
+    warningMap: {}
   },
-  Yellow: {
-    color: "#a37716",
-    title: "Yellow - 观察",
-    copy: "市场偏热，开始跟踪资金流、广度和杠杆变化。"
-  },
-  Orange: {
-    color: "#b85223",
-    title: "Orange - 降风险",
-    copy: "泡沫晚期概率上升，避免加杠杆，降低高 beta 暴露。"
-  },
-  Red: {
-    color: "#b3263a",
-    title: "Red - 强警戒",
-    copy: "多个模块同时高危，优先考虑对冲、止盈和降低集中仓位。"
+  zh: {
+    overallLabel: "泡沫风险总分",
+    priceLabel: "QQQ 价格",
+    conceptEyebrow: "概念",
+    conceptTitle: "模型来源与原理解读",
+    warningsLabel: "预警",
+    warningsTitle: "当前触发信号",
+    metricsLabel: "信号明细",
+    metricsTitle: "指标明细",
+    methodLabel: "方法",
+    methodCopy:
+      "该面板用于监控 NASDAQ 泡沫压力。它把估值、流动性、杠杆/衍生品、市场广度/集中度和价格确认压缩成 0-100 分。高分代表顶部脆弱性上升，不代表已经预测出精确见顶日期。",
+    loading: "正在读取最新数据快照。",
+    noWarning: "暂无触发信号。",
+    noData: "暂无数据",
+    dataLoadFailed: "数据读取失败",
+    metricHeaders: ["指标", "数值", "分数", "来源"],
+    moduleLabels: {
+      valuation: "估值压力",
+      liquidity: "资金增量",
+      leverage_derivatives: "杠杆/衍生品",
+      breadth_concentration: "广度/集中度",
+      price_confirmation: "价格确认"
+    },
+    statusMeta: {
+      Green: {
+        title: "Green - 正常",
+        copy: "泡沫压力尚未形成系统性高危组合，维持常规监控。"
+      },
+      Yellow: {
+        title: "Yellow - 观察",
+        copy: "市场开始偏热，需要更密切跟踪资金流、市场广度和杠杆变化。"
+      },
+      Orange: {
+        title: "Orange - 降风险",
+        copy: "泡沫晚期概率上升，避免增加杠杆，并降低高 beta 集中暴露。"
+      },
+      Red: {
+        title: "Red - 强警戒",
+        copy: "多个模块同时高危，优先考虑对冲、止盈和降低集中仓位。"
+      }
+    },
+    decisions: [
+      ["Green", "正常配置", "常规再平衡，继续跟踪。"],
+      ["Yellow", "停止追高", "观察资金流和市场广度。"],
+      ["Orange", "降低风险", "减少杠杆和高 beta 集中。"],
+      ["Red", "强警戒", "对冲、止盈、严格止损。"]
+    ],
+    conceptCards: [
+      {
+        title: "Minsky：庞氏融资",
+        body:
+          "模型借鉴 Minsky 金融不稳定假说：长期繁荣会诱导更激进的风险承担，融资结构从现金流可支撑逐步滑向投机型和庞氏型，系统脆弱性随之上升。"
+      },
+      {
+        title: "Kindleberger：泡沫阶段",
+        body:
+          "面板把泡沫理解为一个阶段过程：新叙事、繁荣、狂热、资金压力和反转。目标是识别市场从健康动量进入泡沫晚期脆弱状态的转折。"
+      },
+      {
+        title: "LPPL / 临界点逻辑",
+        body:
+          "如果模型声称能识别顶部窗口，它更接近 LPPL 的思想：价格上涨快于基本面，并在临界区附近集中释放不稳定性。本面板不做精确日期预测。"
+      },
+      {
+        title: "资金与估值张力",
+        body:
+          "运行原理很简单：当估值扩张需要更多边际资金，而可见资金流入走弱、杠杆和投机占比上升时，市场就越来越依赖脆弱买盘。"
+      }
+    ],
+    warningMap: {
+      "NASDAQ valuation pressure is elevated.": "NASDAQ 估值压力处于偏高区域。",
+      "FINRA margin leverage is in a historically high zone.": "FINRA 保证金杠杆处于历史高位区间。",
+      "Breadth/concentration signals suggest narrowing leadership.": "市场广度/集中度信号显示上涨领导力正在收窄。",
+      "QQQ is extended above its 200-day moving average.": "QQQ 相对 200 日均线明显偏离。",
+      "Price has pulled back from highs while bubble pressure remains high.": "价格已从高位回落，但泡沫压力仍然较高。",
+      "Run scripts/update_data.py to generate a fresh snapshot.": "运行 scripts/update_data.py 生成最新数据快照。"
+    }
   }
 };
 
-const moduleLabels = {
-  valuation: "估值压力",
-  liquidity: "资金增量",
-  leverage_derivatives: "杠杆/衍生品",
-  breadth_concentration: "广度/集中度",
-  price_confirmation: "价格确认"
+const statusColors = {
+  Green: "#26734d",
+  Yellow: "#a37716",
+  Orange: "#b85223",
+  Red: "#b3263a"
 };
 
-const decisions = [
-  ["Green", "正常配置", "常规再平衡，继续跟踪。"],
-  ["Yellow", "停止追高", "观察资金流和市场广度。"],
-  ["Orange", "降低风险", "减少杠杆和高 beta 集中。"],
-  ["Red", "强警戒", "对冲、止盈、严格止损。"]
-];
+let currentLanguage = localStorage.getItem("dashboardLanguage") || "zh";
+let latestData = null;
+
+function t() {
+  return translations[currentLanguage] || translations.zh;
+}
 
 function fmtPct(value) {
   if (value === null || value === undefined || Number.isNaN(value)) return "--";
@@ -47,10 +177,19 @@ function fmtNum(value, digits = 1) {
 }
 
 function scoreColor(score) {
-  if (score >= 75) return "#b3263a";
-  if (score >= 60) return "#b85223";
-  if (score >= 40) return "#a37716";
-  return "#26734d";
+  if (score >= 75) return statusColors.Red;
+  if (score >= 60) return statusColors.Orange;
+  if (score >= 40) return statusColors.Yellow;
+  return statusColors.Green;
+}
+
+function setLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem("dashboardLanguage", lang);
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+  document.getElementById("lang-en").classList.toggle("active", lang === "en");
+  document.getElementById("lang-zh").classList.toggle("active", lang === "zh");
+  if (latestData) render(latestData);
 }
 
 function drawChart(canvas, rows) {
@@ -113,20 +252,46 @@ function drawChart(canvas, rows) {
 
 async function loadDashboard() {
   const response = await fetch("./data/dashboard.json", { cache: "no-store" });
-  const data = await response.json();
-  render(data);
+  latestData = await response.json();
+  render(latestData);
+}
+
+function renderStaticText() {
+  document.querySelectorAll("[data-i18n]").forEach((node) => {
+    const key = node.getAttribute("data-i18n");
+    node.textContent = t()[key] || node.textContent;
+  });
+}
+
+function renderConcept() {
+  document.getElementById("concept-grid").innerHTML = t()
+    .conceptCards.map(
+      (card) => `<article class="concept-card">
+        <h3>${card.title}</h3>
+        <p>${card.body}</p>
+      </article>`
+    )
+    .join("");
+}
+
+function localizeWarning(message) {
+  return t().warningMap[message] || message;
 }
 
 function render(data) {
-  const meta = statusMeta[data.status] || statusMeta.Yellow;
+  renderStaticText();
+  renderConcept();
+
+  const meta = t().statusMeta[data.status] || t().statusMeta.Yellow;
   const score = Number(data.overall_score);
+  const statusColor = statusColors[data.status] || statusColors.Yellow;
 
   document.getElementById("overall-score").textContent = fmtNum(score, 0);
   document.getElementById("status-title").textContent = meta.title;
   document.getElementById("status-copy").textContent = meta.copy;
   document.getElementById("status-pill").textContent = data.status;
-  document.getElementById("status-pill").style.borderColor = meta.color;
-  document.getElementById("status-pill").style.color = meta.color;
+  document.getElementById("status-pill").style.borderColor = statusColor;
+  document.getElementById("status-pill").style.color = statusColor;
   document.getElementById("generated-at").textContent = new Date(data.generated_at).toLocaleString();
 
   const deg = Math.round(score * 3.6);
@@ -137,11 +302,11 @@ function render(data) {
   document.getElementById("ret-3m").textContent = `3M ${fmtPct(data.price.return_3m)}`;
   document.getElementById("dist-200").textContent = `200DMA ${fmtPct(data.price.distance_200dma)}`;
 
-  document.getElementById("decision-strip").innerHTML = decisions
-    .map(([name, title, copy]) => {
+  document.getElementById("decision-strip").innerHTML = t()
+    .decisions.map(([name, title, copy]) => {
       const active = name === data.status;
-      return `<div class="decision" style="${active ? `border-color:${statusMeta[name].color};` : ""}">
-        <strong style="${active ? `color:${statusMeta[name].color};` : ""}">${name} · ${title}</strong>
+      return `<div class="decision" style="${active ? `border-color:${statusColors[name]};` : ""}">
+        <strong style="${active ? `color:${statusColors[name]};` : ""}">${name} · ${title}</strong>
         <span>${copy}</span>
       </div>`;
     })
@@ -151,31 +316,34 @@ function render(data) {
     .map(([key, value]) => {
       const color = scoreColor(value);
       return `<article class="module">
-        <p class="label">${moduleLabels[key] || key}</p>
+        <p class="label">${t().moduleLabels[key] || key}</p>
         <div class="module-value" style="color:${color}">${fmtNum(value, 0)}</div>
         <div class="bar"><span style="width:${value}%; background:${color}"></span></div>
       </article>`;
     })
     .join("");
 
-  const warnings = data.warnings && data.warnings.length ? data.warnings : ["No active warning."];
-  document.getElementById("warnings-list").innerHTML = warnings.map((w) => `<li>${w}</li>`).join("");
+  const warnings = data.warnings && data.warnings.length ? data.warnings : [t().noWarning];
+  document.getElementById("warnings-list").innerHTML = warnings.map((w) => `<li>${localizeWarning(w)}</li>`).join("");
 
   const groups = Object.entries(data.metrics || {});
+  const [indicatorHeader, valueHeader, scoreHeader, sourceHeader] = t().metricHeaders;
   document.getElementById("metric-table").innerHTML = groups
     .map(([group, rows]) => {
       const body = (rows || [])
-        .map((m) => `<div class="metric-row">
+        .map(
+          (m) => `<div class="metric-row">
           <span>${m.name}</span>
           <span>${m.value === null ? "--" : fmtNum(m.value, 2)}</span>
           <span>${m.score === null ? "--" : fmtNum(m.score, 0)}</span>
           <span>${m.source}</span>
-        </div>`)
+        </div>`
+        )
         .join("");
       return `<div class="metric-group">
         <p class="label">${group}</p>
-        <div class="metric-row"><span>Indicator</span><span>Value</span><span>Score</span><span>Source</span></div>
-        ${body || '<div class="metric-row"><span>No data</span><span>--</span><span>--</span><span>--</span></div>'}
+        <div class="metric-row"><span>${indicatorHeader}</span><span>${valueHeader}</span><span>${scoreHeader}</span><span>${sourceHeader}</span></div>
+        ${body || `<div class="metric-row"><span>${t().noData}</span><span>--</span><span>--</span><span>--</span></div>`}
       </div>`;
     })
     .join("");
@@ -183,8 +351,12 @@ function render(data) {
   drawChart(document.getElementById("price-chart"), data.history);
 }
 
-window.addEventListener("resize", () => loadDashboard().catch(() => {}));
+document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
+document.getElementById("lang-zh").addEventListener("click", () => setLanguage("zh"));
+window.addEventListener("resize", () => latestData && drawChart(document.getElementById("price-chart"), latestData.history));
+
+setLanguage(currentLanguage);
 loadDashboard().catch((error) => {
-  document.getElementById("status-title").textContent = "Data load failed";
+  document.getElementById("status-title").textContent = t().dataLoadFailed;
   document.getElementById("status-copy").textContent = error.message;
 });

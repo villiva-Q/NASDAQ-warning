@@ -68,6 +68,40 @@ h2 {
   white-space: nowrap;
 }
 
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.language-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px;
+  background: #fff;
+}
+
+.language-toggle button {
+  min-width: 44px;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.language-toggle button.active {
+  background: var(--ink);
+  color: #fff;
+}
+
 #status-pill {
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -90,7 +124,8 @@ h2 {
 .chart-panel,
 .warnings,
 .metrics,
-.method {
+.method,
+.concept {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -204,6 +239,36 @@ h2 {
   gap: 12px;
 }
 
+.concept {
+  grid-column: 1 / -1;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.concept-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: #fbfcf8;
+  min-height: 160px;
+}
+
+.concept-card h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 760;
+}
+
+.concept-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .module {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -283,11 +348,16 @@ canvas {
   .modules,
   .warnings,
   .metrics,
-  .method {
+  .method,
+  .concept {
     grid-column: auto;
   }
 
   .modules {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .concept-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -308,7 +378,8 @@ canvas {
   }
 
   .decision-strip,
-  .modules {
+  .modules,
+  .concept-grid {
     grid-template-columns: 1fr;
   }
 

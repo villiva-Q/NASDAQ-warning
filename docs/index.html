@@ -12,9 +12,15 @@
         <p class="eyebrow">NASDAQ / QQQ</p>
         <h1>Bubble Radar</h1>
       </div>
-      <div class="timestamp">
-        <span id="status-pill">Loading</span>
-        <span id="generated-at">--</span>
+      <div class="top-actions">
+        <div class="language-toggle" aria-label="Language switch">
+          <button id="lang-en" type="button">EN</button>
+          <button id="lang-zh" type="button">中文</button>
+        </div>
+        <div class="timestamp">
+          <span id="status-pill">Loading</span>
+          <span id="generated-at">--</span>
+        </div>
       </div>
     </header>
 
@@ -26,9 +32,9 @@
             <small>/100</small>
           </div>
           <div>
-            <p class="label">Overall Bubble Score</p>
+            <p class="label" data-i18n="overallLabel">Overall Bubble Score</p>
             <h2 id="status-title">Loading</h2>
-            <p id="status-copy" class="muted">正在读取最新数据快照。</p>
+            <p id="status-copy" class="muted">Loading the latest data snapshot.</p>
           </div>
         </div>
         <div class="decision-strip" id="decision-strip"></div>
@@ -37,7 +43,7 @@
       <section class="chart-panel">
         <div class="section-head">
           <div>
-            <p class="label">QQQ Price</p>
+            <p class="label" data-i18n="priceLabel">QQQ Price</p>
             <h2 id="price-title">--</h2>
           </div>
           <div class="mini-stats">
@@ -50,11 +56,21 @@
 
       <section class="modules" id="modules"></section>
 
+      <section class="concept">
+        <div class="section-head">
+          <div>
+            <p class="label" data-i18n="conceptEyebrow">Concept</p>
+            <h2 data-i18n="conceptTitle">Model Sources & Principle</h2>
+          </div>
+        </div>
+        <div id="concept-grid" class="concept-grid"></div>
+      </section>
+
       <section class="warnings">
         <div class="section-head">
           <div>
-            <p class="label">Warnings</p>
-            <h2>当前触发信号</h2>
+            <p class="label" data-i18n="warningsLabel">Warnings</p>
+            <h2 data-i18n="warningsTitle">Active Signals</h2>
           </div>
         </div>
         <ul id="warnings-list"></ul>
@@ -63,19 +79,20 @@
       <section class="metrics">
         <div class="section-head">
           <div>
-            <p class="label">Signal Details</p>
-            <h2>指标明细</h2>
+            <p class="label" data-i18n="metricsLabel">Signal Details</p>
+            <h2 data-i18n="metricsTitle">Indicator Details</h2>
           </div>
         </div>
         <div id="metric-table"></div>
       </section>
 
       <section class="method">
-        <p class="label">Method</p>
-        <p>
-          该面板用于监控 NASDAQ 泡沫水平。它把估值、资金、杠杆/衍生品、
-          广度/集中度和价格确认压缩成 0-100 分。高分代表顶部脆弱性上升，
-          不是精确见顶日期。
+        <p class="label" data-i18n="methodLabel">Method</p>
+        <p data-i18n="methodCopy">
+          This dashboard monitors NASDAQ bubble pressure. It compresses valuation,
+          liquidity, leverage/derivatives, breadth/concentration, and price confirmation
+          into a 0-100 score. A high score means top fragility is rising, not that an
+          exact top date has been predicted.
         </p>
       </section>
     </main>
