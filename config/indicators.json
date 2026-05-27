@@ -1,0 +1,70 @@
+{
+  "valuation": {
+    "ndx_forward_pe": {
+      "value": 31.5,
+      "low": 18,
+      "high": 38,
+      "source": "manual"
+    },
+    "ndx_price_sales": {
+      "value": 6.2,
+      "low": 3.0,
+      "high": 8.0,
+      "source": "manual"
+    },
+    "equity_risk_premium": {
+      "value": 0.7,
+      "low": 0.0,
+      "high": 4.0,
+      "source": "manual"
+    }
+  },
+  "liquidity": {
+    "qqq_flow_4w_usd_bn": {
+      "value": null,
+      "low": -8,
+      "high": 18,
+      "source": "manual"
+    },
+    "fed_liquidity_4w_change_usd_bn": {
+      "value": null,
+      "low": -250,
+      "high": 250,
+      "source": "manual"
+    },
+    "credit_spread_trend": {
+      "value": null,
+      "low": -0.5,
+      "high": 1.5,
+      "source": "manual"
+    }
+  },
+  "derivatives": {
+    "zero_dte_share": {
+      "value": 0.6,
+      "low": 0.25,
+      "high": 0.65,
+      "source": "manual"
+    },
+    "put_call_heat": {
+      "value": 0.78,
+      "low": 0.35,
+      "high": 0.9,
+      "source": "manual"
+    }
+  },
+  "breadth": {
+    "equal_weight_relative_6m": {
+      "value": -0.08,
+      "low": -0.15,
+      "high": 0.08,
+      "source": "manual"
+    },
+    "mega_cap_concentration": {
+      "value": 0.51,
+      "low": 0.30,
+      "high": 0.58,
+      "source": "manual"
+    }
+  }
+}

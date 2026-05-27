@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NASDAQ Bubble Radar</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">NASDAQ / QQQ</p>
+        <h1>Bubble Radar</h1>
+      </div>
+      <div class="timestamp">
+        <span id="status-pill">Loading</span>
+        <span id="generated-at">--</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="score-panel">
+        <div class="score-block">
+          <div class="score-ring" id="score-ring">
+            <span id="overall-score">--</span>
+            <small>/100</small>
+          </div>
+          <div>
+            <p class="label">Overall Bubble Score</p>
+            <h2 id="status-title">Loading</h2>
+            <p id="status-copy" class="muted">正在读取最新数据快照。</p>
+          </div>
+        </div>
+        <div class="decision-strip" id="decision-strip"></div>
+      </section>
+
+      <section class="chart-panel">
+        <div class="section-head">
+          <div>
+            <p class="label">QQQ Price</p>
+            <h2 id="price-title">--</h2>
+          </div>
+          <div class="mini-stats">
+            <span id="ret-3m">3M --</span>
+            <span id="dist-200">200DMA --</span>
+          </div>
+        </div>
+        <canvas id="price-chart" height="220"></canvas>
+      </section>
+
+      <section class="modules" id="modules"></section>
+
+      <section class="warnings">
+        <div class="section-head">
+          <div>
+            <p class="label">Warnings</p>
+            <h2>当前触发信号</h2>
+          </div>
+        </div>
+        <ul id="warnings-list"></ul>
+      </section>
+
+      <section class="metrics">
+        <div class="section-head">
+          <div>
+            <p class="label">Signal Details</p>
+            <h2>指标明细</h2>
+          </div>
+        </div>
+        <div id="metric-table"></div>
+      </section>
+
+      <section class="method">
+        <p class="label">Method</p>
+        <p>
+          该面板用于监控 NASDAQ 泡沫水平。它把估值、资金、杠杆/衍生品、
+          广度/集中度和价格确认压缩成 0-100 分。高分代表顶部脆弱性上升，
+          不是精确见顶日期。
+        </p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

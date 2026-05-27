@@ -1,0 +1,33 @@
+name: Update NASDAQ Bubble Radar
+
+on:
+  schedule:
+    - cron: "20 22 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas openpyxl
+
+      - name: Update dashboard data
+        run: python scripts/update_data.py
+
+      - name: Commit updated snapshot
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update NASDAQ bubble dashboard data"
+          file_pattern: docs/data/dashboard.json data/finra-margin-statistics.xlsx data/yahoo-qqq.json
