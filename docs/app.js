@@ -2,6 +2,7 @@ const translations = {
   en: {
     overallLabel: "Overall Bubble Score",
     priceLabel: "QQQ Price",
+    followX: "Follow @villiva",
     conceptEyebrow: "Concept",
     conceptTitle: "Model Sources & Principle",
     warningsLabel: "Warnings",
@@ -74,6 +75,7 @@ const translations = {
   zh: {
     overallLabel: "泡沫风险总分",
     priceLabel: "QQQ 价格",
+    followX: "关注 @villiva",
     conceptEyebrow: "概念",
     conceptTitle: "模型来源与原理解读",
     warningsLabel: "预警",
