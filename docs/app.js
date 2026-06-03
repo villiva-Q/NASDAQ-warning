@@ -9,14 +9,50 @@ const translations = {
     warningsTitle: "Active Signals",
     metricsLabel: "Signal Details",
     metricsTitle: "Indicator Details",
+    sourcesLabel: "Data",
+    sourcesTitle: "Data Sources & Refresh",
     methodLabel: "Method",
     methodCopy:
       "This dashboard monitors NASDAQ bubble pressure. It compresses valuation, liquidity, leverage/derivatives, breadth/concentration, and price confirmation into a 0-100 score. A high score means top fragility is rising, not that an exact top date has been predicted.",
+    snapshotPrefix: "Snapshot",
+    dailySnapshot: "Daily snapshot",
     loading: "Loading the latest data snapshot.",
     noWarning: "No active warning.",
     noData: "No data",
     dataLoadFailed: "Data load failed",
     metricHeaders: ["Indicator", "Value", "Score", "Source"],
+    sourceFields: {
+      source: "Source",
+      cadence: "Cadence",
+      latest: "Latest",
+      note: "Note"
+    },
+    sourceCards: {
+      qqq: {
+        title: "QQQ price and price-derived signals",
+        source: "Yahoo Finance chart API",
+        cadence: "Daily snapshot via GitHub Actions",
+        note: "Used for QQQ price, 50/200DMA distance, 3M/6M return, and drawdown."
+      },
+      finra: {
+        title: "Margin leverage",
+        source: "FINRA margin statistics",
+        cadence: "Monthly source data, refreshed daily when the workflow runs",
+        note: "Used for margin debt, customer free credit, and leverage percentiles."
+      },
+      manual: {
+        title: "Configured valuation, liquidity, derivatives, and breadth inputs",
+        source: "config/indicators.json",
+        cadence: "Manual/configured until reliable APIs are connected",
+        note: "These inputs are visible in the indicator table and are not presented as real-time data."
+      },
+      workflow: {
+        title: "Dashboard refresh",
+        source: "GitHub Actions",
+        cadence: "Weekdays, once per day",
+        note: "The page reads docs/data/dashboard.json. It updates when the workflow commits a new snapshot."
+      }
+    },
     moduleLabels: {
       valuation: "Valuation",
       liquidity: "Liquidity",
@@ -82,14 +118,50 @@ const translations = {
     warningsTitle: "当前触发信号",
     metricsLabel: "信号明细",
     metricsTitle: "指标明细",
+    sourcesLabel: "数据",
+    sourcesTitle: "数据来源与更新时间",
     methodLabel: "方法",
     methodCopy:
       "该面板用于监控 NASDAQ 泡沫压力。它把估值、流动性、杠杆/衍生品、市场广度/集中度和价格确认压缩成 0-100 分。高分代表顶部脆弱性上升，不代表已经预测出精确见顶日期。",
+    snapshotPrefix: "快照",
+    dailySnapshot: "每日数据快照",
     loading: "正在读取最新数据快照。",
     noWarning: "暂无触发信号。",
     noData: "暂无数据",
     dataLoadFailed: "数据读取失败",
     metricHeaders: ["指标", "数值", "分数", "来源"],
+    sourceFields: {
+      source: "来源",
+      cadence: "更新频率",
+      latest: "最新数据",
+      note: "说明"
+    },
+    sourceCards: {
+      qqq: {
+        title: "QQQ 价格与价格派生信号",
+        source: "Yahoo Finance chart API",
+        cadence: "通过 GitHub Actions 每日生成快照",
+        note: "用于 QQQ 价格、50/200 日均线偏离、3个月/6个月收益和回撤。"
+      },
+      finra: {
+        title: "保证金杠杆",
+        source: "FINRA margin statistics",
+        cadence: "源数据为月度，工作流每天检查并刷新快照",
+        note: "用于保证金债务、客户现金余额和杠杆百分位。"
+      },
+      manual: {
+        title: "估值、流动性、衍生品和广度配置项",
+        source: "config/indicators.json",
+        cadence: "在接入可靠 API 前为手动/配置更新",
+        note: "这些指标会显示在指标表中，不会伪装成实时数据。"
+      },
+      workflow: {
+        title: "Dashboard 刷新",
+        source: "GitHub Actions",
+        cadence: "工作日每天一次",
+        note: "页面读取 docs/data/dashboard.json；工作流提交新快照后页面随之更新。"
+      }
+    },
     moduleLabels: {
       valuation: "估值压力",
       liquidity: "资金增量",
@@ -176,6 +248,11 @@ function fmtPct(value) {
 function fmtNum(value, digits = 1) {
   if (value === null || value === undefined || Number.isNaN(value)) return "--";
   return Number(value).toFixed(digits);
+}
+
+function fmtDateTime(value) {
+  if (!value) return "--";
+  return new Date(value).toLocaleString();
 }
 
 function scoreColor(score) {
@@ -276,6 +353,43 @@ function renderConcept() {
     .join("");
 }
 
+function renderSources(data) {
+  const cards = t().sourceCards;
+  const fields = t().sourceFields;
+  const sourceRows = [
+    {
+      ...cards.qqq,
+      latest: data.price ? `${data.price.latest_date} · QQQ ${fmtNum(data.price.latest, 2)}` : "--"
+    },
+    {
+      ...cards.finra,
+      latest: data.finra ? data.finra.month : "--"
+    },
+    {
+      ...cards.manual,
+      latest: "config/indicators.json"
+    },
+    {
+      ...cards.workflow,
+      latest: `${t().snapshotPrefix}: ${fmtDateTime(data.generated_at)}`
+    }
+  ];
+
+  document.getElementById("source-grid").innerHTML = sourceRows
+    .map(
+      (row) => `<article class="source-card">
+        <h3>${row.title}</h3>
+        <dl>
+          <div><dt>${fields.source}</dt><dd>${row.source}</dd></div>
+          <div><dt>${fields.cadence}</dt><dd>${row.cadence}</dd></div>
+          <div><dt>${fields.latest}</dt><dd>${row.latest}</dd></div>
+          <div><dt>${fields.note}</dt><dd>${row.note}</dd></div>
+        </dl>
+      </article>`
+    )
+    .join("");
+}
+
 function localizeWarning(message) {
   return t().warningMap[message] || message;
 }
@@ -283,6 +397,7 @@ function localizeWarning(message) {
 function render(data) {
   renderStaticText();
   renderConcept();
+  renderSources(data);
 
   const meta = t().statusMeta[data.status] || t().statusMeta.Yellow;
   const score = Number(data.overall_score);
@@ -294,7 +409,8 @@ function render(data) {
   document.getElementById("status-pill").textContent = data.status;
   document.getElementById("status-pill").style.borderColor = statusColor;
   document.getElementById("status-pill").style.color = statusColor;
-  document.getElementById("generated-at").textContent = new Date(data.generated_at).toLocaleString();
+  document.getElementById("generated-at").textContent = `${t().snapshotPrefix}: ${fmtDateTime(data.generated_at)}`;
+  document.getElementById("update-frequency").textContent = t().dailySnapshot;
 
   const deg = Math.round(score * 3.6);
   const ring = document.getElementById("score-ring");
