@@ -46,6 +46,18 @@ const translations = {
         cadence: "Manual only; not covered by the daily refresh",
         note: "The daily workflow can refresh the page snapshot, but these inputs only change when config/indicators.json is edited."
       },
+      ibkr: {
+        title: "IBKR client margin loan proxy",
+        source: "Interactive Brokers monthly brokerage metrics",
+        cadence: "Monthly, entered as a configured input",
+        note: "Single-broker leverage proxy. Faster than FINRA, but not a total-market margin debt measure."
+      },
+      dailyProxy: {
+        title: "QQQ / TQQQ daily leverage proxy",
+        source: "Yahoo Finance chart API",
+        cadence: "Daily snapshot via GitHub Actions",
+        note: "Uses QQQ volume, TQQQ volume, and TQQQ/QQQ volume ratio as fast proxies for leveraged NASDAQ trading activity."
+      },
       workflow: {
         title: "Dashboard refresh",
         source: "GitHub Actions",
@@ -154,6 +166,18 @@ const translations = {
         source: "config/indicators.json",
         cadence: "仅手动更新，不属于每日自动刷新范围",
         note: "每日工作流可以刷新页面快照，但这些输入只有在 config/indicators.json 被编辑后才会改变。"
+      },
+      ibkr: {
+        title: "IBKR 客户保证金贷款代理",
+        source: "Interactive Brokers 月度券商指标",
+        cadence: "月度数据，以配置项形式录入",
+        note: "这是单一券商的杠杆代理，通常比 FINRA 更快，但不代表全市场保证金债务。"
+      },
+      dailyProxy: {
+        title: "QQQ / TQQQ 日频杠杆代理",
+        source: "Yahoo Finance chart API",
+        cadence: "通过 GitHub Actions 每日生成快照",
+        note: "使用 QQQ 成交量、TQQQ 成交量和 TQQQ/QQQ 成交量比值，作为 NASDAQ 杠杆交易活跃度的快速代理。"
       },
       workflow: {
         title: "Dashboard 刷新",
@@ -369,6 +393,14 @@ function renderSources(data) {
       ...cards.manual,
       latest: data.manual_inputs?.manual_inputs_updated_at || "Not set",
       note: `${cards.manual.note} ${currentLanguage === "zh" ? data.manual_inputs?.manual_update_path_zh || "" : data.manual_inputs?.manual_update_path || ""}`.trim()
+    },
+    {
+      ...cards.ibkr,
+      latest: data.metrics?.ibkr_leverage_proxy?.[0]?.as_of || "--"
+    },
+    {
+      ...cards.dailyProxy,
+      latest: data.price ? data.price.latest_date : "--"
     },
     {
       ...cards.workflow,

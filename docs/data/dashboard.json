@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-03T08:47:59+00:00",
+  "generated_at": "2026-06-03T08:55:14+00:00",
   "market": "NASDAQ / QQQ",
   "manual_inputs": {
-    "manual_inputs_updated_at": "2026-05-27",
+    "manual_inputs_updated_at": "2026-06-03",
     "manual_update_path": "Edit config/indicators.json, then run scripts/update_data.py or trigger the GitHub Actions workflow manually.",
     "manual_update_path_zh": "\u7f16\u8f91 config/indicators.json\uff0c\u7136\u540e\u8fd0\u884c scripts/update_data.py\uff0c\u6216\u5728 GitHub Actions \u4e2d\u624b\u52a8\u89e6\u53d1\u66f4\u65b0\u5de5\u4f5c\u6d41\u3002"
   },
-  "overall_score": 71.1,
+  "overall_score": 68.8,
   "status": "Orange",
   "modules": {
     "valuation": 71.3,
     "liquidity": 50,
-    "leverage_derivatives": 93.7,
+    "leverage_derivatives": 82.1,
     "breadth_concentration": 72.3,
     "price_confirmation": 65.2
   },
@@ -19,18 +19,18 @@
     "latest": 746.1599731445312,
     "latest_date": "2026-06-02",
     "sma50": 659.2075988769532,
-    "sma200": 618.4891217041015,
+    "sma200": 618.48912109375,
     "return_1m": 0.1068159105876414,
     "return_3m": 0.2418976266968038,
-    "return_6m": 0.2080152166368774,
+    "return_6m": 0.20801509726751366,
     "distance_50dma": 0.13190438704850016,
-    "distance_200dma": 0.20642376229457793,
+    "distance_200dma": 0.20642376348512848,
     "drawdown_from_52w_high": 0.0,
     "range_52w": {
       "low": 520.689697265625,
       "high": 746.1599731445312
     },
-    "score": 65.18966895015882
+    "score": 65.18967581754835
   },
   "finra": {
     "month": "2026-04",
@@ -53,7 +53,9 @@
         "range": {
           "low": 18,
           "high": 38
-        }
+        },
+        "as_of": null,
+        "note": null
       },
       {
         "name": "NDX Price/Sales",
@@ -63,7 +65,9 @@
         "range": {
           "low": 3.0,
           "high": 8.0
-        }
+        },
+        "as_of": null,
+        "note": null
       },
       {
         "name": "Equity Risk Premium",
@@ -73,7 +77,9 @@
         "range": {
           "low": 0.0,
           "high": 4.0
-        }
+        },
+        "as_of": null,
+        "note": null
       }
     ],
     "liquidity": [
@@ -85,7 +91,9 @@
         "range": {
           "low": -8,
           "high": 18
-        }
+        },
+        "as_of": null,
+        "note": null
       },
       {
         "name": "Fed Liquidity 4W Change",
@@ -95,7 +103,9 @@
         "range": {
           "low": -250,
           "high": 250
-        }
+        },
+        "as_of": null,
+        "note": null
       },
       {
         "name": "Credit Spread Trend",
@@ -105,7 +115,9 @@
         "range": {
           "low": -0.5,
           "high": 1.5
-        }
+        },
+        "as_of": null,
+        "note": null
       }
     ],
     "derivatives": [
@@ -117,7 +129,9 @@
         "range": {
           "low": 0.25,
           "high": 0.65
-        }
+        },
+        "as_of": null,
+        "note": null
       },
       {
         "name": "Put/Call Heat",
@@ -127,7 +141,85 @@
         "range": {
           "low": 0.35,
           "high": 0.9
-        }
+        },
+        "as_of": null,
+        "note": null
+      }
+    ],
+    "ibkr_leverage_proxy": [
+      {
+        "name": "IBKR Client Margin Loan",
+        "value": 100.9,
+        "score": 93.6923076923077,
+        "source": "manual: IBKR monthly brokerage metrics",
+        "range": {
+          "low": 40,
+          "high": 105
+        },
+        "as_of": "2026-05",
+        "note": "Interactive Brokers May 2026 ending client margin loan balances; single-broker proxy, not total market margin debt."
+      },
+      {
+        "name": "IBKR Margin Loan YoY",
+        "value": 65,
+        "score": 92.85714285714286,
+        "source": "manual: IBKR monthly brokerage metrics",
+        "range": {
+          "low": 0,
+          "high": 70
+        },
+        "as_of": "2026-05",
+        "note": "Year-over-year growth from IBKR May 2026 monthly brokerage metrics."
+      },
+      {
+        "name": "IBKR Margin Loan MoM",
+        "value": 11,
+        "score": 95.0,
+        "source": "manual: IBKR monthly brokerage metrics",
+        "range": {
+          "low": -8,
+          "high": 12
+        },
+        "as_of": "2026-05",
+        "note": "Month-over-month growth from IBKR May 2026 monthly brokerage metrics."
+      }
+    ],
+    "daily_leverage_proxy": [
+      {
+        "name": "QQQ Volume Percentile",
+        "value": 29688500.0,
+        "score": 1.984126984126984,
+        "source": "auto: Yahoo Finance chart API",
+        "range": {
+          "low": "1Y low volume",
+          "high": "1Y high volume"
+        },
+        "as_of": "2026-06-02",
+        "note": "Daily QQQ volume percentile over the last 252 trading days."
+      },
+      {
+        "name": "TQQQ Volume Percentile",
+        "value": 47312000.0,
+        "score": 1.984126984126984,
+        "source": "auto: Yahoo Finance chart API",
+        "range": {
+          "low": "1Y low volume",
+          "high": "1Y high volume"
+        },
+        "as_of": "2026-06-02",
+        "note": "Daily TQQQ volume percentile over the last 252 trading days."
+      },
+      {
+        "name": "TQQQ / QQQ Volume Ratio",
+        "value": 1.5936136888020613,
+        "score": 23.41269841269841,
+        "source": "auto: Yahoo Finance chart API",
+        "range": {
+          "low": "1Y low ratio",
+          "high": "1Y high ratio"
+        },
+        "as_of": "2026-06-02",
+        "note": "Leveraged ETF activity proxy relative to QQQ volume."
       }
     ],
     "breadth": [
@@ -139,7 +231,9 @@
         "range": {
           "low": -0.15,
           "high": 0.08
-        }
+        },
+        "as_of": null,
+        "note": null
       },
       {
         "name": "Mega-cap Concentration",
@@ -149,7 +243,9 @@
         "range": {
           "low": 0.3,
           "high": 0.58
-        }
+        },
+        "as_of": null,
+        "note": null
       }
     ]
   },
@@ -161,7 +257,7 @@
   "history": [
     {
       "date": "2025-05-20",
-      "close": 517.7637939453125,
+      "close": 517.7638549804688,
       "volume": 42517600
     },
     {
@@ -171,7 +267,7 @@
     },
     {
       "date": "2025-05-22",
-      "close": 511.5239562988281,
+      "close": 511.5240173339844,
       "volume": 55607200
     },
     {
@@ -186,17 +282,17 @@
     },
     {
       "date": "2025-05-28",
-      "close": 516.4102783203125,
+      "close": 516.4103393554688,
       "volume": 46637200
     },
     {
       "date": "2025-05-29",
-      "close": 517.4254150390625,
+      "close": 517.4254760742188,
       "volume": 58513300
     },
     {
       "date": "2025-05-30",
-      "close": 516.609375,
+      "close": 516.6093139648438,
       "volume": 67662800
     },
     {
@@ -216,7 +312,7 @@
     },
     {
       "date": "2025-06-05",
-      "close": 522.261962890625,
+      "close": 522.2620239257812,
       "volume": 61031200
     },
     {
@@ -226,37 +322,37 @@
     },
     {
       "date": "2025-06-09",
-      "close": 528.1435546875,
+      "close": 528.1436157226562,
       "volume": 33688700
     },
     {
       "date": "2025-06-10",
-      "close": 531.63671875,
+      "close": 531.6366577148438,
       "volume": 40664800
     },
     {
       "date": "2025-06-11",
-      "close": 529.8453369140625,
+      "close": 529.8452758789062,
       "volume": 53701000
     },
     {
       "date": "2025-06-12",
-      "close": 531.0892944335938,
+      "close": 531.0892333984375,
       "volume": 34104900
     },
     {
       "date": "2025-06-13",
-      "close": 524.4215698242188,
+      "close": 524.421630859375,
       "volume": 55814400
     },
     {
       "date": "2025-06-16",
-      "close": 531.7161865234375,
+      "close": 531.7162475585938,
       "volume": 37622100
     },
     {
       "date": "2025-06-17",
-      "close": 526.5314331054688,
+      "close": 526.5313110351562,
       "volume": 42180900
     },
     {
@@ -276,7 +372,7 @@
     },
     {
       "date": "2025-06-24",
-      "close": 537.783203125,
+      "close": 537.7831420898438,
       "volume": 45442000
     },
     {
@@ -321,7 +417,7 @@
     },
     {
       "date": "2025-07-08",
-      "close": 550.2966918945312,
+      "close": 550.2967529296875,
       "volume": 36153300
     },
     {
@@ -336,12 +432,12 @@
     },
     {
       "date": "2025-07-11",
-      "close": 552.1497802734375,
+      "close": 552.1497192382812,
       "volume": 39618600
     },
     {
       "date": "2025-07-14",
-      "close": 554.1524047851562,
+      "close": 554.15234375,
       "volume": 36453300
     },
     {
@@ -376,42 +472,42 @@
     },
     {
       "date": "2025-07-23",
-      "close": 561.7242431640625,
+      "close": 561.7241821289062,
       "volume": 40215300
     },
     {
       "date": "2025-07-24",
-      "close": 562.9197387695312,
+      "close": 562.9197998046875,
       "volume": 42275500
     },
     {
       "date": "2025-07-25",
-      "close": 564.2747192382812,
+      "close": 564.2747802734375,
       "volume": 30630800
     },
     {
       "date": "2025-07-28",
-      "close": 566.0382690429688,
+      "close": 566.0381469726562,
       "volume": 31498700
     },
     {
       "date": "2025-07-29",
-      "close": 565.1614990234375,
+      "close": 565.1614379882812,
       "volume": 45463300
     },
     {
       "date": "2025-07-30",
-      "close": 565.9186401367188,
+      "close": 565.918701171875,
       "volume": 43433800
     },
     {
       "date": "2025-07-31",
-      "close": 562.9197387695312,
+      "close": 562.9197998046875,
       "volume": 64613600
     },
     {
       "date": "2025-08-01",
-      "close": 551.8309936523438,
+      "close": 551.8309326171875,
       "volume": 69400800
     },
     {
@@ -421,7 +517,7 @@
     },
     {
       "date": "2025-08-05",
-      "close": 558.1973266601562,
+      "close": 558.197265625,
       "volume": 48666600
     },
     {
@@ -436,7 +532,7 @@
     },
     {
       "date": "2025-08-08",
-      "close": 572.4244995117188,
+      "close": 572.4244384765625,
       "volume": 35255500
     },
     {
@@ -451,7 +547,7 @@
     },
     {
       "date": "2025-08-13",
-      "close": 578.193115234375,
+      "close": 578.1930541992188,
       "volume": 41209300
     },
     {
@@ -461,12 +557,12 @@
     },
     {
       "date": "2025-08-15",
-      "close": 575.2042236328125,
+      "close": 575.2041625976562,
       "volume": 49480200
     },
     {
       "date": "2025-08-18",
-      "close": 574.9750366210938,
+      "close": 574.9749755859375,
       "volume": 29831000
     },
     {
@@ -481,7 +577,7 @@
     },
     {
       "date": "2025-08-21",
-      "close": 561.1962280273438,
+      "close": 561.1961669921875,
       "volume": 46436900
     },
     {
@@ -491,12 +587,12 @@
     },
     {
       "date": "2025-08-25",
-      "close": 568.210205078125,
+      "close": 568.2100830078125,
       "volume": 34044700
     },
     {
       "date": "2025-08-26",
-      "close": 570.4915771484375,
+      "close": 570.4916381835938,
       "volume": 34103000
     },
     {
@@ -516,12 +612,12 @@
     },
     {
       "date": "2025-09-02",
-      "close": 563.527587890625,
+      "close": 563.5275268554688,
       "volume": 65876800
     },
     {
       "date": "2025-09-03",
-      "close": 567.9610595703125,
+      "close": 567.9611206054688,
       "volume": 54230200
     },
     {
@@ -531,17 +627,17 @@
     },
     {
       "date": "2025-09-05",
-      "close": 573.9288940429688,
+      "close": 573.9288330078125,
       "volume": 68342500
     },
     {
       "date": "2025-09-08",
-      "close": 576.728515625,
+      "close": 576.7284545898438,
       "volume": 46371400
     },
     {
       "date": "2025-09-09",
-      "close": 578.3624267578125,
+      "close": 578.3624877929688,
       "volume": 44007600
     },
     {
@@ -551,12 +647,12 @@
     },
     {
       "date": "2025-09-11",
-      "close": 581.9192504882812,
+      "close": 581.919189453125,
       "volume": 44745800
     },
     {
       "date": "2025-09-12",
-      "close": 584.4896850585938,
+      "close": 584.4896240234375,
       "volume": 50745900
     },
     {
@@ -566,7 +662,7 @@
     },
     {
       "date": "2025-09-16",
-      "close": 588.992919921875,
+      "close": 588.9929809570312,
       "volume": 36942100
     },
     {
@@ -576,7 +672,7 @@
     },
     {
       "date": "2025-09-18",
-      "close": 593.11767578125,
+      "close": 593.1176147460938,
       "volume": 61069300
     },
     {
@@ -646,7 +742,7 @@
     },
     {
       "date": "2025-10-08",
-      "close": 609.8842163085938,
+      "close": 609.88427734375,
       "volume": 50629800
     },
     {
@@ -666,17 +762,17 @@
     },
     {
       "date": "2025-10-14",
-      "close": 596.4784545898438,
+      "close": 596.4783935546875,
       "volume": 69203200
     },
     {
       "date": "2025-10-15",
-      "close": 600.6876831054688,
+      "close": 600.6876220703125,
       "volume": 62805500
     },
     {
       "date": "2025-10-16",
-      "close": 598.46337890625,
+      "close": 598.4633178710938,
       "volume": 70982000
     },
     {
@@ -686,7 +782,7 @@
     },
     {
       "date": "2025-10-20",
-      "close": 609.9839477539062,
+      "close": 609.98388671875,
       "volume": 45761700
     },
     {
@@ -731,7 +827,7 @@
     },
     {
       "date": "2025-10-31",
-      "close": 627.4694213867188,
+      "close": 627.4693603515625,
       "volume": 66305100
     },
     {
@@ -741,7 +837,7 @@
     },
     {
       "date": "2025-11-04",
-      "close": 617.67431640625,
+      "close": 617.6743774414062,
       "volume": 63830800
     },
     {
@@ -791,17 +887,17 @@
     },
     {
       "date": "2025-11-18",
-      "close": 594.7926635742188,
+      "close": 594.792724609375,
       "volume": 83327300
     },
     {
       "date": "2025-11-19",
-      "close": 598.3436279296875,
+      "close": 598.3436889648438,
       "volume": 73111500
     },
     {
       "date": "2025-11-20",
-      "close": 584.1797485351562,
+      "close": 584.1798095703125,
       "volume": 117743200
     },
     {
@@ -816,7 +912,7 @@
     },
     {
       "date": "2025-11-25",
-      "close": 607.3407592773438,
+      "close": 607.3406982421875,
       "volume": 57560900
     },
     {
@@ -826,7 +922,7 @@
     },
     {
       "date": "2025-11-28",
-      "close": 617.67431640625,
+      "close": 617.6743774414062,
       "volume": 23034400
     },
     {
@@ -836,12 +932,12 @@
     },
     {
       "date": "2025-12-02",
-      "close": 620.4172973632812,
+      "close": 620.4173583984375,
       "volume": 54541800
     },
     {
       "date": "2025-12-03",
-      "close": 621.9334716796875,
+      "close": 621.9335327148438,
       "volume": 47841600
     },
     {
@@ -856,12 +952,12 @@
     },
     {
       "date": "2025-12-08",
-      "close": 622.6915283203125,
+      "close": 622.6915893554688,
       "volume": 43462400
     },
     {
       "date": "2025-12-09",
-      "close": 623.4595336914062,
+      "close": 623.4595947265625,
       "volume": 37156000
     },
     {
@@ -876,7 +972,7 @@
     },
     {
       "date": "2025-12-12",
-      "close": 612.0586547851562,
+      "close": 612.0587158203125,
       "volume": 75158700
     },
     {
@@ -896,12 +992,12 @@
     },
     {
       "date": "2025-12-18",
-      "close": 607.5601196289062,
+      "close": 607.5601806640625,
       "volume": 78875800
     },
     {
       "date": "2025-12-19",
-      "close": 615.47998046875,
+      "close": 615.4799194335938,
       "volume": 60369800
     },
     {
@@ -1457,7 +1553,7 @@
     {
       "date": "2026-06-02",
       "close": 746.1599731445312,
-      "volume": 28237099
+      "volume": 29688500
     }
   ],
   "notes": [

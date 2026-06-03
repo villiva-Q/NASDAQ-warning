@@ -113,6 +113,19 @@ def load_or_fetch_qqq() -> dict:
         raise
 
 
+def load_or_fetch_symbol(symbol: str, range_: str = "2y", interval: str = "1d") -> dict:
+    cache = LOCAL_DATA / f"yahoo-{symbol.lower()}.json"
+    try:
+        data = fetch_yahoo(symbol, range_, interval)
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_text(json.dumps(data, indent=2), encoding="utf-8")
+        return data
+    except Exception:
+        if cache.exists():
+            return json.loads(cache.read_text(encoding="utf-8"))
+        raise
+
+
 def compute_price_metrics(rows: list[dict]) -> dict:
     closes = [float(r["close"]) for r in rows]
     latest = closes[-1]
@@ -210,7 +223,67 @@ def build_manual_metric(name: str, spec: dict, inverse: bool = False) -> dict:
         "score": score_fn(value, spec["low"], spec["high"]) if value is not None else None,
         "source": spec.get("source", "manual"),
         "range": {"low": spec["low"], "high": spec["high"]},
+        "as_of": spec.get("as_of"),
+        "note": spec.get("note"),
     }
+
+
+def percentile(values: list[float], latest: float) -> float | None:
+    clean = [v for v in values if v is not None and not math.isnan(v)]
+    if not clean:
+        return None
+    return sum(1 for v in clean if v <= latest) / len(clean) * 100
+
+
+def compute_daily_proxy_metrics(qqq_rows: list[dict], tqqq_rows: list[dict]) -> tuple[list[dict], float]:
+    qqq_volumes = [float(row["volume"]) for row in qqq_rows if row.get("volume")]
+    tqqq_volumes = [float(row["volume"]) for row in tqqq_rows if row.get("volume")]
+    paired = list(zip(qqq_rows[-min(len(qqq_rows), len(tqqq_rows)) :], tqqq_rows[-min(len(qqq_rows), len(tqqq_rows)) :]))
+    volume_ratios = [
+        float(trow["volume"]) / float(qrow["volume"])
+        for qrow, trow in paired
+        if qrow.get("volume") and trow.get("volume") and float(qrow["volume"]) != 0
+    ]
+
+    latest_qqq_volume = qqq_volumes[-1] if qqq_volumes else None
+    latest_tqqq_volume = tqqq_volumes[-1] if tqqq_volumes else None
+    latest_ratio = volume_ratios[-1] if volume_ratios else None
+
+    qqq_volume_score = percentile(qqq_volumes[-252:], latest_qqq_volume) if latest_qqq_volume else None
+    tqqq_volume_score = percentile(tqqq_volumes[-252:], latest_tqqq_volume) if latest_tqqq_volume else None
+    tqqq_ratio_score = percentile(volume_ratios[-252:], latest_ratio) if latest_ratio else None
+    proxy_score = average_available([qqq_volume_score, tqqq_volume_score, tqqq_ratio_score])
+
+    metrics = [
+        {
+            "name": "QQQ Volume Percentile",
+            "value": latest_qqq_volume,
+            "score": qqq_volume_score,
+            "source": "auto: Yahoo Finance chart API",
+            "range": {"low": "1Y low volume", "high": "1Y high volume"},
+            "as_of": qqq_rows[-1]["date"] if qqq_rows else None,
+            "note": "Daily QQQ volume percentile over the last 252 trading days.",
+        },
+        {
+            "name": "TQQQ Volume Percentile",
+            "value": latest_tqqq_volume,
+            "score": tqqq_volume_score,
+            "source": "auto: Yahoo Finance chart API",
+            "range": {"low": "1Y low volume", "high": "1Y high volume"},
+            "as_of": tqqq_rows[-1]["date"] if tqqq_rows else None,
+            "note": "Daily TQQQ volume percentile over the last 252 trading days.",
+        },
+        {
+            "name": "TQQQ / QQQ Volume Ratio",
+            "value": latest_ratio,
+            "score": tqqq_ratio_score,
+            "source": "auto: Yahoo Finance chart API",
+            "range": {"low": "1Y low ratio", "high": "1Y high ratio"},
+            "as_of": tqqq_rows[-1]["date"] if tqqq_rows else None,
+            "note": "Leveraged ETF activity proxy relative to QQQ volume.",
+        },
+    ]
+    return metrics, proxy_score
 
 
 def status_for(score: float, modules: dict) -> str:
@@ -227,6 +300,7 @@ def status_for(score: float, modules: dict) -> str:
 def build_snapshot() -> dict:
     config = load_config()
     qqq = load_or_fetch_qqq()
+    tqqq = load_or_fetch_symbol("TQQQ", "2y", "1d")
     price = compute_price_metrics(qqq["rows"])
     finra = load_or_fetch_finra()
 
@@ -244,6 +318,12 @@ def build_snapshot() -> dict:
         build_manual_metric("0DTE Share", config["derivatives"]["zero_dte_share"]),
         build_manual_metric("Put/Call Heat", config["derivatives"]["put_call_heat"]),
     ]
+    ibkr_metrics = [
+        build_manual_metric("IBKR Client Margin Loan", config["leverage_proxies"]["ibkr_client_margin_loan_usd_bn"]),
+        build_manual_metric("IBKR Margin Loan YoY", config["leverage_proxies"]["ibkr_margin_loan_yoy_pct"]),
+        build_manual_metric("IBKR Margin Loan MoM", config["leverage_proxies"]["ibkr_margin_loan_mom_pct"]),
+    ]
+    daily_proxy_metrics, daily_proxy_score = compute_daily_proxy_metrics(qqq["rows"], tqqq["rows"])
     breadth_metrics = [
         build_manual_metric("Equal Weight Relative 6M", config["breadth"]["equal_weight_relative_6m"], inverse=True),
         build_manual_metric("Mega-cap Concentration", config["breadth"]["mega_cap_concentration"]),
@@ -252,9 +332,10 @@ def build_snapshot() -> dict:
     valuation_score = average_available([m["score"] for m in valuation_metrics])
     liquidity_score = average_available([m["score"] for m in liquidity_metrics], fallback=50)
     leverage_score = finra["score"] if finra else 50
+    ibkr_score = average_available([m["score"] for m in ibkr_metrics])
     derivatives_score = average_available([m["score"] for m in derivatives_metrics])
     breadth_score = average_available([m["score"] for m in breadth_metrics])
-    leverage_derivatives_score = 0.65 * leverage_score + 0.35 * derivatives_score
+    leverage_derivatives_score = 0.45 * leverage_score + 0.25 * ibkr_score + 0.15 * derivatives_score + 0.15 * daily_proxy_score
 
     modules = {
         "valuation": valuation_score,
@@ -296,6 +377,8 @@ def build_snapshot() -> dict:
             "valuation": valuation_metrics,
             "liquidity": liquidity_metrics,
             "derivatives": derivatives_metrics,
+            "ibkr_leverage_proxy": ibkr_metrics,
+            "daily_leverage_proxy": daily_proxy_metrics,
             "breadth": breadth_metrics,
         },
         "warnings": warnings,

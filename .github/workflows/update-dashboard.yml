@@ -30,4 +30,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update NASDAQ bubble dashboard data"
-          file_pattern: docs/data/dashboard.json data/finra-margin-statistics.xlsx data/yahoo-qqq.json
+          file_pattern: docs/data/dashboard.json data/finra-margin-statistics.xlsx data/yahoo-qqq.json data/yahoo-tqqq.json

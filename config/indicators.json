@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "manual_inputs_updated_at": "2026-05-27",
+    "manual_inputs_updated_at": "2026-06-03",
     "manual_update_path": "Edit config/indicators.json, then run scripts/update_data.py or trigger the GitHub Actions workflow manually.",
     "manual_update_path_zh": "编辑 config/indicators.json，然后运行 scripts/update_data.py，或在 GitHub Actions 中手动触发更新工作流。"
   },
@@ -56,6 +56,32 @@
       "low": 0.35,
       "high": 0.9,
       "source": "manual"
+    }
+  },
+  "leverage_proxies": {
+    "ibkr_client_margin_loan_usd_bn": {
+      "value": 100.9,
+      "low": 40,
+      "high": 105,
+      "source": "manual: IBKR monthly brokerage metrics",
+      "as_of": "2026-05",
+      "note": "Interactive Brokers May 2026 ending client margin loan balances; single-broker proxy, not total market margin debt."
+    },
+    "ibkr_margin_loan_yoy_pct": {
+      "value": 65,
+      "low": 0,
+      "high": 70,
+      "source": "manual: IBKR monthly brokerage metrics",
+      "as_of": "2026-05",
+      "note": "Year-over-year growth from IBKR May 2026 monthly brokerage metrics."
+    },
+    "ibkr_margin_loan_mom_pct": {
+      "value": 11,
+      "low": -8,
+      "high": 12,
+      "source": "manual: IBKR monthly brokerage metrics",
+      "as_of": "2026-05",
+      "note": "Month-over-month growth from IBKR May 2026 monthly brokerage metrics."
     }
   },
   "breadth": {

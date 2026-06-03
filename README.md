@@ -27,6 +27,28 @@ Then open:
 http://localhost:8000
 ```
 
+### Manual Input Update
+
+Some valuation, liquidity, derivative, breadth, and IBKR proxy fields are intentionally configured manually until stable APIs are connected.
+
+To update them:
+
+1. Edit `config/indicators.json`.
+2. Update `_meta.manual_inputs_updated_at`.
+3. Run:
+
+```powershell
+python scripts/update_data.py
+```
+
+4. Commit and push the refreshed files:
+
+```powershell
+git add config/indicators.json docs/data/dashboard.json
+git commit -m "Update manual dashboard inputs"
+git push
+```
+
 ### GitHub Pages
 
 This repository is prepared for GitHub Pages:
@@ -66,6 +88,8 @@ Current MVP inputs:
 
 - Yahoo Finance chart API: QQQ daily price history
 - FINRA margin statistics: margin debt and customer free credit balances
+- Yahoo Finance chart API: QQQ/TQQQ daily volume proxy
+- Interactive Brokers monthly brokerage metrics: IBKR client margin loan proxy, configured manually
 - Manual/configured indicators: NDX Forward P/E, P/S, 0DTE share, fund flow, and other metrics that do not yet have stable free real-time sources
 
 Indicators without a reliable live source are marked as `manual` or `unavailable`. The dashboard does not pretend manual data is real-time.
@@ -101,6 +125,28 @@ python -m http.server 8000 -d docs
 
 ```text
 http://localhost:8000
+```
+
+### 手动输入更新
+
+部分估值、流动性、衍生品、广度和 IBKR 代理指标，在接入稳定 API 前会作为手动配置项保留。
+
+更新步骤：
+
+1. 编辑 `config/indicators.json`。
+2. 更新 `_meta.manual_inputs_updated_at`。
+3. 运行：
+
+```powershell
+python scripts/update_data.py
+```
+
+4. 提交并推送刷新后的文件：
+
+```powershell
+git add config/indicators.json docs/data/dashboard.json
+git commit -m "Update manual dashboard inputs"
+git push
 ```
 
 ### GitHub Pages
@@ -142,6 +188,8 @@ Bubble Risk Score = 0.30 Valuation
 
 - Yahoo Finance chart API：QQQ 日线价格
 - FINRA margin statistics：保证金借款和客户现金余额
+- Yahoo Finance chart API：QQQ/TQQQ 日频成交量代理
+- Interactive Brokers 月度券商指标：IBKR 客户保证金贷款代理，当前以手动配置方式录入
 - 手动/配置指标：NDX Forward P/E、P/S、0DTE 占比、资金流等尚未接入稳定免费实时源的指标
 
 没有可靠实时数据源的指标会标记为 `manual` 或 `unavailable`。Dashboard 不会把手动数据伪装成实时数据。
