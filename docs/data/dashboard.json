@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-06-03T00:04:15+00:00",
+  "generated_at": "2026-06-03T08:47:59+00:00",
   "market": "NASDAQ / QQQ",
+  "manual_inputs": {
+    "manual_inputs_updated_at": "2026-05-27",
+    "manual_update_path": "Edit config/indicators.json, then run scripts/update_data.py or trigger the GitHub Actions workflow manually.",
+    "manual_update_path_zh": "\u7f16\u8f91 config/indicators.json\uff0c\u7136\u540e\u8fd0\u884c scripts/update_data.py\uff0c\u6216\u5728 GitHub Actions \u4e2d\u624b\u52a8\u89e6\u53d1\u66f4\u65b0\u5de5\u4f5c\u6d41\u3002"
+  },
   "overall_score": 71.1,
   "status": "Orange",
   "modules": {

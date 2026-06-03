@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "manual_inputs_updated_at": "2026-05-27",
+    "manual_update_path": "Edit config/indicators.json, then run scripts/update_data.py or trigger the GitHub Actions workflow manually.",
+    "manual_update_path_zh": "编辑 config/indicators.json，然后运行 scripts/update_data.py，或在 GitHub Actions 中手动触发更新工作流。"
+  },
   "valuation": {
     "ndx_forward_pe": {
       "value": 31.5,

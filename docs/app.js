@@ -37,14 +37,14 @@ const translations = {
       finra: {
         title: "Margin leverage",
         source: "FINRA margin statistics",
-        cadence: "Monthly source data, refreshed daily when the workflow runs",
-        note: "Used for margin debt, customer free credit, and leverage percentiles."
+        cadence: "Monthly source data with publication lag; checked daily by the workflow",
+        note: "Authoritative aggregate margin data, but not a daily leverage feed. Use it as a slow-moving structural risk indicator."
       },
       manual: {
         title: "Configured valuation, liquidity, derivatives, and breadth inputs",
         source: "config/indicators.json",
-        cadence: "Manual/configured until reliable APIs are connected",
-        note: "These inputs are visible in the indicator table and are not presented as real-time data."
+        cadence: "Manual only; not covered by the daily refresh",
+        note: "The daily workflow can refresh the page snapshot, but these inputs only change when config/indicators.json is edited."
       },
       workflow: {
         title: "Dashboard refresh",
@@ -146,14 +146,14 @@ const translations = {
       finra: {
         title: "保证金杠杆",
         source: "FINRA margin statistics",
-        cadence: "源数据为月度，工作流每天检查并刷新快照",
-        note: "用于保证金债务、客户现金余额和杠杆百分位。"
+        cadence: "源数据为月度且有发布时间滞后；工作流每天检查是否有更新",
+        note: "这是权威的总体保证金数据，但不是日频杠杆数据。它更适合作为慢变量结构性风险指标。"
       },
       manual: {
         title: "估值、流动性、衍生品和广度配置项",
         source: "config/indicators.json",
-        cadence: "在接入可靠 API 前为手动/配置更新",
-        note: "这些指标会显示在指标表中，不会伪装成实时数据。"
+        cadence: "仅手动更新，不属于每日自动刷新范围",
+        note: "每日工作流可以刷新页面快照，但这些输入只有在 config/indicators.json 被编辑后才会改变。"
       },
       workflow: {
         title: "Dashboard 刷新",
@@ -367,7 +367,8 @@ function renderSources(data) {
     },
     {
       ...cards.manual,
-      latest: "config/indicators.json"
+      latest: data.manual_inputs?.manual_inputs_updated_at || "Not set",
+      note: `${cards.manual.note} ${currentLanguage === "zh" ? data.manual_inputs?.manual_update_path_zh || "" : data.manual_inputs?.manual_update_path || ""}`.trim()
     },
     {
       ...cards.workflow,

@@ -286,6 +286,7 @@ def build_snapshot() -> dict:
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "market": "NASDAQ / QQQ",
+        "manual_inputs": config.get("_meta", {}),
         "overall_score": round(overall, 1),
         "status": status_for(overall, modules),
         "modules": {k: round(v, 1) for k, v in modules.items()},
