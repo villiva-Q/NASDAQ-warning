@@ -1,36 +1,43 @@
 {
-  "generated_at": "2026-06-03T08:55:14+00:00",
+  "generated_at": "2026-06-03T09:19:24+00:00",
   "market": "NASDAQ / QQQ",
   "manual_inputs": {
     "manual_inputs_updated_at": "2026-06-03",
     "manual_update_path": "Edit config/indicators.json, then run scripts/update_data.py or trigger the GitHub Actions workflow manually.",
     "manual_update_path_zh": "\u7f16\u8f91 config/indicators.json\uff0c\u7136\u540e\u8fd0\u884c scripts/update_data.py\uff0c\u6216\u5728 GitHub Actions \u4e2d\u624b\u52a8\u89e6\u53d1\u66f4\u65b0\u5de5\u4f5c\u6d41\u3002"
   },
-  "overall_score": 68.8,
+  "overall_score": 63.2,
   "status": "Orange",
   "modules": {
-    "valuation": 71.3,
-    "liquidity": 50,
-    "leverage_derivatives": 82.1,
-    "breadth_concentration": 72.3,
-    "price_confirmation": 65.2
+    "price_confirmation": 65.2,
+    "finra_margin_slow": 99.6,
+    "daily_leverage_proxy": 9.1
+  },
+  "score_policy": {
+    "name": "Core Daily Score",
+    "description": "Only automatic daily proxies and explicit-frequency slow variables enter the score. Manual inputs are context only.",
+    "weights": {
+      "price_confirmation": 0.4,
+      "finra_margin_slow": 0.35,
+      "daily_leverage_proxy": 0.25
+    }
   },
   "price": {
     "latest": 746.1599731445312,
     "latest_date": "2026-06-02",
     "sma50": 659.2075988769532,
-    "sma200": 618.48912109375,
+    "sma200": 618.4891223144531,
     "return_1m": 0.1068159105876414,
     "return_3m": 0.2418976266968038,
     "return_6m": 0.20801509726751366,
     "distance_50dma": 0.13190438704850016,
-    "distance_200dma": 0.20642376348512848,
+    "distance_200dma": 0.20642376110402738,
     "drawdown_from_52w_high": 0.0,
     "range_52w": {
-      "low": 520.689697265625,
+      "low": 520.6896362304688,
       "high": 746.1599731445312
     },
-    "score": 65.18967581754835
+    "score": 65.1896756474697
   },
   "finra": {
     "month": "2026-04",
@@ -43,145 +50,39 @@
     "debit_to_free_cash_percentile": 99.14772727272727,
     "score": 99.57386363636363
   },
-  "metrics": {
-    "valuation": [
+  "core_metrics": {
+    "price": [
       {
-        "name": "NDX Forward P/E",
-        "value": 31.5,
-        "score": 67.5,
-        "source": "manual",
+        "name": "QQQ Price Confirmation",
+        "value": 746.1599731445312,
+        "score": 65.1896756474697,
+        "source": "auto: Yahoo Finance chart API",
         "range": {
-          "low": 18,
-          "high": 38
+          "low": "low risk",
+          "high": "high risk"
         },
-        "as_of": null,
-        "note": null
-      },
-      {
-        "name": "NDX Price/Sales",
-        "value": 6.2,
-        "score": 64.0,
-        "source": "manual",
-        "range": {
-          "low": 3.0,
-          "high": 8.0
-        },
-        "as_of": null,
-        "note": null
-      },
-      {
-        "name": "Equity Risk Premium",
-        "value": 0.7,
-        "score": 82.5,
-        "source": "manual",
-        "range": {
-          "low": 0.0,
-          "high": 4.0
-        },
-        "as_of": null,
-        "note": null
+        "as_of": "2026-06-02",
+        "note": "Composite of distance from 200DMA, 3M return, acceleration, and drawdown from 52-week high.",
+        "refresh": "daily",
+        "used_in_score": true,
+        "freshness": "fresh"
       }
     ],
-    "liquidity": [
+    "finra_margin_slow": [
       {
-        "name": "QQQ 4W Flow",
-        "value": null,
-        "score": null,
-        "source": "manual",
+        "name": "FINRA Margin Leverage",
+        "value": 5.987444683156136,
+        "score": 99.57386363636363,
+        "source": "auto-check: FINRA margin statistics",
         "range": {
-          "low": -8,
-          "high": 18
+          "low": "historical low",
+          "high": "historical high"
         },
-        "as_of": null,
-        "note": null
-      },
-      {
-        "name": "Fed Liquidity 4W Change",
-        "value": null,
-        "score": null,
-        "source": "manual",
-        "range": {
-          "low": -250,
-          "high": 250
-        },
-        "as_of": null,
-        "note": null
-      },
-      {
-        "name": "Credit Spread Trend",
-        "value": null,
-        "score": null,
-        "source": "manual",
-        "range": {
-          "low": -0.5,
-          "high": 1.5
-        },
-        "as_of": null,
-        "note": null
-      }
-    ],
-    "derivatives": [
-      {
-        "name": "0DTE Share",
-        "value": 0.6,
-        "score": 87.49999999999999,
-        "source": "manual",
-        "range": {
-          "low": 0.25,
-          "high": 0.65
-        },
-        "as_of": null,
-        "note": null
-      },
-      {
-        "name": "Put/Call Heat",
-        "value": 0.78,
-        "score": 78.18181818181819,
-        "source": "manual",
-        "range": {
-          "low": 0.35,
-          "high": 0.9
-        },
-        "as_of": null,
-        "note": null
-      }
-    ],
-    "ibkr_leverage_proxy": [
-      {
-        "name": "IBKR Client Margin Loan",
-        "value": 100.9,
-        "score": 93.6923076923077,
-        "source": "manual: IBKR monthly brokerage metrics",
-        "range": {
-          "low": 40,
-          "high": 105
-        },
-        "as_of": "2026-05",
-        "note": "Interactive Brokers May 2026 ending client margin loan balances; single-broker proxy, not total market margin debt."
-      },
-      {
-        "name": "IBKR Margin Loan YoY",
-        "value": 65,
-        "score": 92.85714285714286,
-        "source": "manual: IBKR monthly brokerage metrics",
-        "range": {
-          "low": 0,
-          "high": 70
-        },
-        "as_of": "2026-05",
-        "note": "Year-over-year growth from IBKR May 2026 monthly brokerage metrics."
-      },
-      {
-        "name": "IBKR Margin Loan MoM",
-        "value": 11,
-        "score": 95.0,
-        "source": "manual: IBKR monthly brokerage metrics",
-        "range": {
-          "low": -8,
-          "high": 12
-        },
-        "as_of": "2026-05",
-        "note": "Month-over-month growth from IBKR May 2026 monthly brokerage metrics."
+        "as_of": "2026-04",
+        "note": "Authoritative aggregate margin data. Monthly and lagged; used as a slow structural risk variable.",
+        "refresh": "monthly",
+        "used_in_score": true,
+        "freshness": "fresh"
       }
     ],
     "daily_leverage_proxy": [
@@ -195,7 +96,10 @@
           "high": "1Y high volume"
         },
         "as_of": "2026-06-02",
-        "note": "Daily QQQ volume percentile over the last 252 trading days."
+        "note": "Daily QQQ volume percentile over the last 252 trading days.",
+        "refresh": "daily",
+        "used_in_score": true,
+        "freshness": "fresh"
       },
       {
         "name": "TQQQ Volume Percentile",
@@ -207,7 +111,10 @@
           "high": "1Y high volume"
         },
         "as_of": "2026-06-02",
-        "note": "Daily TQQQ volume percentile over the last 252 trading days."
+        "note": "Daily TQQQ volume percentile over the last 252 trading days.",
+        "refresh": "daily",
+        "used_in_score": true,
+        "freshness": "fresh"
       },
       {
         "name": "TQQQ / QQQ Volume Ratio",
@@ -219,7 +126,185 @@
           "high": "1Y high ratio"
         },
         "as_of": "2026-06-02",
-        "note": "Leveraged ETF activity proxy relative to QQQ volume."
+        "note": "Leveraged ETF activity proxy relative to QQQ volume.",
+        "refresh": "daily",
+        "used_in_score": true,
+        "freshness": "fresh"
+      }
+    ]
+  },
+  "metrics": {
+    "valuation": [
+      {
+        "name": "NDX Forward P/E",
+        "value": 31.5,
+        "score": 67.5,
+        "source": "manual",
+        "range": {
+          "low": 18,
+          "high": 38
+        },
+        "as_of": null,
+        "note": null,
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
+      },
+      {
+        "name": "NDX Price/Sales",
+        "value": 6.2,
+        "score": 64.0,
+        "source": "manual",
+        "range": {
+          "low": 3.0,
+          "high": 8.0
+        },
+        "as_of": null,
+        "note": null,
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
+      },
+      {
+        "name": "Equity Risk Premium",
+        "value": 0.7,
+        "score": 82.5,
+        "source": "manual",
+        "range": {
+          "low": 0.0,
+          "high": 4.0
+        },
+        "as_of": null,
+        "note": null,
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
+      }
+    ],
+    "liquidity": [
+      {
+        "name": "QQQ 4W Flow",
+        "value": null,
+        "score": null,
+        "source": "manual",
+        "range": {
+          "low": -8,
+          "high": 18
+        },
+        "as_of": null,
+        "note": null,
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
+      },
+      {
+        "name": "Fed Liquidity 4W Change",
+        "value": null,
+        "score": null,
+        "source": "manual",
+        "range": {
+          "low": -250,
+          "high": 250
+        },
+        "as_of": null,
+        "note": null,
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
+      },
+      {
+        "name": "Credit Spread Trend",
+        "value": null,
+        "score": null,
+        "source": "manual",
+        "range": {
+          "low": -0.5,
+          "high": 1.5
+        },
+        "as_of": null,
+        "note": null,
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
+      }
+    ],
+    "derivatives": [
+      {
+        "name": "0DTE Share",
+        "value": 0.6,
+        "score": 87.49999999999999,
+        "source": "manual",
+        "range": {
+          "low": 0.25,
+          "high": 0.65
+        },
+        "as_of": null,
+        "note": null,
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
+      },
+      {
+        "name": "Put/Call Heat",
+        "value": 0.78,
+        "score": 78.18181818181819,
+        "source": "manual",
+        "range": {
+          "low": 0.35,
+          "high": 0.9
+        },
+        "as_of": null,
+        "note": null,
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
+      }
+    ],
+    "ibkr_leverage_proxy": [
+      {
+        "name": "IBKR Client Margin Loan",
+        "value": 100.9,
+        "score": 93.6923076923077,
+        "source": "manual: IBKR monthly brokerage metrics",
+        "range": {
+          "low": 40,
+          "high": 105
+        },
+        "as_of": "2026-05",
+        "note": "Interactive Brokers May 2026 ending client margin loan balances; single-broker proxy, not total market margin debt.",
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
+      },
+      {
+        "name": "IBKR Margin Loan YoY",
+        "value": 65,
+        "score": 92.85714285714286,
+        "source": "manual: IBKR monthly brokerage metrics",
+        "range": {
+          "low": 0,
+          "high": 70
+        },
+        "as_of": "2026-05",
+        "note": "Year-over-year growth from IBKR May 2026 monthly brokerage metrics.",
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
+      },
+      {
+        "name": "IBKR Margin Loan MoM",
+        "value": 11,
+        "score": 95.0,
+        "source": "manual: IBKR monthly brokerage metrics",
+        "range": {
+          "low": -8,
+          "high": 12
+        },
+        "as_of": "2026-05",
+        "note": "Month-over-month growth from IBKR May 2026 monthly brokerage metrics.",
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
       }
     ],
     "breadth": [
@@ -233,7 +318,10 @@
           "high": 0.08
         },
         "as_of": null,
-        "note": null
+        "note": null,
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
       },
       {
         "name": "Mega-cap Concentration",
@@ -245,13 +333,15 @@
           "high": 0.58
         },
         "as_of": null,
-        "note": null
+        "note": null,
+        "refresh": "manual",
+        "used_in_score": false,
+        "freshness": "fresh"
       }
     ]
   },
   "warnings": [
     "FINRA margin leverage is in a historically high zone.",
-    "Breadth/concentration signals suggest narrowing leadership.",
     "QQQ is extended above its 200-day moving average."
   ],
   "history": [
@@ -292,12 +382,12 @@
     },
     {
       "date": "2025-05-30",
-      "close": 516.6093139648438,
+      "close": 516.609375,
       "volume": 67662800
     },
     {
       "date": "2025-06-02",
-      "close": 520.689697265625,
+      "close": 520.6896362304688,
       "volume": 44762800
     },
     {
@@ -317,7 +407,7 @@
     },
     {
       "date": "2025-06-06",
-      "close": 527.3672485351562,
+      "close": 527.3673095703125,
       "volume": 42467000
     },
     {
@@ -327,22 +417,22 @@
     },
     {
       "date": "2025-06-10",
-      "close": 531.6366577148438,
+      "close": 531.63671875,
       "volume": 40664800
     },
     {
       "date": "2025-06-11",
-      "close": 529.8452758789062,
+      "close": 529.8453369140625,
       "volume": 53701000
     },
     {
       "date": "2025-06-12",
-      "close": 531.0892333984375,
+      "close": 531.0892944335938,
       "volume": 34104900
     },
     {
       "date": "2025-06-13",
-      "close": 524.421630859375,
+      "close": 524.4215698242188,
       "volume": 55814400
     },
     {
@@ -352,7 +442,7 @@
     },
     {
       "date": "2025-06-17",
-      "close": 526.5313110351562,
+      "close": 526.5313720703125,
       "volume": 42180900
     },
     {
@@ -382,12 +472,12 @@
     },
     {
       "date": "2025-06-26",
-      "close": 544.1992797851562,
+      "close": 544.19921875,
       "volume": 43811400
     },
     {
       "date": "2025-06-27",
-      "close": 546.0623779296875,
+      "close": 546.0624389648438,
       "volume": 57577100
     },
     {
@@ -397,12 +487,12 @@
     },
     {
       "date": "2025-07-01",
-      "close": 544.9664306640625,
+      "close": 544.9664916992188,
       "volume": 56166700
     },
     {
       "date": "2025-07-02",
-      "close": 548.7623291015625,
+      "close": 548.7622680664062,
       "volume": 36538300
     },
     {
@@ -417,7 +507,7 @@
     },
     {
       "date": "2025-07-08",
-      "close": 550.2967529296875,
+      "close": 550.2966918945312,
       "volume": 36153300
     },
     {
@@ -432,12 +522,12 @@
     },
     {
       "date": "2025-07-11",
-      "close": 552.1497192382812,
+      "close": 552.1497802734375,
       "volume": 39618600
     },
     {
       "date": "2025-07-14",
-      "close": 554.15234375,
+      "close": 554.1524047851562,
       "volume": 36453300
     },
     {
@@ -452,7 +542,7 @@
     },
     {
       "date": "2025-07-17",
-      "close": 559.7216186523438,
+      "close": 559.7216796875,
       "volume": 40423800
     },
     {
@@ -467,12 +557,12 @@
     },
     {
       "date": "2025-07-22",
-      "close": 559.1737060546875,
+      "close": 559.1736450195312,
       "volume": 43270600
     },
     {
       "date": "2025-07-23",
-      "close": 561.7241821289062,
+      "close": 561.7242431640625,
       "volume": 40215300
     },
     {
@@ -507,17 +597,17 @@
     },
     {
       "date": "2025-08-01",
-      "close": 551.8309326171875,
+      "close": 551.8309936523438,
       "volume": 69400800
     },
     {
       "date": "2025-08-04",
-      "close": 562.0131225585938,
+      "close": 562.0130615234375,
       "volume": 47669800
     },
     {
       "date": "2025-08-05",
-      "close": 558.197265625,
+      "close": 558.1973266601562,
       "volume": 48666600
     },
     {
@@ -527,7 +617,7 @@
     },
     {
       "date": "2025-08-07",
-      "close": 567.1340942382812,
+      "close": 567.1341552734375,
       "volume": 44463000
     },
     {
@@ -557,7 +647,7 @@
     },
     {
       "date": "2025-08-15",
-      "close": 575.2041625976562,
+      "close": 575.2042236328125,
       "volume": 49480200
     },
     {
@@ -572,12 +662,12 @@
     },
     {
       "date": "2025-08-20",
-      "close": 563.8065185546875,
+      "close": 563.8064575195312,
       "volume": 76781100
     },
     {
       "date": "2025-08-21",
-      "close": 561.1961669921875,
+      "close": 561.1962280273438,
       "volume": 46436900
     },
     {
@@ -607,12 +697,12 @@
     },
     {
       "date": "2025-08-29",
-      "close": 568.2898559570312,
+      "close": 568.2899169921875,
       "volume": 56030400
     },
     {
       "date": "2025-09-02",
-      "close": 563.5275268554688,
+      "close": 563.5274658203125,
       "volume": 65876800
     },
     {
@@ -627,7 +717,7 @@
     },
     {
       "date": "2025-09-05",
-      "close": 573.9288330078125,
+      "close": 573.9288940429688,
       "volume": 68342500
     },
     {
@@ -647,7 +737,7 @@
     },
     {
       "date": "2025-09-11",
-      "close": 581.919189453125,
+      "close": 581.9192504882812,
       "volume": 44745800
     },
     {
@@ -657,12 +747,12 @@
     },
     {
       "date": "2025-09-15",
-      "close": 589.4910888671875,
+      "close": 589.4911499023438,
       "volume": 44360300
     },
     {
       "date": "2025-09-16",
-      "close": 588.9929809570312,
+      "close": 588.992919921875,
       "volume": 36942100
     },
     {
@@ -672,7 +762,7 @@
     },
     {
       "date": "2025-09-18",
-      "close": 593.1176147460938,
+      "close": 593.11767578125,
       "volume": 61069300
     },
     {

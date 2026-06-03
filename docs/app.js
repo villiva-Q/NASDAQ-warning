@@ -20,7 +20,9 @@ const translations = {
     noWarning: "No active warning.",
     noData: "No data",
     dataLoadFailed: "Data load failed",
-    metricHeaders: ["Indicator", "Value", "Score", "Source"],
+    coreMetricsLabel: "Core Score Inputs",
+    contextMetricsLabel: "Context Signals",
+    metricHeaders: ["Indicator", "Value", "Score", "Refresh", "Last Updated", "Freshness", "Used"],
     sourceFields: {
       source: "Source",
       cadence: "Cadence",
@@ -66,11 +68,9 @@ const translations = {
       }
     },
     moduleLabels: {
-      valuation: "Valuation",
-      liquidity: "Liquidity",
-      leverage_derivatives: "Leverage / Derivatives",
-      breadth_concentration: "Breadth / Concentration",
-      price_confirmation: "Price Confirmation"
+      price_confirmation: "Price Confirmation",
+      finra_margin_slow: "FINRA Margin Slow",
+      daily_leverage_proxy: "Daily Leverage Proxy"
     },
     statusMeta: {
       Green: {
@@ -141,7 +141,9 @@ const translations = {
     noWarning: "暂无触发信号。",
     noData: "暂无数据",
     dataLoadFailed: "数据读取失败",
-    metricHeaders: ["指标", "数值", "分数", "来源"],
+    coreMetricsLabel: "核心入分指标",
+    contextMetricsLabel: "背景参考信号",
+    metricHeaders: ["指标", "数值", "分数", "刷新", "更新时间", "新鲜度", "入分"],
     sourceFields: {
       source: "来源",
       cadence: "更新频率",
@@ -187,11 +189,9 @@ const translations = {
       }
     },
     moduleLabels: {
-      valuation: "估值压力",
-      liquidity: "资金增量",
-      leverage_derivatives: "杠杆/衍生品",
-      breadth_concentration: "广度/集中度",
-      price_confirmation: "价格确认"
+      price_confirmation: "价格确认",
+      finra_margin_slow: "FINRA 慢变量",
+      daily_leverage_proxy: "日频杠杆代理"
     },
     statusMeta: {
       Green: {
@@ -242,6 +242,7 @@ const translations = {
     warningMap: {
       "NASDAQ valuation pressure is elevated.": "NASDAQ 估值压力处于偏高区域。",
       "FINRA margin leverage is in a historically high zone.": "FINRA 保证金杠杆处于历史高位区间。",
+      "QQQ/TQQQ daily leverage proxy is elevated.": "QQQ/TQQQ 日频杠杆代理处于偏高区域。",
       "Breadth/concentration signals suggest narrowing leadership.": "市场广度/集中度信号显示上涨领导力正在收窄。",
       "QQQ is extended above its 200-day moving average.": "QQQ 相对 200 日均线明显偏离。",
       "Price has pulled back from highs while bubble pressure remains high.": "价格已从高位回落，但泡沫压力仍然较高。",
@@ -272,6 +273,15 @@ function fmtPct(value) {
 function fmtNum(value, digits = 1) {
   if (value === null || value === undefined || Number.isNaN(value)) return "--";
   return Number(value).toFixed(digits);
+}
+
+function fmtValue(value) {
+  if (value === null || value === undefined) return "--";
+  if (typeof value === "number") {
+    if (Math.abs(value) >= 1000000) return value.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    return fmtNum(value, Math.abs(value) < 10 ? 2 : 1);
+  }
+  return String(value);
 }
 
 function fmtDateTime(value) {
@@ -427,6 +437,50 @@ function localizeWarning(message) {
   return t().warningMap[message] || message;
 }
 
+function freshnessLabel(value) {
+  const labels =
+    currentLanguage === "zh"
+      ? { fresh: "新鲜", stale: "过期", unknown: "未知" }
+      : { fresh: "Fresh", stale: "Stale", unknown: "Unknown" };
+  return labels[value] || labels.unknown;
+}
+
+function usedLabel(value) {
+  if (currentLanguage === "zh") return value ? "是" : "否";
+  return value ? "Yes" : "No";
+}
+
+function renderMetricGroups(title, groups) {
+  const [indicatorHeader, valueHeader, scoreHeader, refreshHeader, updatedHeader, freshHeader, usedHeader] = t().metricHeaders;
+  const entries = Object.entries(groups || {});
+  if (!entries.length) return "";
+  return `<div class="metric-section">
+    <p class="label">${title}</p>
+    ${entries
+      .map(([group, rows]) => {
+        const body = (rows || [])
+          .map(
+            (m) => `<div class="metric-row metric-row-wide">
+              <span>${m.name}</span>
+              <span>${fmtValue(m.value)}</span>
+              <span>${m.score === null || m.score === undefined ? "--" : fmtNum(m.score, 0)}</span>
+              <span>${m.refresh || "manual"}</span>
+              <span>${m.as_of || "--"}</span>
+              <span class="freshness ${m.freshness || "unknown"}">${freshnessLabel(m.freshness)}</span>
+              <span>${usedLabel(Boolean(m.used_in_score))}</span>
+            </div>`
+          )
+          .join("");
+        return `<div class="metric-group">
+          <p class="label">${group}</p>
+          <div class="metric-row metric-row-wide"><span>${indicatorHeader}</span><span>${valueHeader}</span><span>${scoreHeader}</span><span>${refreshHeader}</span><span>${updatedHeader}</span><span>${freshHeader}</span><span>${usedHeader}</span></div>
+          ${body || `<div class="metric-row metric-row-wide"><span>${t().noData}</span><span>--</span><span>--</span><span>--</span><span>--</span><span>--</span><span>--</span></div>`}
+        </div>`;
+      })
+      .join("")}
+  </div>`;
+}
+
 function render(data) {
   renderStaticText();
   renderConcept();
@@ -477,27 +531,10 @@ function render(data) {
   const warnings = data.warnings && data.warnings.length ? data.warnings : [t().noWarning];
   document.getElementById("warnings-list").innerHTML = warnings.map((w) => `<li>${localizeWarning(w)}</li>`).join("");
 
-  const groups = Object.entries(data.metrics || {});
-  const [indicatorHeader, valueHeader, scoreHeader, sourceHeader] = t().metricHeaders;
-  document.getElementById("metric-table").innerHTML = groups
-    .map(([group, rows]) => {
-      const body = (rows || [])
-        .map(
-          (m) => `<div class="metric-row">
-          <span>${m.name}</span>
-          <span>${m.value === null ? "--" : fmtNum(m.value, 2)}</span>
-          <span>${m.score === null ? "--" : fmtNum(m.score, 0)}</span>
-          <span>${m.source}</span>
-        </div>`
-        )
-        .join("");
-      return `<div class="metric-group">
-        <p class="label">${group}</p>
-        <div class="metric-row"><span>${indicatorHeader}</span><span>${valueHeader}</span><span>${scoreHeader}</span><span>${sourceHeader}</span></div>
-        ${body || `<div class="metric-row"><span>${t().noData}</span><span>--</span><span>--</span><span>--</span></div>`}
-      </div>`;
-    })
-    .join("");
+  document.getElementById("metric-table").innerHTML = [
+    renderMetricGroups(t().coreMetricsLabel, data.core_metrics),
+    renderMetricGroups(t().contextMetricsLabel, data.metrics)
+  ].join("");
 
   drawChart(document.getElementById("price-chart"), data.history);
 }

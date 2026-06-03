@@ -409,6 +409,30 @@ h2 {
   font-size: 13px;
 }
 
+.metric-section + .metric-section {
+  margin-top: 22px;
+}
+
+.metric-row-wide {
+  grid-template-columns: minmax(180px, 1.4fr) 0.7fr 0.5fr 0.7fr 0.8fr 0.6fr 0.4fr;
+}
+
+.freshness {
+  font-weight: 760;
+}
+
+.freshness.fresh {
+  color: var(--green);
+}
+
+.freshness.stale {
+  color: var(--red);
+}
+
+.freshness.unknown {
+  color: var(--yellow);
+}
+
 .metric-row:first-child {
   color: var(--muted);
   font-weight: 720;
@@ -478,8 +502,18 @@ canvas {
     grid-template-columns: 1fr 0.5fr;
   }
 
-  .metric-row span:nth-child(3),
-  .metric-row span:nth-child(4) {
+  .metric-row-wide {
+    grid-template-columns: 1fr 0.5fr 0.45fr;
+  }
+
+  .metric-row:not(.metric-row-wide) span:nth-child(3),
+  .metric-row:not(.metric-row-wide) span:nth-child(4) {
+    display: none;
+  }
+
+  .metric-row-wide span:nth-child(4),
+  .metric-row-wide span:nth-child(5),
+  .metric-row-wide span:nth-child(7) {
     display: none;
   }
 }

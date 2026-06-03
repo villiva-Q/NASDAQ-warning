@@ -65,14 +65,17 @@ Settings -> Pages -> Deploy from a branch -> master / docs
 
 ### Model
 
-The dashboard uses the following weighted score:
+The dashboard now separates the score into two layers:
+
+- `Core Daily Score`: used for the dashboard status color. It only uses auto-refreshing daily proxies and explicit-frequency slow variables.
+- `Context Signals`: manual or semi-manual inputs that explain the background but do not affect the status color.
+
+Current core score:
 
 ```text
-Bubble Risk Score = 0.30 Valuation
-                  + 0.20 Liquidity
-                  + 0.20 Leverage/Derivatives
-                  + 0.20 Breadth/Concentration
-                  + 0.10 Price Confirmation
+Core Daily Score = 0.40 Price Confirmation
+                 + 0.35 FINRA Margin Slow Variable
+                 + 0.25 QQQ/TQQQ Daily Leverage Proxy
 ```
 
 Risk states:
@@ -165,14 +168,17 @@ Settings -> Pages -> Deploy from a branch -> master / docs
 
 ### 模型说明
 
-Dashboard 使用以下加权总分：
+Dashboard 现在把分数拆成两层：
+
+- `Core Daily Score`：用于页面颜色状态，只使用自动更新的日频代理和明确发布频率的慢变量。
+- `Context Signals`：手动或半手动指标，只解释背景，不影响页面颜色状态。
+
+当前核心分数：
 
 ```text
-Bubble Risk Score = 0.30 Valuation
-                  + 0.20 Liquidity
-                  + 0.20 Leverage/Derivatives
-                  + 0.20 Breadth/Concentration
-                  + 0.10 Price Confirmation
+Core Daily Score = 0.40 Price Confirmation
+                 + 0.35 FINRA Margin Slow Variable
+                 + 0.25 QQQ/TQQQ Daily Leverage Proxy
 ```
 
 风险状态：

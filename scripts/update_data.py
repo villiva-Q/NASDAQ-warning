@@ -225,7 +225,39 @@ def build_manual_metric(name: str, spec: dict, inverse: bool = False) -> dict:
         "range": {"low": spec["low"], "high": spec["high"]},
         "as_of": spec.get("as_of"),
         "note": spec.get("note"),
+        "refresh": "manual",
+        "used_in_score": False,
+        "freshness": freshness_status(spec.get("as_of") or load_config().get("_meta", {}).get("manual_inputs_updated_at"), "manual"),
     }
+
+
+def freshness_status(as_of: str | None, cadence: str) -> str:
+    if not as_of:
+        return "unknown"
+    try:
+        if len(as_of) == 7:
+            dt = datetime.fromisoformat(f"{as_of}-15").replace(tzinfo=timezone.utc)
+        else:
+            dt = datetime.fromisoformat(as_of).replace(tzinfo=timezone.utc)
+    except Exception:
+        return "unknown"
+    age_days = (datetime.now(timezone.utc) - dt).days
+    if cadence == "daily":
+        return "fresh" if age_days <= 3 else "stale"
+    if cadence == "monthly":
+        return "fresh" if age_days <= 75 else "stale"
+    if cadence == "manual":
+        return "fresh" if age_days <= 30 else "stale"
+    return "unknown"
+
+
+def mark_metric(metric: dict, refresh: str, used_in_score: bool, as_of: str | None = None) -> dict:
+    metric["refresh"] = refresh
+    metric["used_in_score"] = used_in_score
+    if as_of is not None:
+        metric["as_of"] = as_of
+    metric["freshness"] = freshness_status(metric.get("as_of"), refresh)
+    return metric
 
 
 def percentile(values: list[float], latest: float) -> float | None:
@@ -255,7 +287,7 @@ def compute_daily_proxy_metrics(qqq_rows: list[dict], tqqq_rows: list[dict]) -> 
     proxy_score = average_available([qqq_volume_score, tqqq_volume_score, tqqq_ratio_score])
 
     metrics = [
-        {
+        mark_metric({
             "name": "QQQ Volume Percentile",
             "value": latest_qqq_volume,
             "score": qqq_volume_score,
@@ -263,8 +295,8 @@ def compute_daily_proxy_metrics(qqq_rows: list[dict], tqqq_rows: list[dict]) -> 
             "range": {"low": "1Y low volume", "high": "1Y high volume"},
             "as_of": qqq_rows[-1]["date"] if qqq_rows else None,
             "note": "Daily QQQ volume percentile over the last 252 trading days.",
-        },
-        {
+        }, "daily", True),
+        mark_metric({
             "name": "TQQQ Volume Percentile",
             "value": latest_tqqq_volume,
             "score": tqqq_volume_score,
@@ -272,8 +304,8 @@ def compute_daily_proxy_metrics(qqq_rows: list[dict], tqqq_rows: list[dict]) -> 
             "range": {"low": "1Y low volume", "high": "1Y high volume"},
             "as_of": tqqq_rows[-1]["date"] if tqqq_rows else None,
             "note": "Daily TQQQ volume percentile over the last 252 trading days.",
-        },
-        {
+        }, "daily", True),
+        mark_metric({
             "name": "TQQQ / QQQ Volume Ratio",
             "value": latest_ratio,
             "score": tqqq_ratio_score,
@@ -281,7 +313,7 @@ def compute_daily_proxy_metrics(qqq_rows: list[dict], tqqq_rows: list[dict]) -> 
             "range": {"low": "1Y low ratio", "high": "1Y high ratio"},
             "as_of": tqqq_rows[-1]["date"] if tqqq_rows else None,
             "note": "Leveraged ETF activity proxy relative to QQQ volume.",
-        },
+        }, "daily", True),
     ]
     return metrics, proxy_score
 
@@ -329,36 +361,48 @@ def build_snapshot() -> dict:
         build_manual_metric("Mega-cap Concentration", config["breadth"]["mega_cap_concentration"]),
     ]
 
-    valuation_score = average_available([m["score"] for m in valuation_metrics])
-    liquidity_score = average_available([m["score"] for m in liquidity_metrics], fallback=50)
-    leverage_score = finra["score"] if finra else 50
-    ibkr_score = average_available([m["score"] for m in ibkr_metrics])
-    derivatives_score = average_available([m["score"] for m in derivatives_metrics])
-    breadth_score = average_available([m["score"] for m in breadth_metrics])
-    leverage_derivatives_score = 0.45 * leverage_score + 0.25 * ibkr_score + 0.15 * derivatives_score + 0.15 * daily_proxy_score
+    price_metric = mark_metric({
+        "name": "QQQ Price Confirmation",
+        "value": price["latest"],
+        "score": price["score"],
+        "source": "auto: Yahoo Finance chart API",
+        "range": {"low": "low risk", "high": "high risk"},
+        "as_of": price["latest_date"],
+        "note": "Composite of distance from 200DMA, 3M return, acceleration, and drawdown from 52-week high.",
+    }, "daily", True)
+
+    finra_metric = None
+    if finra:
+        finra_metric = mark_metric({
+            "name": "FINRA Margin Leverage",
+            "value": finra["debit_to_free_cash"],
+            "score": finra["score"],
+            "source": "auto-check: FINRA margin statistics",
+            "range": {"low": "historical low", "high": "historical high"},
+            "as_of": finra["month"],
+            "note": "Authoritative aggregate margin data. Monthly and lagged; used as a slow structural risk variable.",
+        }, "monthly", True)
+
+    core_price_score = price_metric["score"]
+    core_finra_score = finra_metric["score"] if finra_metric and finra_metric["freshness"] != "stale" else 50
+    core_daily_proxy_score = daily_proxy_score
 
     modules = {
-        "valuation": valuation_score,
-        "liquidity": liquidity_score,
-        "leverage_derivatives": leverage_derivatives_score,
-        "breadth_concentration": breadth_score,
-        "price_confirmation": price["score"],
+        "price_confirmation": core_price_score,
+        "finra_margin_slow": core_finra_score,
+        "daily_leverage_proxy": core_daily_proxy_score,
     }
     overall = (
-        modules["valuation"] * 0.30
-        + modules["liquidity"] * 0.20
-        + modules["leverage_derivatives"] * 0.20
-        + modules["breadth_concentration"] * 0.20
-        + modules["price_confirmation"] * 0.10
+        modules["price_confirmation"] * 0.40
+        + modules["finra_margin_slow"] * 0.35
+        + modules["daily_leverage_proxy"] * 0.25
     )
 
     warnings = []
-    if valuation_score >= 75:
-        warnings.append("NASDAQ valuation pressure is elevated.")
-    if leverage_score >= 80:
+    if core_finra_score >= 80:
         warnings.append("FINRA margin leverage is in a historically high zone.")
-    if breadth_score >= 70:
-        warnings.append("Breadth/concentration signals suggest narrowing leadership.")
+    if core_daily_proxy_score >= 75:
+        warnings.append("QQQ/TQQQ daily leverage proxy is elevated.")
     if price["distance_200dma"] and price["distance_200dma"] > 0.18:
         warnings.append("QQQ is extended above its 200-day moving average.")
     if price["drawdown_from_52w_high"] and price["drawdown_from_52w_high"] < -0.05 and overall > 60:
@@ -371,14 +415,27 @@ def build_snapshot() -> dict:
         "overall_score": round(overall, 1),
         "status": status_for(overall, modules),
         "modules": {k: round(v, 1) for k, v in modules.items()},
+        "score_policy": {
+            "name": "Core Daily Score",
+            "description": "Only automatic daily proxies and explicit-frequency slow variables enter the score. Manual inputs are context only.",
+            "weights": {
+                "price_confirmation": 0.40,
+                "finra_margin_slow": 0.35,
+                "daily_leverage_proxy": 0.25
+            }
+        },
         "price": price,
         "finra": finra,
+        "core_metrics": {
+            "price": [price_metric],
+            "finra_margin_slow": [finra_metric] if finra_metric else [],
+            "daily_leverage_proxy": daily_proxy_metrics,
+        },
         "metrics": {
             "valuation": valuation_metrics,
             "liquidity": liquidity_metrics,
             "derivatives": derivatives_metrics,
             "ibkr_leverage_proxy": ibkr_metrics,
-            "daily_leverage_proxy": daily_proxy_metrics,
             "breadth": breadth_metrics,
         },
         "warnings": warnings,
