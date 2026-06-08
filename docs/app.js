@@ -1,94 +1,47 @@
-const translations = {
+const i18n = {
   en: {
-    overallLabel: "Overall Bubble Score",
-    priceLabel: "QQQ Price",
     followX: "Follow @villiva",
-    conceptEyebrow: "Concept",
-    conceptTitle: "Model Sources & Principle",
+    dailySnapshot: "Daily snapshot",
+    bubbleLabel: "Bubble Risk",
+    bottomLabel: "Bottom Readiness",
+    priceLabel: "QQQ Price",
     warningsLabel: "Warnings",
     warningsTitle: "Active Signals",
-    metricsLabel: "Signal Details",
-    metricsTitle: "Indicator Details",
+    coreMetricsLabel: "Bubble Core Inputs",
+    contextMetricsLabel: "Bubble Context Signals",
+    bottomSignalsLabel: "Bottom Model",
+    bottomSignalsTitle: "Liquidation-End Signals",
+    calibrationLabel: "Calibration",
+    calibrationTitle: "Backtest Thresholds",
+    conceptEyebrow: "Framework",
+    conceptTitle: "How The Two-Layer Model Works",
     sourcesLabel: "Data",
     sourcesTitle: "Data Sources & Refresh",
     methodLabel: "Method",
-    methodCopy:
-      "This dashboard monitors NASDAQ bubble pressure. It compresses valuation, liquidity, leverage/derivatives, breadth/concentration, and price confirmation into a 0-100 score. A high score means top fragility is rising, not that an exact top date has been predicted.",
-    snapshotPrefix: "Snapshot",
-    dailySnapshot: "Daily snapshot",
-    loading: "Loading the latest data snapshot.",
     noWarning: "No active warning.",
-    noData: "No data",
+    loading: "Loading the latest data snapshot.",
     dataLoadFailed: "Data load failed",
-    coreMetricsLabel: "Core Score Inputs",
-    contextMetricsLabel: "Context Signals",
+    snapshotPrefix: "Snapshot",
     metricHeaders: ["Indicator", "Value", "Score", "Refresh", "Last Updated", "Freshness", "Used"],
-    sourceFields: {
-      source: "Source",
-      cadence: "Cadence",
-      latest: "Latest",
-      note: "Note"
-    },
-    sourceCards: {
-      qqq: {
-        title: "QQQ price and price-derived signals",
-        source: "Yahoo Finance chart API",
-        cadence: "Daily snapshot via GitHub Actions",
-        note: "Used for QQQ price, 50/200DMA distance, 3M/6M return, and drawdown."
-      },
-      finra: {
-        title: "Margin leverage",
-        source: "FINRA margin statistics",
-        cadence: "Monthly source data with publication lag; checked daily by the workflow",
-        note: "Authoritative aggregate margin data, but not a daily leverage feed. Use it as a slow-moving structural risk indicator."
-      },
-      manual: {
-        title: "Configured valuation, liquidity, derivatives, and breadth inputs",
-        source: "config/indicators.json",
-        cadence: "Manual only; not covered by the daily refresh",
-        note: "The daily workflow can refresh the page snapshot, but these inputs only change when config/indicators.json is edited."
-      },
-      ibkr: {
-        title: "IBKR client margin loan proxy",
-        source: "Interactive Brokers monthly brokerage metrics",
-        cadence: "Monthly, entered as a configured input",
-        note: "Single-broker leverage proxy. Faster than FINRA, but not a total-market margin debt measure."
-      },
-      dailyProxy: {
-        title: "QQQ / TQQQ daily leverage proxy",
-        source: "Yahoo Finance chart API",
-        cadence: "Daily snapshot via GitHub Actions",
-        note: "Uses QQQ volume, TQQQ volume, and TQQQ/QQQ volume ratio as fast proxies for leveraged NASDAQ trading activity."
-      },
-      workflow: {
-        title: "Dashboard refresh",
-        source: "GitHub Actions",
-        cadence: "Weekdays, once per day",
-        note: "The page reads docs/data/dashboard.json. It updates when the workflow commits a new snapshot."
-      }
-    },
+    bottomHeaders: ["Signal", "Observed Value", "Score", "Source"],
+    thresholdHeaders: ["Threshold", "Events", "Avg Days From Low", "21D Avg", "21D Hit", "63D Avg", "63D Hit"],
     moduleLabels: {
       price_confirmation: "Price Confirmation",
       finra_margin_slow: "FINRA Margin Slow",
       daily_leverage_proxy: "Daily Leverage Proxy"
     },
     statusMeta: {
-      Green: {
-        title: "Green - Normal",
-        copy: "Bubble pressure has not formed a systemic high-risk combination. Keep routine monitoring."
-      },
-      Yellow: {
-        title: "Yellow - Watch",
-        copy: "The market is heating up. Track flows, breadth, and leverage more closely."
-      },
-      Orange: {
-        title: "Orange - De-risk",
-        copy: "Late-cycle bubble risk is rising. Avoid adding leverage and reduce high-beta concentration."
-      },
-      Red: {
-        title: "Red - High Alert",
-        copy: "Multiple modules are high-risk at the same time. Prioritize hedging, profit-taking, and concentration control."
-      }
+      Green: ["Green - Normal", "Bubble pressure is not yet a systemic high-risk combination."],
+      Yellow: ["Yellow - Watch", "The market is heating up. Track flows, breadth, and leverage more closely."],
+      Orange: ["Orange - De-risk", "Late-cycle bubble risk is rising. Avoid adding leverage and reduce high-beta concentration."],
+      Red: ["Red - High Alert", "Multiple modules are high risk together. Prioritize hedging, profit-taking, and concentration control."]
+    },
+    bottomStatus: {
+      "No setup": ["No Setup", "QQQ has not pulled back enough for a bottom-readiness signal to matter."],
+      Wait: ["Wait", "The drawdown has started, but liquidation-end evidence is still weak."],
+      Watch: ["Watch", "Some stabilization is appearing. Treat this as a watch zone, not confirmation."],
+      "Entry zone": ["Entry Zone", "The calibrated score is in the staged-entry zone after a meaningful drawdown."],
+      Confirmed: ["Confirmed", "Most public proxies suggest forced selling has probably cooled."]
     },
     decisions: [
       ["Green", "Normal allocation", "Routine rebalancing and monitoring."],
@@ -96,120 +49,76 @@ const translations = {
       ["Orange", "Reduce risk", "Cut leverage and high-beta concentration."],
       ["Red", "High alert", "Hedge, take profits, and enforce stops."]
     ],
+    bottomDecisions: [
+      ["0-7", "Wait", "Liquidation risk is usually unresolved."],
+      ["8-11", "Observe", "Only small test positions, if any."],
+      ["12-13", "Watch", "Bottom process may be forming."],
+      ["13+", "Staged entry", "Use only with drawdown and price confirmation."]
+    ],
     conceptCards: [
       {
-        title: "Minsky: Ponzi Finance",
-        body:
-          "The model borrows from Minsky's financial instability hypothesis: long expansions encourage risk-taking, financing shifts from stable cash-flow support toward speculative and Ponzi-like structures, and the system becomes more fragile."
+        title: "Top Risk Layer",
+        body: "The bubble score monitors late-cycle fragility: price extension, FINRA margin leverage, and QQQ/TQQQ leveraged trading activity. A high score warns that the market depends on fragile marginal buyers."
       },
       {
-        title: "Kindleberger: Bubble Stages",
-        body:
-          "The dashboard treats bubbles as a staged process: new narrative, boom, euphoria, funding stress, and reversal. The aim is to detect the transition from healthy momentum to late-cycle fragility."
+        title: "Bottom Readiness Layer",
+        body: "The bottom score is only meaningful after a real QQQ drawdown. It rises when volatility normalizes, rates stop worsening, crypto risk appetite stabilizes, leverage cools, breadth repairs, and price stops falling."
       },
       {
-        title: "LPPL / Critical Point Logic",
-        body:
-          "If a model claims to identify a top window, it resembles log-periodic power law thinking: prices accelerate faster than fundamentals and instability concentrates near a critical zone. This dashboard does not make exact date predictions."
+        title: "No Paid Microstructure Data",
+        body: "Dealer gamma, put walls, and CTA flow are not directly available for free. The dashboard uses public proxies: VIX/VIX3M, VXN/VIX changes, TQQQ/QQQ volume, QQQ trend, QQEW/QQQ breadth, BTC, and FINRA margin debt."
       },
       {
-        title: "Funding-valuation tension",
-        body:
-          "The operating principle is simple: when valuation expansion needs more marginal capital, but visible inflows weaken and leverage/speculation rises, the market becomes dependent on fragile buyers."
+        title: "Calibration Discipline",
+        body: "The bottom framework is backtested on QQQ drawdown events. FINRA data is lagged by 21 days to avoid look-ahead bias, and missing free signals are excluded from the score denominator instead of being treated as bearish."
       }
     ],
-    warningMap: {}
+    methodCopy:
+      "This dashboard is a risk and timing aid, not investment advice. Use the bubble score to identify top fragility and the bottom-readiness score to judge whether a selloff is moving from forced liquidation toward stabilization."
   },
   zh: {
-    overallLabel: "泡沫风险总分",
-    priceLabel: "QQQ 价格",
     followX: "关注 @villiva",
-    conceptEyebrow: "概念",
-    conceptTitle: "模型来源与原理解读",
+    dailySnapshot: "每日快照",
+    bubbleLabel: "泡沫风险",
+    bottomLabel: "底部就绪度",
+    priceLabel: "QQQ 价格",
     warningsLabel: "预警",
     warningsTitle: "当前触发信号",
-    metricsLabel: "信号明细",
-    metricsTitle: "指标明细",
+    coreMetricsLabel: "泡沫核心指标",
+    contextMetricsLabel: "泡沫背景信号",
+    bottomSignalsLabel: "底部模型",
+    bottomSignalsTitle: "清算结束信号",
+    calibrationLabel: "校准",
+    calibrationTitle: "回测阈值",
+    conceptEyebrow: "框架",
+    conceptTitle: "双层模型如何工作",
     sourcesLabel: "数据",
-    sourcesTitle: "数据来源与更新时间",
+    sourcesTitle: "数据来源与刷新",
     methodLabel: "方法",
-    methodCopy:
-      "该面板用于监控 NASDAQ 泡沫压力。它把估值、流动性、杠杆/衍生品、市场广度/集中度和价格确认压缩成 0-100 分。高分代表顶部脆弱性上升，不代表已经预测出精确见顶日期。",
-    snapshotPrefix: "快照",
-    dailySnapshot: "每日数据快照",
-    loading: "正在读取最新数据快照。",
     noWarning: "暂无触发信号。",
-    noData: "暂无数据",
+    loading: "正在读取最新数据快照。",
     dataLoadFailed: "数据读取失败",
-    coreMetricsLabel: "核心入分指标",
-    contextMetricsLabel: "背景参考信号",
+    snapshotPrefix: "快照",
     metricHeaders: ["指标", "数值", "分数", "刷新", "更新时间", "新鲜度", "入分"],
-    sourceFields: {
-      source: "来源",
-      cadence: "更新频率",
-      latest: "最新数据",
-      note: "说明"
-    },
-    sourceCards: {
-      qqq: {
-        title: "QQQ 价格与价格派生信号",
-        source: "Yahoo Finance chart API",
-        cadence: "通过 GitHub Actions 每日生成快照",
-        note: "用于 QQQ 价格、50/200 日均线偏离、3个月/6个月收益和回撤。"
-      },
-      finra: {
-        title: "保证金杠杆",
-        source: "FINRA margin statistics",
-        cadence: "源数据为月度且有发布时间滞后；工作流每天检查是否有更新",
-        note: "这是权威的总体保证金数据，但不是日频杠杆数据。它更适合作为慢变量结构性风险指标。"
-      },
-      manual: {
-        title: "估值、流动性、衍生品和广度配置项",
-        source: "config/indicators.json",
-        cadence: "仅手动更新，不属于每日自动刷新范围",
-        note: "每日工作流可以刷新页面快照，但这些输入只有在 config/indicators.json 被编辑后才会改变。"
-      },
-      ibkr: {
-        title: "IBKR 客户保证金贷款代理",
-        source: "Interactive Brokers 月度券商指标",
-        cadence: "月度数据，以配置项形式录入",
-        note: "这是单一券商的杠杆代理，通常比 FINRA 更快，但不代表全市场保证金债务。"
-      },
-      dailyProxy: {
-        title: "QQQ / TQQQ 日频杠杆代理",
-        source: "Yahoo Finance chart API",
-        cadence: "通过 GitHub Actions 每日生成快照",
-        note: "使用 QQQ 成交量、TQQQ 成交量和 TQQQ/QQQ 成交量比值，作为 NASDAQ 杠杆交易活跃度的快速代理。"
-      },
-      workflow: {
-        title: "Dashboard 刷新",
-        source: "GitHub Actions",
-        cadence: "工作日每天一次",
-        note: "页面读取 docs/data/dashboard.json；工作流提交新快照后页面随之更新。"
-      }
-    },
+    bottomHeaders: ["信号", "观测值", "分数", "来源"],
+    thresholdHeaders: ["阈值", "触发事件", "距离低点均值", "21日均值", "21日胜率", "63日均值", "63日胜率"],
     moduleLabels: {
       price_confirmation: "价格确认",
       finra_margin_slow: "FINRA 慢变量",
       daily_leverage_proxy: "日频杠杆代理"
     },
     statusMeta: {
-      Green: {
-        title: "Green - 正常",
-        copy: "泡沫压力尚未形成系统性高危组合，维持常规监控。"
-      },
-      Yellow: {
-        title: "Yellow - 观察",
-        copy: "市场开始偏热，需要更密切跟踪资金流、市场广度和杠杆变化。"
-      },
-      Orange: {
-        title: "Orange - 降风险",
-        copy: "泡沫晚期概率上升，避免增加杠杆，并降低高 beta 集中暴露。"
-      },
-      Red: {
-        title: "Red - 强警戒",
-        copy: "多个模块同时高危，优先考虑对冲、止盈和降低集中仓位。"
-      }
+      Green: ["Green - 正常", "泡沫压力尚未形成系统性高风险组合。"],
+      Yellow: ["Yellow - 观察", "市场开始升温，需要更密切跟踪资金流、广度和杠杆。"],
+      Orange: ["Orange - 降风险", "泡沫晚期脆弱性上升，避免增加杠杆，降低高 beta 集中暴露。"],
+      Red: ["Red - 强警戒", "多个模块同时高危，优先考虑对冲、止盈和控制集中仓位。"]
+    },
+    bottomStatus: {
+      "No setup": ["无底部设置", "QQQ 回撤还不够，底部就绪信号暂时意义不大。"],
+      Wait: ["等待", "回撤已经开始，但清算结束证据仍然很弱。"],
+      Watch: ["观察", "部分稳定信号开始出现，但还不是确认。"],
+      "Entry zone": ["分批区", "有意义回撤后，分数进入校准后的分批入场区。"],
+      Confirmed: ["确认", "多数公开代理显示强制卖出大概率已经降温。"]
     },
     decisions: [
       ["Green", "正常配置", "常规再平衡，继续跟踪。"],
@@ -217,37 +126,32 @@ const translations = {
       ["Orange", "降低风险", "减少杠杆和高 beta 集中。"],
       ["Red", "强警戒", "对冲、止盈、严格止损。"]
     ],
+    bottomDecisions: [
+      ["0-7", "等待", "清算风险通常尚未解除。"],
+      ["8-11", "观察", "最多小仓试探。"],
+      ["12-13", "关注", "底部过程可能正在形成。"],
+      ["13+", "分批", "必须结合回撤和价格确认使用。"]
+    ],
     conceptCards: [
       {
-        title: "Minsky：庞氏融资",
-        body:
-          "模型借鉴 Minsky 金融不稳定假说：长期繁荣会诱导更激进的风险承担，融资结构从现金流可支撑逐步滑向投机型和庞氏型，系统脆弱性随之上升。"
+        title: "顶部风险层",
+        body: "泡沫分数监控晚周期脆弱性：价格延伸、FINRA 保证金杠杆、QQQ/TQQQ 杠杆交易活跃度。高分代表市场越来越依赖脆弱的边际买盘。"
       },
       {
-        title: "Kindleberger：泡沫阶段",
-        body:
-          "面板把泡沫理解为一个阶段过程：新叙事、繁荣、狂热、资金压力和反转。目标是识别市场从健康动量进入泡沫晚期脆弱状态的转折。"
+        title: "底部就绪层",
+        body: "底部评分只在 QQQ 出现真实回撤后才有意义。波动率正常化、利率压力停止恶化、加密风险偏好企稳、杠杆降温、广度修复、价格止跌时，分数会上升。"
       },
       {
-        title: "LPPL / 临界点逻辑",
-        body:
-          "如果模型声称能识别顶部窗口，它更接近 LPPL 的思想：价格上涨快于基本面，并在临界区附近集中释放不稳定性。本面板不做精确日期预测。"
+        title: "不使用付费微观结构数据",
+        body: "Dealer gamma、put wall、CTA flow 没有稳定免费源。面板用公开代理替代：VIX/VIX3M、VXN/VIX、TQQQ/QQQ 成交量、QQQ 趋势、QQEW/QQQ 广度、BTC 和 FINRA 保证金。"
       },
       {
-        title: "资金与估值张力",
-        body:
-          "运行原理很简单：当估值扩张需要更多边际资金，而可见资金流入走弱、杠杆和投机占比上升时，市场就越来越依赖脆弱买盘。"
+        title: "校准纪律",
+        body: "底部框架基于 QQQ 回撤事件回测。FINRA 月度数据滞后 21 天对齐，避免未来函数；免费源缺失的指标会从分母剔除，不会被当成看空信号。"
       }
     ],
-    warningMap: {
-      "NASDAQ valuation pressure is elevated.": "NASDAQ 估值压力处于偏高区域。",
-      "FINRA margin leverage is in a historically high zone.": "FINRA 保证金杠杆处于历史高位区间。",
-      "QQQ/TQQQ daily leverage proxy is elevated.": "QQQ/TQQQ 日频杠杆代理处于偏高区域。",
-      "Breadth/concentration signals suggest narrowing leadership.": "市场广度/集中度信号显示上涨领导力正在收窄。",
-      "QQQ is extended above its 200-day moving average.": "QQQ 相对 200 日均线明显偏离。",
-      "Price has pulled back from highs while bubble pressure remains high.": "价格已从高位回落，但泡沫压力仍然较高。",
-      "Run scripts/update_data.py to generate a fresh snapshot.": "运行 scripts/update_data.py 生成最新数据快照。"
-    }
+    methodCopy:
+      "这个 dashboard 是风险和择时辅助工具，不是投资建议。泡沫分数用于识别顶部脆弱性，底部就绪分用于判断一次下跌是否正在从强制清算转向稳定。"
   }
 };
 
@@ -255,30 +159,36 @@ const statusColors = {
   Green: "#26734d",
   Yellow: "#a37716",
   Orange: "#b85223",
-  Red: "#b3263a"
+  Red: "#b3263a",
+  Wait: "#b3263a",
+  Watch: "#a37716",
+  "Entry zone": "#2364aa",
+  Confirmed: "#26734d",
+  "No setup": "#66707a"
 };
 
 let currentLanguage = localStorage.getItem("dashboardLanguage") || "zh";
 let latestData = null;
 
-function t() {
-  return translations[currentLanguage] || translations.zh;
+function tr() {
+  return i18n[currentLanguage] || i18n.zh;
 }
 
 function fmtPct(value) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "--";
-  return `${(value * 100).toFixed(1)}%`;
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return "--";
+  return `${(Number(value) * 100).toFixed(1)}%`;
 }
 
 function fmtNum(value, digits = 1) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "--";
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return "--";
   return Number(value).toFixed(digits);
 }
 
 function fmtValue(value) {
-  if (value === null || value === undefined) return "--";
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return "--";
   if (typeof value === "number") {
     if (Math.abs(value) >= 1000000) return value.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    if (Math.abs(value) < 1) return fmtNum(value, 3);
     return fmtNum(value, Math.abs(value) < 10 ? 2 : 1);
   }
   return String(value);
@@ -305,6 +215,12 @@ function setLanguage(lang) {
   if (latestData) render(latestData);
 }
 
+function setRing(id, score, maxScore, color) {
+  const ring = document.getElementById(id);
+  const deg = Math.round((score / maxScore) * 360);
+  ring.style.background = `conic-gradient(${color} 0deg, ${color} ${deg}deg, #e6e8e1 ${deg}deg)`;
+}
+
 function drawChart(canvas, rows) {
   const ctx = canvas.getContext("2d");
   const rect = canvas.getBoundingClientRect();
@@ -312,23 +228,17 @@ function drawChart(canvas, rows) {
   canvas.width = Math.max(320, rect.width) * ratio;
   canvas.height = 220 * ratio;
   ctx.scale(ratio, ratio);
-
   const width = canvas.width / ratio;
   const height = canvas.height / ratio;
   ctx.clearRect(0, 0, width, height);
-
-  if (!rows || rows.length < 2) {
-    ctx.fillStyle = "#66707a";
-    ctx.fillText("No price history", 18, 32);
-    return;
-  }
+  if (!rows || rows.length < 2) return;
 
   const closes = rows.map((r) => Number(r.close));
   const min = Math.min(...closes);
   const max = Math.max(...closes);
   const pad = 18;
-  const xStep = (width - pad * 2) / (rows.length - 1);
   const y = (value) => height - pad - ((value - min) / (max - min || 1)) * (height - pad * 2);
+  const xStep = (width - pad * 2) / (rows.length - 1);
 
   ctx.strokeStyle = "#d9ded7";
   ctx.lineWidth = 1;
@@ -351,90 +261,42 @@ function drawChart(canvas, rows) {
   });
   ctx.stroke();
 
-  const lastY = y(closes[closes.length - 1]);
-  ctx.fillStyle = "#2364aa";
-  ctx.beginPath();
-  ctx.arc(width - pad, lastY, 4, 0, Math.PI * 2);
-  ctx.fill();
-
   ctx.fillStyle = "#66707a";
   ctx.font = "12px system-ui";
   ctx.fillText(`High ${max.toFixed(2)}`, pad, 14);
   ctx.fillText(`Low ${min.toFixed(2)}`, pad, height - 4);
 }
 
-async function loadDashboard() {
-  const response = await fetch("./data/dashboard.json", { cache: "no-store" });
-  latestData = await response.json();
-  render(latestData);
-}
-
 function renderStaticText() {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const key = node.getAttribute("data-i18n");
-    node.textContent = t()[key] || node.textContent;
+    node.textContent = tr()[key] || node.textContent;
   });
 }
 
-function renderConcept() {
-  document.getElementById("concept-grid").innerHTML = t()
-    .conceptCards.map(
-      (card) => `<article class="concept-card">
-        <h3>${card.title}</h3>
-        <p>${card.body}</p>
-      </article>`
-    )
+function renderDecisionStrip(id, rows, activeLabel) {
+  document.getElementById(id).innerHTML = rows
+    .map(([name, title, copy]) => {
+      const active = name === activeLabel || (activeLabel === "Entry zone" && name === "13+");
+      return `<div class="decision ${active ? "active" : ""}">
+        <strong>${name} · ${title}</strong>
+        <span>${copy}</span>
+      </div>`;
+    })
     .join("");
 }
 
-function renderSources(data) {
-  const cards = t().sourceCards;
-  const fields = t().sourceFields;
-  const sourceRows = [
-    {
-      ...cards.qqq,
-      latest: data.price ? `${data.price.latest_date} · QQQ ${fmtNum(data.price.latest, 2)}` : "--"
-    },
-    {
-      ...cards.finra,
-      latest: data.finra ? data.finra.month : "--"
-    },
-    {
-      ...cards.manual,
-      latest: data.manual_inputs?.manual_inputs_updated_at || "Not set",
-      note: `${cards.manual.note} ${currentLanguage === "zh" ? data.manual_inputs?.manual_update_path_zh || "" : data.manual_inputs?.manual_update_path || ""}`.trim()
-    },
-    {
-      ...cards.ibkr,
-      latest: data.metrics?.ibkr_leverage_proxy?.[0]?.as_of || "--"
-    },
-    {
-      ...cards.dailyProxy,
-      latest: data.price ? data.price.latest_date : "--"
-    },
-    {
-      ...cards.workflow,
-      latest: `${t().snapshotPrefix}: ${fmtDateTime(data.generated_at)}`
-    }
-  ];
-
-  document.getElementById("source-grid").innerHTML = sourceRows
-    .map(
-      (row) => `<article class="source-card">
-        <h3>${row.title}</h3>
-        <dl>
-          <div><dt>${fields.source}</dt><dd>${row.source}</dd></div>
-          <div><dt>${fields.cadence}</dt><dd>${row.cadence}</dd></div>
-          <div><dt>${fields.latest}</dt><dd>${row.latest}</dd></div>
-          <div><dt>${fields.note}</dt><dd>${row.note}</dd></div>
-        </dl>
-      </article>`
-    )
+function renderModules(data) {
+  document.getElementById("modules").innerHTML = Object.entries(data.modules)
+    .map(([key, value]) => {
+      const color = scoreColor(value);
+      return `<article class="module">
+        <p class="label">${tr().moduleLabels[key] || key}</p>
+        <div class="module-value" style="color:${color}">${fmtNum(value, 0)}</div>
+        <div class="bar"><span style="width:${value}%; background:${color}"></span></div>
+      </article>`;
+    })
     .join("");
-}
-
-function localizeWarning(message) {
-  return t().warningMap[message] || message;
 }
 
 function freshnessLabel(value) {
@@ -446,12 +308,11 @@ function freshnessLabel(value) {
 }
 
 function usedLabel(value) {
-  if (currentLanguage === "zh") return value ? "是" : "否";
-  return value ? "Yes" : "No";
+  return currentLanguage === "zh" ? (value ? "是" : "否") : value ? "Yes" : "No";
 }
 
 function renderMetricGroups(title, groups) {
-  const [indicatorHeader, valueHeader, scoreHeader, refreshHeader, updatedHeader, freshHeader, usedHeader] = t().metricHeaders;
+  const headers = tr().metricHeaders;
   const entries = Object.entries(groups || {});
   if (!entries.length) return "";
   return `<div class="metric-section">
@@ -461,11 +322,8 @@ function renderMetricGroups(title, groups) {
         const body = (rows || [])
           .map(
             (m) => `<div class="metric-row metric-row-wide">
-              <span>${m.name}</span>
-              <span>${fmtValue(m.value)}</span>
-              <span>${m.score === null || m.score === undefined ? "--" : fmtNum(m.score, 0)}</span>
-              <span>${m.refresh || "manual"}</span>
-              <span>${m.as_of || "--"}</span>
+              <span>${m.name}</span><span>${fmtValue(m.value)}</span><span>${fmtNum(m.score, 0)}</span>
+              <span>${m.refresh || "manual"}</span><span>${m.as_of || "--"}</span>
               <span class="freshness ${m.freshness || "unknown"}">${freshnessLabel(m.freshness)}</span>
               <span>${usedLabel(Boolean(m.used_in_score))}</span>
             </div>`
@@ -473,12 +331,81 @@ function renderMetricGroups(title, groups) {
           .join("");
         return `<div class="metric-group">
           <p class="label">${group}</p>
-          <div class="metric-row metric-row-wide"><span>${indicatorHeader}</span><span>${valueHeader}</span><span>${scoreHeader}</span><span>${refreshHeader}</span><span>${updatedHeader}</span><span>${freshHeader}</span><span>${usedHeader}</span></div>
-          ${body || `<div class="metric-row metric-row-wide"><span>${t().noData}</span><span>--</span><span>--</span><span>--</span><span>--</span><span>--</span><span>--</span></div>`}
+          <div class="metric-row metric-row-wide">${headers.map((h) => `<span>${h}</span>`).join("")}</div>
+          ${body}
         </div>`;
       })
       .join("")}
   </div>`;
+}
+
+function renderBottomSignals(bottom) {
+  const headers = tr().bottomHeaders;
+  const rows = bottom?.signals || [];
+  document.getElementById("bottom-signal-table").innerHTML = `
+    <div class="metric-row bottom-row">${headers.map((h) => `<span>${h}</span>`).join("")}</div>
+    ${rows
+      .map(
+        (m) => `<div class="metric-row bottom-row">
+          <span><strong>${m.name}</strong><small>${m.note || ""}</small></span>
+          <span>${fmtValue(m.value)}</span>
+          <span>${m.score === null || m.score === undefined ? "--" : fmtNum(m.score, 0)}</span>
+          <span>${m.source || "--"}</span>
+        </div>`
+      )
+      .join("")}`;
+}
+
+function renderCalibration(bottom) {
+  const headers = tr().thresholdHeaders;
+  const rows = bottom?.calibration?.threshold_summary || [];
+  document.getElementById("calibration-table").innerHTML = `
+    <div class="metric-row calibration-row">${headers.map((h) => `<span>${h}</span>`).join("")}</div>
+    ${rows
+      .map(
+        (r) => `<div class="metric-row calibration-row ${r.threshold === bottom.calibration.best_threshold ? "highlight" : ""}">
+          <span>${fmtNum(r.threshold, 0)}</span>
+          <span>${r.triggered_events}/${r.events}</span>
+          <span>${fmtNum(r.avg_days_from_low, 1)}</span>
+          <span>${fmtPct(r.avg_fwd_21d)}</span>
+          <span>${fmtPct(r.hit_rate_21d)}</span>
+          <span>${fmtPct(r.avg_fwd_63d)}</span>
+          <span>${fmtPct(r.hit_rate_63d)}</span>
+        </div>`
+      )
+      .join("")}`;
+
+  const wf = bottom?.calibration?.walk_forward;
+  document.getElementById("walk-forward-copy").textContent = wf
+    ? `Walk-forward: ${wf.triggered_events}/${wf.tested_events} events, 21D ${fmtPct(wf.avg_fwd_21d)} hit ${fmtPct(wf.hit_rate_21d)}, 63D ${fmtPct(wf.avg_fwd_63d)} hit ${fmtPct(wf.hit_rate_63d)}.`
+    : "";
+}
+
+function renderConcept() {
+  document.getElementById("concept-grid").innerHTML = tr()
+    .conceptCards.map(
+      (card) => `<article class="concept-card"><h3>${card.title}</h3><p>${card.body}</p></article>`
+    )
+    .join("");
+}
+
+function renderSources(data) {
+  const bottom = data.bottom_framework;
+  const sourceRows = [
+    ["Yahoo Finance", "QQQ, TQQQ, SPY, QQEW, VIX, VIX3M, VXN, TNX, BTC-USD", data.price?.latest_date],
+    ["FINRA", "Monthly margin statistics, lagged in the bottom backtest", data.finra?.month || "--"],
+    ["Free optional proxies", "VIX9D, SKEW, CBOE put/call via Yahoo when available", bottom?.as_of || "--"],
+    ["GitHub Actions", "Runs the update script and commits docs/data/dashboard.json", fmtDateTime(data.generated_at)]
+  ];
+  document.getElementById("source-grid").innerHTML = sourceRows
+    .map(
+      ([title, body, latest]) => `<article class="source-card">
+        <h3>${title}</h3>
+        <p>${body}</p>
+        <small>${latest || "--"}</small>
+      </article>`
+    )
+    .join("");
 }
 
 function render(data) {
@@ -486,57 +413,62 @@ function render(data) {
   renderConcept();
   renderSources(data);
 
-  const meta = t().statusMeta[data.status] || t().statusMeta.Yellow;
-  const score = Number(data.overall_score);
-  const statusColor = statusColors[data.status] || statusColors.Yellow;
+  const bubbleScore = Number(data.overall_score);
+  const bubbleColor = scoreColor(bubbleScore);
+  const bubbleMeta = tr().statusMeta[data.status] || tr().statusMeta.Yellow;
+  document.getElementById("overall-score").textContent = fmtNum(bubbleScore, 0);
+  document.getElementById("status-title").textContent = bubbleMeta[0];
+  document.getElementById("status-copy").textContent = bubbleMeta[1];
+  setRing("score-ring", bubbleScore, 100, bubbleColor);
 
-  document.getElementById("overall-score").textContent = fmtNum(score, 0);
-  document.getElementById("status-title").textContent = meta.title;
-  document.getElementById("status-copy").textContent = meta.copy;
+  const bottom = data.bottom_framework;
+  const bottomScore = bottom?.available ? Number(bottom.score) : 0;
+  const bottomStatus = bottom?.status || "No setup";
+  const bottomColor = statusColors[bottomStatus] || statusColors["No setup"];
+  const bottomMeta = tr().bottomStatus[bottomStatus] || tr().bottomStatus["No setup"];
+  document.getElementById("bottom-score").textContent = fmtNum(bottomScore, 1);
+  document.getElementById("bottom-status-title").textContent = bottomMeta[0];
+  document.getElementById("bottom-status-copy").textContent = bottom?.available ? bottomMeta[1] : bottom?.error || "--";
+  document.getElementById("bottom-threshold").textContent = bottom?.available
+    ? `Threshold ${bottom.calibration.best_threshold}/20 · ${fmtPct(bottom.qqq.drawdown_from_52w_high)} drawdown`
+    : "--";
+  setRing("bottom-ring", bottomScore, 20, bottomColor);
+
   document.getElementById("status-pill").textContent = data.status;
-  document.getElementById("status-pill").style.borderColor = statusColor;
-  document.getElementById("status-pill").style.color = statusColor;
-  document.getElementById("generated-at").textContent = `${t().snapshotPrefix}: ${fmtDateTime(data.generated_at)}`;
-  document.getElementById("update-frequency").textContent = t().dailySnapshot;
-
-  const deg = Math.round(score * 3.6);
-  const ring = document.getElementById("score-ring");
-  ring.style.background = `conic-gradient(${scoreColor(score)} 0deg, ${scoreColor(score)} ${deg}deg, #e6e8e1 ${deg}deg)`;
+  document.getElementById("status-pill").style.color = bubbleColor;
+  document.getElementById("status-pill").style.borderColor = bubbleColor;
+  document.getElementById("generated-at").textContent = `${tr().snapshotPrefix}: ${fmtDateTime(data.generated_at)}`;
+  document.getElementById("update-frequency").textContent = tr().dailySnapshot;
 
   document.getElementById("price-title").textContent = `QQQ ${fmtNum(data.price.latest, 2)} · ${data.price.latest_date}`;
   document.getElementById("ret-3m").textContent = `3M ${fmtPct(data.price.return_3m)}`;
   document.getElementById("dist-200").textContent = `200DMA ${fmtPct(data.price.distance_200dma)}`;
-
-  document.getElementById("decision-strip").innerHTML = t()
-    .decisions.map(([name, title, copy]) => {
-      const active = name === data.status;
-      return `<div class="decision" style="${active ? `border-color:${statusColors[name]};` : ""}">
-        <strong style="${active ? `color:${statusColors[name]};` : ""}">${name} · ${title}</strong>
-        <span>${copy}</span>
-      </div>`;
-    })
-    .join("");
-
-  document.getElementById("modules").innerHTML = Object.entries(data.modules)
-    .map(([key, value]) => {
-      const color = scoreColor(value);
-      return `<article class="module">
-        <p class="label">${t().moduleLabels[key] || key}</p>
-        <div class="module-value" style="color:${color}">${fmtNum(value, 0)}</div>
-        <div class="bar"><span style="width:${value}%; background:${color}"></span></div>
-      </article>`;
-    })
-    .join("");
-
-  const warnings = data.warnings && data.warnings.length ? data.warnings : [t().noWarning];
-  document.getElementById("warnings-list").innerHTML = warnings.map((w) => `<li>${localizeWarning(w)}</li>`).join("");
-
-  document.getElementById("metric-table").innerHTML = [
-    renderMetricGroups(t().coreMetricsLabel, data.core_metrics),
-    renderMetricGroups(t().contextMetricsLabel, data.metrics)
-  ].join("");
-
   drawChart(document.getElementById("price-chart"), data.history);
+
+  renderDecisionStrip("decision-strip", tr().decisions, data.status);
+  renderDecisionStrip("bottom-decision-strip", tr().bottomDecisions, bottomStatus);
+  renderModules(data);
+  renderBottomSignals(bottom);
+  renderCalibration(bottom);
+
+  const warnings = data.warnings && data.warnings.length ? data.warnings : [tr().noWarning];
+  document.getElementById("warnings-list").innerHTML = warnings.map((w) => `<li>${w}</li>`).join("");
+  document.getElementById("metric-table").innerHTML = [
+    renderMetricGroups(tr().coreMetricsLabel, data.core_metrics),
+    renderMetricGroups(tr().contextMetricsLabel, data.metrics)
+  ].join("");
+  document.getElementById("method-copy").textContent = tr().methodCopy;
+}
+
+async function loadDashboard() {
+  try {
+    const response = await fetch("./data/dashboard.json", { cache: "no-store" });
+    latestData = await response.json();
+  } catch (error) {
+    if (!window.DASHBOARD_DATA) throw error;
+    latestData = window.DASHBOARD_DATA;
+  }
+  render(latestData);
 }
 
 document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
@@ -545,6 +477,6 @@ window.addEventListener("resize", () => latestData && drawChart(document.getElem
 
 setLanguage(currentLanguage);
 loadDashboard().catch((error) => {
-  document.getElementById("status-title").textContent = t().dataLoadFailed;
+  document.getElementById("status-title").textContent = tr().dataLoadFailed;
   document.getElementById("status-copy").textContent = error.message;
 });

@@ -37,12 +37,28 @@
             <small>/100</small>
           </div>
           <div>
-            <p class="label" data-i18n="overallLabel">Overall Bubble Score</p>
+            <p class="label" data-i18n="bubbleLabel">Bubble Risk</p>
             <h2 id="status-title">Loading</h2>
             <p id="status-copy" class="muted">Loading the latest data snapshot.</p>
           </div>
         </div>
         <div class="decision-strip" id="decision-strip"></div>
+      </section>
+
+      <section class="score-panel bottom-panel">
+        <div class="score-block">
+          <div class="score-ring bottom-ring" id="bottom-ring">
+            <span id="bottom-score">--</span>
+            <small>/20</small>
+          </div>
+          <div>
+            <p class="label" data-i18n="bottomLabel">Bottom Readiness</p>
+            <h2 id="bottom-status-title">Loading</h2>
+            <p id="bottom-status-copy" class="muted">Loading the latest data snapshot.</p>
+            <p id="bottom-threshold" class="subtle">--</p>
+          </div>
+        </div>
+        <div class="decision-strip" id="bottom-decision-strip"></div>
       </section>
 
       <section class="chart-panel">
@@ -61,11 +77,32 @@
 
       <section class="modules" id="modules"></section>
 
+      <section class="bottom-signals">
+        <div class="section-head">
+          <div>
+            <p class="label" data-i18n="bottomSignalsLabel">Bottom Model</p>
+            <h2 data-i18n="bottomSignalsTitle">Liquidation-End Signals</h2>
+          </div>
+        </div>
+        <div id="bottom-signal-table"></div>
+      </section>
+
+      <section class="calibration">
+        <div class="section-head">
+          <div>
+            <p class="label" data-i18n="calibrationLabel">Calibration</p>
+            <h2 data-i18n="calibrationTitle">Backtest Thresholds</h2>
+          </div>
+        </div>
+        <p id="walk-forward-copy" class="muted"></p>
+        <div id="calibration-table"></div>
+      </section>
+
       <section class="concept">
         <div class="section-head">
           <div>
-            <p class="label" data-i18n="conceptEyebrow">Concept</p>
-            <h2 data-i18n="conceptTitle">Model Sources & Principle</h2>
+            <p class="label" data-i18n="conceptEyebrow">Framework</p>
+            <h2 data-i18n="conceptTitle">How The Two-Layer Model Works</h2>
           </div>
         </div>
         <div id="concept-grid" class="concept-grid"></div>
@@ -84,8 +121,8 @@
       <section class="metrics">
         <div class="section-head">
           <div>
-            <p class="label" data-i18n="metricsLabel">Signal Details</p>
-            <h2 data-i18n="metricsTitle">Indicator Details</h2>
+            <p class="label" data-i18n="coreMetricsLabel">Bubble Core Inputs</p>
+            <h2>Indicator Details</h2>
           </div>
         </div>
         <div id="metric-table"></div>
@@ -103,15 +140,11 @@
 
       <section class="method">
         <p class="label" data-i18n="methodLabel">Method</p>
-        <p data-i18n="methodCopy">
-          This dashboard monitors NASDAQ bubble pressure. It compresses valuation,
-          liquidity, leverage/derivatives, breadth/concentration, and price confirmation
-          into a 0-100 score. A high score means top fragility is rising, not that an
-          exact top date has been predicted.
-        </p>
+        <p id="method-copy" data-i18n="methodCopy"></p>
       </section>
     </main>
 
+    <script src="./data/dashboard-inline.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

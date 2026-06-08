@@ -161,7 +161,9 @@ h2 {
 .metrics,
 .method,
 .concept,
-.data-sources {
+.data-sources,
+.bottom-signals,
+.calibration {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -208,9 +210,19 @@ h2 {
   margin-left: 2px;
 }
 
+.bottom-ring span {
+  font-size: 34px;
+}
+
 .muted {
   color: var(--muted);
   line-height: 1.5;
+  margin-top: 8px;
+}
+
+.subtle {
+  color: var(--muted);
+  font-size: 12px;
   margin-top: 8px;
 }
 
@@ -241,7 +253,13 @@ h2 {
   line-height: 1.35;
 }
 
+.decision.active {
+  border-color: var(--blue);
+  background: #f3f7fb;
+}
+
 .chart-panel {
+  grid-column: 1 / -1;
   min-height: 320px;
 }
 
@@ -280,6 +298,11 @@ h2 {
 }
 
 .data-sources {
+  grid-column: 1 / -1;
+}
+
+.bottom-signals,
+.calibration {
   grid-column: 1 / -1;
 }
 
@@ -354,6 +377,18 @@ h2 {
   line-height: 1.4;
 }
 
+.source-card p {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0 0 12px;
+}
+
+.source-card small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .module {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -417,6 +452,30 @@ h2 {
   grid-template-columns: minmax(180px, 1.4fr) 0.7fr 0.5fr 0.7fr 0.8fr 0.6fr 0.4fr;
 }
 
+.bottom-row {
+  grid-template-columns: minmax(240px, 1.4fr) 0.7fr 0.4fr minmax(180px, 0.8fr);
+}
+
+.bottom-row small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+  margin-top: 3px;
+}
+
+.calibration-row {
+  grid-template-columns: 0.45fr 0.7fr 0.8fr 0.65fr 0.65fr 0.65fr 0.65fr;
+}
+
+.calibration-row.highlight {
+  background: #f3f7fb;
+  margin: 0 -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 6px;
+}
+
 .freshness {
   font-weight: 760;
 }
@@ -459,7 +518,10 @@ canvas {
   .metrics,
   .method,
   .concept,
-  .data-sources {
+  .data-sources,
+  .bottom-signals,
+  .calibration,
+  .chart-panel {
     grid-column: auto;
   }
 
@@ -506,6 +568,14 @@ canvas {
     grid-template-columns: 1fr 0.5fr 0.45fr;
   }
 
+  .bottom-row {
+    grid-template-columns: 1fr 0.45fr 0.35fr;
+  }
+
+  .calibration-row {
+    grid-template-columns: 0.4fr 0.6fr 0.7fr 0.6fr;
+  }
+
   .metric-row:not(.metric-row-wide) span:nth-child(3),
   .metric-row:not(.metric-row-wide) span:nth-child(4) {
     display: none;
@@ -514,6 +584,13 @@ canvas {
   .metric-row-wide span:nth-child(4),
   .metric-row-wide span:nth-child(5),
   .metric-row-wide span:nth-child(7) {
+    display: none;
+  }
+
+  .bottom-row span:nth-child(4),
+  .calibration-row span:nth-child(5),
+  .calibration-row span:nth-child(6),
+  .calibration-row span:nth-child(7) {
     display: none;
   }
 }

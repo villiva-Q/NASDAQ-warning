@@ -15,6 +15,16 @@ try:
 except Exception:  # pragma: no cover
     pd = None
 
+try:
+    from backtest_bottom_framework import add_scores, build_dataset, choose_threshold, evaluate_thresholds, find_drawdown_events, walk_forward_calibration
+except Exception:  # pragma: no cover
+    add_scores = None
+    build_dataset = None
+    choose_threshold = None
+    evaluate_thresholds = None
+    find_drawdown_events = None
+    walk_forward_calibration = None
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS_DATA = ROOT / "docs" / "data"
@@ -329,12 +339,117 @@ def status_for(score: float, modules: dict) -> str:
     return "Green"
 
 
+def bottom_status_for(score: float, drawdown: float | None) -> str:
+    if drawdown is None or drawdown > -0.04:
+        return "No setup"
+    if score >= 15:
+        return "Confirmed"
+    if score >= 14:
+        return "Entry zone"
+    if score >= 12:
+        return "Watch"
+    return "Wait"
+
+
+def bottom_metric(name: str, value, score, source: str, note: str, as_of: str | None) -> dict:
+    return {
+        "name": name,
+        "value": None if value is None or (isinstance(value, float) and math.isnan(value)) else value,
+        "score": None if score is None or (isinstance(score, float) and math.isnan(score)) else round(float(score), 2),
+        "source": source,
+        "note": note,
+        "as_of": as_of,
+        "refresh": "daily",
+        "used_in_score": True,
+        "freshness": freshness_status(as_of, "daily") if as_of else "unknown",
+    }
+
+
+def build_bottom_framework_snapshot() -> dict | None:
+    if not all([add_scores, build_dataset, find_drawdown_events, evaluate_thresholds]):
+        return None
+    try:
+        scored = add_scores(build_dataset("10y")).dropna(subset=["qqq_drawdown", "bottom_score"])
+    except Exception as exc:
+        return {
+            "available": False,
+            "error": str(exc),
+        }
+
+    events = find_drawdown_events(scored)
+    summary, _ = evaluate_thresholds(scored, events)
+    wf = walk_forward_calibration(scored, events) if walk_forward_calibration else pd.DataFrame()
+    latest = scored.iloc[-1]
+    latest_date = scored.index[-1].isoformat()
+
+    best_threshold = choose_threshold(summary) if choose_threshold else None
+    if best_threshold is None:
+        best_threshold = 13
+
+    signal_specs = [
+        ("Drawdown Zone", "qqq_drawdown", "s_drawdown_zone", "QQQ", "Scores whether the pullback is large enough to matter."),
+        ("Price Stabilizing", "qqq_ret_5d", "s_price_stabilizing", "QQQ", "Looks for short-term stabilization after the drawdown."),
+        ("Oversold Rebound", "qqq_rsi14", "s_oversold_rebound", "QQQ", "Checks whether oversold pressure is starting to reverse."),
+        ("Volatility Easing", "vix_change_5d", "s_vol_easing", "Yahoo: ^VIX, ^VXN", "VIX/VXN easing means forced hedging pressure may be cooling."),
+        ("VIX Term Structure", "vix_ratio_3m", "s_vol_term", "Yahoo: ^VIX, ^VIX3M", "Contango recovery is a panic-normalization proxy."),
+        ("Short Vol Term", "vix9d_ratio_3m", "s_short_vol_term", "Yahoo: ^VIX9D, ^VIX3M", "VIX9D/VIX3M adds a shorter panic gauge when free data is available."),
+        ("Options Skew Cooling", "skew_change_5d", "s_options_skew_cooling", "Yahoo: ^SKEW, ^CPC", "Free proxy for put/call and tail-hedge pressure cooling."),
+        ("Rate Easing", "tnx_change_5d", "s_rate_easing", "Yahoo: ^TNX", "Checks whether rate pressure stopped worsening."),
+        ("Crypto Stable", "btc_ret_5d", "s_crypto_stable", "Yahoo: BTC-USD", "BTC stabilization proxies high-beta risk appetite."),
+        ("Leveraged ETF Cooling", "tqqq_qqq_volume_ratio", "s_leverage_cooling", "Yahoo: TQQQ/QQQ", "TQQQ/QQQ volume ratio proxies leveraged NASDAQ activity."),
+        ("Breadth Recovering", "qqew_rel_qqq_10d", "s_breadth_recovering", "Yahoo: QQEW/QQQ", "Equal-weight relative strength proxies internal repair."),
+        ("Tech Relative Strength", "qqq_rel_spy_5d", "s_tech_relative", "Yahoo: QQQ/SPY", "Checks whether NASDAQ leadership is returning."),
+        ("FINRA Margin Cooling", "finra_margin_3m", "s_finra_margin_cooling", "FINRA margin statistics", "Monthly margin debt is lagged 21 days to avoid look-ahead bias."),
+    ]
+    signals = [
+        bottom_metric(name, latest.get(value_col), latest.get(score_col), source, note, latest_date)
+        for name, value_col, score_col, source, note in signal_specs
+    ]
+
+    wf_valid = wf[wf["triggered"] & wf["fwd_21d"].notna()].copy() if wf is not None and not wf.empty else pd.DataFrame()
+    return {
+        "available": True,
+        "as_of": latest_date,
+        "score": round(float(latest["bottom_score"]), 1),
+        "score_pct": round(float(latest["bottom_score_pct"]), 1),
+        "status": bottom_status_for(float(latest["bottom_score"]), float(latest["qqq_drawdown"])),
+        "qqq": {
+            "close": round(float(latest["qqq_close"]), 2),
+            "drawdown_from_52w_high": float(latest["qqq_drawdown"]),
+            "forward_21d": None if math.isnan(float(latest["qqq_fwd_21d"])) else float(latest["qqq_fwd_21d"]),
+            "forward_63d": None if math.isnan(float(latest["qqq_fwd_63d"])) else float(latest["qqq_fwd_63d"]),
+        },
+        "calibration": {
+            "history_start": scored.index.min().isoformat(),
+            "history_end": scored.index.max().isoformat(),
+            "event_count": len(events),
+            "best_threshold": best_threshold,
+            "threshold_summary": summary.to_dict(orient="records"),
+            "walk_forward": {
+                "tested_events": int(len(wf)) if wf is not None else 0,
+                "triggered_events": int(wf["triggered"].sum()) if wf is not None and not wf.empty else 0,
+                "avg_fwd_21d": float(wf_valid["fwd_21d"].mean()) if not wf_valid.empty else None,
+                "hit_rate_21d": float((wf_valid["fwd_21d"] > 0).mean()) if not wf_valid.empty else None,
+                "avg_fwd_63d": float(wf_valid["fwd_63d"].mean()) if not wf_valid.empty and wf_valid["fwd_63d"].notna().any() else None,
+                "hit_rate_63d": float((wf_valid["fwd_63d"] > 0).mean()) if not wf_valid.empty and wf_valid["fwd_63d"].notna().any() else None,
+            },
+        },
+        "signals": signals,
+        "principle": {
+            "summary": "Bottom readiness rises when a meaningful QQQ drawdown is followed by volatility normalization, rate pressure easing, risk appetite stabilization, leverage cooling, breadth repair, and price stabilization.",
+            "use": "Use as a staged-entry confirmation tool after a drawdown, not as an exact low predictor.",
+            "limits": "Dealer gamma, put wall, and CTA flow are represented by public proxies unless paid data is connected.",
+        },
+    }
+
+
 def build_snapshot() -> dict:
     config = load_config()
     qqq = load_or_fetch_qqq()
     tqqq = load_or_fetch_symbol("TQQQ", "2y", "1d")
     price = compute_price_metrics(qqq["rows"])
     finra = load_or_fetch_finra()
+    bottom_framework = build_bottom_framework_snapshot()
 
     valuation_metrics = [
         build_manual_metric("NDX Forward P/E", config["valuation"]["ndx_forward_pe"]),
@@ -426,6 +541,7 @@ def build_snapshot() -> dict:
         },
         "price": price,
         "finra": finra,
+        "bottom_framework": bottom_framework,
         "core_metrics": {
             "price": [price_metric],
             "finra_margin_slow": [finra_metric] if finra_metric else [],
@@ -451,6 +567,12 @@ def main() -> int:
     DOCS_DATA.mkdir(parents=True, exist_ok=True)
     snapshot = build_snapshot()
     (DOCS_DATA / "dashboard.json").write_text(json.dumps(snapshot, indent=2), encoding="utf-8")
+    (DOCS_DATA / "dashboard-inline.js").write_text(
+        "window.DASHBOARD_DATA = "
+        + json.dumps(snapshot, ensure_ascii=False)
+        + ";\n",
+        encoding="utf-8",
+    )
     print(f"Updated docs/data/dashboard.json at {snapshot['generated_at']}")
     return 0
 
