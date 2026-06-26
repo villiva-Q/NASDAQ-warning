@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-25T23:47:52+00:00",
+  "generated_at": "2026-06-26T23:37:03+00:00",
   "market": "NASDAQ / QQQ",
   "manual_inputs": {
     "manual_inputs_updated_at": "2026-06-03",
     "manual_update_path": "Edit config/indicators.json, then run scripts/update_data.py or trigger the GitHub Actions workflow manually.",
     "manual_update_path_zh": "\u7f16\u8f91 config/indicators.json\uff0c\u7136\u540e\u8fd0\u884c scripts/update_data.py\uff0c\u6216\u5728 GitHub Actions \u4e2d\u624b\u52a8\u89e6\u53d1\u66f4\u65b0\u5de5\u4f5c\u6d41\u3002"
   },
-  "overall_score": 76.2,
+  "overall_score": 69.3,
   "status": "Orange",
   "modules": {
-    "price_confirmation": 65.3,
+    "price_confirmation": 69.5,
     "finra_margin_slow": 100.0,
-    "daily_leverage_proxy": 60.2
+    "daily_leverage_proxy": 25.8
   },
   "score_policy": {
     "name": "Core Daily Score",
@@ -23,21 +23,21 @@
     }
   },
   "price": {
-    "latest": 716.3800048828125,
-    "latest_date": "2026-06-25",
-    "sma50": 700.7042297363281,
-    "sma200": 630.0163653564454,
-    "return_1m": -0.01795582814735286,
-    "return_3m": 0.22004567231006278,
-    "return_6m": 0.15965754386963327,
-    "distance_50dma": 0.022371457858022525,
-    "distance_200dma": 0.1370815811705226,
-    "drawdown_from_52w_high": -0.038855880831975,
+    "latest": 706.52001953125,
+    "latest_date": "2026-06-26",
+    "sma50": 702.1006237792968,
+    "sma200": 630.6603289794922,
+    "return_1m": -0.030370265509260586,
+    "return_3m": 0.2326748240671177,
+    "return_6m": 0.13836512437898518,
+    "distance_50dma": 0.006294533293766724,
+    "distance_200dma": 0.12028613037149616,
+    "drawdown_from_52w_high": -0.05208470753169203,
     "range_52w": {
-      "low": 538.566162109375,
+      "low": 543.6018676757812,
       "high": 745.3408813476562
     },
-    "score": 65.32160347022065
+    "score": 69.53156628690212
   },
   "finra": {
     "month": "2026-05",
@@ -52,19 +52,19 @@
   },
   "bottom_framework": {
     "available": true,
-    "as_of": "2026-06-25T00:00:00",
-    "score": 8.5,
-    "score_pct": 42.3,
-    "status": "No setup",
+    "as_of": "2026-06-26T00:00:00",
+    "score": 6.9,
+    "score_pct": 34.6,
+    "status": "Wait",
     "qqq": {
-      "close": 716.38,
-      "drawdown_from_52w_high": -0.038855880831975,
+      "close": 706.52,
+      "drawdown_from_52w_high": -0.05208470753169203,
       "forward_21d": null,
       "forward_63d": null
     },
     "calibration": {
       "history_start": "2017-06-26T00:00:00",
-      "history_end": "2026-06-25T00:00:00",
+      "history_end": "2026-06-26T00:00:00",
       "event_count": 19,
       "best_threshold": 13,
       "threshold_summary": [
@@ -74,9 +74,9 @@
           "events": 19,
           "avg_days_from_low": -26.0,
           "median_days_from_low": -9.5,
-          "avg_fwd_21d": 0.0081529552384189,
+          "avg_fwd_21d": 0.008152980069755103,
           "hit_rate_21d": 0.5555555555555556,
-          "avg_fwd_63d": 0.06812948041706032,
+          "avg_fwd_63d": 0.06812950642218174,
           "hit_rate_63d": 0.8888888888888888
         },
         {
@@ -85,9 +85,9 @@
           "events": 19,
           "avg_days_from_low": -24.61111111111111,
           "median_days_from_low": -9.0,
-          "avg_fwd_21d": 0.004653052211738364,
+          "avg_fwd_21d": 0.004653097784360405,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.06577587501824624,
+          "avg_fwd_63d": 0.06577589188372507,
           "hit_rate_63d": 0.8888888888888888
         },
         {
@@ -96,9 +96,9 @@
           "events": 19,
           "avg_days_from_low": -23.0,
           "median_days_from_low": -3.0,
-          "avg_fwd_21d": 0.009223521871333998,
+          "avg_fwd_21d": 0.009223534151667342,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.06850553903162887,
+          "avg_fwd_63d": 0.06850559072998416,
           "hit_rate_63d": 0.8888888888888888
         },
         {
@@ -107,9 +107,9 @@
           "events": 19,
           "avg_days_from_low": -19.11764705882353,
           "median_days_from_low": 3.0,
-          "avg_fwd_21d": 0.03595183468116783,
+          "avg_fwd_21d": 0.03595184928540493,
           "hit_rate_21d": 0.5882352941176471,
-          "avg_fwd_63d": 0.08615642069062318,
+          "avg_fwd_63d": 0.0861564081433277,
           "hit_rate_63d": 0.7647058823529411
         },
         {
@@ -118,9 +118,9 @@
           "events": 19,
           "avg_days_from_low": -17.9375,
           "median_days_from_low": 4.5,
-          "avg_fwd_21d": 0.03229148109566441,
+          "avg_fwd_21d": 0.03229149599225995,
           "hit_rate_21d": 0.6875,
-          "avg_fwd_63d": 0.07710417990584933,
+          "avg_fwd_63d": 0.0771041990889569,
           "hit_rate_63d": 0.8125
         },
         {
@@ -129,9 +129,9 @@
           "events": 19,
           "avg_days_from_low": -20.583333333333332,
           "median_days_from_low": 6.5,
-          "avg_fwd_21d": 0.04724894385392444,
+          "avg_fwd_21d": 0.047249057590025643,
           "hit_rate_21d": 0.8333333333333334,
-          "avg_fwd_63d": 0.102205910715834,
+          "avg_fwd_63d": 0.1022060157106556,
           "hit_rate_63d": 0.75
         },
         {
@@ -140,9 +140,9 @@
           "events": 19,
           "avg_days_from_low": -69.0,
           "median_days_from_low": -6.0,
-          "avg_fwd_21d": 0.012312340612293499,
+          "avg_fwd_21d": 0.012312375500010686,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.09272020128710826,
+          "avg_fwd_63d": 0.09272027753814122,
           "hit_rate_63d": 0.75
         },
         {
@@ -151,9 +151,9 @@
           "events": 19,
           "avg_days_from_low": -63.333333333333336,
           "median_days_from_low": -18.0,
-          "avg_fwd_21d": -0.016833957387805392,
+          "avg_fwd_21d": -0.01683399066624358,
           "hit_rate_21d": 0.3333333333333333,
-          "avg_fwd_63d": 0.09293438880784406,
+          "avg_fwd_63d": 0.0929344656924405,
           "hit_rate_63d": 0.6666666666666666
         },
         {
@@ -162,9 +162,9 @@
           "events": 19,
           "avg_days_from_low": -72.0,
           "median_days_from_low": -72.0,
-          "avg_fwd_21d": 0.009249077746983803,
+          "avg_fwd_21d": 0.009249181180083166,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.08200635709164766,
+          "avg_fwd_63d": 0.08200662131096575,
           "hit_rate_63d": 0.5
         },
         {
@@ -173,150 +173,150 @@
           "events": 19,
           "avg_days_from_low": 71.0,
           "median_days_from_low": 71.0,
-          "avg_fwd_21d": 0.09175356923127742,
+          "avg_fwd_21d": 0.0917533272233979,
           "hit_rate_21d": 1.0,
-          "avg_fwd_63d": 0.13654001940268845,
+          "avg_fwd_63d": 0.1365398783015237,
           "hit_rate_63d": 1.0
         }
       ],
       "walk_forward": {
         "tested_events": 15,
         "triggered_events": 9,
-        "avg_fwd_21d": 0.03938456016577948,
+        "avg_fwd_21d": 0.03938462850005426,
         "hit_rate_21d": 0.7777777777777778,
-        "avg_fwd_63d": 0.09249590832226648,
+        "avg_fwd_63d": 0.09249596334732181,
         "hit_rate_63d": 0.6666666666666666
       }
     },
     "signals": [
       {
         "name": "Drawdown Zone",
-        "value": -0.038855880831975,
+        "value": -0.05208470753169203,
         "score": 0.0,
         "source": "QQQ",
         "note": "Scores whether the pullback is large enough to matter.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Price Stabilizing",
-        "value": -0.007394663113173605,
-        "score": 1.0,
+        "value": -0.044994149821656615,
+        "score": 0.0,
         "source": "QQQ",
         "note": "Looks for short-term stabilization after the drawdown.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Oversold Rebound",
-        "value": 43.95293151938932,
+        "value": 50.66499566868019,
         "score": 0.0,
         "source": "QQQ",
         "note": "Checks whether oversold pressure is starting to reverse.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Volatility Easing",
-        "value": 0.4499988555908203,
+        "value": 2.010000228881836,
         "score": 0.0,
         "source": "Yahoo: ^VIX, ^VXN",
         "note": "VIX/VXN easing means forced hedging pressure may be cooling.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "VIX Term Structure",
-        "value": 0.9291686896477316,
+        "value": 0.9145554205135401,
         "score": 2.0,
         "source": "Yahoo: ^VIX, ^VIX3M",
         "note": "Contango recovery is a panic-normalization proxy.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Short Vol Term",
-        "value": 0.8814559834502558,
+        "value": 0.8345752576981608,
         "score": 2.0,
         "source": "Yahoo: ^VIX9D, ^VIX3M",
         "note": "VIX9D/VIX3M adds a shorter panic gauge when free data is available.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Options Skew Cooling",
-        "value": -2.7299957275390625,
+        "value": -7.32000732421875,
         "score": 1.0,
         "source": "Yahoo: ^SKEW, ^CPC",
         "note": "Free proxy for put/call and tail-hedge pressure cooling.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Rate Easing",
-        "value": -0.0710000991821289,
+        "value": -0.07899999618530273,
         "score": 2.0,
         "source": "Yahoo: ^TNX",
         "note": "Checks whether rate pressure stopped worsening.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Crypto Stable",
-        "value": -0.07127483502941767,
+        "value": -0.04757806059896175,
         "score": 0.0,
         "source": "Yahoo: BTC-USD",
         "note": "BTC stabilization proxies high-beta risk appetite.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Leveraged ETF Cooling",
-        "value": 2.1580820545908153,
-        "score": 1.0,
+        "value": 1.559099815148144,
+        "score": 0.0,
         "source": "Yahoo: TQQQ/QQQ",
         "note": "TQQQ/QQQ volume ratio proxies leveraged NASDAQ activity.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Breadth Recovering",
-        "value": 0.0057305941445355835,
-        "score": 1.0,
+        "value": 0.024956220342322588,
+        "score": 2.0,
         "source": "Yahoo: QQEW/QQQ",
         "note": "Equal-weight relative strength proxies internal repair.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Tech Relative Strength",
-        "value": -0.0009655834086198523,
-        "score": 1.0,
+        "value": -0.021740944609311086,
+        "score": 0.0,
         "source": "Yahoo: QQQ/SPY",
         "note": "Checks whether NASDAQ leadership is returning.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
@@ -327,7 +327,7 @@
         "score": 0.0,
         "source": "FINRA margin statistics",
         "note": "Monthly margin debt is lagged 21 days to avoid look-ahead bias.",
-        "as_of": "2026-06-25T00:00:00",
+        "as_of": "2026-06-26T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
@@ -343,14 +343,14 @@
     "price": [
       {
         "name": "QQQ Price Confirmation",
-        "value": 716.3800048828125,
-        "score": 65.32160347022065,
+        "value": 706.52001953125,
+        "score": 69.53156628690212,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "low risk",
           "high": "high risk"
         },
-        "as_of": "2026-06-25",
+        "as_of": "2026-06-26",
         "note": "Composite of distance from 200DMA, 3M return, acceleration, and drawdown from 52-week high.",
         "refresh": "daily",
         "used_in_score": true,
@@ -377,14 +377,14 @@
     "daily_leverage_proxy": [
       {
         "name": "QQQ Volume Percentile",
-        "value": 48613709.0,
-        "score": 47.61904761904761,
+        "value": 44705529.0,
+        "score": 35.317460317460316,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "1Y low volume",
           "high": "1Y high volume"
         },
-        "as_of": "2026-06-25",
+        "as_of": "2026-06-26",
         "note": "Daily QQQ volume percentile over the last 252 trading days.",
         "refresh": "daily",
         "used_in_score": true,
@@ -392,14 +392,14 @@
       },
       {
         "name": "TQQQ Volume Percentile",
-        "value": 104912373.0,
-        "score": 60.317460317460316,
+        "value": 69700382.0,
+        "score": 17.46031746031746,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "1Y low volume",
           "high": "1Y high volume"
         },
-        "as_of": "2026-06-25",
+        "as_of": "2026-06-26",
         "note": "Daily TQQQ volume percentile over the last 252 trading days.",
         "refresh": "daily",
         "used_in_score": true,
@@ -407,14 +407,14 @@
       },
       {
         "name": "TQQQ / QQQ Volume Ratio",
-        "value": 2.1580820545908153,
-        "score": 72.61904761904762,
+        "value": 1.559099815148144,
+        "score": 24.6031746031746,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "1Y low ratio",
           "high": "1Y high ratio"
         },
-        "as_of": "2026-06-25",
+        "as_of": "2026-06-26",
         "note": "Leveraged ETF activity proxy relative to QQQ volume.",
         "refresh": "daily",
         "used_in_score": true,
@@ -630,17 +630,13 @@
     ]
   },
   "warnings": [
-    "FINRA margin leverage is in a historically high zone."
+    "FINRA margin leverage is in a historically high zone.",
+    "Price has pulled back from highs while bubble pressure remains high."
   ],
   "history": [
     {
-      "date": "2025-06-12",
-      "close": 530.50634765625,
-      "volume": 34104900
-    },
-    {
       "date": "2025-06-13",
-      "close": 523.8458862304688,
+      "close": 523.845947265625,
       "volume": 55814400
     },
     {
@@ -655,7 +651,7 @@
     },
     {
       "date": "2025-06-18",
-      "close": 525.8638916015625,
+      "close": 525.8638305664062,
       "volume": 43983500
     },
     {
@@ -675,7 +671,7 @@
     },
     {
       "date": "2025-06-25",
-      "close": 538.566162109375,
+      "close": 538.5661010742188,
       "volume": 44804200
     },
     {
@@ -690,17 +686,17 @@
     },
     {
       "date": "2025-06-30",
-      "close": 548.9959716796875,
+      "close": 548.9959106445312,
       "volume": 45548700
     },
     {
       "date": "2025-07-01",
-      "close": 544.3681640625,
+      "close": 544.3682250976562,
       "volume": 56166700
     },
     {
       "date": "2025-07-02",
-      "close": 548.1599731445312,
+      "close": 548.159912109375,
       "volume": 36538300
     },
     {
@@ -720,12 +716,12 @@
     },
     {
       "date": "2025-07-09",
-      "close": 553.5838012695312,
+      "close": 553.5838623046875,
       "volume": 43045500
     },
     {
       "date": "2025-07-10",
-      "close": 552.7877197265625,
+      "close": 552.7876586914062,
       "volume": 34710900
     },
     {
@@ -735,7 +731,7 @@
     },
     {
       "date": "2025-07-14",
-      "close": 553.5440063476562,
+      "close": 553.5440673828125,
       "volume": 36453300
     },
     {
@@ -745,7 +741,7 @@
     },
     {
       "date": "2025-07-16",
-      "close": 554.6188354492188,
+      "close": 554.6187744140625,
       "volume": 52314700
     },
     {
@@ -760,17 +756,17 @@
     },
     {
       "date": "2025-07-21",
-      "close": 561.4658203125,
+      "close": 561.4658813476562,
       "volume": 39595200
     },
     {
       "date": "2025-07-22",
-      "close": 558.5598754882812,
+      "close": 558.559814453125,
       "volume": 43270600
     },
     {
       "date": "2025-07-23",
-      "close": 561.107666015625,
+      "close": 561.1076049804688,
       "volume": 40215300
     },
     {
@@ -780,12 +776,12 @@
     },
     {
       "date": "2025-07-25",
-      "close": 563.6553344726562,
+      "close": 563.6553955078125,
       "volume": 30630800
     },
     {
       "date": "2025-07-28",
-      "close": 565.4169311523438,
+      "close": 565.4168090820312,
       "volume": 31498700
     },
     {
@@ -795,7 +791,7 @@
     },
     {
       "date": "2025-07-30",
-      "close": 565.2974243164062,
+      "close": 565.2974853515625,
       "volume": 43433800
     },
     {
@@ -805,17 +801,17 @@
     },
     {
       "date": "2025-08-01",
-      "close": 551.2251586914062,
+      "close": 551.2252197265625,
       "volume": 69400800
     },
     {
       "date": "2025-08-04",
-      "close": 561.3961791992188,
+      "close": 561.3961181640625,
       "volume": 47669800
     },
     {
       "date": "2025-08-05",
-      "close": 557.5845336914062,
+      "close": 557.5845947265625,
       "volume": 48666600
     },
     {
@@ -825,22 +821,22 @@
     },
     {
       "date": "2025-08-07",
-      "close": 566.5115356445312,
+      "close": 566.5115966796875,
       "volume": 44463000
     },
     {
       "date": "2025-08-08",
-      "close": 571.796142578125,
+      "close": 571.7960815429688,
       "volume": 35255500
     },
     {
       "date": "2025-08-11",
-      "close": 570.104248046875,
+      "close": 570.1041870117188,
       "volume": 33112900
     },
     {
       "date": "2025-08-12",
-      "close": 577.269775390625,
+      "close": 577.2697143554688,
       "volume": 42143300
     },
     {
@@ -850,12 +846,12 @@
     },
     {
       "date": "2025-08-14",
-      "close": 577.1105346679688,
+      "close": 577.110595703125,
       "volume": 45425000
     },
     {
       "date": "2025-08-15",
-      "close": 574.57275390625,
+      "close": 574.5728149414062,
       "volume": 49480200
     },
     {
@@ -870,7 +866,7 @@
     },
     {
       "date": "2025-08-20",
-      "close": 563.1876220703125,
+      "close": 563.1875610351562,
       "volume": 76781100
     },
     {
@@ -885,12 +881,12 @@
     },
     {
       "date": "2025-08-25",
-      "close": 567.58642578125,
+      "close": 567.5863647460938,
       "volume": 34044700
     },
     {
       "date": "2025-08-26",
-      "close": 569.8653564453125,
+      "close": 569.8654174804688,
       "volume": 34103000
     },
     {
@@ -900,12 +896,12 @@
     },
     {
       "date": "2025-08-28",
-      "close": 574.3140258789062,
+      "close": 574.31396484375,
       "volume": 46787900
     },
     {
       "date": "2025-08-29",
-      "close": 567.666015625,
+      "close": 567.6660766601562,
       "volume": 56030400
     },
     {
@@ -930,12 +926,12 @@
     },
     {
       "date": "2025-09-08",
-      "close": 576.095458984375,
+      "close": 576.0953979492188,
       "volume": 46371400
     },
     {
       "date": "2025-09-09",
-      "close": 577.7275390625,
+      "close": 577.7276000976562,
       "volume": 44007600
     },
     {
@@ -950,7 +946,7 @@
     },
     {
       "date": "2025-09-12",
-      "close": 583.8480834960938,
+      "close": 583.8479614257812,
       "volume": 50745900
     },
     {
@@ -965,7 +961,7 @@
     },
     {
       "date": "2025-09-17",
-      "close": 587.1720581054688,
+      "close": 587.172119140625,
       "volume": 69384800
     },
     {
@@ -1050,7 +1046,7 @@
     },
     {
       "date": "2025-10-10",
-      "close": 587.3546142578125,
+      "close": 587.3545532226562,
       "volume": 97614800
     },
     {
@@ -1080,7 +1076,7 @@
     },
     {
       "date": "2025-10-20",
-      "close": 609.3143310546875,
+      "close": 609.3142700195312,
       "volume": 45761700
     },
     {
@@ -1115,22 +1111,22 @@
     },
     {
       "date": "2025-10-29",
-      "close": 633.4561767578125,
+      "close": 633.4562377929688,
       "volume": 67422800
     },
     {
       "date": "2025-10-30",
-      "close": 623.7715454101562,
+      "close": 623.7716064453125,
       "volume": 61628600
     },
     {
       "date": "2025-10-31",
-      "close": 626.780517578125,
+      "close": 626.7805786132812,
       "volume": 66305100
     },
     {
       "date": "2025-11-03",
-      "close": 629.7796020507812,
+      "close": 629.779541015625,
       "volume": 37154300
     },
     {
@@ -1140,7 +1136,7 @@
     },
     {
       "date": "2025-11-05",
-      "close": 621.0116577148438,
+      "close": 621.01171875,
       "volume": 48688500
     },
     {
@@ -1150,7 +1146,7 @@
     },
     {
       "date": "2025-11-07",
-      "close": 607.5209350585938,
+      "close": 607.5208740234375,
       "volume": 81835400
     },
     {
@@ -1165,7 +1161,7 @@
     },
     {
       "date": "2025-11-12",
-      "close": 618.8197021484375,
+      "close": 618.8196411132812,
       "volume": 47444400
     },
     {
@@ -1175,7 +1171,7 @@
     },
     {
       "date": "2025-11-14",
-      "close": 606.64404296875,
+      "close": 606.6441040039062,
       "volume": 80087300
     },
     {
@@ -1185,12 +1181,12 @@
     },
     {
       "date": "2025-11-18",
-      "close": 594.1397705078125,
+      "close": 594.1398315429688,
       "volume": 83327300
     },
     {
       "date": "2025-11-19",
-      "close": 597.686767578125,
+      "close": 597.6868286132812,
       "volume": 73111500
     },
     {
@@ -1230,7 +1226,7 @@
     },
     {
       "date": "2025-12-02",
-      "close": 619.7362670898438,
+      "close": 619.736328125,
       "volume": 54541800
     },
     {
@@ -1250,12 +1246,12 @@
     },
     {
       "date": "2025-12-08",
-      "close": 622.0079956054688,
+      "close": 622.008056640625,
       "volume": 43462400
     },
     {
       "date": "2025-12-09",
-      "close": 622.775146484375,
+      "close": 622.7752075195312,
       "volume": 37156000
     },
     {
@@ -1280,7 +1276,7 @@
     },
     {
       "date": "2025-12-16",
-      "close": 609.5235595703125,
+      "close": 609.5236206054688,
       "volume": 55152800
     },
     {
@@ -1295,7 +1291,7 @@
     },
     {
       "date": "2025-12-19",
-      "close": 614.8043212890625,
+      "close": 614.8042602539062,
       "volume": 60369800
     },
     {
@@ -1931,7 +1927,12 @@
     {
       "date": "2026-06-25",
       "close": 716.3800048828125,
-      "volume": 48613709
+      "volume": 50144100
+    },
+    {
+      "date": "2026-06-26",
+      "close": 706.52001953125,
+      "volume": 44705529
     }
   ],
   "notes": [
