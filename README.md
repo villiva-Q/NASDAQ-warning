@@ -65,11 +65,11 @@ Core Daily Score = 0.30 Price Confirmation
 
 The AI fragility overlay combines three late-cycle inputs:
 
-- AI CapEx cycle: hyperscaler capex growth and acceleration/deceleration.
-- Liquidity drain: bank reserves, TGA, SOFR/RRP spread, and SRF usage.
-- Options mechanical bid: 0DTE share, call premium inversion, and core call-volume heat.
+- AI CapEx cycle: hyperscaler capex growth and acceleration/deceleration, using SEC Companyfacts for Microsoft, Amazon, Alphabet, and Meta as a free quarterly proxy.
+- Liquidity drain: bank reserves, TGA, SOFR/RRP spread, and SRF usage, using FRED CSV and New York Fed Markets API sources.
+- Options mechanical bid: 0DTE share, call premium proxy, and core call-volume heat. Free Cboe daily statistics are used as a proxy; exact 0DTE share and dealer gamma remain manual or paid-data problems.
 
-Several overlay fields are manual until stable public APIs are connected. Missing fields are excluded from the sub-score denominator; fully missing groups fall back to neutral.
+Every metric is tagged with refresh frequency, last update, freshness, confidence, and whether it enters the score. Missing fields are excluded from the sub-score denominator; fully missing groups fall back to neutral.
 
 Risk states:
 
@@ -154,11 +154,23 @@ Current free sources:
 - Yahoo Finance chart API: QQQ, TQQQ, SPY, QQEW, VIX, VIX3M, VXN, TNX, BTC-USD
 - Yahoo Finance chart API: MU
 - SEC companyfacts API: Micron financial statements
+- SEC Companyfacts API: MSFT, AMZN, GOOGL, META hyperscaler CapEx proxy
+- FRED CSV: WRESBAL, WTREGEN, SOFR, RRPONTSYAWARD
+- New York Fed Markets API: repo / SRF operation results
+- Cboe Daily Market Statistics: SPX/SPXW call-put volume proxy
 - Yahoo optional symbols when available: VIX9D, SKEW, put/call proxy
 - FINRA margin statistics: aggregate margin debt and customer free credit balances
-- Manual/configured indicators: valuation, liquidity, derivative speculation, breadth, AI capex-cycle, liquidity-drain, option-mechanical, Micron demand-lock-in, and IBKR proxy fields in `config/indicators.json`
+- Manual/configured indicators: valuation, broad derivative speculation, breadth, exact 0DTE stress share, Micron demand-lock-in, and IBKR proxy fields in `config/indicators.json`
 
 Indicators without a reliable source are marked manual or optional. The dashboard does not pretend manual or missing data is real-time.
+
+## Data Quality
+
+The dashboard includes a data quality panel:
+
+- Freshness: each metric is checked against its cadence, such as daily, weekly, monthly, quarterly, or manual.
+- Confidence: official sources score highest; Yahoo and Cboe proxies are medium; manual fields score lower and decay when stale.
+- Coverage: the panel reports how many metrics are automatic vs manual, and flags stale or low-confidence scored inputs.
 
 ## Manual Input Update
 

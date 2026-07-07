@@ -104,14 +104,14 @@
         "value": null,
         "low": -0.05,
         "high": 0.30,
-        "source": "manual: hyperscaler quarterly capex",
-        "note": "QoQ growth in combined Microsoft, Amazon, Alphabet, Meta AI/cloud capex. High growth keeps the AI capex cycle hot."
+        "source": "auto: SEC Companyfacts API; manual fallback",
+        "note": "QoQ growth in combined Microsoft, Amazon, Alphabet, Meta cash CapEx / productive asset purchases. High growth keeps the AI capex cycle hot."
       },
       "hyperscaler_capex_qoq_delta": {
         "value": null,
         "low": -0.20,
         "high": 0.10,
-        "source": "manual: hyperscaler quarterly capex",
+        "source": "auto: SEC Companyfacts API; manual fallback",
         "note": "QoQ growth acceleration. Negative values are a death-signal candidate when upstream profits remain extreme."
       }
     },
@@ -120,14 +120,14 @@
         "value": null,
         "low": 2.50,
         "high": 2.90,
-        "source": "manual: Federal Reserve H.4.1",
+        "source": "auto: FRED WRESBAL / Federal Reserve H.4.1; manual fallback",
         "note": "Lower reserves imply higher liquidity drain risk. Watch 2.9T, 2.8T, and 2.5T zones."
       },
       "tga_usd_bn": {
         "value": 901.8,
         "low": 650,
         "high": 1000,
-        "source": "manual: Treasury / video transcript snapshot",
+        "source": "auto: FRED WTREGEN / Treasury General Account; manual fallback",
         "as_of": "2026-07",
         "note": "Treasury General Account balance. Higher TGA can drain private-sector liquidity."
       },
@@ -135,14 +135,14 @@
         "value": null,
         "low": -2,
         "high": 3,
-        "source": "manual: SOFR minus ON RRP",
+        "source": "auto: FRED SOFR minus RRPONTSYAWARD; manual fallback",
         "note": "Persistent positive spread and >3 bp stress are liquidity warning signs."
       },
       "srf_usage_usd_bn": {
         "value": null,
         "low": 0,
         "high": 50,
-        "source": "manual: Federal Reserve standing repo facility",
+        "source": "auto: New York Fed Markets API repo operations; manual fallback",
         "note": "Sudden SRF usage suggests funding stress."
       }
     },
@@ -159,15 +159,15 @@
         "value": null,
         "low": 0,
         "high": 1,
-        "source": "manual: option skew monitor",
-        "note": "1 means calls are unusually expensive relative to puts in core AI/index names."
+        "source": "auto-proxy: Cboe Daily Market Statistics; manual fallback",
+        "note": "Free proxy uses index/equity call-share imbalance. 1 means calls are unusually expensive or crowded relative to puts in core AI/index names."
       },
       "core_call_volume_heat": {
         "value": null,
         "low": 0,
         "high": 1,
-        "source": "manual: options volume monitor",
-        "note": "AI mega-cap call-volume heat, normalized 0-1."
+        "source": "auto-proxy: Cboe Daily Market Statistics; manual fallback",
+        "note": "SPX/SPXW call-volume heat proxy, normalized 0-1. Exact AI mega-cap option-chain heat still needs paid or unstable chain data."
       }
     }
   },

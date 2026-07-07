@@ -1,0 +1,12 @@
+{
+  "bank_reserves_usd_tn": 2.966897,
+  "bank_reserves_as_of": "2026-07-01",
+  "tga_usd_bn": 880.237,
+  "tga_as_of": "2026-07-01",
+  "sofr_rrp_spread_bp": 14.000000000000012,
+  "sofr_rrp_spread_as_of": "2026-07-02",
+  "srf_usage_usd_bn": 0.0,
+  "srf_usage_as_of": "2026-07-06",
+  "source": "FRED CSV and New York Fed Markets API",
+  "errors": {}
+}

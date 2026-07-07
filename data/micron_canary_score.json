@@ -1,8 +1,8 @@
 {
   "available": true,
   "as_of": "2026-07-06",
-  "score": 75.4,
-  "status": "Fragile",
+  "score": 72.3,
+  "status": "Hot",
   "symbol": "MU",
   "price": {
     "latest": 984.75,
@@ -10,7 +10,7 @@
     "return_1m": -0.08769092642253973,
     "return_3m": 1.6892243472138673,
     "distance_50dma": 0.14253225214631526,
-    "distance_200dma": 1.1967029236488158,
+    "distance_200dma": 1.196702924396532,
     "drawdown_from_52w_high": -0.18841966588379933,
     "range_52w": {
       "high": 1213.3734130859375
@@ -53,7 +53,7 @@
         },
         {
           "name": "Distance From 200DMA",
-          "value": 1.1967029236488158,
+          "value": 1.196702924396532,
           "score": 100.0,
           "source": "auto: Yahoo Finance chart API",
           "note": "Price extension above long trend.",
@@ -199,12 +199,12 @@
       ]
     },
     "liquidity_sensitivity": {
-      "score": 71.9,
+      "score": 41.4,
       "metrics": [
         {
           "name": "Market Liquidity Sensitivity",
-          "value": 71.9,
-          "score": 71.9,
+          "value": 41.4,
+          "score": 41.4,
           "source": "dashboard: liquidity drain overlay",
           "note": "High-beta AI canaries become more fragile when the broader liquidity-drain overlay rises.",
           "as_of": "2026-07-06",

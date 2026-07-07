@@ -1,0 +1,152 @@
+{
+  "as_of": "2026-07-07",
+  "spx_call_share": 0.4694244236758967,
+  "spx_total_volume": 4306084.0,
+  "spx_share_of_all_volume": 0.3350518215305734,
+  "index_total_volume": 5285824.0,
+  "index_call_share": 0.49546579681805525,
+  "equity_call_share": 0.6167644806092543,
+  "call_skew_proxy": -0.12129868379119901,
+  "products": {
+    "SUM OF ALL PRODUCTS": {
+      "call_volume": 6759040.0,
+      "put_volume": 6092954.0,
+      "total_volume": 12851994.0,
+      "call_share": 0.5259137220263252
+    },
+    "INDEX OPTIONS": {
+      "call_volume": 2618945.0,
+      "put_volume": 2666879.0,
+      "total_volume": 5285824.0,
+      "call_share": 0.49546579681805525
+    },
+    "EXCHANGE TRADED PRODUCTS": {
+      "call_volume": 1509341.0,
+      "put_volume": 1791418.0,
+      "total_volume": 3300759.0,
+      "call_share": 0.4572708883017512
+    },
+    "EQUITY OPTIONS": {
+      "call_volume": 2630754.0,
+      "put_volume": 1634657.0,
+      "total_volume": 4265411.0,
+      "call_share": 0.6167644806092543
+    },
+    "CBOE VOLATILITY INDEX (VIX)": {
+      "call_volume": 472404.0,
+      "put_volume": 202042.0,
+      "total_volume": 674446.0,
+      "call_share": 0.7004326513909194
+    },
+    "SPX + SPXW": {
+      "call_volume": 2021381.0,
+      "put_volume": 2284703.0,
+      "total_volume": 4306084.0,
+      "call_share": 0.4694244236758967
+    },
+    "OEX": {
+      "call_volume": 0.0,
+      "put_volume": 0.0,
+      "total_volume": 0.0,
+      "call_share": null
+    },
+    "MRUT": {
+      "call_volume": 21.0,
+      "put_volume": 12.0,
+      "total_volume": 33.0,
+      "call_share": 0.6363636363636364
+    },
+    "MXEA": {
+      "call_volume": 0.0,
+      "put_volume": 0.0,
+      "total_volume": 0.0,
+      "call_share": null
+    },
+    "MXEF": {
+      "call_volume": 0.0,
+      "put_volume": 0.0,
+      "total_volume": 0.0,
+      "call_share": null
+    },
+    "MXACW": {
+      "call_volume": 0.0,
+      "put_volume": 0.0,
+      "total_volume": 0.0,
+      "call_share": null
+    },
+    "MXWLD": {
+      "call_volume": 0.0,
+      "put_volume": 0.0,
+      "total_volume": 0.0,
+      "call_share": null
+    },
+    "MXUSA": {
+      "call_volume": 0.0,
+      "put_volume": 0.0,
+      "total_volume": 0.0,
+      "call_share": null
+    },
+    "CBTX": {
+      "call_volume": 109.0,
+      "put_volume": 71.0,
+      "total_volume": 180.0,
+      "call_share": 0.6055555555555555
+    },
+    "MBTX": {
+      "call_volume": 3.0,
+      "put_volume": 2781.0,
+      "total_volume": 2784.0,
+      "call_share": 0.0010775862068965517
+    },
+    "SPEQX": {
+      "call_volume": 0.0,
+      "put_volume": 0.0,
+      "total_volume": 0.0,
+      "call_share": null
+    },
+    "SPEQW": {
+      "call_volume": 0.0,
+      "put_volume": 1.0,
+      "total_volume": 1.0,
+      "call_share": 0.0
+    },
+    "MGTN": {
+      "call_volume": 12.0,
+      "put_volume": 26.0,
+      "total_volume": 38.0,
+      "call_share": 0.3157894736842105
+    },
+    "MGTNW": {
+      "call_volume": 347.0,
+      "put_volume": 217.0,
+      "total_volume": 564.0,
+      "call_share": 0.6152482269503546
+    },
+    "DJX": {
+      "call_volume": 53.0,
+      "put_volume": 19.0,
+      "total_volume": 72.0,
+      "call_share": 0.7361111111111112
+    },
+    "DJXW": {
+      "call_volume": 17.0,
+      "put_volume": 134.0,
+      "total_volume": 151.0,
+      "call_share": 0.11258278145695365
+    },
+    "XSPBX": {
+      "call_volume": 0.0,
+      "put_volume": 0.0,
+      "total_volume": 0.0,
+      "call_share": null
+    },
+    "XSPBW": {
+      "call_volume": 10.0,
+      "put_volume": 4.0,
+      "total_volume": 14.0,
+      "call_share": 0.7142857142857143
+    }
+  },
+  "source": "Cboe Daily Market Statistics page",
+  "note": "Free Cboe page proxy. It captures SPX/SPXW call/put volume, not true dealer gamma or exact 0DTE share."
+}

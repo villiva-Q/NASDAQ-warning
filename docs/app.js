@@ -9,6 +9,8 @@ const i18n = {
     warningsTitle: "Active Signals",
     coreMetricsLabel: "Bubble Core Inputs",
     contextMetricsLabel: "Bubble Context Signals",
+    dataQualityLabel: "Data Quality",
+    dataQualityTitle: "Freshness & Confidence",
     topFragilityLabel: "Top Fragility",
     topFragilityTitle: "AI Melt-Up Overlay",
     micronLabel: "Micron Canary",
@@ -25,7 +27,7 @@ const i18n = {
     loading: "Loading the latest data snapshot.",
     dataLoadFailed: "Data load failed",
     snapshotPrefix: "Snapshot",
-    metricHeaders: ["Indicator", "Value", "Score", "Refresh", "Last Updated", "Freshness", "Used"],
+    metricHeaders: ["Indicator", "Value", "Score", "Refresh", "Last Updated", "Freshness", "Confidence", "Used"],
     bottomHeaders: ["Signal", "Observed Value", "Score", "Source"],
     thresholdHeaders: ["Threshold", "Events", "Avg Days From Low", "21D Avg", "21D Hit", "63D Avg", "63D Hit"],
     moduleLabels: {
@@ -94,6 +96,8 @@ const i18n = {
     warningsTitle: "当前触发信号",
     coreMetricsLabel: "泡沫核心指标",
     contextMetricsLabel: "泡沫背景信号",
+    dataQualityLabel: "数据质量",
+    dataQualityTitle: "新鲜度与置信度",
     topFragilityLabel: "顶部脆弱性",
     topFragilityTitle: "AI 融涨覆盖层",
     micronLabel: "美光金丝雀",
@@ -110,7 +114,7 @@ const i18n = {
     loading: "正在读取最新数据快照。",
     dataLoadFailed: "数据读取失败",
     snapshotPrefix: "快照",
-    metricHeaders: ["指标", "数值", "分数", "刷新", "更新时间", "新鲜度", "入分"],
+    metricHeaders: ["指标", "数值", "分数", "刷新", "更新时间", "新鲜度", "置信度", "入分"],
     bottomHeaders: ["信号", "观测值", "分数", "来源"],
     thresholdHeaders: ["阈值", "触发事件", "距离低点均值", "21日均值", "21日胜率", "63日均值", "63日胜率"],
     moduleLabels: {
@@ -321,9 +325,17 @@ function renderModules(data) {
 function freshnessLabel(value) {
   const labels =
     currentLanguage === "zh"
-      ? { fresh: "新鲜", stale: "过期", unknown: "未知" }
-      : { fresh: "Fresh", stale: "Stale", unknown: "Unknown" };
+      ? { fresh: "新鲜", aging: "临近过期", stale: "过期", unknown: "未知" }
+      : { fresh: "Fresh", aging: "Aging", stale: "Stale", unknown: "Unknown" };
   return labels[value] || labels.unknown;
+}
+
+function confidenceLabel(value) {
+  const labels =
+    currentLanguage === "zh"
+      ? { high: "高", medium: "中", low: "低" }
+      : { high: "High", medium: "Medium", low: "Low" };
+  return labels[value] || "--";
 }
 
 function usedLabel(value) {
@@ -344,6 +356,7 @@ function renderMetricGroups(title, groups) {
               <span>${m.name}</span><span>${fmtValue(m.value)}</span><span>${fmtNum(m.score, 0)}</span>
               <span>${m.refresh || "manual"}</span><span>${m.as_of || "--"}</span>
               <span class="freshness ${m.freshness || "unknown"}">${freshnessLabel(m.freshness)}</span>
+              <span class="confidence ${m.confidence || "low"}">${confidenceLabel(m.confidence)}<small>${fmtNum(m.confidence_score, 0)}</small></span>
               <span>${usedLabel(Boolean(m.used_in_score))}</span>
             </div>`
           )
@@ -358,6 +371,60 @@ function renderMetricGroups(title, groups) {
   </div>`;
 }
 
+function renderDataQuality(data) {
+  const quality = data.data_quality;
+  if (!quality) return;
+  const summary = quality.summary || {};
+  const issueCount = (quality.issues?.stale_or_unknown_used || []).length + (quality.issues?.low_confidence_used || []).length;
+  const cards =
+    currentLanguage === "zh"
+      ? [
+          ["自动覆盖率", `${fmtNum(summary.auto_coverage_pct, 1)}%`, `${summary.auto_metrics || 0}/${summary.total_metrics || 0} 个指标自动刷新`],
+          ["新鲜度", fmtNum(summary.freshness_score, 0), `新鲜 ${summary.fresh || 0} · 临近 ${summary.aging || 0} · 过期 ${summary.stale || 0}`],
+          ["置信度", fmtNum(summary.confidence_score, 0), "官方源最高，Cboe/Yahoo 为代理源"],
+          ["待关注", String(issueCount), "过期、未知或低置信入分项"]
+        ]
+      : [
+          ["Auto Coverage", `${fmtNum(summary.auto_coverage_pct, 1)}%`, `${summary.auto_metrics || 0}/${summary.total_metrics || 0} metrics update automatically`],
+          ["Freshness", fmtNum(summary.freshness_score, 0), `Fresh ${summary.fresh || 0} · Aging ${summary.aging || 0} · Stale ${summary.stale || 0}`],
+          ["Confidence", fmtNum(summary.confidence_score, 0), "Official sources score highest; Cboe/Yahoo are proxies"],
+          ["Needs Review", String(issueCount), "Stale, unknown, or low-confidence scored inputs"]
+        ];
+
+  document.getElementById("data-quality-summary").innerHTML = cards
+    .map(
+      ([title, value, copy]) => `<article class="quality-card">
+        <p class="label">${title}</p>
+        <strong>${value}</strong>
+        <span>${copy}</span>
+      </article>`
+    )
+    .join("");
+
+  const rows = quality.section_breakdown || [];
+  document.getElementById("data-quality-table").innerHTML = `
+    <div class="metric-row quality-row">
+      <span>${currentLanguage === "zh" ? "区块" : "Section"}</span>
+      <span>${currentLanguage === "zh" ? "自动/总数" : "Auto/Total"}</span>
+      <span>${currentLanguage === "zh" ? "新鲜" : "Fresh"}</span>
+      <span>${currentLanguage === "zh" ? "临近" : "Aging"}</span>
+      <span>${currentLanguage === "zh" ? "过期/未知" : "Stale/Unknown"}</span>
+      <span>${currentLanguage === "zh" ? "置信度" : "Confidence"}</span>
+    </div>
+    ${rows
+      .map(
+        (row) => `<div class="metric-row quality-row">
+          <span>${row.section}</span>
+          <span>${row.auto}/${row.total}</span>
+          <span>${row.fresh}</span>
+          <span>${row.aging}</span>
+          <span>${(row.stale || 0) + (row.unknown || 0)}</span>
+          <span>${fmtNum(row.confidence_score, 0)}</span>
+        </div>`
+      )
+      .join("")}`;
+}
+
 function renderTopFragility(data) {
   const overlay = data.top_fragility_overlay;
   if (!overlay) return;
@@ -367,7 +434,7 @@ function renderTopFragility(data) {
   );
   document.getElementById("top-fragility-table").innerHTML = `
     <div class="metric-row fragility-row">
-      <span>Group</span><span>Signal</span><span>Value</span><span>Score</span><span>Updated</span>
+      <span>Group</span><span>Signal</span><span>Value</span><span>Score</span><span>Source</span><span>Freshness</span><span>Confidence</span>
     </div>
     ${rows
       .map(
@@ -376,7 +443,9 @@ function renderTopFragility(data) {
           <span>${m.name}<small>${m.note || ""}</small></span>
           <span>${fmtValue(m.value)}</span>
           <span>${fmtNum(m.score, 0)}</span>
-          <span>${m.as_of || "--"}</span>
+          <span>${m.source || "--"}<small>${m.as_of || "--"}</small></span>
+          <span class="freshness ${m.freshness || "unknown"}">${freshnessLabel(m.freshness)}</span>
+          <span class="confidence ${m.confidence || "low"}">${confidenceLabel(m.confidence)}<small>${fmtNum(m.confidence_score, 0)}</small></span>
         </div>`
       )
       .join("")}`;
@@ -487,7 +556,9 @@ function renderSources(data) {
   const sourceRows = [
     ["Yahoo Finance", "QQQ, TQQQ, SPY, QQEW, VIX, VIX3M, VXN, TNX, BTC-USD", data.price?.latest_date],
     ["FINRA", "Monthly margin statistics, lagged in the bottom backtest", data.finra?.month || "--"],
-    ["Free optional proxies", "VIX9D, SKEW, CBOE put/call via Yahoo when available", bottom?.as_of || "--"],
+    ["FRED / NY Fed / Treasury", "Bank reserves, TGA, SOFR minus ON RRP, and SRF/repo operations", data.top_fragility_overlay?.groups?.liquidity_drain?.metrics?.[0]?.as_of || "--"],
+    ["SEC Companyfacts", "MSFT, AMZN, GOOGL, META CapEx proxy and Micron financial statements", data.top_fragility_overlay?.groups?.ai_capex_cycle?.metrics?.[0]?.as_of || "--"],
+    ["Cboe Proxy", "Free SPX/SPXW call-put volume proxy; not exact 0DTE or dealer gamma", data.top_fragility_overlay?.groups?.options_mechanical_bid?.metrics?.[1]?.as_of || "--"],
     ["GitHub Actions", "Runs the update script and commits docs/data/dashboard.json", fmtDateTime(data.generated_at)]
   ];
   document.getElementById("source-grid").innerHTML = sourceRows
@@ -541,6 +612,7 @@ function render(data) {
   renderDecisionStrip("decision-strip", tr().decisions, data.status);
   renderDecisionStrip("bottom-decision-strip", tr().bottomDecisions, bottomStatus);
   renderModules(data);
+  renderDataQuality(data);
   renderTopFragility(data);
   renderMicronCanary(data);
   renderBottomSignals(bottom);
