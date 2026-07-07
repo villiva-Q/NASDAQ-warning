@@ -1,43 +1,45 @@
 {
-  "generated_at": "2026-07-06T23:33:14+00:00",
+  "generated_at": "2026-07-07T08:25:35+00:00",
   "market": "NASDAQ / QQQ",
   "manual_inputs": {
     "manual_inputs_updated_at": "2026-06-03",
     "manual_update_path": "Edit config/indicators.json, then run scripts/update_data.py or trigger the GitHub Actions workflow manually.",
     "manual_update_path_zh": "\u7f16\u8f91 config/indicators.json\uff0c\u7136\u540e\u8fd0\u884c scripts/update_data.py\uff0c\u6216\u5728 GitHub Actions \u4e2d\u624b\u52a8\u89e6\u53d1\u66f4\u65b0\u5de5\u4f5c\u6d41\u3002"
   },
-  "overall_score": 66.4,
+  "overall_score": 69.7,
   "status": "Orange",
   "modules": {
     "price_confirmation": 66.2,
     "finra_margin_slow": 100.0,
-    "daily_leverage_proxy": 19.8
+    "daily_leverage_proxy": 19.2,
+    "ai_fragility_overlay": 73.1
   },
   "score_policy": {
     "name": "Core Daily Score",
-    "description": "Only automatic daily proxies and explicit-frequency slow variables enter the score. Manual inputs are context only.",
+    "description": "Automatic daily proxies, explicit-frequency slow variables, and the AI fragility overlay enter the top-risk score. Manual overlay fields are labeled and excluded when missing.",
     "weights": {
-      "price_confirmation": 0.4,
-      "finra_margin_slow": 0.35,
-      "daily_leverage_proxy": 0.25
+      "price_confirmation": 0.3,
+      "finra_margin_slow": 0.25,
+      "daily_leverage_proxy": 0.15,
+      "ai_fragility_overlay": 0.3
     }
   },
   "price": {
     "latest": 722.8200073242188,
     "latest_date": "2026-07-06",
     "sma50": 709.8820617675781,
-    "sma200": 634.164504699707,
+    "sma200": 634.1645043945313,
     "return_1m": -0.027674537215536033,
     "return_3m": 0.23698992384521445,
     "return_6m": 0.17941559453628053,
     "distance_50dma": 0.01822548596935336,
-    "distance_200dma": 0.13979890386090332,
+    "distance_200dma": 0.139798904409403,
     "drawdown_from_52w_high": -0.030215535719330666,
     "range_52w": {
-      "low": 549.3840942382812,
+      "low": 549.384033203125,
       "high": 745.3408813476562
     },
-    "score": 66.16216246250471
+    "score": 66.16216250168326
   },
   "finra": {
     "month": "2026-05",
@@ -49,6 +51,393 @@
     "margin_debt_percentile": 100.0,
     "debit_to_free_cash_percentile": 100.0,
     "score": 100.0
+  },
+  "top_fragility_overlay": {
+    "score": 73.1,
+    "groups": {
+      "ai_capex_cycle": {
+        "score": 50,
+        "metrics": [
+          {
+            "name": "Hyperscaler CapEx QoQ Growth",
+            "value": null,
+            "score": null,
+            "source": "manual: hyperscaler quarterly capex",
+            "range": {
+              "low": -0.05,
+              "high": 0.3
+            },
+            "as_of": null,
+            "note": "QoQ growth in combined Microsoft, Amazon, Alphabet, Meta AI/cloud capex. High growth keeps the AI capex cycle hot.",
+            "refresh": "manual",
+            "used_in_score": true,
+            "freshness": "unknown"
+          },
+          {
+            "name": "Hyperscaler CapEx QoQ Delta",
+            "value": null,
+            "score": null,
+            "source": "manual: hyperscaler quarterly capex",
+            "range": {
+              "low": -0.2,
+              "high": 0.1
+            },
+            "as_of": null,
+            "note": "QoQ growth acceleration. Negative values are a death-signal candidate when upstream profits remain extreme.",
+            "refresh": "manual",
+            "used_in_score": true,
+            "freshness": "unknown"
+          }
+        ]
+      },
+      "liquidity_drain": {
+        "score": 71.9,
+        "metrics": [
+          {
+            "name": "Bank Reserves",
+            "value": null,
+            "score": null,
+            "source": "manual: Federal Reserve H.4.1",
+            "range": {
+              "low": 2.5,
+              "high": 2.9
+            },
+            "as_of": null,
+            "note": "Lower reserves imply higher liquidity drain risk. Watch 2.9T, 2.8T, and 2.5T zones.",
+            "refresh": "manual",
+            "used_in_score": true,
+            "freshness": "unknown"
+          },
+          {
+            "name": "Treasury General Account",
+            "value": 901.8,
+            "score": 71.94285714285714,
+            "source": "manual: Treasury / video transcript snapshot",
+            "range": {
+              "low": 650,
+              "high": 1000
+            },
+            "as_of": "2026-07",
+            "note": "Treasury General Account balance. Higher TGA can drain private-sector liquidity.",
+            "refresh": "manual",
+            "used_in_score": true,
+            "freshness": "fresh"
+          },
+          {
+            "name": "SOFR - RRP Spread",
+            "value": null,
+            "score": null,
+            "source": "manual: SOFR minus ON RRP",
+            "range": {
+              "low": -2,
+              "high": 3
+            },
+            "as_of": null,
+            "note": "Persistent positive spread and >3 bp stress are liquidity warning signs.",
+            "refresh": "manual",
+            "used_in_score": true,
+            "freshness": "unknown"
+          },
+          {
+            "name": "Standing Repo Facility Usage",
+            "value": null,
+            "score": null,
+            "source": "manual: Federal Reserve standing repo facility",
+            "range": {
+              "low": 0,
+              "high": 50
+            },
+            "as_of": null,
+            "note": "Sudden SRF usage suggests funding stress.",
+            "refresh": "manual",
+            "used_in_score": true,
+            "freshness": "unknown"
+          }
+        ]
+      },
+      "options_mechanical_bid": {
+        "score": 97.5,
+        "metrics": [
+          {
+            "name": "0DTE Stress Share",
+            "value": 0.64,
+            "score": 97.5,
+            "source": "manual: Cboe / video transcript snapshot",
+            "range": {
+              "low": 0.25,
+              "high": 0.65
+            },
+            "as_of": "2026-06",
+            "note": "SPX 0DTE stress-day share. High readings imply short-dated option crowding.",
+            "refresh": "manual",
+            "used_in_score": true,
+            "freshness": "fresh"
+          },
+          {
+            "name": "Call Premium Inversion",
+            "value": null,
+            "score": null,
+            "source": "manual: option skew monitor",
+            "range": {
+              "low": 0,
+              "high": 1
+            },
+            "as_of": null,
+            "note": "1 means calls are unusually expensive relative to puts in core AI/index names.",
+            "refresh": "manual",
+            "used_in_score": true,
+            "freshness": "unknown"
+          },
+          {
+            "name": "Core Call Volume Heat",
+            "value": null,
+            "score": null,
+            "source": "manual: options volume monitor",
+            "range": {
+              "low": 0,
+              "high": 1
+            },
+            "as_of": null,
+            "note": "AI mega-cap call-volume heat, normalized 0-1.",
+            "refresh": "manual",
+            "used_in_score": true,
+            "freshness": "unknown"
+          }
+        ]
+      }
+    },
+    "principle": {
+      "summary": "AI late-cycle fragility is tracked through hyperscaler capex acceleration, liquidity drain, and options-driven mechanical buying pressure.",
+      "use": "Use this overlay to upgrade or downgrade top-risk interpretation when price and leverage signals are already elevated.",
+      "limits": "Several inputs are manual until reliable public APIs are connected. Missing inputs are excluded from group denominators; fully missing groups fall back to neutral 50."
+    }
+  },
+  "micron_canary": {
+    "available": true,
+    "as_of": "2026-07-06",
+    "score": 75.4,
+    "status": "Fragile",
+    "symbol": "MU",
+    "price": {
+      "latest": 984.75,
+      "latest_date": "2026-07-06",
+      "return_1m": -0.08769092642253973,
+      "return_3m": 1.6892243472138673,
+      "distance_50dma": 0.14253225214631526,
+      "distance_200dma": 1.1967029236488158,
+      "drawdown_from_52w_high": -0.18841966588379933,
+      "range_52w": {
+        "high": 1213.3734130859375
+      }
+    },
+    "fundamentals": {
+      "latest_quarter_end": "2026-05-28",
+      "latest_revenue": 41456000000.0,
+      "latest_gross_profit": 35056000000.0,
+      "latest_gross_margin": 0.8456194519490544,
+      "latest_diluted_eps": 24.67,
+      "revenue_qoq": 0.737468566638726,
+      "eps_qoq": 1.0439105219552611,
+      "gross_margin_delta": 0.10148701272021954,
+      "ttm_revenue": 90274000000.0,
+      "ttm_net_income": 50469000000.0,
+      "ttm_diluted_eps": 44.239999999999995,
+      "trailing_pe": 22.259267631103075
+    },
+    "weights": {
+      "price_heat": 0.3,
+      "profit_cycle_heat": 0.25,
+      "demand_lockin_heat": 0.2,
+      "peak_earnings_trap": 0.15,
+      "liquidity_sensitivity": 0.1
+    },
+    "groups": {
+      "price_heat": {
+        "score": 63.1,
+        "metrics": [
+          {
+            "name": "MU 3M Return",
+            "value": 1.6892243472138673,
+            "score": 100.0,
+            "source": "auto: Yahoo Finance chart API",
+            "note": "Three-month momentum heat.",
+            "as_of": "2026-07-06",
+            "refresh": "auto",
+            "used_in_score": true
+          },
+          {
+            "name": "Distance From 200DMA",
+            "value": 1.1967029236488158,
+            "score": 100.0,
+            "source": "auto: Yahoo Finance chart API",
+            "note": "Price extension above long trend.",
+            "as_of": "2026-07-06",
+            "refresh": "auto",
+            "used_in_score": true
+          },
+          {
+            "name": "Drawdown From 52W High",
+            "value": -0.18841966588379933,
+            "score": 41.9,
+            "source": "auto: Yahoo Finance chart API",
+            "note": "Near-high prices leave less margin for disappointment.",
+            "as_of": "2026-07-06",
+            "refresh": "auto",
+            "used_in_score": true
+          },
+          {
+            "name": "MU 1M Return",
+            "value": -0.08769092642253973,
+            "score": 10.4,
+            "source": "auto: Yahoo Finance chart API",
+            "note": "Short-term acceleration heat.",
+            "as_of": "2026-07-06",
+            "refresh": "auto",
+            "used_in_score": true
+          }
+        ]
+      },
+      "profit_cycle_heat": {
+        "score": 81.5,
+        "metrics": [
+          {
+            "name": "Latest Gross Margin",
+            "value": 0.8456194519490544,
+            "score": 99.1,
+            "source": "auto: SEC companyfacts",
+            "note": "Gross profit divided by revenue for the latest standalone quarter.",
+            "as_of": "2026-05-28",
+            "refresh": "auto",
+            "used_in_score": true
+          },
+          {
+            "name": "Revenue QoQ Growth",
+            "value": 0.737468566638726,
+            "score": 93.1,
+            "source": "auto: SEC companyfacts",
+            "note": "Standalone quarterly revenue growth. Extreme growth signals capex-chain heat.",
+            "as_of": "2026-05-28",
+            "refresh": "auto",
+            "used_in_score": true
+          },
+          {
+            "name": "Diluted EPS QoQ Growth",
+            "value": 1.0439105219552611,
+            "score": 73.2,
+            "source": "auto: SEC companyfacts",
+            "note": "Standalone quarterly GAAP diluted EPS growth.",
+            "as_of": "2026-05-28",
+            "refresh": "auto",
+            "used_in_score": true
+          },
+          {
+            "name": "Gross Margin QoQ Delta",
+            "value": 0.10148701272021954,
+            "score": 60.6,
+            "source": "auto: SEC companyfacts",
+            "note": "Quarterly gross-margin acceleration. A rollover from extreme levels is a canary warning.",
+            "as_of": "2026-05-28",
+            "refresh": "auto",
+            "used_in_score": true
+          }
+        ]
+      },
+      "demand_lockin_heat": {
+        "score": 83.3,
+        "metrics": [
+          {
+            "name": "HBM Supply Tightness",
+            "value": 0.9,
+            "score": 90.0,
+            "source": "manual: AI memory supply-chain read",
+            "note": "Normalized 0-1 estimate of HBM/advanced memory supply tightness.",
+            "as_of": "2026-07",
+            "refresh": "manual",
+            "used_in_score": true
+          },
+          {
+            "name": "Take-or-Pay Intensity",
+            "value": 0.85,
+            "score": 85.0,
+            "source": "manual: customer contract structure",
+            "note": "Normalized 0-1 estimate of take-or-pay / non-cancelable contract intensity.",
+            "as_of": "2026-07",
+            "refresh": "manual",
+            "used_in_score": true
+          },
+          {
+            "name": "Customer Prepayment Intensity",
+            "value": 0.75,
+            "score": 75.0,
+            "source": "manual: customer deposits and commitments",
+            "note": "Normalized 0-1 estimate of customer prepayment and commitment intensity.",
+            "as_of": "2026-07",
+            "refresh": "manual",
+            "used_in_score": true
+          }
+        ]
+      },
+      "peak_earnings_trap": {
+        "score": 81.5,
+        "metrics": [
+          {
+            "name": "Trailing GAAP P/E",
+            "value": 22.259267631103075,
+            "score": 47.2,
+            "source": "auto: Yahoo Finance + SEC companyfacts",
+            "note": "Low P/E becomes risky when it is paired with extreme margins and EPS surge, because it may reflect peak earnings.",
+            "as_of": "2026-07-06",
+            "refresh": "auto",
+            "used_in_score": true
+          },
+          {
+            "name": "TTM Diluted EPS",
+            "value": 44.239999999999995,
+            "score": 98.3,
+            "source": "auto: SEC companyfacts",
+            "note": "TTM GAAP diluted EPS estimated from latest annual plus YTD bridge.",
+            "as_of": "2026-05-28",
+            "refresh": "auto",
+            "used_in_score": true
+          },
+          {
+            "name": "Peak Margin Confirmation",
+            "value": 0.8456194519490544,
+            "score": 98.9,
+            "source": "auto: SEC companyfacts",
+            "note": "Extreme gross margin confirms that valuation is being measured on unusually strong profits.",
+            "as_of": "2026-05-28",
+            "refresh": "auto",
+            "used_in_score": true
+          }
+        ]
+      },
+      "liquidity_sensitivity": {
+        "score": 71.9,
+        "metrics": [
+          {
+            "name": "Market Liquidity Sensitivity",
+            "value": 71.9,
+            "score": 71.9,
+            "source": "dashboard: liquidity drain overlay",
+            "note": "High-beta AI canaries become more fragile when the broader liquidity-drain overlay rises.",
+            "as_of": "2026-07-06",
+            "refresh": "auto",
+            "used_in_score": true
+          }
+        ]
+      }
+    },
+    "warnings": [
+      "Micron profits look extreme enough that low P/E may be a peak-earnings trap.",
+      "Manual supply-chain inputs imply high demand lock-in and customer urgency.",
+      "MU has started to draw down materially from its 52-week high."
+    ],
+    "principle": {
+      "summary": "Micron is treated as an AI-memory canary: low static P/E is not automatically safe when gross margin, EPS, and demand lock-in are extreme.",
+      "use": "Watch for divergence: MU price near highs and profits extreme, while cloud capex QoQ growth or memory gross margin acceleration rolls over.",
+      "limits": "Demand lock-in inputs are manual until a stable contract/deposit dataset is connected."
+    }
   },
   "bottom_framework": {
     "available": true,
@@ -74,9 +463,9 @@
           "events": 19,
           "avg_days_from_low": -26.0,
           "median_days_from_low": -9.5,
-          "avg_fwd_21d": 0.00815288633872561,
+          "avg_fwd_21d": 0.008152931392568945,
           "hit_rate_21d": 0.5555555555555556,
-          "avg_fwd_63d": 0.06812943008971611,
+          "avg_fwd_63d": 0.06812946754621359,
           "hit_rate_63d": 0.8888888888888888
         },
         {
@@ -85,9 +474,9 @@
           "events": 19,
           "avg_days_from_low": -24.61111111111111,
           "median_days_from_low": -9.0,
-          "avg_fwd_21d": 0.004653031443792656,
+          "avg_fwd_21d": 0.004653014774262258,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.06577580963133228,
+          "avg_fwd_63d": 0.065775824161688,
           "hit_rate_63d": 0.8888888888888888
         },
         {
@@ -96,9 +485,9 @@
           "events": 19,
           "avg_days_from_low": -23.0,
           "median_days_from_low": -3.0,
-          "avg_fwd_21d": 0.009223503852024115,
+          "avg_fwd_21d": 0.009223468487992634,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.06850553587800995,
+          "avg_fwd_63d": 0.06850551706031117,
           "hit_rate_63d": 0.8888888888888888
         },
         {
@@ -107,9 +496,9 @@
           "events": 19,
           "avg_days_from_low": -19.11764705882353,
           "median_days_from_low": 3.0,
-          "avg_fwd_21d": 0.0359517647763095,
+          "avg_fwd_21d": 0.03595175464257601,
           "hit_rate_21d": 0.5882352941176471,
-          "avg_fwd_63d": 0.08615644041099091,
+          "avg_fwd_63d": 0.08615637905278417,
           "hit_rate_63d": 0.7647058823529411
         },
         {
@@ -118,9 +507,9 @@
           "events": 19,
           "avg_days_from_low": -17.9375,
           "median_days_from_low": 4.5,
-          "avg_fwd_21d": 0.03229155759436766,
+          "avg_fwd_21d": 0.03229153498977597,
           "hit_rate_21d": 0.6875,
-          "avg_fwd_63d": 0.07710433134956642,
+          "avg_fwd_63d": 0.07710424186544712,
           "hit_rate_63d": 0.8125
         },
         {
@@ -129,9 +518,9 @@
           "events": 19,
           "avg_days_from_low": -20.583333333333332,
           "median_days_from_low": 6.5,
-          "avg_fwd_21d": 0.04724910213754054,
+          "avg_fwd_21d": 0.047249031181319616,
           "hit_rate_21d": 0.8333333333333334,
-          "avg_fwd_63d": 0.10220609299518592,
+          "avg_fwd_63d": 0.10220598741362917,
           "hit_rate_63d": 0.75
         },
         {
@@ -140,9 +529,9 @@
           "events": 19,
           "avg_days_from_low": -69.0,
           "median_days_from_low": -6.0,
-          "avg_fwd_21d": 0.012312166376713285,
+          "avg_fwd_21d": 0.012312187704026728,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.09272019598676282,
+          "avg_fwd_63d": 0.09272023769037124,
           "hit_rate_63d": 0.75
         },
         {
@@ -151,9 +540,9 @@
           "events": 19,
           "avg_days_from_low": -63.333333333333336,
           "median_days_from_low": -18.0,
-          "avg_fwd_21d": -0.01683427313829126,
+          "avg_fwd_21d": -0.016834073698808738,
           "hit_rate_21d": 0.3333333333333333,
-          "avg_fwd_63d": 0.09293441034897072,
+          "avg_fwd_63d": 0.09293449630987716,
           "hit_rate_63d": 0.6666666666666666
         },
         {
@@ -162,9 +551,9 @@
           "events": 19,
           "avg_days_from_low": -72.0,
           "median_days_from_low": -72.0,
-          "avg_fwd_21d": 0.009248702373165496,
+          "avg_fwd_21d": 0.009248924356717148,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.0820065921277554,
+          "avg_fwd_63d": 0.08200656177668925,
           "hit_rate_63d": 0.5
         },
         {
@@ -173,18 +562,18 @@
           "events": 19,
           "avg_days_from_low": 71.0,
           "median_days_from_low": 71.0,
-          "avg_fwd_21d": 0.09175391190429227,
+          "avg_fwd_21d": 0.09175343805787839,
           "hit_rate_21d": 1.0,
-          "avg_fwd_63d": 0.1365400345360357,
+          "avg_fwd_63d": 0.1365396566325625,
           "hit_rate_63d": 1.0
         }
       ],
       "walk_forward": {
         "tested_events": 15,
         "triggered_events": 9,
-        "avg_fwd_21d": 0.03938465448108766,
+        "avg_fwd_21d": 0.03938460280609657,
         "hit_rate_21d": 0.7777777777777778,
-        "avg_fwd_63d": 0.0924961130677546,
+        "avg_fwd_63d": 0.0924959855138127,
         "hit_rate_63d": 0.6666666666666666
       }
     },
@@ -235,7 +624,7 @@
       },
       {
         "name": "VIX Term Structure",
-        "value": 0.8290734358649983,
+        "value": 0.8177520454910641,
         "score": 2.0,
         "source": "Yahoo: ^VIX, ^VIX3M",
         "note": "Contango recovery is a panic-normalization proxy.",
@@ -246,7 +635,7 @@
       },
       {
         "name": "Short Vol Term",
-        "value": 0.6560169991678964,
+        "value": 0.6496848366993093,
         "score": 2.0,
         "source": "Yahoo: ^VIX9D, ^VIX3M",
         "note": "VIX9D/VIX3M adds a shorter panic gauge when free data is available.",
@@ -268,7 +657,7 @@
       },
       {
         "name": "Rate Easing",
-        "value": 0.10699987411499023,
+        "value": 0.11299991607666016,
         "score": 0.0,
         "source": "Yahoo: ^TNX",
         "note": "Checks whether rate pressure stopped worsening.",
@@ -279,7 +668,7 @@
       },
       {
         "name": "Crypto Stable",
-        "value": 0.06793725624350522,
+        "value": 0.06629161311687692,
         "score": 2.0,
         "source": "Yahoo: BTC-USD",
         "note": "BTC stabilization proxies high-beta risk appetite.",
@@ -290,7 +679,7 @@
       },
       {
         "name": "Leveraged ETF Cooling",
-        "value": 1.826569420601876,
+        "value": 1.7961691470950143,
         "score": 0.0,
         "source": "Yahoo: TQQQ/QQQ",
         "note": "TQQQ/QQQ volume ratio proxies leveraged NASDAQ activity.",
@@ -344,7 +733,7 @@
       {
         "name": "QQQ Price Confirmation",
         "value": 722.8200073242188,
-        "score": 66.16216246250471,
+        "score": 66.16216250168326,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "low risk",
@@ -377,8 +766,8 @@
     "daily_leverage_proxy": [
       {
         "name": "QQQ Volume Percentile",
-        "value": 29416923.0,
-        "score": 1.984126984126984,
+        "value": 29988100.0,
+        "score": 2.380952380952381,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "1Y low volume",
@@ -392,7 +781,7 @@
       },
       {
         "name": "TQQQ Volume Percentile",
-        "value": 53732052.0,
+        "value": 53863700.0,
         "score": 3.968253968253968,
         "source": "auto: Yahoo Finance chart API",
         "range": {
@@ -407,8 +796,8 @@
       },
       {
         "name": "TQQQ / QQQ Volume Ratio",
-        "value": 1.826569420601876,
-        "score": 53.57142857142857,
+        "value": 1.7961691470950143,
+        "score": 51.19047619047619,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "1Y low ratio",
@@ -419,6 +808,143 @@
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
+      }
+    ],
+    "ai_fragility_overlay": [
+      {
+        "name": "Hyperscaler CapEx QoQ Growth",
+        "value": null,
+        "score": null,
+        "source": "manual: hyperscaler quarterly capex",
+        "range": {
+          "low": -0.05,
+          "high": 0.3
+        },
+        "as_of": null,
+        "note": "QoQ growth in combined Microsoft, Amazon, Alphabet, Meta AI/cloud capex. High growth keeps the AI capex cycle hot.",
+        "refresh": "manual",
+        "used_in_score": true,
+        "freshness": "unknown"
+      },
+      {
+        "name": "Hyperscaler CapEx QoQ Delta",
+        "value": null,
+        "score": null,
+        "source": "manual: hyperscaler quarterly capex",
+        "range": {
+          "low": -0.2,
+          "high": 0.1
+        },
+        "as_of": null,
+        "note": "QoQ growth acceleration. Negative values are a death-signal candidate when upstream profits remain extreme.",
+        "refresh": "manual",
+        "used_in_score": true,
+        "freshness": "unknown"
+      },
+      {
+        "name": "Bank Reserves",
+        "value": null,
+        "score": null,
+        "source": "manual: Federal Reserve H.4.1",
+        "range": {
+          "low": 2.5,
+          "high": 2.9
+        },
+        "as_of": null,
+        "note": "Lower reserves imply higher liquidity drain risk. Watch 2.9T, 2.8T, and 2.5T zones.",
+        "refresh": "manual",
+        "used_in_score": true,
+        "freshness": "unknown"
+      },
+      {
+        "name": "Treasury General Account",
+        "value": 901.8,
+        "score": 71.94285714285714,
+        "source": "manual: Treasury / video transcript snapshot",
+        "range": {
+          "low": 650,
+          "high": 1000
+        },
+        "as_of": "2026-07",
+        "note": "Treasury General Account balance. Higher TGA can drain private-sector liquidity.",
+        "refresh": "manual",
+        "used_in_score": true,
+        "freshness": "fresh"
+      },
+      {
+        "name": "SOFR - RRP Spread",
+        "value": null,
+        "score": null,
+        "source": "manual: SOFR minus ON RRP",
+        "range": {
+          "low": -2,
+          "high": 3
+        },
+        "as_of": null,
+        "note": "Persistent positive spread and >3 bp stress are liquidity warning signs.",
+        "refresh": "manual",
+        "used_in_score": true,
+        "freshness": "unknown"
+      },
+      {
+        "name": "Standing Repo Facility Usage",
+        "value": null,
+        "score": null,
+        "source": "manual: Federal Reserve standing repo facility",
+        "range": {
+          "low": 0,
+          "high": 50
+        },
+        "as_of": null,
+        "note": "Sudden SRF usage suggests funding stress.",
+        "refresh": "manual",
+        "used_in_score": true,
+        "freshness": "unknown"
+      },
+      {
+        "name": "0DTE Stress Share",
+        "value": 0.64,
+        "score": 97.5,
+        "source": "manual: Cboe / video transcript snapshot",
+        "range": {
+          "low": 0.25,
+          "high": 0.65
+        },
+        "as_of": "2026-06",
+        "note": "SPX 0DTE stress-day share. High readings imply short-dated option crowding.",
+        "refresh": "manual",
+        "used_in_score": true,
+        "freshness": "fresh"
+      },
+      {
+        "name": "Call Premium Inversion",
+        "value": null,
+        "score": null,
+        "source": "manual: option skew monitor",
+        "range": {
+          "low": 0,
+          "high": 1
+        },
+        "as_of": null,
+        "note": "1 means calls are unusually expensive relative to puts in core AI/index names.",
+        "refresh": "manual",
+        "used_in_score": true,
+        "freshness": "unknown"
+      },
+      {
+        "name": "Core Call Volume Heat",
+        "value": null,
+        "score": null,
+        "source": "manual: options volume monitor",
+        "range": {
+          "low": 0,
+          "high": 1
+        },
+        "as_of": null,
+        "note": "AI mega-cap call-volume heat, normalized 0-1.",
+        "refresh": "manual",
+        "used_in_score": true,
+        "freshness": "unknown"
       }
     ]
   },
@@ -630,7 +1156,9 @@
     ]
   },
   "warnings": [
-    "FINRA margin leverage is in a historically high zone."
+    "FINRA margin leverage is in a historically high zone.",
+    "AI fragility overlay is elevated across capex, liquidity, or option-mechanical signals.",
+    "Liquidity drain inputs are in a warning zone; watch reserves, TGA, SOFR/RRP, and SRF."
   ],
   "history": [
     {
@@ -640,7 +1168,7 @@
     },
     {
       "date": "2025-06-24",
-      "close": 537.1927490234375,
+      "close": 537.1928100585938,
       "volume": 45442000
     },
     {
@@ -650,7 +1178,7 @@
     },
     {
       "date": "2025-06-26",
-      "close": 543.6018676757812,
+      "close": 543.601806640625,
       "volume": 43811400
     },
     {
@@ -660,7 +1188,7 @@
     },
     {
       "date": "2025-06-30",
-      "close": 548.9959106445312,
+      "close": 548.995849609375,
       "volume": 45548700
     },
     {
@@ -670,7 +1198,7 @@
     },
     {
       "date": "2025-07-02",
-      "close": 548.1599731445312,
+      "close": 548.159912109375,
       "volume": 36538300
     },
     {
@@ -680,12 +1208,12 @@
     },
     {
       "date": "2025-07-07",
-      "close": 549.3840942382812,
+      "close": 549.384033203125,
       "volume": 45349300
     },
     {
       "date": "2025-07-08",
-      "close": 549.6925659179688,
+      "close": 549.692626953125,
       "volume": 36153300
     },
     {
@@ -705,17 +1233,17 @@
     },
     {
       "date": "2025-07-14",
-      "close": 553.5440673828125,
+      "close": 553.5440063476562,
       "volume": 36453300
     },
     {
       "date": "2025-07-15",
-      "close": 554.051513671875,
+      "close": 554.0515747070312,
       "volume": 43277700
     },
     {
       "date": "2025-07-16",
-      "close": 554.6187744140625,
+      "close": 554.6188354492188,
       "volume": 52314700
     },
     {
@@ -800,12 +1328,12 @@
     },
     {
       "date": "2025-08-08",
-      "close": 571.7960815429688,
+      "close": 571.796142578125,
       "volume": 35255500
     },
     {
       "date": "2025-08-11",
-      "close": 570.104248046875,
+      "close": 570.1041870117188,
       "volume": 33112900
     },
     {
@@ -820,12 +1348,12 @@
     },
     {
       "date": "2025-08-14",
-      "close": 577.110595703125,
+      "close": 577.1105346679688,
       "volume": 45425000
     },
     {
       "date": "2025-08-15",
-      "close": 574.57275390625,
+      "close": 574.5728149414062,
       "volume": 49480200
     },
     {
@@ -835,12 +1363,12 @@
     },
     {
       "date": "2025-08-19",
-      "close": 566.5514526367188,
+      "close": 566.5513916015625,
       "volume": 53752600
     },
     {
       "date": "2025-08-20",
-      "close": 563.1876220703125,
+      "close": 563.1875610351562,
       "volume": 76781100
     },
     {
@@ -855,7 +1383,7 @@
     },
     {
       "date": "2025-08-25",
-      "close": 567.5863647460938,
+      "close": 567.58642578125,
       "volume": 34044700
     },
     {
@@ -865,12 +1393,12 @@
     },
     {
       "date": "2025-08-27",
-      "close": 570.7411499023438,
+      "close": 570.7412109375,
       "volume": 36927100
     },
     {
       "date": "2025-08-28",
-      "close": 574.3140258789062,
+      "close": 574.31396484375,
       "volume": 46787900
     },
     {
@@ -895,7 +1423,7 @@
     },
     {
       "date": "2025-09-05",
-      "close": 573.298828125,
+      "close": 573.2988891601562,
       "volume": 68342500
     },
     {
@@ -905,7 +1433,7 @@
     },
     {
       "date": "2025-09-09",
-      "close": 577.7276000976562,
+      "close": 577.7275390625,
       "volume": 44007600
     },
     {
@@ -920,7 +1448,7 @@
     },
     {
       "date": "2025-09-12",
-      "close": 583.8480224609375,
+      "close": 583.8480834960938,
       "volume": 50745900
     },
     {
@@ -930,12 +1458,12 @@
     },
     {
       "date": "2025-09-16",
-      "close": 588.3463134765625,
+      "close": 588.3463745117188,
       "volume": 36942100
     },
     {
       "date": "2025-09-17",
-      "close": 587.1720581054688,
+      "close": 587.172119140625,
       "volume": 69384800
     },
     {
@@ -945,7 +1473,7 @@
     },
     {
       "date": "2025-09-19",
-      "close": 596.4772338867188,
+      "close": 596.4771728515625,
       "volume": 58196100
     },
     {
@@ -955,7 +1483,7 @@
     },
     {
       "date": "2025-09-23",
-      "close": 596.0228881835938,
+      "close": 596.02294921875,
       "volume": 64635500
     },
     {
@@ -965,12 +1493,12 @@
     },
     {
       "date": "2025-09-25",
-      "close": 591.3699951171875,
+      "close": 591.3699340820312,
       "volume": 70920200
     },
     {
       "date": "2025-09-26",
-      "close": 593.8009643554688,
+      "close": 593.801025390625,
       "volume": 54337400
     },
     {
@@ -1015,12 +1543,12 @@
     },
     {
       "date": "2025-10-09",
-      "close": 608.4774780273438,
+      "close": 608.4774169921875,
       "volume": 45551000
     },
     {
       "date": "2025-10-10",
-      "close": 587.3545532226562,
+      "close": 587.3546142578125,
       "volume": 97614800
     },
     {
@@ -1035,12 +1563,12 @@
     },
     {
       "date": "2025-10-15",
-      "close": 600.0283203125,
+      "close": 600.0282592773438,
       "volume": 62805500
     },
     {
       "date": "2025-10-16",
-      "close": 597.8064575195312,
+      "close": 597.806396484375,
       "volume": 70982000
     },
     {
@@ -1075,17 +1603,17 @@
     },
     {
       "date": "2025-10-27",
-      "close": 625.80419921875,
+      "close": 625.8041381835938,
       "volume": 54098600
     },
     {
       "date": "2025-10-28",
-      "close": 630.6165161132812,
+      "close": 630.6165771484375,
       "volume": 61195700
     },
     {
       "date": "2025-10-29",
-      "close": 633.4561767578125,
+      "close": 633.4562377929688,
       "volume": 67422800
     },
     {
@@ -1095,7 +1623,7 @@
     },
     {
       "date": "2025-10-31",
-      "close": 626.7805786132812,
+      "close": 626.7806396484375,
       "volume": 66305100
     },
     {
@@ -1105,12 +1633,12 @@
     },
     {
       "date": "2025-11-04",
-      "close": 616.996337890625,
+      "close": 616.9962768554688,
       "volume": 63830800
     },
     {
       "date": "2025-11-05",
-      "close": 621.0116577148438,
+      "close": 621.01171875,
       "volume": 48688500
     },
     {
@@ -1120,12 +1648,12 @@
     },
     {
       "date": "2025-11-07",
-      "close": 607.5208740234375,
+      "close": 607.5209350585938,
       "volume": 81835400
     },
     {
       "date": "2025-11-10",
-      "close": 620.9617919921875,
+      "close": 620.9618530273438,
       "volume": 55919900
     },
     {
@@ -1140,7 +1668,7 @@
     },
     {
       "date": "2025-11-13",
-      "close": 606.185791015625,
+      "close": 606.1858520507812,
       "volume": 71333600
     },
     {
@@ -1155,7 +1683,7 @@
     },
     {
       "date": "2025-11-18",
-      "close": 594.1397705078125,
+      "close": 594.1397094726562,
       "volume": 83327300
     },
     {
@@ -1165,7 +1693,7 @@
     },
     {
       "date": "2025-11-20",
-      "close": 583.5385131835938,
+      "close": 583.5384521484375,
       "volume": 117743200
     },
     {
@@ -1190,7 +1718,7 @@
     },
     {
       "date": "2025-11-28",
-      "close": 616.996337890625,
+      "close": 616.9962768554688,
       "volume": 23034400
     },
     {
@@ -1205,17 +1733,17 @@
     },
     {
       "date": "2025-12-03",
-      "close": 621.2507934570312,
+      "close": 621.250732421875,
       "volume": 47841600
     },
     {
       "date": "2025-12-04",
-      "close": 620.6728515625,
+      "close": 620.6729125976562,
       "volume": 47067800
     },
     {
       "date": "2025-12-05",
-      "close": 623.2036743164062,
+      "close": 623.20361328125,
       "volume": 53614200
     },
     {
@@ -1235,7 +1763,7 @@
     },
     {
       "date": "2025-12-11",
-      "close": 623.3033447265625,
+      "close": 623.3032836914062,
       "volume": 58272800
     },
     {
@@ -1931,7 +2459,7 @@
     {
       "date": "2026-07-06",
       "close": 722.8200073242188,
-      "volume": 29416923
+      "volume": 29988100
     }
   ],
   "notes": [

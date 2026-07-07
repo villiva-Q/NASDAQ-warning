@@ -1,0 +1,227 @@
+{
+  "available": true,
+  "as_of": "2026-07-06",
+  "score": 75.4,
+  "status": "Fragile",
+  "symbol": "MU",
+  "price": {
+    "latest": 984.75,
+    "latest_date": "2026-07-06",
+    "return_1m": -0.08769092642253973,
+    "return_3m": 1.6892243472138673,
+    "distance_50dma": 0.14253225214631526,
+    "distance_200dma": 1.1967029236488158,
+    "drawdown_from_52w_high": -0.18841966588379933,
+    "range_52w": {
+      "high": 1213.3734130859375
+    }
+  },
+  "fundamentals": {
+    "latest_quarter_end": "2026-05-28",
+    "latest_revenue": 41456000000.0,
+    "latest_gross_profit": 35056000000.0,
+    "latest_gross_margin": 0.8456194519490544,
+    "latest_diluted_eps": 24.67,
+    "revenue_qoq": 0.737468566638726,
+    "eps_qoq": 1.0439105219552611,
+    "gross_margin_delta": 0.10148701272021954,
+    "ttm_revenue": 90274000000.0,
+    "ttm_net_income": 50469000000.0,
+    "ttm_diluted_eps": 44.239999999999995,
+    "trailing_pe": 22.259267631103075
+  },
+  "weights": {
+    "price_heat": 0.3,
+    "profit_cycle_heat": 0.25,
+    "demand_lockin_heat": 0.2,
+    "peak_earnings_trap": 0.15,
+    "liquidity_sensitivity": 0.1
+  },
+  "groups": {
+    "price_heat": {
+      "score": 63.1,
+      "metrics": [
+        {
+          "name": "MU 3M Return",
+          "value": 1.6892243472138673,
+          "score": 100.0,
+          "source": "auto: Yahoo Finance chart API",
+          "note": "Three-month momentum heat.",
+          "as_of": "2026-07-06",
+          "refresh": "auto",
+          "used_in_score": true
+        },
+        {
+          "name": "Distance From 200DMA",
+          "value": 1.1967029236488158,
+          "score": 100.0,
+          "source": "auto: Yahoo Finance chart API",
+          "note": "Price extension above long trend.",
+          "as_of": "2026-07-06",
+          "refresh": "auto",
+          "used_in_score": true
+        },
+        {
+          "name": "Drawdown From 52W High",
+          "value": -0.18841966588379933,
+          "score": 41.9,
+          "source": "auto: Yahoo Finance chart API",
+          "note": "Near-high prices leave less margin for disappointment.",
+          "as_of": "2026-07-06",
+          "refresh": "auto",
+          "used_in_score": true
+        },
+        {
+          "name": "MU 1M Return",
+          "value": -0.08769092642253973,
+          "score": 10.4,
+          "source": "auto: Yahoo Finance chart API",
+          "note": "Short-term acceleration heat.",
+          "as_of": "2026-07-06",
+          "refresh": "auto",
+          "used_in_score": true
+        }
+      ]
+    },
+    "profit_cycle_heat": {
+      "score": 81.5,
+      "metrics": [
+        {
+          "name": "Latest Gross Margin",
+          "value": 0.8456194519490544,
+          "score": 99.1,
+          "source": "auto: SEC companyfacts",
+          "note": "Gross profit divided by revenue for the latest standalone quarter.",
+          "as_of": "2026-05-28",
+          "refresh": "auto",
+          "used_in_score": true
+        },
+        {
+          "name": "Revenue QoQ Growth",
+          "value": 0.737468566638726,
+          "score": 93.1,
+          "source": "auto: SEC companyfacts",
+          "note": "Standalone quarterly revenue growth. Extreme growth signals capex-chain heat.",
+          "as_of": "2026-05-28",
+          "refresh": "auto",
+          "used_in_score": true
+        },
+        {
+          "name": "Diluted EPS QoQ Growth",
+          "value": 1.0439105219552611,
+          "score": 73.2,
+          "source": "auto: SEC companyfacts",
+          "note": "Standalone quarterly GAAP diluted EPS growth.",
+          "as_of": "2026-05-28",
+          "refresh": "auto",
+          "used_in_score": true
+        },
+        {
+          "name": "Gross Margin QoQ Delta",
+          "value": 0.10148701272021954,
+          "score": 60.6,
+          "source": "auto: SEC companyfacts",
+          "note": "Quarterly gross-margin acceleration. A rollover from extreme levels is a canary warning.",
+          "as_of": "2026-05-28",
+          "refresh": "auto",
+          "used_in_score": true
+        }
+      ]
+    },
+    "demand_lockin_heat": {
+      "score": 83.3,
+      "metrics": [
+        {
+          "name": "HBM Supply Tightness",
+          "value": 0.9,
+          "score": 90.0,
+          "source": "manual: AI memory supply-chain read",
+          "note": "Normalized 0-1 estimate of HBM/advanced memory supply tightness.",
+          "as_of": "2026-07",
+          "refresh": "manual",
+          "used_in_score": true
+        },
+        {
+          "name": "Take-or-Pay Intensity",
+          "value": 0.85,
+          "score": 85.0,
+          "source": "manual: customer contract structure",
+          "note": "Normalized 0-1 estimate of take-or-pay / non-cancelable contract intensity.",
+          "as_of": "2026-07",
+          "refresh": "manual",
+          "used_in_score": true
+        },
+        {
+          "name": "Customer Prepayment Intensity",
+          "value": 0.75,
+          "score": 75.0,
+          "source": "manual: customer deposits and commitments",
+          "note": "Normalized 0-1 estimate of customer prepayment and commitment intensity.",
+          "as_of": "2026-07",
+          "refresh": "manual",
+          "used_in_score": true
+        }
+      ]
+    },
+    "peak_earnings_trap": {
+      "score": 81.5,
+      "metrics": [
+        {
+          "name": "Trailing GAAP P/E",
+          "value": 22.259267631103075,
+          "score": 47.2,
+          "source": "auto: Yahoo Finance + SEC companyfacts",
+          "note": "Low P/E becomes risky when it is paired with extreme margins and EPS surge, because it may reflect peak earnings.",
+          "as_of": "2026-07-06",
+          "refresh": "auto",
+          "used_in_score": true
+        },
+        {
+          "name": "TTM Diluted EPS",
+          "value": 44.239999999999995,
+          "score": 98.3,
+          "source": "auto: SEC companyfacts",
+          "note": "TTM GAAP diluted EPS estimated from latest annual plus YTD bridge.",
+          "as_of": "2026-05-28",
+          "refresh": "auto",
+          "used_in_score": true
+        },
+        {
+          "name": "Peak Margin Confirmation",
+          "value": 0.8456194519490544,
+          "score": 98.9,
+          "source": "auto: SEC companyfacts",
+          "note": "Extreme gross margin confirms that valuation is being measured on unusually strong profits.",
+          "as_of": "2026-05-28",
+          "refresh": "auto",
+          "used_in_score": true
+        }
+      ]
+    },
+    "liquidity_sensitivity": {
+      "score": 71.9,
+      "metrics": [
+        {
+          "name": "Market Liquidity Sensitivity",
+          "value": 71.9,
+          "score": 71.9,
+          "source": "dashboard: liquidity drain overlay",
+          "note": "High-beta AI canaries become more fragile when the broader liquidity-drain overlay rises.",
+          "as_of": "2026-07-06",
+          "refresh": "auto",
+          "used_in_score": true
+        }
+      ]
+    }
+  },
+  "warnings": [
+    "Micron profits look extreme enough that low P/E may be a peak-earnings trap.",
+    "Manual supply-chain inputs imply high demand lock-in and customer urgency.",
+    "MU has started to draw down materially from its 52-week high."
+  ],
+  "principle": {
+    "summary": "Micron is treated as an AI-memory canary: low static P/E is not automatically safe when gross margin, EPS, and demand lock-in are extreme.",
+    "use": "Watch for divergence: MU price near highs and profits extreme, while cloud capex QoQ growth or memory gross margin acceleration rolls over.",
+    "limits": "Demand lock-in inputs are manual until a stable contract/deposit dataset is connected."
+  }
+}

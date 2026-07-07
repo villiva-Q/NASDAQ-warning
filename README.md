@@ -7,6 +7,15 @@ NASDAQ Bubble Radar is a static dashboard for monitoring two different NASDAQ / 
 
 It is not designed to predict exact tops or bottoms. It is a disciplined monitoring tool that combines public data, slow leverage variables, and calibrated historical proxies.
 
+## Obsidian Sync
+
+This repository can be used directly as an Obsidian vault. Open the project root folder in Obsidian, then use Obsidian Sync or your existing vault-sync workflow to sync it across devices.
+
+Recommended entry pages:
+
+- [[00_项目主页]]
+- [[跨设备同步说明]]
+
 ## Live Site
 
 After GitHub Pages is enabled, the dashboard should be available at:
@@ -17,8 +26,19 @@ https://villiva-Q.github.io/NASDAQ-warning/
 
 ## Local Usage
 
+Install dependencies:
+
 ```powershell
-C:\Users\villi\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts/update_data.py
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Update data and start the local dashboard:
+
+```powershell
+python scripts/update_data.py
 python -m http.server 8000 -d docs
 ```
 
@@ -37,10 +57,19 @@ The top-risk layer remains a 0-100 score. It monitors whether NASDAQ is becoming
 Current core score:
 
 ```text
-Core Daily Score = 0.40 Price Confirmation
-                 + 0.35 FINRA Margin Slow Variable
-                 + 0.25 QQQ/TQQQ Daily Leverage Proxy
+Core Daily Score = 0.30 Price Confirmation
+                 + 0.25 FINRA Margin Slow Variable
+                 + 0.15 QQQ/TQQQ Daily Leverage Proxy
+                 + 0.30 AI Fragility Overlay
 ```
+
+The AI fragility overlay combines three late-cycle inputs:
+
+- AI CapEx cycle: hyperscaler capex growth and acceleration/deceleration.
+- Liquidity drain: bank reserves, TGA, SOFR/RRP spread, and SRF usage.
+- Options mechanical bid: 0DTE share, call premium inversion, and core call-volume heat.
+
+Several overlay fields are manual until stable public APIs are connected. Missing fields are excluded from the sub-score denominator; fully missing groups fall back to neutral.
 
 Risk states:
 
@@ -82,7 +111,7 @@ Missing optional free signals are excluded from the score denominator. They are 
 Run:
 
 ```powershell
-C:\Users\villi\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts/backtest_bottom_framework.py
+python scripts/backtest_bottom_framework.py
 ```
 
 Outputs:
@@ -92,6 +121,22 @@ Outputs:
 - `data/nasdaq_bottom_backtest_entries.csv`
 - `data/nasdaq_bottom_walk_forward_entries.csv`
 - `data/nasdaq_bottom_scored_history.csv`
+
+## Micron Canary
+
+Micron is tracked as an AI-memory canary:
+
+```powershell
+python scripts/micron_canary_score.py
+```
+
+The score combines MU price heat, profit-cycle heat, demand lock-in, peak-earnings valuation-trap risk, and broader liquidity sensitivity. It is designed to answer a different question than a static P/E ratio:
+
+```text
+Is Micron showing the kind of extreme upstream profitability and demand lock-in that often appears near a capex-cycle peak?
+```
+
+The dashboard automatically embeds the Micron canary snapshot when `scripts/update_data.py` is run.
 
 The backtest uses QQQ drawdown events and calibrates score thresholds. FINRA margin data is lagged by 21 days to avoid look-ahead bias.
 
@@ -107,9 +152,11 @@ Current practical interpretation:
 Current free sources:
 
 - Yahoo Finance chart API: QQQ, TQQQ, SPY, QQEW, VIX, VIX3M, VXN, TNX, BTC-USD
+- Yahoo Finance chart API: MU
+- SEC companyfacts API: Micron financial statements
 - Yahoo optional symbols when available: VIX9D, SKEW, put/call proxy
 - FINRA margin statistics: aggregate margin debt and customer free credit balances
-- Manual/configured indicators: valuation, liquidity, derivative speculation, breadth, and IBKR proxy fields in `config/indicators.json`
+- Manual/configured indicators: valuation, liquidity, derivative speculation, breadth, AI capex-cycle, liquidity-drain, option-mechanical, Micron demand-lock-in, and IBKR proxy fields in `config/indicators.json`
 
 Indicators without a reliable source are marked manual or optional. The dashboard does not pretend manual or missing data is real-time.
 
@@ -124,10 +171,10 @@ To update them:
 3. Run:
 
 ```powershell
-C:\Users\villi\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts/update_data.py
+python scripts/update_data.py
 ```
 
-4. Commit and push the refreshed files.
+4. Commit and push the refreshed files if you are using Git.
 
 ## GitHub Pages
 
@@ -145,7 +192,7 @@ Settings -> Pages -> Deploy from a branch -> master / docs
 
 ## 中文说明
 
-这个项目现在是一个双层 NASDAQ / QQQ 监控面板：
+这个项目是一个双层 NASDAQ / QQQ 监控面板：
 
 1. **泡沫风险**：判断顶部脆弱性是否升高。
 2. **底部就绪度**：判断一次下跌是否正在从强制清算转向稳定。

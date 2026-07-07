@@ -130,6 +130,7 @@ def build_dataset(range_: str = "10y") -> pd.DataFrame:
         frames[f"{name}_volume"] = df["volume"]
 
     data = pd.DataFrame(frames).sort_index()
+    data = data.apply(pd.to_numeric, errors="coerce")
     data = data.ffill()
     data = data.loc[qqq_trading_dates]
     data = data[data["qqq_close"].notna()]

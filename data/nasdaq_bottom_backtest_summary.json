@@ -1,126 +1,126 @@
 {
-  "generated_at": "2026-06-08T12:52:35+00:00",
-  "history_start": "2017-06-05T00:00:00",
-  "history_end": "2026-06-05T00:00:00",
-  "event_count": 18,
+  "generated_at": "2026-07-07T02:42:37+00:00",
+  "history_start": "2017-07-06T00:00:00",
+  "history_end": "2026-07-06T00:00:00",
+  "event_count": 19,
   "best_threshold": 13,
   "walk_forward": {
-    "tested_events": 14,
+    "tested_events": 15,
     "triggered_events": 9,
-    "avg_fwd_21d": 0.03938460118670305,
+    "avg_fwd_21d": 0.03938466634539527,
     "hit_rate_21d": 0.7777777777777778,
-    "avg_fwd_63d": 0.09249597637707206,
+    "avg_fwd_63d": 0.09249607868994102,
     "hit_rate_63d": 0.6666666666666666
   },
   "threshold_summary": [
     {
       "threshold": 8,
-      "triggered_events": 18,
-      "events": 18,
+      "triggered_events": 19,
+      "events": 19,
       "avg_days_from_low": -26.0,
       "median_days_from_low": -9.5,
-      "avg_fwd_21d": 0.00815292517270991,
+      "avg_fwd_21d": 0.008152931950287287,
       "hit_rate_21d": 0.5555555555555556,
-      "avg_fwd_63d": 0.05970856452127274,
-      "hit_rate_63d": 0.8333333333333334
+      "avg_fwd_63d": 0.06812946117584215,
+      "hit_rate_63d": 0.8888888888888888
     },
     {
       "threshold": 9,
-      "triggered_events": 18,
-      "events": 18,
+      "triggered_events": 19,
+      "events": 19,
       "avg_days_from_low": -24.61111111111111,
       "median_days_from_low": -9.0,
-      "avg_fwd_21d": 0.0046529991911115065,
+      "avg_fwd_21d": 0.004653055843276583,
       "hit_rate_21d": 0.5,
-      "avg_fwd_63d": 0.0572163963768158,
-      "hit_rate_63d": 0.8333333333333334
+      "avg_fwd_63d": 0.06577585765260091,
+      "hit_rate_63d": 0.8888888888888888
     },
     {
       "threshold": 10,
-      "triggered_events": 18,
-      "events": 18,
+      "triggered_events": 19,
+      "events": 19,
       "avg_days_from_low": -23.0,
       "median_days_from_low": -3.0,
-      "avg_fwd_21d": 0.009223512810665628,
+      "avg_fwd_21d": 0.009223516563590753,
       "hit_rate_21d": 0.5,
-      "avg_fwd_63d": 0.05780171712954794,
-      "hit_rate_63d": 0.8333333333333334
+      "avg_fwd_63d": 0.06850551536092629,
+      "hit_rate_63d": 0.8888888888888888
     },
     {
       "threshold": 11,
-      "triggered_events": 17,
-      "events": 18,
+      "triggered_events": 18,
+      "events": 19,
       "avg_days_from_low": -19.11764705882353,
       "median_days_from_low": 3.0,
-      "avg_fwd_21d": 0.0359518479061111,
+      "avg_fwd_21d": 0.03595190192900193,
       "hit_rate_21d": 0.5882352941176471,
-      "avg_fwd_63d": 0.08615645761767,
+      "avg_fwd_63d": 0.08615644581009002,
       "hit_rate_63d": 0.7647058823529411
     },
     {
       "threshold": 12,
       "triggered_events": 16,
-      "events": 18,
+      "events": 19,
       "avg_days_from_low": -17.9375,
       "median_days_from_low": 4.5,
-      "avg_fwd_21d": 0.03229153108305477,
+      "avg_fwd_21d": 0.03229162655995828,
       "hit_rate_21d": 0.6875,
-      "avg_fwd_63d": 0.07710429249454093,
+      "avg_fwd_63d": 0.07710433971815807,
       "hit_rate_63d": 0.8125
     },
     {
       "threshold": 13,
       "triggered_events": 12,
-      "events": 18,
+      "events": 19,
       "avg_days_from_low": -20.583333333333332,
       "median_days_from_low": 6.5,
-      "avg_fwd_21d": 0.04724900834162995,
+      "avg_fwd_21d": 0.04724900776987068,
       "hit_rate_21d": 0.8333333333333334,
-      "avg_fwd_63d": 0.10220600287557859,
+      "avg_fwd_63d": 0.10220598600619728,
       "hit_rate_63d": 0.75
     },
     {
       "threshold": 14,
       "triggered_events": 4,
-      "events": 18,
+      "events": 19,
       "avg_days_from_low": -69.0,
       "median_days_from_low": -6.0,
-      "avg_fwd_21d": 0.012312328658296207,
+      "avg_fwd_21d": 0.012312106689778723,
       "hit_rate_21d": 0.5,
-      "avg_fwd_63d": 0.09272020094949085,
+      "avg_fwd_63d": 0.09272009575152529,
       "hit_rate_63d": 0.75
     },
     {
       "threshold": 15,
       "triggered_events": 3,
-      "events": 18,
+      "events": 19,
       "avg_days_from_low": -63.333333333333336,
       "median_days_from_low": -18.0,
-      "avg_fwd_21d": -0.01683389108327893,
+      "avg_fwd_21d": -0.016834153248324973,
       "hit_rate_21d": 0.3333333333333333,
-      "avg_fwd_63d": 0.09293457147689244,
+      "avg_fwd_63d": 0.09293432721569657,
       "hit_rate_63d": 0.6666666666666666
     },
     {
       "threshold": 16,
       "triggered_events": 2,
-      "events": 18,
+      "events": 19,
       "avg_days_from_low": -72.0,
       "median_days_from_low": -72.0,
-      "avg_fwd_21d": 0.009248955434193518,
+      "avg_fwd_21d": 0.009248821121277784,
       "hit_rate_21d": 0.5,
-      "avg_fwd_63d": 0.08200640784075586,
+      "avg_fwd_63d": 0.08200629750799848,
       "hit_rate_63d": 0.5
     },
     {
       "threshold": 17,
       "triggered_events": 1,
-      "events": 18,
+      "events": 19,
       "avg_days_from_low": 71.0,
       "median_days_from_low": 71.0,
-      "avg_fwd_21d": 0.09175358823042923,
+      "avg_fwd_21d": 0.09175366989630995,
       "hit_rate_21d": 1.0,
-      "avg_fwd_63d": 0.13653969492194573,
+      "avg_fwd_63d": 0.13653967176586623,
       "hit_rate_63d": 1.0
     }
   ],
@@ -130,132 +130,139 @@
       "start": "2018-02-05T00:00:00",
       "end": "2018-02-23T00:00:00",
       "low_date": "2018-02-08T00:00:00",
-      "low_drawdown": -0.10226374034359442
+      "low_drawdown": -0.10226426618565776
     },
     {
       "event_id": 2,
       "start": "2018-03-22T00:00:00",
       "end": "2018-06-01T00:00:00",
       "low_date": "2018-04-02T00:00:00",
-      "low_drawdown": -0.10522622505529955
+      "low_drawdown": -0.10522597980872284
     },
     {
       "event_id": 3,
       "start": "2018-10-10T00:00:00",
       "end": "2019-03-21T00:00:00",
       "low_date": "2018-12-24T00:00:00",
-      "low_drawdown": -0.22796670645724781
+      "low_drawdown": -0.22796623824208295
     },
     {
       "event_id": 4,
       "start": "2019-05-13T00:00:00",
       "end": "2019-06-20T00:00:00",
       "low_date": "2019-06-03T00:00:00",
-      "low_drawdown": -0.10983176878119183
+      "low_drawdown": -0.1098320321251457
     },
     {
       "event_id": 5,
       "start": "2019-08-05T00:00:00",
       "end": "2019-09-05T00:00:00",
       "low_date": "2019-08-05T00:00:00",
-      "low_drawdown": -0.07455587049626977
+      "low_drawdown": -0.0745557450174823
     },
     {
       "event_id": 6,
       "start": "2020-02-24T00:00:00",
       "end": "2020-05-29T00:00:00",
       "low_date": "2020-03-16T00:00:00",
-      "low_drawdown": -0.2855937177525204
+      "low_drawdown": -0.2855936425707133
     },
     {
       "event_id": 7,
       "start": "2020-09-04T00:00:00",
       "end": "2020-11-27T00:00:00",
       "low_date": "2020-09-23T00:00:00",
-      "low_drawdown": -0.12749398490905817
+      "low_drawdown": -0.12749406591375545
     },
     {
       "event_id": 8,
       "start": "2021-02-25T00:00:00",
       "end": "2021-04-05T00:00:00",
       "low_date": "2021-03-08T00:00:00",
-      "low_drawdown": -0.10851518680294991
+      "low_drawdown": -0.10851519618796535
     },
     {
       "event_id": 9,
       "start": "2021-05-12T00:00:00",
       "end": "2021-06-04T00:00:00",
       "low_date": "2021-05-12T00:00:00",
-      "low_drawdown": -0.07344811939024942
+      "low_drawdown": -0.0734481816853787
     },
     {
       "event_id": 10,
       "start": "2021-09-30T00:00:00",
       "end": "2021-10-19T00:00:00",
       "low_date": "2021-10-04T00:00:00",
-      "low_drawdown": -0.07615353833082117
+      "low_drawdown": -0.07615393977967622
     },
     {
       "event_id": 11,
       "start": "2022-01-13T00:00:00",
       "end": "2023-05-10T00:00:00",
       "low_date": "2022-11-03T00:00:00",
-      "low_drawdown": -0.3511871079378961
+      "low_drawdown": -0.35118714912770055
     },
     {
       "event_id": 12,
       "start": "2023-08-16T00:00:00",
       "end": "2023-09-05T00:00:00",
       "low_date": "2023-08-18T00:00:00",
-      "low_drawdown": -0.07157667039971494
+      "low_drawdown": -0.07157651690455447
     },
     {
       "event_id": 13,
       "start": "2023-09-21T00:00:00",
       "end": "2023-11-10T00:00:00",
       "low_date": "2023-10-26T00:00:00",
-      "low_drawdown": -0.10779924584277589
+      "low_drawdown": -0.10779945251606837
     },
     {
       "event_id": 14,
       "start": "2024-04-19T00:00:00",
       "end": "2024-05-06T00:00:00",
       "low_date": "2024-04-19T00:00:00",
-      "low_drawdown": -0.07108294367104862
+      "low_drawdown": -0.07108293455329961
     },
     {
       "event_id": 15,
       "start": "2024-07-24T00:00:00",
       "end": "2024-10-09T00:00:00",
       "low_date": "2024-08-07T00:00:00",
-      "low_drawdown": -0.13557745961827594
+      "low_drawdown": -0.13557739553521508
     },
     {
       "event_id": 16,
       "start": "2025-02-27T00:00:00",
       "end": "2025-06-04T00:00:00",
       "low_date": "2025-04-08T00:00:00",
-      "low_drawdown": -0.22768310492842747
+      "low_drawdown": -0.22768317249200065
     },
     {
       "event_id": 17,
       "start": "2025-11-18T00:00:00",
       "end": "2025-12-03T00:00:00",
       "low_date": "2025-11-20T00:00:00",
-      "low_drawdown": -0.07880209648706749
+      "low_drawdown": -0.07880207882684143
     },
     {
       "event_id": 18,
       "start": "2026-03-13T00:00:00",
       "end": "2026-04-14T00:00:00",
       "low_date": "2026-03-30T00:00:00",
-      "low_drawdown": -0.11964367111609375
+      "low_drawdown": -0.11964363794311839
+    },
+    {
+      "event_id": 19,
+      "start": "2026-06-10T00:00:00",
+      "end": "2026-06-15T00:00:00",
+      "low_date": "2026-06-10T00:00:00",
+      "low_drawdown": -0.07031997684181479
     }
   ],
   "files": {
-    "entries_csv": "C:\\Users\\villi\\OneDrive\\Documents\\\u7f8e\u80a1\u6ce1\u6cab\u7814\u7a76\\data\\nasdaq_bottom_backtest_entries.csv",
-    "walk_forward_csv": "C:\\Users\\villi\\OneDrive\\Documents\\\u7f8e\u80a1\u6ce1\u6cab\u7814\u7a76\\data\\nasdaq_bottom_walk_forward_entries.csv",
-    "scored_history_csv": "C:\\Users\\villi\\OneDrive\\Documents\\\u7f8e\u80a1\u6ce1\u6cab\u7814\u7a76\\data\\nasdaq_bottom_scored_history.csv",
-    "report_md": "C:\\Users\\villi\\OneDrive\\Documents\\\u7f8e\u80a1\u6ce1\u6cab\u7814\u7a76\\docs\\nasdaq_bottom_framework_backtest.md"
+    "entries_csv": "/Users/mr.q/Obsidian/cargoQ/Projects/\u7f8e\u80a1\u6ce1\u6cab\u7814\u7a76/data/nasdaq_bottom_backtest_entries.csv",
+    "walk_forward_csv": "/Users/mr.q/Obsidian/cargoQ/Projects/\u7f8e\u80a1\u6ce1\u6cab\u7814\u7a76/data/nasdaq_bottom_walk_forward_entries.csv",
+    "scored_history_csv": "/Users/mr.q/Obsidian/cargoQ/Projects/\u7f8e\u80a1\u6ce1\u6cab\u7814\u7a76/data/nasdaq_bottom_scored_history.csv",
+    "report_md": "/Users/mr.q/Obsidian/cargoQ/Projects/\u7f8e\u80a1\u6ce1\u6cab\u7814\u7a76/docs/nasdaq_bottom_framework_backtest.md"
   }
 }

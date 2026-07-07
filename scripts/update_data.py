@@ -25,6 +25,11 @@ except Exception:  # pragma: no cover
     find_drawdown_events = None
     walk_forward_calibration = None
 
+try:
+    from micron_canary_score import build_micron_canary_snapshot
+except Exception:  # pragma: no cover
+    build_micron_canary_snapshot = None
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS_DATA = ROOT / "docs" / "data"
@@ -328,6 +333,68 @@ def compute_daily_proxy_metrics(qqq_rows: list[dict], tqqq_rows: list[dict]) -> 
     return metrics, proxy_score
 
 
+def manual_metric_from_spec(name: str, spec: dict, inverse: bool = False, used_in_score: bool = True) -> dict:
+    value = spec.get("value")
+    score_fn = score_low_risk if inverse else score_high_risk
+    return mark_metric({
+        "name": name,
+        "value": value,
+        "score": score_fn(value, spec["low"], spec["high"]) if value is not None else None,
+        "source": spec.get("source", "manual"),
+        "range": {"low": spec["low"], "high": spec["high"]},
+        "as_of": spec.get("as_of"),
+        "note": spec.get("note"),
+    }, "manual", used_in_score, spec.get("as_of"))
+
+
+def build_top_fragility_overlay(config: dict) -> dict:
+    fragility = config.get("top_fragility", {})
+
+    ai_capex_specs = fragility.get("ai_capex_cycle", {})
+    liquidity_specs = fragility.get("liquidity_drain", {})
+    options_specs = fragility.get("options_mechanical_bid", {})
+
+    groups = {
+        "ai_capex_cycle": [
+            manual_metric_from_spec("Hyperscaler CapEx QoQ Growth", ai_capex_specs["hyperscaler_capex_qoq_growth"]),
+            manual_metric_from_spec("Hyperscaler CapEx QoQ Delta", ai_capex_specs["hyperscaler_capex_qoq_delta"], inverse=True),
+        ],
+        "liquidity_drain": [
+            manual_metric_from_spec("Bank Reserves", liquidity_specs["bank_reserves_usd_tn"], inverse=True),
+            manual_metric_from_spec("Treasury General Account", liquidity_specs["tga_usd_bn"]),
+            manual_metric_from_spec("SOFR - RRP Spread", liquidity_specs["sofr_rrp_spread_bp"]),
+            manual_metric_from_spec("Standing Repo Facility Usage", liquidity_specs["srf_usage_usd_bn"]),
+        ],
+        "options_mechanical_bid": [
+            manual_metric_from_spec("0DTE Stress Share", options_specs["zero_dte_stress_share"]),
+            manual_metric_from_spec("Call Premium Inversion", options_specs["call_premium_inversion"]),
+            manual_metric_from_spec("Core Call Volume Heat", options_specs["core_call_volume_heat"]),
+        ],
+    }
+
+    group_scores = {
+        name: average_available([metric["score"] for metric in metrics])
+        for name, metrics in groups.items()
+    }
+    score = average_available(list(group_scores.values()))
+
+    return {
+        "score": round(score, 1),
+        "groups": {
+            name: {
+                "score": round(group_scores[name], 1),
+                "metrics": metrics,
+            }
+            for name, metrics in groups.items()
+        },
+        "principle": {
+            "summary": "AI late-cycle fragility is tracked through hyperscaler capex acceleration, liquidity drain, and options-driven mechanical buying pressure.",
+            "use": "Use this overlay to upgrade or downgrade top-risk interpretation when price and leverage signals are already elevated.",
+            "limits": "Several inputs are manual until reliable public APIs are connected. Missing inputs are excluded from group denominators; fully missing groups fall back to neutral 50.",
+        },
+    }
+
+
 def status_for(score: float, modules: dict) -> str:
     high_modules = sum(1 for value in modules.values() if value >= 70)
     if score >= 75 and high_modules >= 3:
@@ -449,6 +516,19 @@ def build_snapshot() -> dict:
     tqqq = load_or_fetch_symbol("TQQQ", "2y", "1d")
     price = compute_price_metrics(qqq["rows"])
     finra = load_or_fetch_finra()
+    top_fragility_overlay = build_top_fragility_overlay(config)
+    micron_canary = None
+    if build_micron_canary_snapshot:
+        try:
+            micron_canary = build_micron_canary_snapshot(
+                config,
+                top_fragility_overlay["groups"]["liquidity_drain"]["score"],
+            )
+        except Exception as exc:
+            micron_canary = {
+                "available": False,
+                "error": str(exc),
+            }
     bottom_framework = build_bottom_framework_snapshot()
 
     valuation_metrics = [
@@ -501,16 +581,19 @@ def build_snapshot() -> dict:
     core_price_score = price_metric["score"]
     core_finra_score = finra_metric["score"] if finra_metric and finra_metric["freshness"] != "stale" else 50
     core_daily_proxy_score = daily_proxy_score
+    core_ai_fragility_score = top_fragility_overlay["score"]
 
     modules = {
         "price_confirmation": core_price_score,
         "finra_margin_slow": core_finra_score,
         "daily_leverage_proxy": core_daily_proxy_score,
+        "ai_fragility_overlay": core_ai_fragility_score,
     }
     overall = (
-        modules["price_confirmation"] * 0.40
-        + modules["finra_margin_slow"] * 0.35
-        + modules["daily_leverage_proxy"] * 0.25
+        modules["price_confirmation"] * 0.30
+        + modules["finra_margin_slow"] * 0.25
+        + modules["daily_leverage_proxy"] * 0.15
+        + modules["ai_fragility_overlay"] * 0.30
     )
 
     warnings = []
@@ -518,6 +601,14 @@ def build_snapshot() -> dict:
         warnings.append("FINRA margin leverage is in a historically high zone.")
     if core_daily_proxy_score >= 75:
         warnings.append("QQQ/TQQQ daily leverage proxy is elevated.")
+    if core_ai_fragility_score >= 70:
+        warnings.append("AI fragility overlay is elevated across capex, liquidity, or option-mechanical signals.")
+    liquidity_group = top_fragility_overlay["groups"]["liquidity_drain"]["score"]
+    if liquidity_group >= 70:
+        warnings.append("Liquidity drain inputs are in a warning zone; watch reserves, TGA, SOFR/RRP, and SRF.")
+    capex_group = top_fragility_overlay["groups"]["ai_capex_cycle"]["score"]
+    if capex_group >= 70:
+        warnings.append("AI capex-cycle inputs suggest late-cycle acceleration or deceleration risk.")
     if price["distance_200dma"] and price["distance_200dma"] > 0.18:
         warnings.append("QQQ is extended above its 200-day moving average.")
     if price["drawdown_from_52w_high"] and price["drawdown_from_52w_high"] < -0.05 and overall > 60:
@@ -532,20 +623,28 @@ def build_snapshot() -> dict:
         "modules": {k: round(v, 1) for k, v in modules.items()},
         "score_policy": {
             "name": "Core Daily Score",
-            "description": "Only automatic daily proxies and explicit-frequency slow variables enter the score. Manual inputs are context only.",
+            "description": "Automatic daily proxies, explicit-frequency slow variables, and the AI fragility overlay enter the top-risk score. Manual overlay fields are labeled and excluded when missing.",
             "weights": {
-                "price_confirmation": 0.40,
-                "finra_margin_slow": 0.35,
-                "daily_leverage_proxy": 0.25
+                "price_confirmation": 0.30,
+                "finra_margin_slow": 0.25,
+                "daily_leverage_proxy": 0.15,
+                "ai_fragility_overlay": 0.30
             }
         },
         "price": price,
         "finra": finra,
+        "top_fragility_overlay": top_fragility_overlay,
+        "micron_canary": micron_canary,
         "bottom_framework": bottom_framework,
         "core_metrics": {
             "price": [price_metric],
             "finra_margin_slow": [finra_metric] if finra_metric else [],
             "daily_leverage_proxy": daily_proxy_metrics,
+            "ai_fragility_overlay": [
+                metric
+                for group in top_fragility_overlay["groups"].values()
+                for metric in group["metrics"]
+            ],
         },
         "metrics": {
             "valuation": valuation_metrics,
@@ -567,6 +666,11 @@ def main() -> int:
     DOCS_DATA.mkdir(parents=True, exist_ok=True)
     snapshot = build_snapshot()
     (DOCS_DATA / "dashboard.json").write_text(json.dumps(snapshot, indent=2), encoding="utf-8")
+    if snapshot.get("micron_canary"):
+        (LOCAL_DATA / "micron_canary_score.json").write_text(
+            json.dumps(snapshot["micron_canary"], indent=2),
+            encoding="utf-8",
+        )
     (DOCS_DATA / "dashboard-inline.js").write_text(
         "window.DASHBOARD_DATA = "
         + json.dumps(snapshot, ensure_ascii=False)

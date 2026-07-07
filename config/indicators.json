@@ -97,5 +97,104 @@
       "high": 0.58,
       "source": "manual"
     }
+  },
+  "top_fragility": {
+    "ai_capex_cycle": {
+      "hyperscaler_capex_qoq_growth": {
+        "value": null,
+        "low": -0.05,
+        "high": 0.30,
+        "source": "manual: hyperscaler quarterly capex",
+        "note": "QoQ growth in combined Microsoft, Amazon, Alphabet, Meta AI/cloud capex. High growth keeps the AI capex cycle hot."
+      },
+      "hyperscaler_capex_qoq_delta": {
+        "value": null,
+        "low": -0.20,
+        "high": 0.10,
+        "source": "manual: hyperscaler quarterly capex",
+        "note": "QoQ growth acceleration. Negative values are a death-signal candidate when upstream profits remain extreme."
+      }
+    },
+    "liquidity_drain": {
+      "bank_reserves_usd_tn": {
+        "value": null,
+        "low": 2.50,
+        "high": 2.90,
+        "source": "manual: Federal Reserve H.4.1",
+        "note": "Lower reserves imply higher liquidity drain risk. Watch 2.9T, 2.8T, and 2.5T zones."
+      },
+      "tga_usd_bn": {
+        "value": 901.8,
+        "low": 650,
+        "high": 1000,
+        "source": "manual: Treasury / video transcript snapshot",
+        "as_of": "2026-07",
+        "note": "Treasury General Account balance. Higher TGA can drain private-sector liquidity."
+      },
+      "sofr_rrp_spread_bp": {
+        "value": null,
+        "low": -2,
+        "high": 3,
+        "source": "manual: SOFR minus ON RRP",
+        "note": "Persistent positive spread and >3 bp stress are liquidity warning signs."
+      },
+      "srf_usage_usd_bn": {
+        "value": null,
+        "low": 0,
+        "high": 50,
+        "source": "manual: Federal Reserve standing repo facility",
+        "note": "Sudden SRF usage suggests funding stress."
+      }
+    },
+    "options_mechanical_bid": {
+      "zero_dte_stress_share": {
+        "value": 0.64,
+        "low": 0.25,
+        "high": 0.65,
+        "source": "manual: Cboe / video transcript snapshot",
+        "as_of": "2026-06",
+        "note": "SPX 0DTE stress-day share. High readings imply short-dated option crowding."
+      },
+      "call_premium_inversion": {
+        "value": null,
+        "low": 0,
+        "high": 1,
+        "source": "manual: option skew monitor",
+        "note": "1 means calls are unusually expensive relative to puts in core AI/index names."
+      },
+      "core_call_volume_heat": {
+        "value": null,
+        "low": 0,
+        "high": 1,
+        "source": "manual: options volume monitor",
+        "note": "AI mega-cap call-volume heat, normalized 0-1."
+      }
+    }
+  },
+  "micron_canary": {
+    "hbm_supply_tightness": {
+      "value": 0.90,
+      "low": 0,
+      "high": 1,
+      "source": "manual: AI memory supply-chain read",
+      "as_of": "2026-07",
+      "note": "Normalized 0-1 estimate of HBM/advanced memory supply tightness."
+    },
+    "take_or_pay_intensity": {
+      "value": 0.85,
+      "low": 0,
+      "high": 1,
+      "source": "manual: customer contract structure",
+      "as_of": "2026-07",
+      "note": "Normalized 0-1 estimate of take-or-pay / non-cancelable contract intensity."
+    },
+    "customer_prepayment_intensity": {
+      "value": 0.75,
+      "low": 0,
+      "high": 1,
+      "source": "manual: customer deposits and commitments",
+      "as_of": "2026-07",
+      "note": "Normalized 0-1 estimate of customer prepayment and commitment intensity."
+    }
   }
 }

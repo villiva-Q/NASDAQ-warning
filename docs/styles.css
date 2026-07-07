@@ -162,6 +162,8 @@ h2 {
 .method,
 .concept,
 .data-sources,
+.top-fragility,
+.micron-canary,
 .bottom-signals,
 .calibration {
   background: var(--panel);
@@ -302,6 +304,8 @@ h2 {
 }
 
 .bottom-signals,
+.top-fragility,
+.micron-canary,
 .calibration {
   grid-column: 1 / -1;
 }
@@ -468,6 +472,56 @@ h2 {
   grid-template-columns: 0.45fr 0.7fr 0.8fr 0.65fr 0.65fr 0.65fr 0.65fr;
 }
 
+.fragility-row,
+.micron-row {
+  grid-template-columns: minmax(120px, 0.65fr) minmax(240px, 1.4fr) 0.55fr 0.45fr minmax(140px, 0.8fr);
+}
+
+.fragility-row small,
+.micron-row small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+  margin-top: 3px;
+}
+
+.canary-layout {
+  display: grid;
+  grid-template-columns: 156px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.canary-ring span {
+  font-size: 36px;
+}
+
+.canary-group-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.canary-group {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fbfcf8;
+  min-height: 92px;
+}
+
+.canary-group strong {
+  display: block;
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+#micron-table {
+  margin-top: 16px;
+}
+
 .calibration-row.highlight {
   background: #f3f7fb;
   margin: 0 -8px;
@@ -517,9 +571,11 @@ canvas {
   .warnings,
   .metrics,
   .method,
-  .concept,
-  .data-sources,
-  .bottom-signals,
+    .concept,
+    .data-sources,
+    .top-fragility,
+    .micron-canary,
+    .bottom-signals,
   .calibration,
   .chart-panel {
     grid-column: auto;
@@ -534,6 +590,10 @@ canvas {
   }
 
   .source-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .canary-group-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -556,7 +616,12 @@ canvas {
   .decision-strip,
   .modules,
   .concept-grid,
-  .source-grid {
+  .source-grid,
+  .canary-group-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .canary-layout {
     grid-template-columns: 1fr;
   }
 
@@ -576,6 +641,11 @@ canvas {
     grid-template-columns: 0.4fr 0.6fr 0.7fr 0.6fr;
   }
 
+  .fragility-row,
+  .micron-row {
+    grid-template-columns: 0.7fr 1.2fr 0.5fr;
+  }
+
   .metric-row:not(.metric-row-wide) span:nth-child(3),
   .metric-row:not(.metric-row-wide) span:nth-child(4) {
     display: none;
@@ -588,6 +658,10 @@ canvas {
   }
 
   .bottom-row span:nth-child(4),
+  .fragility-row span:nth-child(4),
+  .fragility-row span:nth-child(5),
+  .micron-row span:nth-child(4),
+  .micron-row span:nth-child(5),
   .calibration-row span:nth-child(5),
   .calibration-row span:nth-child(6),
   .calibration-row span:nth-child(7) {

@@ -9,6 +9,9 @@ const i18n = {
     warningsTitle: "Active Signals",
     coreMetricsLabel: "Bubble Core Inputs",
     contextMetricsLabel: "Bubble Context Signals",
+    topFragilityLabel: "Top Fragility",
+    topFragilityTitle: "AI Melt-Up Overlay",
+    micronLabel: "Micron Canary",
     bottomSignalsLabel: "Bottom Model",
     bottomSignalsTitle: "Liquidation-End Signals",
     calibrationLabel: "Calibration",
@@ -28,7 +31,8 @@ const i18n = {
     moduleLabels: {
       price_confirmation: "Price Confirmation",
       finra_margin_slow: "FINRA Margin Slow",
-      daily_leverage_proxy: "Daily Leverage Proxy"
+      daily_leverage_proxy: "Daily Leverage Proxy",
+      ai_fragility_overlay: "AI Fragility Overlay"
     },
     statusMeta: {
       Green: ["Green - Normal", "Bubble pressure is not yet a systemic high-risk combination."],
@@ -71,6 +75,10 @@ const i18n = {
       {
         title: "Calibration Discipline",
         body: "The bottom framework is backtested on QQQ drawdown events. FINRA data is lagged by 21 days to avoid look-ahead bias, and missing free signals are excluded from the score denominator instead of being treated as bearish."
+      },
+      {
+        title: "Micron Canary",
+        body: "Micron is treated as an AI-memory canary. A low static P/E is not automatically safe when gross margin, EPS, and customer lock-in are extreme; the dashboard watches for peak-earnings risk."
       }
     ],
     methodCopy:
@@ -86,6 +94,9 @@ const i18n = {
     warningsTitle: "当前触发信号",
     coreMetricsLabel: "泡沫核心指标",
     contextMetricsLabel: "泡沫背景信号",
+    topFragilityLabel: "顶部脆弱性",
+    topFragilityTitle: "AI 融涨覆盖层",
+    micronLabel: "美光金丝雀",
     bottomSignalsLabel: "底部模型",
     bottomSignalsTitle: "清算结束信号",
     calibrationLabel: "校准",
@@ -105,7 +116,8 @@ const i18n = {
     moduleLabels: {
       price_confirmation: "价格确认",
       finra_margin_slow: "FINRA 慢变量",
-      daily_leverage_proxy: "日频杠杆代理"
+      daily_leverage_proxy: "日频杠杆代理",
+      ai_fragility_overlay: "AI 脆弱覆盖层"
     },
     statusMeta: {
       Green: ["Green - 正常", "泡沫压力尚未形成系统性高风险组合。"],
@@ -148,6 +160,10 @@ const i18n = {
       {
         title: "校准纪律",
         body: "底部框架基于 QQQ 回撤事件回测。FINRA 月度数据滞后 21 天对齐，避免未来函数；免费源缺失的指标会从分母剔除，不会被当成看空信号。"
+      },
+      {
+        title: "美光金丝雀",
+        body: "美光被视作 AI 存储链条的金丝雀。低静态 P/E 不必然安全；当毛利率、EPS 和客户锁单强度都极端时，面板会把它识别为峰值利润陷阱风险。"
       }
     ],
     methodCopy:
@@ -164,7 +180,10 @@ const statusColors = {
   Watch: "#a37716",
   "Entry zone": "#2364aa",
   Confirmed: "#26734d",
-  "No setup": "#66707a"
+  "No setup": "#66707a",
+  Normal: "#26734d",
+  Hot: "#b85223",
+  Fragile: "#b3263a"
 };
 
 let currentLanguage = localStorage.getItem("dashboardLanguage") || "zh";
@@ -339,6 +358,80 @@ function renderMetricGroups(title, groups) {
   </div>`;
 }
 
+function renderTopFragility(data) {
+  const overlay = data.top_fragility_overlay;
+  if (!overlay) return;
+  document.getElementById("top-fragility-copy").textContent = overlay.principle?.summary || "";
+  const rows = Object.entries(overlay.groups || {}).flatMap(([group, payload]) =>
+    (payload.metrics || []).map((m) => ({ group, groupScore: payload.score, ...m }))
+  );
+  document.getElementById("top-fragility-table").innerHTML = `
+    <div class="metric-row fragility-row">
+      <span>Group</span><span>Signal</span><span>Value</span><span>Score</span><span>Updated</span>
+    </div>
+    ${rows
+      .map(
+        (m) => `<div class="metric-row fragility-row">
+          <span><strong>${m.group}</strong><small>${fmtNum(m.groupScore, 0)}</small></span>
+          <span>${m.name}<small>${m.note || ""}</small></span>
+          <span>${fmtValue(m.value)}</span>
+          <span>${fmtNum(m.score, 0)}</span>
+          <span>${m.as_of || "--"}</span>
+        </div>`
+      )
+      .join("")}`;
+}
+
+function renderMicronCanary(data) {
+  const micron = data.micron_canary;
+  if (!micron) return;
+  if (micron.available === false) {
+    document.getElementById("micron-title").textContent = "MU --";
+    document.getElementById("micron-copy").textContent = micron.error || "--";
+    return;
+  }
+
+  const score = Number(micron.score);
+  const color = scoreColor(score);
+  document.getElementById("micron-score").textContent = fmtNum(score, 0);
+  document.getElementById("micron-title").textContent = `MU ${micron.status} · ${fmtNum(micron.price.latest, 2)} · ${micron.as_of}`;
+  document.getElementById("micron-copy").textContent = micron.principle?.summary || "";
+  document.getElementById("micron-pe").textContent = `P/E ${fmtNum(micron.fundamentals.trailing_pe, 1)}`;
+  document.getElementById("micron-margin").textContent = `GM ${fmtPct(micron.fundamentals.latest_gross_margin)}`;
+  document.getElementById("micron-eps").textContent = `EPS ${fmtNum(micron.fundamentals.ttm_diluted_eps, 1)}`;
+  setRing("micron-ring", score, 100, color);
+
+  document.getElementById("micron-group-grid").innerHTML = Object.entries(micron.groups || {})
+    .map(([name, group]) => {
+      const groupColor = scoreColor(Number(group.score));
+      return `<article class="canary-group">
+        <p class="label">${name}</p>
+        <strong style="color:${groupColor}">${fmtNum(group.score, 0)}</strong>
+        <div class="bar"><span style="width:${group.score}%; background:${groupColor}"></span></div>
+      </article>`;
+    })
+    .join("");
+
+  const rows = Object.entries(micron.groups || {}).flatMap(([group, payload]) =>
+    (payload.metrics || []).map((m) => ({ group, ...m }))
+  );
+  document.getElementById("micron-table").innerHTML = `
+    <div class="metric-row micron-row">
+      <span>Group</span><span>Signal</span><span>Value</span><span>Score</span><span>Source</span>
+    </div>
+    ${rows
+      .map(
+        (m) => `<div class="metric-row micron-row">
+          <span>${m.group}</span>
+          <span>${m.name}<small>${m.note || ""}</small></span>
+          <span>${fmtValue(m.value)}</span>
+          <span>${fmtNum(m.score, 0)}</span>
+          <span>${m.source || "--"}</span>
+        </div>`
+      )
+      .join("")}`;
+}
+
 function renderBottomSignals(bottom) {
   const headers = tr().bottomHeaders;
   const rows = bottom?.signals || [];
@@ -448,6 +541,8 @@ function render(data) {
   renderDecisionStrip("decision-strip", tr().decisions, data.status);
   renderDecisionStrip("bottom-decision-strip", tr().bottomDecisions, bottomStatus);
   renderModules(data);
+  renderTopFragility(data);
+  renderMicronCanary(data);
   renderBottomSignals(bottom);
   renderCalibration(bottom);
 
