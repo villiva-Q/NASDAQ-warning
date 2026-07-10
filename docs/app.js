@@ -1,6 +1,58 @@
 const i18n = {
   en: {
     followX: "Follow @villiva",
+    navOverview: "Verdict",
+    navTopRisk: "Top risk",
+    navBottom: "Bottom model",
+    navEvidence: "Evidence",
+    navMethod: "Method",
+    heroEyebrow: "Market regime · Risk management · Public data",
+    heroTitle: "Know which phase the bubble is in, instead of guessing the exact top.",
+    heroLead:
+      "A traceable two-layer framework separates a high-valuation melt-up from weakening marginal liquidity, then tests whether forced liquidation is cooling after a real drawdown.",
+    readingLabel: "How to read",
+    readingOneTitle: "Start with the regime",
+    readingOneCopy: "Bubble risk and bottom readiness answer two different questions.",
+    readingTwoTitle: "Track marginal change",
+    readingTwoCopy: "Look for alignment across price, leverage, CapEx, and liquidity.",
+    readingThreeTitle: "Audit the evidence",
+    readingThreeCopy: "Freshness, confidence, and calibration constrain every signal.",
+    liveSnapshot: "Latest snapshot",
+    drawdownOnly: "Active only after a real drawdown",
+    briefingLabel: "Research brief",
+    drawdownLabel: "From 52W high",
+    confidenceLabel: "Data confidence",
+    marketContextLabel: "Market context",
+    marketContextTitle: "Price is strong. The risk is in the structure.",
+    marketContextCopy:
+      "Split the headline score into four explainable drivers so one bright number cannot hide what is actually moving the model.",
+    lateCycleTitle: "The AI melt-up can continue, while its failure signal lives at the margin.",
+    lateCycleCopy:
+      "CapEx momentum, liquidity drain, and options-driven buying explain both why a bubble can extend and when that extension becomes fragile.",
+    thesisOne: "CapEx second derivative",
+    thesisOneCopy: "Not just how high spending is, but whether its growth rate is slowing.",
+    thesisTwo: "Liquidity drain",
+    thesisTwoCopy: "Reserves, TGA, SOFR/RRP, and SRF constrain how long the melt-up can run.",
+    thesisThree: "Mechanical bid",
+    thesisThreeCopy: "Passive flows and dealer gamma can make rising prices generate more buying.",
+    viewTopEvidence: "View the three top-risk evidence groups",
+    viewMicronEvidence: "View Micron component evidence",
+    bottomSectionTitle: "A bottom is not cheapness. It is forced selling beginning to stop.",
+    bottomSectionCopy:
+      "This layer matters only after a real QQQ drawdown. It tests whether volatility, rates, risk appetite, leverage, breadth, and price are stabilizing together.",
+    viewCalibration: "View threshold backtest",
+    evidenceLabel: "Evidence reliability",
+    evidenceTitle: "A signal cannot be more reliable than its data.",
+    evidenceCopy:
+      "Every metric carries a refresh cadence, as-of date, freshness, confidence, and score-usage tag, with official data, public proxies, and manual inputs kept distinct.",
+    viewQualityDetails: "View data quality by model section",
+    indicatorDetailsTitle: "Complete indicator ledger",
+    viewAllMetrics: "Open the full indicator table",
+    frameworkSectionTitle: "Turn a market narrative into a falsifiable monitoring system.",
+    frameworkSectionCopy:
+      "The model is not built to call one perfect top or bottom. It binds market regimes to repeatable risk-management actions.",
+    footerCopy: "A public-data project for market regimes, risk management, and research discipline.",
+    footerDisclaimer: "For research and risk monitoring only. Not investment advice.",
     dailySnapshot: "Daily snapshot",
     bubbleLabel: "Bubble Risk",
     bottomLabel: "Bottom Readiness",
@@ -83,11 +135,64 @@ const i18n = {
         body: "Micron is treated as an AI-memory canary. A low static P/E is not automatically safe when gross margin, EPS, and customer lock-in are extreme; the dashboard watches for peak-earnings risk."
       }
     ],
+    briefingStatus: {
+      Green: ["Risk remains contained.", "Keep routine exposure and monitor whether leverage or liquidity begins to deteriorate."],
+      Yellow: ["The market is heating up.", "Avoid chasing. Watch whether price strength becomes increasingly dependent on leverage and narrow leadership."],
+      Orange: ["Stay involved, but reduce fragile exposure.", "Late-cycle risk is elevated. Avoid adding leverage and prioritize concentration control over calling an exact top."],
+      Red: ["Capital preservation takes priority.", "Several fragility layers are aligned. Hedging, profit-taking, and strict exposure limits deserve priority."]
+    },
     methodCopy:
       "This dashboard is a risk and timing aid, not investment advice. Use the bubble score to identify top fragility and the bottom-readiness score to judge whether a selloff is moving from forced liquidation toward stabilization."
   },
   zh: {
     followX: "关注 @villiva",
+    navOverview: "结论",
+    navTopRisk: "顶部风险",
+    navBottom: "底部框架",
+    navEvidence: "证据",
+    navMethod: "方法",
+    heroEyebrow: "市场状态·风险管理·公开数据",
+    heroTitle: "看清泡沫处于哪一段，而不是猜某一天见顶。",
+    heroLead:
+      "用一套可追溯的双层框架，区分“高估值但仍在融涨”与“边际流动性转弱”，并在真实回撤后判断强制清算是否降温。",
+    readingLabel: "阅读方式",
+    readingOneTitle: "先看状态",
+    readingOneCopy: "泡沫风险与底部就绪是两个不同问题。",
+    readingTwoTitle: "再看边际变化",
+    readingTwoCopy: "价格、杠杆、CapEx 与流动性是否共振。",
+    readingThreeTitle: "最后查证据",
+    readingThreeCopy: "新鲜度、置信度和回测约束决定信号强度。",
+    liveSnapshot: "最新快照",
+    drawdownOnly: "仅在有效回撤后启用",
+    briefingLabel: "当日研究摘要",
+    drawdownLabel: "距 52 周高点",
+    confidenceLabel: "数据置信度",
+    marketContextLabel: "市场上下文",
+    marketContextTitle: "价格很强，但风险来自结构。",
+    marketContextCopy: "把总分拆成四个可解释的来源，避免一个鲜艳的数字掩盖真正驱动因素。",
+    lateCycleTitle: "AI 融涨还能继续，死亡信号却看边际。",
+    lateCycleCopy: "CapEx 绝对值、流动性抽水和期权机械买盘，共同解释泡沫为什么能延长，以及它会在什么条件下变得脆弱。",
+    thesisOne: "CapEx 二阶导",
+    thesisOneCopy: "不只看支出高不高，更看增速是否放缓。",
+    thesisTwo: "流动性抽水",
+    thesisTwoCopy: "准备金、TGA、SOFR/RRP 与 SRF 是融涨的底层约束。",
+    thesisThree: "机械买盘",
+    thesisThreeCopy: "被动资金与 dealer gamma 让上涨本身产生新买盘。",
+    viewTopEvidence: "查看三组顶部证据",
+    viewMicronEvidence: "查看美光分项证据",
+    bottomSectionTitle: "底部不是便宜，而是强制卖出开始停止。",
+    bottomSectionCopy: "这一层只在 QQQ 真实回撤后才有意义：检查波动率、利率、风险偏好、杠杆、广度和价格是否一起企稳。",
+    viewCalibration: "查看阈值回测",
+    evidenceLabel: "证据可靠性",
+    evidenceTitle: "一个信号，不能比它的数据更可靠。",
+    evidenceCopy: "每个指标都带刷新频率、截止日期、新鲜度、置信度和是否入分，并明确区分官方数据、公开代理与手动输入。",
+    viewQualityDetails: "查看分区数据质量",
+    indicatorDetailsTitle: "全部指标明细",
+    viewAllMetrics: "展开完整指标表",
+    frameworkSectionTitle: "把市场叙事，变成可反驳的监测系统。",
+    frameworkSectionCopy: "模型不追求一次性猜对顶底，而是把不同市场状态与对应的风险管理动作绑定。",
+    footerCopy: "一个面向市场状态、风险管理与研究纪律的公开数据项目。",
+    footerDisclaimer: "仅作研究与风险监测，不构成投资建议。",
     dailySnapshot: "每日快照",
     bubbleLabel: "泡沫风险",
     bottomLabel: "底部就绪度",
@@ -170,6 +275,12 @@ const i18n = {
         body: "美光被视作 AI 存储链条的金丝雀。低静态 P/E 不必然安全；当毛利率、EPS 和客户锁单强度都极端时，面板会把它识别为峰值利润陷阱风险。"
       }
     ],
+    briefingStatus: {
+      Green: ["风险仍处于可控区间。", "保持常规暴露，继续监测杠杆或流动性是否开始恶化。"],
+      Yellow: ["市场正在升温。", "不追高，关注价格强势是否越来越依赖杠杆与狭窄龙头。"],
+      Orange: ["保持参与，但先降低脆弱暴露。", "晚周期风险已抬升。避免新增杠杆，优先控制集中度，而不是试图猜中精确顶部。"],
+      Red: ["资本保全优先。", "多个脆弱性层已共振，对冲、止盈和严格暴露上限应成为优先事项。"]
+    },
     methodCopy:
       "这个 dashboard 是风险和择时辅助工具，不是投资建议。泡沫分数用于识别顶部脆弱性，底部就绪分用于判断一次下跌是否正在从强制清算转向稳定。"
   }
@@ -208,8 +319,9 @@ function fmtNum(value, digits = 1) {
 }
 
 function fmtValue(value) {
-  if (value === null || value === undefined || Number.isNaN(Number(value))) return "--";
+  if (value === null || value === undefined || value === "") return "--";
   if (typeof value === "number") {
+    if (Number.isNaN(value)) return "--";
     if (Math.abs(value) >= 1000000) return value.toLocaleString(undefined, { maximumFractionDigits: 0 });
     if (Math.abs(value) < 1) return fmtNum(value, 3);
     return fmtNum(value, Math.abs(value) < 10 ? 2 : 1);
@@ -259,11 +371,11 @@ function drawChart(canvas, rows) {
   const closes = rows.map((r) => Number(r.close));
   const min = Math.min(...closes);
   const max = Math.max(...closes);
-  const pad = 18;
+  const pad = 24;
   const y = (value) => height - pad - ((value - min) / (max - min || 1)) * (height - pad * 2);
   const xStep = (width - pad * 2) / (rows.length - 1);
 
-  ctx.strokeStyle = "#d9ded7";
+  ctx.strokeStyle = "#deddd7";
   ctx.lineWidth = 1;
   for (let i = 0; i < 4; i += 1) {
     const gy = pad + ((height - pad * 2) / 3) * i;
@@ -273,8 +385,25 @@ function drawChart(canvas, rows) {
     ctx.stroke();
   }
 
-  ctx.strokeStyle = "#2364aa";
-  ctx.lineWidth = 2;
+  const area = ctx.createLinearGradient(0, pad, 0, height - pad);
+  area.addColorStop(0, "rgba(45, 101, 166, 0.22)");
+  area.addColorStop(1, "rgba(45, 101, 166, 0)");
+
+  ctx.beginPath();
+  closes.forEach((close, idx) => {
+    const x = pad + xStep * idx;
+    const yy = y(close);
+    if (idx === 0) ctx.moveTo(x, yy);
+    else ctx.lineTo(x, yy);
+  });
+  ctx.lineTo(width - pad, height - pad);
+  ctx.lineTo(pad, height - pad);
+  ctx.closePath();
+  ctx.fillStyle = area;
+  ctx.fill();
+
+  ctx.strokeStyle = "#2d65a6";
+  ctx.lineWidth = 2.25;
   ctx.beginPath();
   closes.forEach((close, idx) => {
     const x = pad + xStep * idx;
@@ -284,7 +413,17 @@ function drawChart(canvas, rows) {
   });
   ctx.stroke();
 
-  ctx.fillStyle = "#66707a";
+  const lastX = width - pad;
+  const lastY = y(closes[closes.length - 1]);
+  ctx.fillStyle = "#ffffff";
+  ctx.beginPath();
+  ctx.arc(lastX, lastY, 5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.strokeStyle = "#2d65a6";
+  ctx.lineWidth = 2.5;
+  ctx.stroke();
+
+  ctx.fillStyle = "#69717b";
   ctx.font = "12px system-ui";
   ctx.fillText(`High ${max.toFixed(2)}`, pad, 14);
   ctx.fillText(`Low ${min.toFixed(2)}`, pad, height - 4);
@@ -340,6 +479,17 @@ function confidenceLabel(value) {
 
 function usedLabel(value) {
   return currentLanguage === "zh" ? (value ? "是" : "否") : value ? "Yes" : "No";
+}
+
+function localizedWarning(value) {
+  if (currentLanguage !== "zh") return value;
+  const warnings = {
+    "FINRA margin leverage is in a historically high zone.": "FINRA 保证金杠杆已处于历史高位区间。",
+    "Micron profits look extreme enough that low P/E may be a peak-earnings trap.": "美光利润已极端到足以让低 P/E 变成峰值利润陷阱。",
+    "Manual supply-chain inputs imply high demand lock-in and customer urgency.": "手动供应链输入显示需求锁定度与客户紧迫性偏高。",
+    "MU has started to draw down materially from its 52-week high.": "MU 已开始较明显地脱离 52 周高点。"
+  };
+  return warnings[value] || value;
 }
 
 function renderMetricGroups(title, groups) {
@@ -428,13 +578,20 @@ function renderDataQuality(data) {
 function renderTopFragility(data) {
   const overlay = data.top_fragility_overlay;
   if (!overlay) return;
-  document.getElementById("top-fragility-copy").textContent = overlay.principle?.summary || "";
+  const headers =
+    currentLanguage === "zh"
+      ? ["分组", "信号", "数值", "得分", "来源", "新鲜度", "置信度"]
+      : ["Group", "Signal", "Value", "Score", "Source", "Freshness", "Confidence"];
+  document.getElementById("top-fragility-copy").textContent =
+    currentLanguage === "zh"
+      ? "真正的顶部脆弱性不只是估值高，而是 AI CapEx 增速放缓、流动性抽水和机械买盘拥挤逐步共振。"
+      : overlay.principle?.summary || "";
   const rows = Object.entries(overlay.groups || {}).flatMap(([group, payload]) =>
     (payload.metrics || []).map((m) => ({ group, groupScore: payload.score, ...m }))
   );
   document.getElementById("top-fragility-table").innerHTML = `
     <div class="metric-row fragility-row">
-      <span>Group</span><span>Signal</span><span>Value</span><span>Score</span><span>Source</span><span>Freshness</span><span>Confidence</span>
+      ${headers.map((header) => `<span>${header}</span>`).join("")}
     </div>
     ${rows
       .map(
@@ -464,7 +621,10 @@ function renderMicronCanary(data) {
   const color = scoreColor(score);
   document.getElementById("micron-score").textContent = fmtNum(score, 0);
   document.getElementById("micron-title").textContent = `MU ${micron.status} · ${fmtNum(micron.price.latest, 2)} · ${micron.as_of}`;
-  document.getElementById("micron-copy").textContent = micron.principle?.summary || "";
+  document.getElementById("micron-copy").textContent =
+    currentLanguage === "zh"
+      ? "美光被视为 AI 存储链的金丝雀：当毛利率、EPS 和需求锁定度都趋于极端时，低静态 P/E 不代表安全。"
+      : micron.principle?.summary || "";
   document.getElementById("micron-pe").textContent = `P/E ${fmtNum(micron.fundamentals.trailing_pe, 1)}`;
   document.getElementById("micron-margin").textContent = `GM ${fmtPct(micron.fundamentals.latest_gross_margin)}`;
   document.getElementById("micron-eps").textContent = `EPS ${fmtNum(micron.fundamentals.ttm_diluted_eps, 1)}`;
@@ -484,9 +644,10 @@ function renderMicronCanary(data) {
   const rows = Object.entries(micron.groups || {}).flatMap(([group, payload]) =>
     (payload.metrics || []).map((m) => ({ group, ...m }))
   );
+  const headers = currentLanguage === "zh" ? ["分组", "信号", "数值", "得分", "来源"] : ["Group", "Signal", "Value", "Score", "Source"];
   document.getElementById("micron-table").innerHTML = `
     <div class="metric-row micron-row">
-      <span>Group</span><span>Signal</span><span>Value</span><span>Score</span><span>Source</span>
+      ${headers.map((header) => `<span>${header}</span>`).join("")}
     </div>
     ${rows
       .map(
@@ -538,9 +699,15 @@ function renderCalibration(bottom) {
       .join("")}`;
 
   const wf = bottom?.calibration?.walk_forward;
-  document.getElementById("walk-forward-copy").textContent = wf
-    ? `Walk-forward: ${wf.triggered_events}/${wf.tested_events} events, 21D ${fmtPct(wf.avg_fwd_21d)} hit ${fmtPct(wf.hit_rate_21d)}, 63D ${fmtPct(wf.avg_fwd_63d)} hit ${fmtPct(wf.hit_rate_63d)}.`
-    : "";
+  if (!wf) {
+    document.getElementById("walk-forward-copy").textContent = "";
+  } else if (currentLanguage === "zh") {
+    document.getElementById("walk-forward-copy").textContent =
+      `Walk-forward：${wf.triggered_events}/${wf.tested_events} 个事件，21 日收益 ${fmtPct(wf.avg_fwd_21d)}，胜率 ${fmtPct(wf.hit_rate_21d)}；63 日收益 ${fmtPct(wf.avg_fwd_63d)}，胜率 ${fmtPct(wf.hit_rate_63d)}。`;
+  } else {
+    document.getElementById("walk-forward-copy").textContent =
+      `Walk-forward: ${wf.triggered_events}/${wf.tested_events} events, 21D ${fmtPct(wf.avg_fwd_21d)} with ${fmtPct(wf.hit_rate_21d)} hit rate; 63D ${fmtPct(wf.avg_fwd_63d)} with ${fmtPct(wf.hit_rate_63d)} hit rate.`;
+  }
 }
 
 function renderConcept() {
@@ -553,14 +720,24 @@ function renderConcept() {
 
 function renderSources(data) {
   const bottom = data.bottom_framework;
-  const sourceRows = [
-    ["Yahoo Finance", "QQQ, TQQQ, SPY, QQEW, VIX, VIX3M, VXN, TNX, BTC-USD", data.price?.latest_date],
-    ["FINRA", "Monthly margin statistics, lagged in the bottom backtest", data.finra?.month || "--"],
-    ["FRED / NY Fed / Treasury", "Bank reserves, TGA, SOFR minus ON RRP, and SRF/repo operations", data.top_fragility_overlay?.groups?.liquidity_drain?.metrics?.[0]?.as_of || "--"],
-    ["SEC Companyfacts", "MSFT, AMZN, GOOGL, META CapEx proxy and Micron financial statements", data.top_fragility_overlay?.groups?.ai_capex_cycle?.metrics?.[0]?.as_of || "--"],
-    ["Cboe Proxy", "Free SPX/SPXW call-put volume proxy; not exact 0DTE or dealer gamma", data.top_fragility_overlay?.groups?.options_mechanical_bid?.metrics?.[1]?.as_of || "--"],
-    ["GitHub Actions", "Runs the update script and commits docs/data/dashboard.json", fmtDateTime(data.generated_at)]
-  ];
+  const sourceRows =
+    currentLanguage === "zh"
+      ? [
+          ["Yahoo Finance", "QQQ、TQQQ、SPY、QQEW、VIX、VIX3M、VXN、TNX 与 BTC-USD", data.price?.latest_date],
+          ["FINRA", "月度保证金数据；底部回测中按发布滞后对齐", data.finra?.month || "--"],
+          ["FRED / NY Fed / Treasury", "银行准备金、TGA、SOFR 减 ON RRP，以及 SRF / 回购操作", data.top_fragility_overlay?.groups?.liquidity_drain?.metrics?.[0]?.as_of || "--"],
+          ["SEC Companyfacts", "MSFT、AMZN、GOOGL、META CapEx 代理与美光财务数据", data.top_fragility_overlay?.groups?.ai_capex_cycle?.metrics?.[0]?.as_of || "--"],
+          ["Cboe 代理", "免费 SPX / SPXW 看涨看跌成交量代理；不等同精确 0DTE 或 dealer gamma", data.top_fragility_overlay?.groups?.options_mechanical_bid?.metrics?.[1]?.as_of || "--"],
+          ["自动刷新", "更新数据快照并保留模型所需的追溯信息", fmtDateTime(data.generated_at)]
+        ]
+      : [
+          ["Yahoo Finance", "QQQ, TQQQ, SPY, QQEW, VIX, VIX3M, VXN, TNX, and BTC-USD", data.price?.latest_date],
+          ["FINRA", "Monthly margin statistics, lagged by publication date in the bottom backtest", data.finra?.month || "--"],
+          ["FRED / NY Fed / Treasury", "Bank reserves, TGA, SOFR minus ON RRP, and SRF / repo operations", data.top_fragility_overlay?.groups?.liquidity_drain?.metrics?.[0]?.as_of || "--"],
+          ["SEC Companyfacts", "MSFT, AMZN, GOOGL, META CapEx proxies and Micron financial statements", data.top_fragility_overlay?.groups?.ai_capex_cycle?.metrics?.[0]?.as_of || "--"],
+          ["Cboe Proxy", "Free SPX / SPXW call-put volume proxy; not exact 0DTE or dealer gamma", data.top_fragility_overlay?.groups?.options_mechanical_bid?.metrics?.[1]?.as_of || "--"],
+          ["Automated refresh", "Updates the data snapshot while preserving model provenance", fmtDateTime(data.generated_at)]
+        ];
   document.getElementById("source-grid").innerHTML = sourceRows
     .map(
       ([title, body, latest]) => `<article class="source-card">
@@ -594,9 +771,26 @@ function render(data) {
   document.getElementById("bottom-status-title").textContent = bottomMeta[0];
   document.getElementById("bottom-status-copy").textContent = bottom?.available ? bottomMeta[1] : bottom?.error || "--";
   document.getElementById("bottom-threshold").textContent = bottom?.available
-    ? `Threshold ${bottom.calibration.best_threshold}/20 · ${fmtPct(bottom.qqq.drawdown_from_52w_high)} drawdown`
+    ? currentLanguage === "zh"
+      ? `参考阈值 ${bottom.calibration.best_threshold}/20 · 当前回撤 ${fmtPct(bottom.qqq.drawdown_from_52w_high)}`
+      : `Threshold ${bottom.calibration.best_threshold}/20 · ${fmtPct(bottom.qqq.drawdown_from_52w_high)} drawdown`
     : "--";
   setRing("bottom-ring", bottomScore, 20, bottomColor);
+
+  const briefing = tr().briefingStatus[data.status] || tr().briefingStatus.Yellow;
+  const highestModule = Object.entries(data.modules || {}).sort((a, b) => Number(b[1]) - Number(a[1]))[0];
+  const highestModuleLabel = highestModule ? tr().moduleLabels[highestModule[0]] || highestModule[0] : "--";
+  const driverCopy = highestModule
+    ? currentLanguage === "zh"
+      ? ` 当前最高风险贡献来自${highestModuleLabel}（${fmtNum(highestModule[1], 0)}）。`
+      : ` The largest current contribution is ${highestModuleLabel} (${fmtNum(highestModule[1], 0)}).`
+    : "";
+  document.getElementById("briefing-status").textContent = `${data.status} · ${fmtNum(bubbleScore, 1)}`;
+  document.getElementById("briefing-title").textContent = briefing[0];
+  document.getElementById("briefing-copy").textContent = `${briefing[1]}${driverCopy}`;
+  document.getElementById("brief-qqq").textContent = fmtNum(data.price?.latest, 2);
+  document.getElementById("brief-drawdown").textContent = fmtPct(data.price?.drawdown_from_52w_high);
+  document.getElementById("brief-confidence").textContent = `${fmtNum(data.data_quality?.summary?.confidence_score, 1)} / 100`;
 
   document.getElementById("status-pill").textContent = data.status;
   document.getElementById("status-pill").style.color = bubbleColor;
@@ -618,7 +812,7 @@ function render(data) {
   renderBottomSignals(bottom);
   renderCalibration(bottom);
 
-  const warnings = data.warnings && data.warnings.length ? data.warnings : [tr().noWarning];
+  const warnings = data.warnings && data.warnings.length ? data.warnings.map(localizedWarning) : [tr().noWarning];
   document.getElementById("warnings-list").innerHTML = warnings.map((w) => `<li>${w}</li>`).join("");
   document.getElementById("metric-table").innerHTML = [
     renderMetricGroups(tr().coreMetricsLabel, data.core_metrics),

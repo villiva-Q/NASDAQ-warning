@@ -3,193 +3,349 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NASDAQ Bubble Radar</title>
+    <meta
+      name="description"
+      content="NASDAQ / QQQ 双层市场状态雷达：监测顶部泡沫脆弱性、AI 资本开支周期与回撤后的底部就绪度。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NASDAQ Bubble Radar" />
+    <meta property="og:description" content="看清泡沫处于哪一段，而不是猜某一天见顶。" />
+    <meta property="og:image" content="./og-evergreen.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NASDAQ Bubble Radar" />
+    <meta name="twitter:description" content="市场状态 · 风险管理 · 公开数据" />
+    <meta name="twitter:image" content="./og-evergreen.png" />
+    <title>NASDAQ Bubble Radar · 美股泡沫研究</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">NASDAQ / QQQ</p>
-        <h1>Bubble Radar</h1>
-      </div>
+    <a class="skip-link" href="#overview">Skip to dashboard</a>
+
+    <header class="site-header">
+      <a class="brand" href="#overview" aria-label="NASDAQ Bubble Radar home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span>
+          <strong>Bubble Radar</strong>
+          <small>NASDAQ / QQQ research system</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#overview" data-i18n="navOverview">结论</a>
+        <a href="#late-cycle" data-i18n="navTopRisk">顶部风险</a>
+        <a href="#bottom-model" data-i18n="navBottom">底部框架</a>
+        <a href="#evidence" data-i18n="navEvidence">证据</a>
+        <a href="#framework" data-i18n="navMethod">方法</a>
+      </nav>
+
       <div class="top-actions">
-        <a class="social-button" href="https://x.com/villiva" target="_blank" rel="noreferrer">
-          <span aria-hidden="true">X</span>
-          <span data-i18n="followX">Follow @villiva</span>
-        </a>
         <div class="language-toggle" aria-label="Language switch">
           <button id="lang-en" type="button">EN</button>
           <button id="lang-zh" type="button">中文</button>
         </div>
-        <div class="timestamp">
-          <span id="status-pill">Loading</span>
-          <span id="generated-at">--</span>
-          <span id="update-frequency">Daily snapshot</span>
-        </div>
+        <a class="social-button" href="https://x.com/villiva" target="_blank" rel="noreferrer">
+          <span aria-hidden="true">X</span>
+          <span data-i18n="followX">Follow @villiva</span>
+        </a>
       </div>
     </header>
 
-    <main class="layout">
-      <section class="score-panel">
-        <div class="score-block">
-          <div class="score-ring" id="score-ring">
-            <span id="overall-score">--</span>
-            <small>/100</small>
-          </div>
-          <div>
-            <p class="label" data-i18n="bubbleLabel">Bubble Risk</p>
-            <h2 id="status-title">Loading</h2>
-            <p id="status-copy" class="muted">Loading the latest data snapshot.</p>
+    <main>
+      <section class="hero" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="heroEyebrow">市场状态·风险管理·公开数据</p>
+          <h1 data-i18n="heroTitle">看清泡沫处于哪一段，<br />而不是猜某一天见顶。</h1>
+          <p class="hero-lead" data-i18n="heroLead">
+            用一套可追溯的双层框架，区分“高估值但仍在融涨”与“边际流动性转弱”，并在真实回撤后判断强制清算是否降温。
+          </p>
+          <div class="snapshot-line" aria-live="polite">
+            <span id="status-pill">Loading</span>
+            <span id="generated-at">--</span>
+            <span id="update-frequency">Daily snapshot</span>
           </div>
         </div>
-        <div class="decision-strip" id="decision-strip"></div>
+
+        <aside class="hero-note" aria-label="How to read this dashboard">
+          <p class="label" data-i18n="readingLabel">阅读方式</p>
+          <ol>
+            <li>
+              <span>01</span>
+              <div><strong data-i18n="readingOneTitle">先看状态</strong><small data-i18n="readingOneCopy">泡沫风险与底部就绪是两个不同问题。</small></div>
+            </li>
+            <li>
+              <span>02</span>
+              <div><strong data-i18n="readingTwoTitle">再看边际变化</strong><small data-i18n="readingTwoCopy">价格、杠杆、CapEx 与流动性是否共振。</small></div>
+            </li>
+            <li>
+              <span>03</span>
+              <div><strong data-i18n="readingThreeTitle">最后查证据</strong><small data-i18n="readingThreeCopy">新鲜度、置信度和回测约束决定信号强度。</small></div>
+            </li>
+          </ol>
+        </aside>
       </section>
 
-      <section class="score-panel bottom-panel">
-        <div class="score-block">
-          <div class="score-ring bottom-ring" id="bottom-ring">
-            <span id="bottom-score">--</span>
-            <small>/20</small>
+      <section class="signal-deck" aria-label="Current market state">
+        <article class="score-panel bubble-panel">
+          <div class="panel-kicker">
+            <p class="label" data-i18n="bubbleLabel">泡沫风险</p>
+            <span class="live-dot"><i></i><span data-i18n="liveSnapshot">最新快照</span></span>
           </div>
-          <div>
-            <p class="label" data-i18n="bottomLabel">Bottom Readiness</p>
-            <h2 id="bottom-status-title">Loading</h2>
-            <p id="bottom-status-copy" class="muted">Loading the latest data snapshot.</p>
-            <p id="bottom-threshold" class="subtle">--</p>
+          <div class="score-block">
+            <div class="score-ring" id="score-ring">
+              <span id="overall-score">--</span>
+              <small>/100</small>
+            </div>
+            <div>
+              <h2 id="status-title">Loading</h2>
+              <p id="status-copy" class="muted">Loading the latest data snapshot.</p>
+            </div>
           </div>
-        </div>
-        <div class="decision-strip" id="bottom-decision-strip"></div>
+          <div class="decision-strip" id="decision-strip"></div>
+        </article>
+
+        <article class="score-panel bottom-panel">
+          <div class="panel-kicker">
+            <p class="label" data-i18n="bottomLabel">底部就绪度</p>
+            <span data-i18n="drawdownOnly">仅在有效回撤后启用</span>
+          </div>
+          <div class="score-block">
+            <div class="score-ring bottom-ring" id="bottom-ring">
+              <span id="bottom-score">--</span>
+              <small>/20</small>
+            </div>
+            <div>
+              <h2 id="bottom-status-title">Loading</h2>
+              <p id="bottom-status-copy" class="muted">Loading the latest data snapshot.</p>
+              <p id="bottom-threshold" class="subtle">--</p>
+            </div>
+          </div>
+          <div class="decision-strip" id="bottom-decision-strip"></div>
+        </article>
+
+        <aside class="briefing-panel">
+          <div class="panel-kicker">
+            <p class="label" data-i18n="briefingLabel">当日研究摘要</p>
+            <span id="briefing-status">--</span>
+          </div>
+          <h2 id="briefing-title">正在读取最新结论</h2>
+          <p id="briefing-copy" class="briefing-copy">--</p>
+          <dl class="brief-stats">
+            <div><dt>QQQ</dt><dd id="brief-qqq">--</dd></div>
+            <div><dt data-i18n="drawdownLabel">距 52 周高点</dt><dd id="brief-drawdown">--</dd></div>
+            <div><dt data-i18n="confidenceLabel">数据置信度</dt><dd id="brief-confidence">--</dd></div>
+          </dl>
+          <div class="warning-box">
+            <p class="label" data-i18n="warningsTitle">当前触发信号</p>
+            <ul id="warnings-list"></ul>
+          </div>
+        </aside>
       </section>
 
-      <section class="chart-panel">
-        <div class="section-head">
+      <section class="research-section market-section" id="market-context">
+        <header class="section-intro">
+          <span class="section-number">01</span>
           <div>
-            <p class="label" data-i18n="priceLabel">QQQ Price</p>
-            <h2 id="price-title">--</h2>
+            <p class="label" data-i18n="marketContextLabel">市场上下文</p>
+            <h2 data-i18n="marketContextTitle">价格很强，但风险来自结构。</h2>
+            <p data-i18n="marketContextCopy">把总分拆成四个可解释的来源，避免一个鲜艳的数字掩盖真正驱动因素。</p>
           </div>
-          <div class="mini-stats">
-            <span id="ret-3m">3M --</span>
-            <span id="dist-200">200DMA --</span>
+        </header>
+
+        <div class="modules" id="modules"></div>
+
+        <section class="chart-panel">
+          <div class="section-head">
+            <div>
+              <p class="label" data-i18n="priceLabel">QQQ 价格</p>
+              <h2 id="price-title">--</h2>
+            </div>
+            <div class="mini-stats">
+              <span id="ret-3m">3M --</span>
+              <span id="dist-200">200DMA --</span>
+            </div>
           </div>
-        </div>
-        <canvas id="price-chart" height="220"></canvas>
+          <canvas id="price-chart" height="260" aria-label="QQQ price history"></canvas>
+        </section>
       </section>
 
-      <section class="modules" id="modules"></section>
-
-      <section class="data-quality">
-        <div class="section-head">
+      <section class="research-section" id="late-cycle">
+        <header class="section-intro">
+          <span class="section-number">02</span>
           <div>
-            <p class="label" data-i18n="dataQualityLabel">Data Quality</p>
-            <h2 data-i18n="dataQualityTitle">Freshness & Confidence</h2>
+            <p class="label" data-i18n="topFragilityLabel">顶部脆弱性</p>
+            <h2 data-i18n="lateCycleTitle">AI 融涨还能继续，死亡信号却看边际。</h2>
+            <p data-i18n="lateCycleCopy">CapEx 绝对值、流动性抽水和期权机械买盘，共同解释泡沫为什么能延长，以及它会在什么条件下变得脆弱。</p>
           </div>
+        </header>
+
+        <div class="thesis-strip" aria-label="Late-cycle thesis">
+          <article><span>01</span><strong data-i18n="thesisOne">CapEx 二阶导</strong><p data-i18n="thesisOneCopy">不只看支出高不高，更看增速是否放缓。</p></article>
+          <article><span>02</span><strong data-i18n="thesisTwo">流动性抽水</strong><p data-i18n="thesisTwoCopy">准备金、TGA、SOFR/RRP 与 SRF 是融涨的底层约束。</p></article>
+          <article><span>03</span><strong data-i18n="thesisThree">机械买盘</strong><p data-i18n="thesisThreeCopy">被动资金与 dealer gamma 让上涨本身产生新买盘。</p></article>
         </div>
-        <div id="data-quality-summary" class="quality-grid"></div>
-        <div id="data-quality-table"></div>
+
+        <section class="top-fragility evidence-panel">
+          <div class="section-head">
+            <div>
+              <p class="label" data-i18n="topFragilityLabel">顶部脆弱性</p>
+              <h2 data-i18n="topFragilityTitle">AI 融涨覆盖层</h2>
+            </div>
+          </div>
+          <p id="top-fragility-copy" class="panel-summary"></p>
+          <details class="data-disclosure" open>
+            <summary data-i18n="viewTopEvidence">查看三组顶部证据</summary>
+            <div class="table-scroll" id="top-fragility-table"></div>
+          </details>
+        </section>
+
+        <section class="micron-canary evidence-panel">
+          <div class="section-head">
+            <div>
+              <p class="label" data-i18n="micronLabel">美光金丝雀</p>
+              <h2 id="micron-title">--</h2>
+            </div>
+            <div class="mini-stats">
+              <span id="micron-pe">P/E --</span>
+              <span id="micron-margin">GM --</span>
+              <span id="micron-eps">EPS --</span>
+            </div>
+          </div>
+          <div class="canary-layout">
+            <div class="score-ring canary-ring" id="micron-ring">
+              <span id="micron-score">--</span>
+              <small>/100</small>
+            </div>
+            <div>
+              <p id="micron-copy" class="panel-summary"></p>
+              <div id="micron-group-grid" class="canary-group-grid"></div>
+            </div>
+          </div>
+          <details class="data-disclosure">
+            <summary data-i18n="viewMicronEvidence">查看美光分项证据</summary>
+            <div class="table-scroll" id="micron-table"></div>
+          </details>
+        </section>
       </section>
 
-      <section class="top-fragility">
-        <div class="section-head">
+      <section class="research-section" id="bottom-model">
+        <header class="section-intro">
+          <span class="section-number">03</span>
           <div>
-            <p class="label" data-i18n="topFragilityLabel">Top Fragility</p>
-            <h2 data-i18n="topFragilityTitle">AI Melt-Up Overlay</h2>
+            <p class="label" data-i18n="bottomSignalsLabel">底部模型</p>
+            <h2 data-i18n="bottomSectionTitle">底部不是便宜，而是强制卖出开始停止。</h2>
+            <p data-i18n="bottomSectionCopy">这一层只在 QQQ 真实回撤后才有意义：检查波动率、利率、风险偏好、杠杆、广度和价格是否一起企稳。</p>
           </div>
+        </header>
+
+        <div class="bottom-grid">
+          <section class="bottom-signals evidence-panel">
+            <div class="section-head">
+              <div>
+                <p class="label" data-i18n="bottomSignalsLabel">底部模型</p>
+                <h2 data-i18n="bottomSignalsTitle">清算结束信号</h2>
+              </div>
+            </div>
+            <div class="table-scroll" id="bottom-signal-table"></div>
+          </section>
+
+          <section class="calibration evidence-panel">
+            <div class="section-head">
+              <div>
+                <p class="label" data-i18n="calibrationLabel">校准</p>
+                <h2 data-i18n="calibrationTitle">回测阈值</h2>
+              </div>
+            </div>
+            <p id="walk-forward-copy" class="panel-summary"></p>
+            <details class="data-disclosure">
+              <summary data-i18n="viewCalibration">查看阈值回测</summary>
+              <div class="table-scroll" id="calibration-table"></div>
+            </details>
+          </section>
         </div>
-        <p id="top-fragility-copy" class="muted"></p>
-        <div id="top-fragility-table"></div>
       </section>
 
-      <section class="micron-canary">
-        <div class="section-head">
+      <section class="research-section" id="evidence">
+        <header class="section-intro">
+          <span class="section-number">04</span>
           <div>
-            <p class="label" data-i18n="micronLabel">Micron Canary</p>
-            <h2 id="micron-title">--</h2>
+            <p class="label" data-i18n="evidenceLabel">证据可靠性</p>
+            <h2 data-i18n="evidenceTitle">一个信号，不能比它的数据更可靠。</h2>
+            <p data-i18n="evidenceCopy">每个指标都带刷新频率、截止日期、新鲜度、置信度和是否入分，并明确区分官方数据、公开代理与手动输入。</p>
           </div>
-          <div class="mini-stats">
-            <span id="micron-pe">P/E --</span>
-            <span id="micron-margin">GM --</span>
-            <span id="micron-eps">EPS --</span>
+        </header>
+
+        <section class="data-quality evidence-panel">
+          <div class="section-head">
+            <div>
+              <p class="label" data-i18n="dataQualityLabel">数据质量</p>
+              <h2 data-i18n="dataQualityTitle">新鲜度与置信度</h2>
+            </div>
           </div>
-        </div>
-        <div class="canary-layout">
-          <div class="score-ring canary-ring" id="micron-ring">
-            <span id="micron-score">--</span>
-            <small>/100</small>
+          <div id="data-quality-summary" class="quality-grid"></div>
+          <details class="data-disclosure">
+            <summary data-i18n="viewQualityDetails">查看分区数据质量</summary>
+            <div class="table-scroll" id="data-quality-table"></div>
+          </details>
+        </section>
+
+        <section class="metrics evidence-panel">
+          <div class="section-head">
+            <div>
+              <p class="label" data-i18n="coreMetricsLabel">泡沫核心指标</p>
+              <h2 data-i18n="indicatorDetailsTitle">全部指标明细</h2>
+            </div>
           </div>
-          <div>
-            <p id="micron-copy" class="muted"></p>
-            <div id="micron-group-grid" class="canary-group-grid"></div>
+          <details class="data-disclosure">
+            <summary data-i18n="viewAllMetrics">展开完整指标表</summary>
+            <div class="table-scroll" id="metric-table"></div>
+          </details>
+        </section>
+
+        <section class="data-sources evidence-panel">
+          <div class="section-head">
+            <div>
+              <p class="label" data-i18n="sourcesLabel">数据</p>
+              <h2 data-i18n="sourcesTitle">数据来源与刷新</h2>
+            </div>
           </div>
-        </div>
-        <div id="micron-table"></div>
+          <div id="source-grid" class="source-grid"></div>
+        </section>
       </section>
 
-      <section class="bottom-signals">
-        <div class="section-head">
+      <section class="research-section framework-section" id="framework">
+        <header class="section-intro">
+          <span class="section-number">05</span>
           <div>
-            <p class="label" data-i18n="bottomSignalsLabel">Bottom Model</p>
-            <h2 data-i18n="bottomSignalsTitle">Liquidation-End Signals</h2>
+            <p class="label" data-i18n="conceptEyebrow">框架</p>
+            <h2 data-i18n="frameworkSectionTitle">把市场叙事，变成可反驳的监测系统。</h2>
+            <p data-i18n="frameworkSectionCopy">模型不追求一次性猜对顶底，而是把不同市场状态与对应的风险管理动作绑定。</p>
           </div>
-        </div>
-        <div id="bottom-signal-table"></div>
-      </section>
+        </header>
 
-      <section class="calibration">
-        <div class="section-head">
-          <div>
-            <p class="label" data-i18n="calibrationLabel">Calibration</p>
-            <h2 data-i18n="calibrationTitle">Backtest Thresholds</h2>
+        <section class="concept evidence-panel">
+          <div class="section-head">
+            <div>
+              <p class="label" data-i18n="conceptEyebrow">框架</p>
+              <h2 data-i18n="conceptTitle">双层模型如何工作</h2>
+            </div>
           </div>
-        </div>
-        <p id="walk-forward-copy" class="muted"></p>
-        <div id="calibration-table"></div>
-      </section>
+          <div id="concept-grid" class="concept-grid"></div>
+        </section>
 
-      <section class="concept">
-        <div class="section-head">
-          <div>
-            <p class="label" data-i18n="conceptEyebrow">Framework</p>
-            <h2 data-i18n="conceptTitle">How The Two-Layer Model Works</h2>
-          </div>
-        </div>
-        <div id="concept-grid" class="concept-grid"></div>
-      </section>
-
-      <section class="warnings">
-        <div class="section-head">
-          <div>
-            <p class="label" data-i18n="warningsLabel">Warnings</p>
-            <h2 data-i18n="warningsTitle">Active Signals</h2>
-          </div>
-        </div>
-        <ul id="warnings-list"></ul>
-      </section>
-
-      <section class="metrics">
-        <div class="section-head">
-          <div>
-            <p class="label" data-i18n="coreMetricsLabel">Bubble Core Inputs</p>
-            <h2>Indicator Details</h2>
-          </div>
-        </div>
-        <div id="metric-table"></div>
-      </section>
-
-      <section class="data-sources">
-        <div class="section-head">
-          <div>
-            <p class="label" data-i18n="sourcesLabel">Data</p>
-            <h2 data-i18n="sourcesTitle">Data Sources & Refresh</h2>
-          </div>
-        </div>
-        <div id="source-grid" class="source-grid"></div>
-      </section>
-
-      <section class="method">
-        <p class="label" data-i18n="methodLabel">Method</p>
-        <p id="method-copy" data-i18n="methodCopy"></p>
+        <section class="method">
+          <p class="label" data-i18n="methodLabel">方法边界</p>
+          <p id="method-copy" data-i18n="methodCopy"></p>
+        </section>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>NASDAQ Bubble Radar</strong>
+        <p data-i18n="footerCopy">一个面向市场状态、风险管理与研究纪律的公开数据项目。</p>
+      </div>
+      <p data-i18n="footerDisclaimer">仅作研究与风险监测，不构成投资建议。</p>
+    </footer>
 
     <script src="./data/dashboard-inline.js"></script>
     <script src="./app.js"></script>
