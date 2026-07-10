@@ -350,6 +350,14 @@ function setLanguage(lang) {
   if (latestData) render(latestData);
 }
 
+function setZenMode(enabled) {
+  const button = document.getElementById("view-mode-toggle");
+  document.documentElement.classList.toggle("zen-mode", enabled);
+  button.textContent = enabled ? "V mode" : "禅 mode";
+  button.setAttribute("aria-pressed", String(enabled));
+  button.setAttribute("aria-label", enabled ? "恢复 V mode 旧数字排版" : "切换到禅 mode 数字居中排版");
+}
+
 function setRing(id, score, maxScore, color) {
   const ring = document.getElementById(id);
   const deg = Math.round((score / maxScore) * 360);
@@ -834,8 +842,12 @@ async function loadDashboard() {
 
 document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
 document.getElementById("lang-zh").addEventListener("click", () => setLanguage("zh"));
+document.getElementById("view-mode-toggle").addEventListener("click", () => {
+  setZenMode(!document.documentElement.classList.contains("zen-mode"));
+});
 window.addEventListener("resize", () => latestData && drawChart(document.getElementById("price-chart"), latestData.history));
 
+setZenMode(false);
 setLanguage(currentLanguage);
 loadDashboard().catch((error) => {
   document.getElementById("status-title").textContent = tr().dataLoadFailed;
