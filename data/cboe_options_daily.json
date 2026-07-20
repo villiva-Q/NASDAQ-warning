@@ -1,60 +1,60 @@
 {
-  "as_of": "2026-07-17",
-  "spx_call_share": 0.4612623084882195,
-  "spx_total_volume": 5237341.0,
-  "spx_share_of_all_volume": 0.3238722857519015,
-  "index_total_volume": 6405175.0,
-  "index_call_share": 0.5056270905947144,
-  "equity_call_share": 0.5974560256895876,
-  "call_skew_proxy": -0.09182893509487311,
+  "as_of": "2026-07-20",
+  "spx_call_share": 0.45790450487115464,
+  "spx_total_volume": 5385992.0,
+  "spx_share_of_all_volume": 0.2954311985462964,
+  "index_total_volume": 6955050.0,
+  "index_call_share": 0.505789749893962,
+  "equity_call_share": 0.5783010940810736,
+  "call_skew_proxy": -0.07251134418711158,
   "products": {
     "SUM OF ALL PRODUCTS": {
-      "call_volume": 8650205.0,
-      "put_volume": 7520802.0,
-      "total_volume": 16171007.0,
-      "call_share": 0.5349206144057695
+      "call_volume": 9230895.0,
+      "put_volume": 9000057.0,
+      "total_volume": 18230952.0,
+      "call_share": 0.5063309365303578
     },
     "INDEX OPTIONS": {
-      "call_volume": 3238630.0,
-      "put_volume": 3166545.0,
-      "total_volume": 6405175.0,
-      "call_share": 0.5056270905947144
+      "call_volume": 3517793.0,
+      "put_volume": 3437257.0,
+      "total_volume": 6955050.0,
+      "call_share": 0.505789749893962
     },
     "EXCHANGE TRADED PRODUCTS": {
-      "call_volume": 2585044.0,
-      "put_volume": 2449844.0,
-      "total_volume": 5034888.0,
-      "call_share": 0.513426316533754
+      "call_volume": 2628459.0,
+      "put_volume": 3313469.0,
+      "total_volume": 5941928.0,
+      "call_share": 0.44235793500022214
     },
     "EQUITY OPTIONS": {
-      "call_volume": 2826531.0,
-      "put_volume": 1904413.0,
-      "total_volume": 4730944.0,
-      "call_share": 0.5974560256895876
+      "call_volume": 3084643.0,
+      "put_volume": 2249331.0,
+      "total_volume": 5333974.0,
+      "call_share": 0.5783010940810736
     },
     "CBOE VOLATILITY INDEX (VIX)": {
-      "call_volume": 657194.0,
-      "put_volume": 161897.0,
-      "total_volume": 819091.0,
-      "call_share": 0.802345526931684
+      "call_volume": 875257.0,
+      "put_volume": 310831.0,
+      "total_volume": 1186088.0,
+      "call_share": 0.7379359710240724
     },
     "SPX + SPXW": {
-      "call_volume": 2415788.0,
-      "put_volume": 2821553.0,
-      "total_volume": 5237341.0,
-      "call_share": 0.4612623084882195
+      "call_volume": 2466270.0,
+      "put_volume": 2919722.0,
+      "total_volume": 5385992.0,
+      "call_share": 0.45790450487115464
     },
     "OEX": {
       "call_volume": 0.0,
-      "put_volume": 0.0,
-      "total_volume": 0.0,
-      "call_share": null
+      "put_volume": 3.0,
+      "total_volume": 3.0,
+      "call_share": 0.0
     },
     "MRUT": {
-      "call_volume": 31.0,
-      "put_volume": 17.0,
-      "total_volume": 48.0,
-      "call_share": 0.6458333333333334
+      "call_volume": 28.0,
+      "put_volume": 59.0,
+      "total_volume": 87.0,
+      "call_share": 0.3218390804597701
     },
     "MXEA": {
       "call_volume": 0.0,
@@ -88,21 +88,21 @@
     },
     "CBTX": {
       "call_volume": 0.0,
-      "put_volume": 2.0,
-      "total_volume": 2.0,
+      "put_volume": 86.0,
+      "total_volume": 86.0,
       "call_share": 0.0
     },
     "MBTX": {
-      "call_volume": 11.0,
-      "put_volume": 1.0,
-      "total_volume": 12.0,
-      "call_share": 0.9166666666666666
+      "call_volume": 5.0,
+      "put_volume": 5.0,
+      "total_volume": 10.0,
+      "call_share": 0.5
     },
     "SPEQX": {
-      "call_volume": 2.0,
+      "call_volume": 0.0,
       "put_volume": 0.0,
-      "total_volume": 2.0,
-      "call_share": 1.0
+      "total_volume": 0.0,
+      "call_share": null
     },
     "SPEQW": {
       "call_volume": 0.0,
@@ -111,28 +111,28 @@
       "call_share": null
     },
     "MGTN": {
-      "call_volume": 40.0,
-      "put_volume": 74.0,
-      "total_volume": 114.0,
-      "call_share": 0.3508771929824561
+      "call_volume": 73.0,
+      "put_volume": 15.0,
+      "total_volume": 88.0,
+      "call_share": 0.8295454545454546
     },
     "MGTNW": {
-      "call_volume": 308.0,
-      "put_volume": 234.0,
-      "total_volume": 542.0,
-      "call_share": 0.5682656826568265
+      "call_volume": 276.0,
+      "put_volume": 152.0,
+      "total_volume": 428.0,
+      "call_share": 0.6448598130841121
     },
     "DJX": {
-      "call_volume": 665.0,
-      "put_volume": 882.0,
-      "total_volume": 1547.0,
-      "call_share": 0.4298642533936652
+      "call_volume": 2781.0,
+      "put_volume": 252.0,
+      "total_volume": 3033.0,
+      "call_share": 0.9169139465875371
     },
     "DJXW": {
-      "call_volume": 213.0,
-      "put_volume": 35.0,
-      "total_volume": 248.0,
-      "call_share": 0.8588709677419355
+      "call_volume": 416.0,
+      "put_volume": 161.0,
+      "total_volume": 577.0,
+      "call_share": 0.7209705372616985
     },
     "XSPBX": {
       "call_volume": 0.0,
@@ -141,10 +141,10 @@
       "call_share": null
     },
     "XSPBW": {
-      "call_volume": 0.0,
+      "call_volume": 6.0,
       "put_volume": 0.0,
-      "total_volume": 0.0,
-      "call_share": null
+      "total_volume": 6.0,
+      "call_share": 1.0
     }
   },
   "source": "Cboe Daily Market Statistics page",
