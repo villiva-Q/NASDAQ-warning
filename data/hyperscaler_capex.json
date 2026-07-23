@@ -454,20 +454,9 @@
     },
     "GOOGL": {
       "cik": "0001652044",
-      "entity": "ALPHABET INC.",
+      "entity": "Alphabet Inc.",
       "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
       "series": [
-        {
-          "start": "2022-03-31",
-          "end": "2023-06-30",
-          "fy": 2023,
-          "fp": "Q2",
-          "quarter": "2023Q2",
-          "value": 3391000000.0,
-          "filed": "2023-07-26",
-          "form": "10-Q",
-          "method": "derived_from_ytd"
-        },
         {
           "start": "2023-06-30",
           "end": "2023-09-30",
@@ -588,6 +577,17 @@
           "filed": "2026-04-30",
           "form": "10-Q",
           "method": "standalone"
+        },
+        {
+          "start": "2025-03-31",
+          "end": "2026-06-30",
+          "fy": 2026,
+          "fp": "Q2",
+          "quarter": "2026Q2",
+          "value": 63401000000.0,
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "method": "derived_from_ytd"
         }
       ]
     },
