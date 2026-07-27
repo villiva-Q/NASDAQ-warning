@@ -1,17 +1,17 @@
 {
   "available": true,
-  "as_of": "2026-07-24",
-  "score": 71.6,
+  "as_of": "2026-07-27",
+  "score": 69.3,
   "status": "Hot",
   "symbol": "MU",
   "price": {
-    "latest": 920.9500122070312,
-    "latest_date": "2026-07-24",
-    "return_1m": -0.12152324508652868,
-    "return_3m": 0.9120892447581743,
-    "distance_50dma": -0.035941915170146665,
-    "distance_200dma": 0.8349658384192318,
-    "drawdown_from_52w_high": -0.24100033652063813,
+    "latest": 900.2000122070312,
+    "latest_date": "2026-07-27",
+    "return_1m": -0.25810141997624736,
+    "return_3m": 0.8125673696563442,
+    "distance_50dma": -0.0595669929259528,
+    "distance_200dma": 0.7809417517486654,
+    "drawdown_from_52w_high": -0.25810141997624736,
     "range_52w": {
       "high": 1213.3734130859375
     }
@@ -28,7 +28,7 @@
     "ttm_revenue": 90274000000.0,
     "ttm_net_income": 50469000000.0,
     "ttm_diluted_eps": 44.239999999999995,
-    "trailing_pe": 20.81713409147901
+    "trailing_pe": 20.348101541750257
   },
   "weights": {
     "price_heat": 0.3,
@@ -39,45 +39,45 @@
   },
   "groups": {
     "price_heat": {
-      "score": 55.3,
+      "score": 51.9,
       "metrics": [
         {
           "name": "MU 3M Return",
-          "value": 0.9120892447581743,
-          "score": 77.9,
+          "value": 0.8125673696563442,
+          "score": 70.2,
           "source": "auto: Yahoo Finance chart API",
           "note": "Three-month momentum heat.",
-          "as_of": "2026-07-24",
+          "as_of": "2026-07-27",
           "refresh": "auto",
           "used_in_score": true
         },
         {
           "name": "Distance From 200DMA",
-          "value": 0.8349658384192318,
-          "score": 85.0,
+          "value": 0.7809417517486654,
+          "score": 80.1,
           "source": "auto: Yahoo Finance chart API",
           "note": "Price extension above long trend.",
-          "as_of": "2026-07-24",
+          "as_of": "2026-07-27",
           "refresh": "auto",
           "used_in_score": true
         },
         {
           "name": "Drawdown From 52W High",
-          "value": -0.24100033652063813,
-          "score": 53.6,
+          "value": -0.25810141997624736,
+          "score": 57.4,
           "source": "auto: Yahoo Finance chart API",
           "note": "Near-high prices leave less margin for disappointment.",
-          "as_of": "2026-07-24",
+          "as_of": "2026-07-27",
           "refresh": "auto",
           "used_in_score": true
         },
         {
           "name": "MU 1M Return",
-          "value": -0.12152324508652868,
-          "score": 4.7,
+          "value": -0.25810141997624736,
+          "score": 0.0,
           "source": "auto: Yahoo Finance chart API",
           "note": "Short-term acceleration heat.",
-          "as_of": "2026-07-24",
+          "as_of": "2026-07-27",
           "refresh": "auto",
           "used_in_score": true
         }
@@ -164,15 +164,15 @@
       ]
     },
     "peak_earnings_trap": {
-      "score": 83.2,
+      "score": 83.8,
       "metrics": [
         {
           "name": "Trailing GAAP P/E",
-          "value": 20.81713409147901,
-          "score": 52.5,
+          "value": 20.348101541750257,
+          "score": 54.3,
           "source": "auto: Yahoo Finance + SEC companyfacts",
           "note": "Low P/E becomes risky when it is paired with extreme margins and EPS surge, because it may reflect peak earnings.",
-          "as_of": "2026-07-24",
+          "as_of": "2026-07-27",
           "refresh": "auto",
           "used_in_score": true
         },
@@ -199,15 +199,15 @@
       ]
     },
     "liquidity_sensitivity": {
-      "score": 55.3,
+      "score": 41.4,
       "metrics": [
         {
           "name": "Market Liquidity Sensitivity",
-          "value": 55.3,
-          "score": 55.3,
+          "value": 41.4,
+          "score": 41.4,
           "source": "dashboard: liquidity drain overlay",
           "note": "High-beta AI canaries become more fragile when the broader liquidity-drain overlay rises.",
-          "as_of": "2026-07-24",
+          "as_of": "2026-07-27",
           "refresh": "auto",
           "used_in_score": true
         }
