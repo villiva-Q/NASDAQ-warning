@@ -1,17 +1,17 @@
 {
   "available": true,
-  "as_of": "2026-07-28",
-  "score": 68.2,
+  "as_of": "2026-07-29",
+  "score": 67.9,
   "status": "Hot",
   "symbol": "MU",
   "price": {
-    "latest": 820.530029296875,
-    "latest_date": "2026-07-28",
-    "return_1m": -0.2752499536099642,
-    "return_3m": 0.5644659666994412,
-    "distance_50dma": -0.14359645563719914,
-    "distance_200dma": 0.6133624107655693,
-    "drawdown_from_52w_high": -0.32376132487521325,
+    "latest": 739.0,
+    "latest_date": "2026-07-29",
+    "return_1m": -0.35464370375274057,
+    "return_3m": 0.46565198933739027,
+    "distance_50dma": -0.22892357952661302,
+    "distance_200dma": 0.44528420870713714,
+    "drawdown_from_52w_high": -0.3909541844002312,
     "range_52w": {
       "high": 1213.3734130859375
     }
@@ -28,7 +28,7 @@
     "ttm_revenue": 90274000000.0,
     "ttm_net_income": 50469000000.0,
     "ttm_diluted_eps": 44.239999999999995,
-    "trailing_pe": 18.547242976873306
+    "trailing_pe": 16.704339963833636
   },
   "weights": {
     "price_heat": 0.3,
@@ -39,45 +39,45 @@
   },
   "groups": {
     "price_heat": {
-      "score": 47.0,
+      "score": 45.0,
       "metrics": [
         {
           "name": "MU 3M Return",
-          "value": 0.5644659666994412,
-          "score": 51.1,
+          "value": 0.46565198933739027,
+          "score": 43.5,
           "source": "auto: Yahoo Finance chart API",
           "note": "Three-month momentum heat.",
-          "as_of": "2026-07-28",
+          "as_of": "2026-07-29",
           "refresh": "auto",
           "used_in_score": true
         },
         {
           "name": "Distance From 200DMA",
-          "value": 0.6133624107655693,
-          "score": 64.9,
+          "value": 0.44528420870713714,
+          "score": 49.6,
           "source": "auto: Yahoo Finance chart API",
           "note": "Price extension above long trend.",
-          "as_of": "2026-07-28",
+          "as_of": "2026-07-29",
           "refresh": "auto",
           "used_in_score": true
         },
         {
           "name": "Drawdown From 52W High",
-          "value": -0.32376132487521325,
-          "score": 71.9,
+          "value": -0.3909541844002312,
+          "score": 86.9,
           "source": "auto: Yahoo Finance chart API",
           "note": "Near-high prices leave less margin for disappointment.",
-          "as_of": "2026-07-28",
+          "as_of": "2026-07-29",
           "refresh": "auto",
           "used_in_score": true
         },
         {
           "name": "MU 1M Return",
-          "value": -0.2752499536099642,
+          "value": -0.35464370375274057,
           "score": 0.0,
           "source": "auto: Yahoo Finance chart API",
           "note": "Short-term acceleration heat.",
-          "as_of": "2026-07-28",
+          "as_of": "2026-07-29",
           "refresh": "auto",
           "used_in_score": true
         }
@@ -164,15 +164,15 @@
       ]
     },
     "peak_earnings_trap": {
-      "score": 86.0,
+      "score": 88.3,
       "metrics": [
         {
           "name": "Trailing GAAP P/E",
-          "value": 18.547242976873306,
-          "score": 60.9,
+          "value": 16.704339963833636,
+          "score": 67.8,
           "source": "auto: Yahoo Finance + SEC companyfacts",
           "note": "Low P/E becomes risky when it is paired with extreme margins and EPS surge, because it may reflect peak earnings.",
-          "as_of": "2026-07-28",
+          "as_of": "2026-07-29",
           "refresh": "auto",
           "used_in_score": true
         },
@@ -207,7 +207,7 @@
           "score": 41.4,
           "source": "dashboard: liquidity drain overlay",
           "note": "High-beta AI canaries become more fragile when the broader liquidity-drain overlay rises.",
-          "as_of": "2026-07-28",
+          "as_of": "2026-07-29",
           "refresh": "auto",
           "used_in_score": true
         }
