@@ -17,19 +17,6 @@
   "qoq_delta": -0.10574004842051798,
   "series": [
     {
-      "quarter": "2023Q2",
-      "end": "2023-06-30",
-      "total_usd": 42117000000.0,
-      "total_usd_bn": 42.117,
-      "company_count": 4,
-      "companies": {
-        "MSFT": 8943000000.0,
-        "AMZN": 11455000000.0,
-        "GOOGL": 3391000000.0,
-        "META": 7617000000.0
-      }
-    },
-    {
       "quarter": "2023Q3",
       "end": "2023-09-30",
       "total_usd": 49473000000.0,
@@ -128,7 +115,7 @@
       "company_count": 4,
       "companies": {
         "MSFT": 17079000000.0,
-        "AMZN": 42277000000.0,
+        "AMZN": 32183000000.0,
         "GOOGL": 27631000000.0,
         "META": 23079000000.0
       }
@@ -170,6 +157,18 @@
         "AMZN": 44203000000.0,
         "GOOGL": 35674000000.0,
         "META": 18997000000.0
+      }
+    },
+    {
+      "quarter": "2026Q2",
+      "end": "2026-06-30",
+      "total_usd": 226803000000.0,
+      "total_usd_bn": 226.803,
+      "company_count": 3,
+      "companies": {
+        "MSFT": 35802000000.0,
+        "AMZN": 73392000000.0,
+        "GOOGL": 63401000000.0
       }
     }
   ],
@@ -319,28 +318,6 @@
       "concept": "PaymentsToAcquireProductiveAssets",
       "series": [
         {
-          "start": "2023-03-31",
-          "end": "2024-06-30",
-          "fy": 2024,
-          "fp": "Q2",
-          "quarter": "2024Q2",
-          "value": 18338000000.0,
-          "filed": "2024-08-02",
-          "form": "10-Q",
-          "method": "derived_from_ytd"
-        },
-        {
-          "start": "2024-04-01",
-          "end": "2024-06-30",
-          "fy": 2025,
-          "fp": "Q2",
-          "quarter": "2024Q2",
-          "value": 17620000000.0,
-          "filed": "2025-08-01",
-          "form": "10-Q",
-          "method": "standalone"
-        },
-        {
           "start": "2024-06-30",
           "end": "2024-09-30",
           "fy": 2024,
@@ -385,17 +362,6 @@
           "method": "standalone"
         },
         {
-          "start": "2025-04-01",
-          "end": "2025-06-30",
-          "fy": 2025,
-          "fp": "Q2",
-          "quarter": "2025Q2",
-          "value": 32183000000.0,
-          "filed": "2025-08-01",
-          "form": "10-Q",
-          "method": "standalone"
-        },
-        {
           "start": "2024-03-31",
           "end": "2025-06-30",
           "fy": 2025,
@@ -405,6 +371,17 @@
           "filed": "2025-08-01",
           "form": "10-Q",
           "method": "derived_from_ytd"
+        },
+        {
+          "start": "2025-04-01",
+          "end": "2025-06-30",
+          "fy": 2026,
+          "fp": "Q2",
+          "quarter": "2025Q2",
+          "value": 32183000000.0,
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "method": "standalone"
         },
         {
           "start": "2025-07-01",
@@ -449,6 +426,28 @@
           "filed": "2026-04-30",
           "form": "10-Q",
           "method": "standalone"
+        },
+        {
+          "start": "2026-04-01",
+          "end": "2026-06-30",
+          "fy": 2026,
+          "fp": "Q2",
+          "quarter": "2026Q2",
+          "value": 54208000000.0,
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "method": "standalone"
+        },
+        {
+          "start": "2025-03-31",
+          "end": "2026-06-30",
+          "fy": 2026,
+          "fp": "Q2",
+          "quarter": "2026Q2",
+          "value": 73392000000.0,
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "method": "derived_from_ytd"
         }
       ]
     },
