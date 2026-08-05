@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-08-04T23:28:17+00:00",
+  "generated_at": "2026-08-05T23:25:55+00:00",
   "market": "NASDAQ / QQQ",
   "manual_inputs": {
     "manual_inputs_updated_at": "2026-06-03",
     "manual_update_path": "Edit config/indicators.json, then run scripts/update_data.py or trigger the GitHub Actions workflow manually.",
     "manual_update_path_zh": "\u7f16\u8f91 config/indicators.json\uff0c\u7136\u540e\u8fd0\u884c scripts/update_data.py\uff0c\u6216\u5728 GitHub Actions \u4e2d\u624b\u52a8\u89e6\u53d1\u66f4\u65b0\u5de5\u4f5c\u6d41\u3002"
   },
-  "overall_score": 55.5,
+  "overall_score": 55.3,
   "status": "Yellow",
   "modules": {
-    "price_confirmation": 35.5,
+    "price_confirmation": 31.3,
     "finra_margin_slow": 100.0,
-    "daily_leverage_proxy": 33.3,
-    "ai_fragility_overlay": 49.3
+    "daily_leverage_proxy": 36.4,
+    "ai_fragility_overlay": 51.5
   },
   "score_policy": {
     "name": "Core Daily Score",
@@ -25,21 +25,21 @@
     }
   },
   "price": {
-    "latest": 723.8499755859375,
-    "latest_date": "2026-08-04",
-    "sma50": 714.7097180175781,
-    "sma200": 644.9714785766602,
-    "return_1m": 0.001424930482391451,
-    "return_3m": 0.07693116573335201,
-    "return_6m": 0.158780995127076,
-    "distance_50dma": 0.012788769115539944,
-    "distance_200dma": 0.12229765133699932,
-    "drawdown_from_52w_high": -0.028833660274827366,
+    "latest": 717.2999877929688,
+    "latest_date": "2026-08-05",
+    "sma50": 714.7206713867188,
+    "sma200": 645.5689447021484,
+    "return_1m": 0.011093406253524618,
+    "return_3m": 0.05351781346863116,
+    "return_6m": 0.1662130880896402,
+    "distance_50dma": 0.003608845398644478,
+    "distance_200dma": 0.11111290851191025,
+    "drawdown_from_52w_high": -0.037621569212715866,
     "range_52w": {
-      "low": 557.5845336914062,
+      "low": 557.5845947265625,
       "high": 745.3408813476562
     },
-    "score": 35.54002211009793
+    "score": 31.349138368883835
   },
   "finra": {
     "month": "2026-06",
@@ -53,7 +53,7 @@
     "score": 100.0
   },
   "top_fragility_overlay": {
-    "score": 49.3,
+    "score": 51.5,
     "groups": {
       "ai_capex_cycle": {
         "score": 48.6,
@@ -75,7 +75,7 @@
             "freshness": "fresh",
             "freshness_detail": {
               "status": "fresh",
-              "age_days": 126,
+              "age_days": 127,
               "cadence": "quarterly",
               "score": 100,
               "fresh_days": 135,
@@ -101,7 +101,7 @@
             "freshness": "fresh",
             "freshness_detail": {
               "status": "fresh",
-              "age_days": 126,
+              "age_days": 127,
               "cadence": "quarterly",
               "score": 100,
               "fresh_days": 135,
@@ -132,7 +132,7 @@
             "freshness": "stale",
             "freshness_detail": {
               "status": "stale",
-              "age_days": 34,
+              "age_days": 35,
               "cadence": "weekly",
               "score": 25,
               "fresh_days": 10,
@@ -158,7 +158,7 @@
             "freshness": "stale",
             "freshness_detail": {
               "status": "stale",
-              "age_days": 34,
+              "age_days": 35,
               "cadence": "weekly",
               "score": 25,
               "fresh_days": 10,
@@ -184,7 +184,7 @@
             "freshness": "stale",
             "freshness_detail": {
               "status": "stale",
-              "age_days": 33,
+              "age_days": 34,
               "cadence": "daily",
               "score": 25,
               "fresh_days": 5,
@@ -202,7 +202,7 @@
               "low": 0,
               "high": 50
             },
-            "as_of": "2026-08-04",
+            "as_of": "2026-08-05",
             "note": "Accepted SRF tranche amount in recent repo operations. Zero is an observed value when no SRF tranche is used.",
             "cadence": "daily",
             "refresh": "daily",
@@ -222,7 +222,7 @@
         ]
       },
       "options_mechanical_bid": {
-        "score": 58.0,
+        "score": 64.6,
         "metrics": [
           {
             "name": "0DTE Stress Share",
@@ -241,7 +241,7 @@
             "freshness": "aging",
             "freshness_detail": {
               "status": "aging",
-              "age_days": 50,
+              "age_days": 51,
               "cadence": "manual",
               "score": 70,
               "fresh_days": 45,
@@ -252,14 +252,14 @@
           },
           {
             "name": "Call Premium / Call Skew Proxy",
-            "value": -0.11412145638291005,
-            "score": 2.9392718085449743,
+            "value": -0.12416260539381296,
+            "score": 0,
             "source": "auto-proxy: Cboe Daily Market Statistics",
             "range": {
               "low": -0.12,
               "high": 0.08
             },
-            "as_of": "2026-08-04",
+            "as_of": "2026-08-05",
             "note": "Index call-share minus equity call-share. This is a free volume proxy, not an IV-skew truth source.",
             "cadence": "daily",
             "refresh": "daily",
@@ -278,14 +278,14 @@
           },
           {
             "name": "Core Call Volume Heat",
-            "value": 0.7360665404177218,
-            "score": 73.60665404177217,
+            "value": 0.9635962591256337,
+            "score": 96.35962591256337,
             "source": "auto-proxy: Cboe Daily Market Statistics",
             "range": {
               "low": 0,
               "high": 1
             },
-            "as_of": "2026-08-04",
+            "as_of": "2026-08-05",
             "note": "Composite of SPX/SPXW call share and SPX/SPXW share of all Cboe option volume.",
             "cadence": "daily",
             "refresh": "daily",
@@ -1054,67 +1054,67 @@
         "sofr_rrp_spread_bp": 14.000000000000012,
         "sofr_rrp_spread_as_of": "2026-07-02",
         "srf_usage_usd_bn": 0.0,
-        "srf_usage_as_of": "2026-08-04",
+        "srf_usage_as_of": "2026-08-05",
         "source": "FRED CSV and New York Fed Markets API",
         "errors": {}
       },
       "options_mechanical_bid": {
-        "as_of": "2026-08-04",
-        "spx_call_share": 0.5252045839784973,
-        "spx_total_volume": 5672976.0,
-        "spx_share_of_all_volume": 0.3735976938394448,
-        "index_total_volume": 6931605.0,
-        "index_call_share": 0.5310262197571847,
-        "equity_call_share": 0.6451476761400947,
-        "call_skew_proxy": -0.11412145638291005,
+        "as_of": "2026-08-05",
+        "spx_call_share": 0.5442705518877501,
+        "spx_total_volume": 7393007.0,
+        "spx_share_of_all_volume": 0.4421790308411358,
+        "index_total_volume": 8668638.0,
+        "index_call_share": 0.5616193685790086,
+        "equity_call_share": 0.6857819739728216,
+        "call_skew_proxy": -0.12416260539381296,
         "products": {
           "SUM OF ALL PRODUCTS": {
-            "call_volume": 8445760.0,
-            "put_volume": 6738959.0,
-            "total_volume": 15184719.0,
-            "call_share": 0.5562012705009556
+            "call_volume": 9878682.0,
+            "put_volume": 6840806.0,
+            "total_volume": 16719488.0,
+            "call_share": 0.59084835612191
           },
           "INDEX OPTIONS": {
-            "call_volume": 3680864.0,
-            "put_volume": 3250741.0,
-            "total_volume": 6931605.0,
-            "call_share": 0.5310262197571847
+            "call_volume": 4868475.0,
+            "put_volume": 3800163.0,
+            "total_volume": 8668638.0,
+            "call_share": 0.5616193685790086
           },
           "EXCHANGE TRADED PRODUCTS": {
-            "call_volume": 1773343.0,
-            "put_volume": 1842766.0,
-            "total_volume": 3616109.0,
-            "call_share": 0.49040087010651506
+            "call_volume": 2417707.0,
+            "put_volume": 1852787.0,
+            "total_volume": 4270494.0,
+            "call_share": 0.566142230851981
           },
           "EQUITY OPTIONS": {
-            "call_volume": 2991553.0,
-            "put_volume": 1645452.0,
-            "total_volume": 4637005.0,
-            "call_share": 0.6451476761400947
+            "call_volume": 2592500.0,
+            "put_volume": 1187856.0,
+            "total_volume": 3780356.0,
+            "call_share": 0.6857819739728216
           },
           "CBOE VOLATILITY INDEX (VIX)": {
-            "call_volume": 516366.0,
-            "put_volume": 346852.0,
-            "total_volume": 863218.0,
-            "call_share": 0.598187248180645
+            "call_volume": 611060.0,
+            "put_volume": 201425.0,
+            "total_volume": 812485.0,
+            "call_share": 0.7520877308504157
           },
           "SPX + SPXW": {
-            "call_volume": 2979473.0,
-            "put_volume": 2693503.0,
-            "total_volume": 5672976.0,
-            "call_share": 0.5252045839784973
+            "call_volume": 4023796.0,
+            "put_volume": 3369211.0,
+            "total_volume": 7393007.0,
+            "call_share": 0.5442705518877501
           },
           "OEX": {
-            "call_volume": 2.0,
+            "call_volume": 1.0,
             "put_volume": 0.0,
-            "total_volume": 2.0,
+            "total_volume": 1.0,
             "call_share": 1.0
           },
           "MRUT": {
-            "call_volume": 60.0,
-            "put_volume": 26.0,
-            "total_volume": 86.0,
-            "call_share": 0.6976744186046512
+            "call_volume": 45.0,
+            "put_volume": 64.0,
+            "total_volume": 109.0,
+            "call_share": 0.41284403669724773
           },
           "MXEA": {
             "call_volume": 0.0,
@@ -1147,16 +1147,16 @@
             "call_share": null
           },
           "CBTX": {
-            "call_volume": 49.0,
-            "put_volume": 38.0,
-            "total_volume": 87.0,
-            "call_share": 0.5632183908045977
+            "call_volume": 0.0,
+            "put_volume": 0.0,
+            "total_volume": 0.0,
+            "call_share": null
           },
           "MBTX": {
-            "call_volume": 4.0,
-            "put_volume": 4.0,
-            "total_volume": 8.0,
-            "call_share": 0.5
+            "call_volume": 0.0,
+            "put_volume": 1.0,
+            "total_volume": 1.0,
+            "call_share": 0.0
           },
           "SPEQX": {
             "call_volume": 0.0,
@@ -1171,28 +1171,28 @@
             "call_share": null
           },
           "MGTN": {
-            "call_volume": 76.0,
-            "put_volume": 66.0,
-            "total_volume": 142.0,
-            "call_share": 0.5352112676056338
+            "call_volume": 63.0,
+            "put_volume": 67.0,
+            "total_volume": 130.0,
+            "call_share": 0.4846153846153846
           },
           "MGTNW": {
-            "call_volume": 518.0,
-            "put_volume": 180.0,
-            "total_volume": 698.0,
-            "call_share": 0.7421203438395415
+            "call_volume": 717.0,
+            "put_volume": 331.0,
+            "total_volume": 1048.0,
+            "call_share": 0.6841603053435115
           },
           "DJX": {
-            "call_volume": 54.0,
-            "put_volume": 68.0,
-            "total_volume": 122.0,
-            "call_share": 0.4426229508196721
+            "call_volume": 787.0,
+            "put_volume": 1816.0,
+            "total_volume": 2603.0,
+            "call_share": 0.30234344986553974
           },
           "DJXW": {
-            "call_volume": 750.0,
-            "put_volume": 121.0,
-            "total_volume": 871.0,
-            "call_share": 0.8610792192881745
+            "call_volume": 264.0,
+            "put_volume": 993.0,
+            "total_volume": 1257.0,
+            "call_share": 0.2100238663484487
           },
           "XSPBX": {
             "call_volume": 0.0,
@@ -1202,9 +1202,9 @@
           },
           "XSPBW": {
             "call_volume": 2.0,
-            "put_volume": 0.0,
-            "total_volume": 2.0,
-            "call_share": 1.0
+            "put_volume": 2.0,
+            "total_volume": 4.0,
+            "call_share": 0.5
           }
         },
         "source": "Cboe Daily Market Statistics page",
@@ -1214,18 +1214,18 @@
   },
   "micron_canary": {
     "available": true,
-    "as_of": "2026-08-04",
-    "score": 68.1,
+    "as_of": "2026-08-05",
+    "score": 67.7,
     "status": "Hot",
     "symbol": "MU",
     "price": {
-      "latest": 892.6699829101562,
-      "latest_date": "2026-08-04",
-      "return_1m": -0.09350598333571336,
-      "return_3m": 0.5488025389953834,
-      "distance_50dma": -0.07907522084452479,
-      "distance_200dma": 0.7014443068983607,
-      "drawdown_from_52w_high": -0.2643072830812614,
+      "latest": 893.1900024414062,
+      "latest_date": "2026-08-05",
+      "return_1m": -0.04815746521266695,
+      "return_3m": 0.3953879427397995,
+      "distance_50dma": -0.08123641043362884,
+      "distance_200dma": 0.6913000626018324,
+      "drawdown_from_52w_high": -0.2638787097124685,
       "range_52w": {
         "high": 1213.3734130859375
       }
@@ -1242,7 +1242,7 @@
       "ttm_revenue": 90274000000.0,
       "ttm_net_income": 50469000000.0,
       "ttm_diluted_eps": 44.239999999999995,
-      "trailing_pe": 20.177892922923967
+      "trailing_pe": 20.189647433124012
     },
     "weights": {
       "price_heat": 0.3,
@@ -1253,45 +1253,45 @@
     },
     "groups": {
       "price_heat": {
-        "score": 47.7,
+        "score": 46.4,
         "metrics": [
           {
             "name": "MU 3M Return",
-            "value": 0.5488025389953834,
-            "score": 49.9,
+            "value": 0.3953879427397995,
+            "score": 38.1,
             "source": "auto: Yahoo Finance chart API",
             "note": "Three-month momentum heat.",
-            "as_of": "2026-08-04",
+            "as_of": "2026-08-05",
             "refresh": "auto",
             "used_in_score": true
           },
           {
             "name": "Distance From 200DMA",
-            "value": 0.7014443068983607,
-            "score": 72.9,
+            "value": 0.6913000626018324,
+            "score": 71.9,
             "source": "auto: Yahoo Finance chart API",
             "note": "Price extension above long trend.",
-            "as_of": "2026-08-04",
+            "as_of": "2026-08-05",
             "refresh": "auto",
             "used_in_score": true
           },
           {
             "name": "Drawdown From 52W High",
-            "value": -0.2643072830812614,
-            "score": 58.7,
+            "value": -0.2638787097124685,
+            "score": 58.6,
             "source": "auto: Yahoo Finance chart API",
             "note": "Near-high prices leave less margin for disappointment.",
-            "as_of": "2026-08-04",
+            "as_of": "2026-08-05",
             "refresh": "auto",
             "used_in_score": true
           },
           {
             "name": "MU 1M Return",
-            "value": -0.09350598333571336,
-            "score": 9.4,
+            "value": -0.04815746521266695,
+            "score": 17.0,
             "source": "auto: Yahoo Finance chart API",
             "note": "Short-term acceleration heat.",
-            "as_of": "2026-08-04",
+            "as_of": "2026-08-05",
             "refresh": "auto",
             "used_in_score": true
           }
@@ -1382,11 +1382,11 @@
         "metrics": [
           {
             "name": "Trailing GAAP P/E",
-            "value": 20.177892922923967,
+            "value": 20.189647433124012,
             "score": 54.9,
             "source": "auto: Yahoo Finance + SEC companyfacts",
             "note": "Low P/E becomes risky when it is paired with extreme margins and EPS surge, because it may reflect peak earnings.",
-            "as_of": "2026-08-04",
+            "as_of": "2026-08-05",
             "refresh": "auto",
             "used_in_score": true
           },
@@ -1421,7 +1421,7 @@
             "score": 41.4,
             "source": "dashboard: liquidity drain overlay",
             "note": "High-beta AI canaries become more fragile when the broader liquidity-drain overlay rises.",
-            "as_of": "2026-08-04",
+            "as_of": "2026-08-05",
             "refresh": "auto",
             "used_in_score": true
           }
@@ -1441,19 +1441,19 @@
   },
   "bottom_framework": {
     "available": true,
-    "as_of": "2026-08-04T00:00:00",
-    "score": 10.8,
-    "score_pct": 53.8,
+    "as_of": "2026-08-05T00:00:00",
+    "score": 13.8,
+    "score_pct": 69.2,
     "status": "No setup",
     "qqq": {
-      "close": 723.85,
-      "drawdown_from_52w_high": -0.028833660274827366,
+      "close": 717.3,
+      "drawdown_from_52w_high": -0.037621569212715866,
       "forward_21d": null,
       "forward_63d": null
     },
     "calibration": {
-      "history_start": "2017-08-04T00:00:00",
-      "history_end": "2026-08-04T00:00:00",
+      "history_start": "2017-08-07T00:00:00",
+      "history_end": "2026-08-05T00:00:00",
       "event_count": 20,
       "best_threshold": 13,
       "threshold_summary": [
@@ -1463,9 +1463,9 @@
           "events": 20,
           "avg_days_from_low": -24.526315789473685,
           "median_days_from_low": -7.0,
-          "avg_fwd_21d": 0.007518664952735221,
+          "avg_fwd_21d": 0.007518692871503319,
           "hit_rate_21d": 0.5263157894736842,
-          "avg_fwd_63d": 0.06812948283620827,
+          "avg_fwd_63d": 0.0681295426525573,
           "hit_rate_63d": 0.8421052631578947
         },
         {
@@ -1474,9 +1474,9 @@
           "events": 20,
           "avg_days_from_low": -23.210526315789473,
           "median_days_from_low": -7.0,
-          "avg_fwd_21d": 0.004202981696237054,
+          "avg_fwd_21d": 0.0042029797606529225,
           "hit_rate_21d": 0.47368421052631576,
-          "avg_fwd_63d": 0.06577581497759594,
+          "avg_fwd_63d": 0.06577583648273991,
           "hit_rate_63d": 0.8421052631578947
         },
         {
@@ -1485,42 +1485,42 @@
           "events": 20,
           "avg_days_from_low": -21.68421052631579,
           "median_days_from_low": 1.0,
-          "avg_fwd_21d": 0.008532928858202787,
+          "avg_fwd_21d": 0.008532882594151222,
           "hit_rate_21d": 0.47368421052631576,
-          "avg_fwd_63d": 0.06850554018386013,
+          "avg_fwd_63d": 0.0685055005164553,
           "hit_rate_63d": 0.8421052631578947
         },
         {
           "threshold": 11,
-          "triggered_events": 18,
+          "triggered_events": 19,
           "events": 20,
           "avg_days_from_low": -17.77777777777778,
           "median_days_from_low": 4.0,
-          "avg_fwd_21d": 0.03117045695633699,
+          "avg_fwd_21d": 0.031170466316616637,
           "hit_rate_21d": 0.5555555555555556,
-          "avg_fwd_63d": 0.0932539167237114,
+          "avg_fwd_63d": 0.09325393077242895,
           "hit_rate_63d": 0.7777777777777778
         },
         {
           "threshold": 12,
-          "triggered_events": 16,
+          "triggered_events": 17,
           "events": 20,
           "avg_days_from_low": -17.9375,
           "median_days_from_low": 4.5,
-          "avg_fwd_21d": 0.03229152820817244,
+          "avg_fwd_21d": 0.03229160333734351,
           "hit_rate_21d": 0.6875,
-          "avg_fwd_63d": 0.08521109270637961,
+          "avg_fwd_63d": 0.08521116892772415,
           "hit_rate_63d": 0.875
         },
         {
           "threshold": 13,
-          "triggered_events": 12,
+          "triggered_events": 13,
           "events": 20,
           "avg_days_from_low": -20.583333333333332,
           "median_days_from_low": 6.5,
-          "avg_fwd_21d": 0.0472489852547032,
+          "avg_fwd_21d": 0.04724909253127435,
           "hit_rate_21d": 0.8333333333333334,
-          "avg_fwd_63d": 0.10954685558463977,
+          "avg_fwd_63d": 0.10954690272234753,
           "hit_rate_63d": 0.8333333333333334
         },
         {
@@ -1529,9 +1529,9 @@
           "events": 20,
           "avg_days_from_low": -69.0,
           "median_days_from_low": -6.0,
-          "avg_fwd_21d": 0.01231208738118239,
+          "avg_fwd_21d": 0.012312131796958586,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.09272016738244493,
+          "avg_fwd_63d": 0.0927200965061204,
           "hit_rate_63d": 0.75
         },
         {
@@ -1540,9 +1540,9 @@
           "events": 20,
           "avg_days_from_low": -63.333333333333336,
           "median_days_from_low": -18.0,
-          "avg_fwd_21d": -0.016834266987157287,
+          "avg_fwd_21d": -0.01683411586824694,
           "hit_rate_21d": 0.3333333333333333,
-          "avg_fwd_63d": 0.09293446596457666,
+          "avg_fwd_63d": 0.09293437430198603,
           "hit_rate_63d": 0.6666666666666666
         },
         {
@@ -1551,9 +1551,9 @@
           "events": 20,
           "avg_days_from_low": -72.0,
           "median_days_from_low": -72.0,
-          "avg_fwd_21d": 0.00924876612125003,
+          "avg_fwd_21d": 0.009248705185467498,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.082006501163286,
+          "avg_fwd_63d": 0.08200638008474975,
           "hit_rate_63d": 0.5
         },
         {
@@ -1562,150 +1562,150 @@
           "events": 20,
           "avg_days_from_low": 71.0,
           "median_days_from_low": 71.0,
-          "avg_fwd_21d": 0.09175343805787839,
+          "avg_fwd_21d": 0.09175356923127742,
           "hit_rate_21d": 1.0,
-          "avg_fwd_63d": 0.1365396566325625,
+          "avg_fwd_63d": 0.13654013023719358,
           "hit_rate_63d": 1.0
         }
       ],
       "walk_forward": {
         "tested_events": 16,
-        "triggered_events": 9,
-        "avg_fwd_21d": 0.039384612035404,
+        "triggered_events": 10,
+        "avg_fwd_21d": 0.03938471223263473,
         "hit_rate_21d": 0.7777777777777778,
-        "avg_fwd_63d": 0.10336273577059493,
+        "avg_fwd_63d": 0.10336278387396977,
         "hit_rate_63d": 0.7777777777777778
       }
     },
     "signals": [
       {
         "name": "Drawdown Zone",
-        "value": -0.028833660274827366,
+        "value": -0.037621569212715866,
         "score": 0.0,
         "source": "QQQ",
         "note": "Scores whether the pullback is large enough to matter.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Price Stabilizing",
-        "value": 0.07159245296112093,
+        "value": 0.08397686211051614,
         "score": 2.0,
         "source": "QQQ",
         "note": "Looks for short-term stabilization after the drawdown.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Oversold Rebound",
-        "value": 52.100952150691995,
-        "score": 0.0,
+        "value": 54.05250873113335,
+        "score": 2.0,
         "source": "QQQ",
         "note": "Checks whether oversold pressure is starting to reverse.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Volatility Easing",
-        "value": -1.7099990844726562,
+        "value": -4.84999942779541,
         "score": 2.0,
         "source": "Yahoo: ^VIX, ^VXN",
         "note": "VIX/VXN easing means forced hedging pressure may be cooling.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "VIX Term Structure",
-        "value": 0.8531540780671675,
+        "value": 0.8343007801105919,
         "score": 2.0,
         "source": "Yahoo: ^VIX, ^VIX3M",
         "note": "Contango recovery is a panic-normalization proxy.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Short Vol Term",
-        "value": 0.7776628667627244,
+        "value": 0.7277044541772343,
         "score": 2.0,
         "source": "Yahoo: ^VIX9D, ^VIX3M",
         "note": "VIX9D/VIX3M adds a shorter panic gauge when free data is available.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Options Skew Cooling",
-        "value": -16.569992065429688,
+        "value": -6.2299957275390625,
         "score": 1.0,
         "source": "Yahoo: ^SKEW, ^CPC",
         "note": "Free proxy for put/call and tail-hedge pressure cooling.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Rate Easing",
-        "value": 0.02299976348876953,
-        "score": 0.0,
+        "value": -0.005000591278076172,
+        "score": 1.0,
         "source": "Yahoo: ^TNX",
         "note": "Checks whether rate pressure stopped worsening.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Crypto Stable",
-        "value": 0.004799747343736449,
+        "value": 0.011894141807846648,
         "score": 1.0,
         "source": "Yahoo: BTC-USD",
         "note": "BTC stabilization proxies high-beta risk appetite.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Leveraged ETF Cooling",
-        "value": 1.2248503021419992,
-        "score": 0.0,
+        "value": 2.1309243565082983,
+        "score": 1.0,
         "source": "Yahoo: TQQQ/QQQ",
         "note": "TQQQ/QQQ volume ratio proxies leveraged NASDAQ activity.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Breadth Recovering",
-        "value": 0.02212133408062078,
+        "value": 0.03590235815245557,
         "score": 2.0,
         "source": "Yahoo: QQEW/QQQ",
         "note": "Equal-weight relative strength proxies internal repair.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
       },
       {
         "name": "Tech Relative Strength",
-        "value": 0.02926108334138422,
+        "value": 0.027186386187143752,
         "score": 2.0,
         "source": "Yahoo: QQQ/SPY",
         "note": "Checks whether NASDAQ leadership is returning.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
@@ -1716,7 +1716,7 @@
         "score": 0.0,
         "source": "FINRA margin statistics",
         "note": "Monthly margin debt is lagged 21 days to avoid look-ahead bias.",
-        "as_of": "2026-08-04T00:00:00",
+        "as_of": "2026-08-05T00:00:00",
         "refresh": "daily",
         "used_in_score": true,
         "freshness": "fresh"
@@ -1732,14 +1732,14 @@
     "price": [
       {
         "name": "QQQ Price Confirmation",
-        "value": 723.8499755859375,
-        "score": 35.54002211009793,
+        "value": 717.2999877929688,
+        "score": 31.349138368883835,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "low risk",
           "high": "high risk"
         },
-        "as_of": "2026-08-04",
+        "as_of": "2026-08-05",
         "note": "Composite of distance from 200DMA, 3M return, acceleration, and drawdown from 52-week high.",
         "refresh": "daily",
         "cadence": "daily",
@@ -1775,7 +1775,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 50,
+          "age_days": 51,
           "cadence": "monthly",
           "score": 100,
           "fresh_days": 75,
@@ -1788,14 +1788,14 @@
     "daily_leverage_proxy": [
       {
         "name": "QQQ Volume Percentile",
-        "value": 58988820.0,
-        "score": 69.04761904761905,
+        "value": 32662387.0,
+        "score": 5.952380952380952,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "1Y low volume",
           "high": "1Y high volume"
         },
-        "as_of": "2026-08-04",
+        "as_of": "2026-08-05",
         "note": "Daily QQQ volume percentile over the last 252 trading days.",
         "refresh": "daily",
         "cadence": "daily",
@@ -1814,14 +1814,14 @@
       },
       {
         "name": "TQQQ Volume Percentile",
-        "value": 72252474.0,
-        "score": 27.380952380952383,
+        "value": 69601076.0,
+        "score": 22.61904761904762,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "1Y low volume",
           "high": "1Y high volume"
         },
-        "as_of": "2026-08-04",
+        "as_of": "2026-08-05",
         "note": "Daily TQQQ volume percentile over the last 252 trading days.",
         "refresh": "daily",
         "cadence": "daily",
@@ -1840,14 +1840,14 @@
       },
       {
         "name": "TQQQ / QQQ Volume Ratio",
-        "value": 1.2248503021419992,
-        "score": 3.571428571428571,
+        "value": 2.1309243565082983,
+        "score": 80.55555555555556,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "1Y low ratio",
           "high": "1Y high ratio"
         },
-        "as_of": "2026-08-04",
+        "as_of": "2026-08-05",
         "note": "Leveraged ETF activity proxy relative to QQQ volume.",
         "refresh": "daily",
         "cadence": "daily",
@@ -1883,7 +1883,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 126,
+          "age_days": 127,
           "cadence": "quarterly",
           "score": 100,
           "fresh_days": 135,
@@ -1909,7 +1909,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 126,
+          "age_days": 127,
           "cadence": "quarterly",
           "score": 100,
           "fresh_days": 135,
@@ -1935,7 +1935,7 @@
         "freshness": "stale",
         "freshness_detail": {
           "status": "stale",
-          "age_days": 34,
+          "age_days": 35,
           "cadence": "weekly",
           "score": 25,
           "fresh_days": 10,
@@ -1961,7 +1961,7 @@
         "freshness": "stale",
         "freshness_detail": {
           "status": "stale",
-          "age_days": 34,
+          "age_days": 35,
           "cadence": "weekly",
           "score": 25,
           "fresh_days": 10,
@@ -1987,7 +1987,7 @@
         "freshness": "stale",
         "freshness_detail": {
           "status": "stale",
-          "age_days": 33,
+          "age_days": 34,
           "cadence": "daily",
           "score": 25,
           "fresh_days": 5,
@@ -2005,7 +2005,7 @@
           "low": 0,
           "high": 50
         },
-        "as_of": "2026-08-04",
+        "as_of": "2026-08-05",
         "note": "Accepted SRF tranche amount in recent repo operations. Zero is an observed value when no SRF tranche is used.",
         "cadence": "daily",
         "refresh": "daily",
@@ -2039,7 +2039,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 50,
+          "age_days": 51,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2050,14 +2050,14 @@
       },
       {
         "name": "Call Premium / Call Skew Proxy",
-        "value": -0.11412145638291005,
-        "score": 2.9392718085449743,
+        "value": -0.12416260539381296,
+        "score": 0,
         "source": "auto-proxy: Cboe Daily Market Statistics",
         "range": {
           "low": -0.12,
           "high": 0.08
         },
-        "as_of": "2026-08-04",
+        "as_of": "2026-08-05",
         "note": "Index call-share minus equity call-share. This is a free volume proxy, not an IV-skew truth source.",
         "cadence": "daily",
         "refresh": "daily",
@@ -2076,14 +2076,14 @@
       },
       {
         "name": "Core Call Volume Heat",
-        "value": 0.7360665404177218,
-        "score": 73.60665404177217,
+        "value": 0.9635962591256337,
+        "score": 96.35962591256337,
         "source": "auto-proxy: Cboe Daily Market Statistics",
         "range": {
           "low": 0,
           "high": 1
         },
-        "as_of": "2026-08-04",
+        "as_of": "2026-08-05",
         "note": "Composite of SPX/SPXW call share and SPX/SPXW share of all Cboe option volume.",
         "cadence": "daily",
         "refresh": "daily",
@@ -2121,7 +2121,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 62,
+          "age_days": 63,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2147,7 +2147,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 62,
+          "age_days": 63,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2173,7 +2173,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 62,
+          "age_days": 63,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2201,7 +2201,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 62,
+          "age_days": 63,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2227,7 +2227,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 62,
+          "age_days": 63,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2253,7 +2253,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 62,
+          "age_days": 63,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2281,7 +2281,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 62,
+          "age_days": 63,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2307,7 +2307,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 62,
+          "age_days": 63,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2335,7 +2335,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 81,
+          "age_days": 82,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2361,7 +2361,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 81,
+          "age_days": 82,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2387,7 +2387,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 81,
+          "age_days": 82,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2415,7 +2415,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 62,
+          "age_days": 63,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2441,7 +2441,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 62,
+          "age_days": 63,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2459,13 +2459,8 @@
   ],
   "history": [
     {
-      "date": "2025-07-23",
-      "close": 561.1075439453125,
-      "volume": 40215300
-    },
-    {
       "date": "2025-07-24",
-      "close": 562.3018798828125,
+      "close": 562.3018188476562,
       "volume": 42275500
     },
     {
@@ -2475,22 +2470,22 @@
     },
     {
       "date": "2025-07-28",
-      "close": 565.4168090820312,
+      "close": 565.4168701171875,
       "volume": 31498700
     },
     {
       "date": "2025-07-29",
-      "close": 564.541015625,
+      "close": 564.5410766601562,
       "volume": 45463300
     },
     {
       "date": "2025-07-30",
-      "close": 565.2974853515625,
+      "close": 565.2974243164062,
       "volume": 43433800
     },
     {
       "date": "2025-07-31",
-      "close": 562.3018798828125,
+      "close": 562.3018188476562,
       "volume": 64613600
     },
     {
@@ -2505,12 +2500,12 @@
     },
     {
       "date": "2025-08-05",
-      "close": 557.5845336914062,
+      "close": 557.5845947265625,
       "volume": 48666600
     },
     {
       "date": "2025-08-06",
-      "close": 564.6007690429688,
+      "close": 564.600830078125,
       "volume": 41823700
     },
     {
@@ -2520,7 +2515,7 @@
     },
     {
       "date": "2025-08-08",
-      "close": 571.7960815429688,
+      "close": 571.796142578125,
       "volume": 35255500
     },
     {
@@ -2535,37 +2530,37 @@
     },
     {
       "date": "2025-08-13",
-      "close": 577.558349609375,
+      "close": 577.5584106445312,
       "volume": 41209300
     },
     {
       "date": "2025-08-14",
-      "close": 577.1105346679688,
+      "close": 577.1104736328125,
       "volume": 45425000
     },
     {
       "date": "2025-08-15",
-      "close": 574.57275390625,
+      "close": 574.5728149414062,
       "volume": 49480200
     },
     {
       "date": "2025-08-18",
-      "close": 574.3438110351562,
+      "close": 574.3438720703125,
       "volume": 29831000
     },
     {
       "date": "2025-08-19",
-      "close": 566.5513916015625,
+      "close": 566.5513305664062,
       "volume": 53752600
     },
     {
       "date": "2025-08-20",
-      "close": 563.1876220703125,
+      "close": 563.1875610351562,
       "volume": 76781100
     },
     {
       "date": "2025-08-21",
-      "close": 560.5801391601562,
+      "close": 560.5802001953125,
       "volume": 46436900
     },
     {
@@ -2575,12 +2570,12 @@
     },
     {
       "date": "2025-08-25",
-      "close": 567.5863647460938,
+      "close": 567.5864868164062,
       "volume": 34044700
     },
     {
       "date": "2025-08-26",
-      "close": 569.8654174804688,
+      "close": 569.8653564453125,
       "volume": 34103000
     },
     {
@@ -2605,7 +2600,7 @@
     },
     {
       "date": "2025-09-03",
-      "close": 567.337646484375,
+      "close": 567.3375854492188,
       "volume": 54230200
     },
     {
@@ -2615,17 +2610,17 @@
     },
     {
       "date": "2025-09-05",
-      "close": 573.298828125,
+      "close": 573.2988891601562,
       "volume": 68342500
     },
     {
       "date": "2025-09-08",
-      "close": 576.0953369140625,
+      "close": 576.0953979492188,
       "volume": 46371400
     },
     {
       "date": "2025-09-09",
-      "close": 577.7276000976562,
+      "close": 577.7275390625,
       "volume": 44007600
     },
     {
@@ -2635,12 +2630,12 @@
     },
     {
       "date": "2025-09-11",
-      "close": 581.2803955078125,
+      "close": 581.2804565429688,
       "volume": 44745800
     },
     {
       "date": "2025-09-12",
-      "close": 583.8480224609375,
+      "close": 583.8480834960938,
       "volume": 50745900
     },
     {
@@ -2650,22 +2645,22 @@
     },
     {
       "date": "2025-09-16",
-      "close": 588.346435546875,
+      "close": 588.3463745117188,
       "volume": 36942100
     },
     {
       "date": "2025-09-17",
-      "close": 587.1720581054688,
+      "close": 587.172119140625,
       "volume": 69384800
     },
     {
       "date": "2025-09-18",
-      "close": 592.466552734375,
+      "close": 592.4666137695312,
       "volume": 61069300
     },
     {
       "date": "2025-09-19",
-      "close": 596.4771728515625,
+      "close": 596.4772338867188,
       "volume": 58196100
     },
     {
@@ -2730,7 +2725,7 @@
     },
     {
       "date": "2025-10-08",
-      "close": 609.2147827148438,
+      "close": 609.2147216796875,
       "volume": 50629800
     },
     {
@@ -2750,17 +2745,17 @@
     },
     {
       "date": "2025-10-14",
-      "close": 595.8236083984375,
+      "close": 595.8236694335938,
       "volume": 69203200
     },
     {
       "date": "2025-10-15",
-      "close": 600.0281982421875,
+      "close": 600.0282592773438,
       "volume": 62805500
     },
     {
       "date": "2025-10-16",
-      "close": 597.8063354492188,
+      "close": 597.806396484375,
       "volume": 70982000
     },
     {
@@ -2770,7 +2765,7 @@
     },
     {
       "date": "2025-10-20",
-      "close": 609.3142700195312,
+      "close": 609.3143310546875,
       "volume": 45761700
     },
     {
@@ -2815,7 +2810,7 @@
     },
     {
       "date": "2025-10-31",
-      "close": 626.7805786132812,
+      "close": 626.7806396484375,
       "volume": 66305100
     },
     {
@@ -2825,7 +2820,7 @@
     },
     {
       "date": "2025-11-04",
-      "close": 616.996337890625,
+      "close": 616.9962768554688,
       "volume": 63830800
     },
     {
@@ -2875,17 +2870,17 @@
     },
     {
       "date": "2025-11-18",
-      "close": 594.1397705078125,
+      "close": 594.1397094726562,
       "volume": 83327300
     },
     {
       "date": "2025-11-19",
-      "close": 597.6868896484375,
+      "close": 597.6868286132812,
       "volume": 73111500
     },
     {
       "date": "2025-11-20",
-      "close": 583.5385131835938,
+      "close": 583.5384521484375,
       "volume": 117743200
     },
     {
@@ -2900,7 +2895,7 @@
     },
     {
       "date": "2025-11-25",
-      "close": 606.6740112304688,
+      "close": 606.674072265625,
       "volume": 57560900
     },
     {
@@ -2910,7 +2905,7 @@
     },
     {
       "date": "2025-11-28",
-      "close": 616.996337890625,
+      "close": 616.9962768554688,
       "volume": 23034400
     },
     {
@@ -2920,12 +2915,12 @@
     },
     {
       "date": "2025-12-02",
-      "close": 619.736328125,
+      "close": 619.7362670898438,
       "volume": 54541800
     },
     {
       "date": "2025-12-03",
-      "close": 621.2507934570312,
+      "close": 621.250732421875,
       "volume": 47841600
     },
     {
@@ -2940,12 +2935,12 @@
     },
     {
       "date": "2025-12-08",
-      "close": 622.008056640625,
+      "close": 622.0079956054688,
       "volume": 43462400
     },
     {
       "date": "2025-12-09",
-      "close": 622.7752075195312,
+      "close": 622.775146484375,
       "volume": 37156000
     },
     {
@@ -2960,7 +2955,7 @@
     },
     {
       "date": "2025-12-12",
-      "close": 611.3868408203125,
+      "close": 611.3867797851562,
       "volume": 75158700
     },
     {
@@ -2980,12 +2975,12 @@
     },
     {
       "date": "2025-12-18",
-      "close": 606.8932495117188,
+      "close": 606.8931884765625,
       "volume": 78875800
     },
     {
       "date": "2025-12-19",
-      "close": 614.8042602539062,
+      "close": 614.8043212890625,
       "volume": 60369800
     },
     {
@@ -3756,7 +3751,12 @@
     {
       "date": "2026-08-04",
       "close": 723.8499755859375,
-      "volume": 58988820
+      "volume": 59778600
+    },
+    {
+      "date": "2026-08-05",
+      "close": 717.2999877929688,
+      "volume": 32662387
     }
   ],
   "notes": [
@@ -3784,42 +3784,42 @@
           "source": "auto: FRED WRESBAL / Federal Reserve H.4.1",
           "freshness": "stale",
           "as_of": "2026-07-01",
-          "age_days": 34
+          "age_days": 35
         },
         {
           "name": "Treasury General Account",
           "source": "auto: FRED WTREGEN / Treasury General Account",
           "freshness": "stale",
           "as_of": "2026-07-01",
-          "age_days": 34
+          "age_days": 35
         },
         {
           "name": "SOFR - ON RRP Spread",
           "source": "auto: FRED SOFR minus RRPONTSYAWARD",
           "freshness": "stale",
           "as_of": "2026-07-02",
-          "age_days": 33
+          "age_days": 34
         },
         {
           "name": "Bank Reserves",
           "source": "auto: FRED WRESBAL / Federal Reserve H.4.1",
           "freshness": "stale",
           "as_of": "2026-07-01",
-          "age_days": 34
+          "age_days": 35
         },
         {
           "name": "Treasury General Account",
           "source": "auto: FRED WTREGEN / Treasury General Account",
           "freshness": "stale",
           "as_of": "2026-07-01",
-          "age_days": 34
+          "age_days": 35
         },
         {
           "name": "SOFR - ON RRP Spread",
           "source": "auto: FRED SOFR minus RRPONTSYAWARD",
           "freshness": "stale",
           "as_of": "2026-07-02",
-          "age_days": 33
+          "age_days": 34
         }
       ],
       "low_confidence_used": [

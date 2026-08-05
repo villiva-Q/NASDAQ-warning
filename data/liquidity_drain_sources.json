@@ -6,7 +6,7 @@
   "sofr_rrp_spread_bp": 14.000000000000012,
   "sofr_rrp_spread_as_of": "2026-07-02",
   "srf_usage_usd_bn": 0.0,
-  "srf_usage_as_of": "2026-08-04",
+  "srf_usage_as_of": "2026-08-05",
   "source": "FRED CSV and New York Fed Markets API",
   "errors": {}
 }
