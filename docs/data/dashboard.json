@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T00:29:04+00:00",
+  "generated_at": "2026-09-09T00:20:19+00:00",
   "market": "NASDAQ / QQQ",
   "manual_inputs": {
     "manual_inputs_updated_at": "2026-06-03",
@@ -28,18 +28,18 @@
     "latest": 718.9600219726562,
     "latest_date": "2026-09-04",
     "sma50": 711.085,
-    "sma200": 656.7820751953125,
+    "sma200": 656.782075805664,
     "return_1m": 0.006030920606387102,
     "return_3m": 0.02083530129329847,
     "return_6m": 0.2015968122918783,
     "distance_50dma": 0.011074656296583774,
-    "distance_200dma": 0.09467059033067171,
+    "distance_200dma": 0.09467058931338768,
     "drawdown_from_52w_high": -0.03539435449629513,
     "range_52w": {
       "low": 557.6671752929688,
       "high": 745.3408813476562
     },
-    "score": 23.87171065452887
+    "score": 23.871710581865724
   },
   "finra": {
     "month": "2026-07",
@@ -75,7 +75,7 @@
             "freshness": "fresh",
             "freshness_detail": {
               "status": "fresh",
-              "age_days": 70,
+              "age_days": 71,
               "cadence": "quarterly",
               "score": 100,
               "fresh_days": 135,
@@ -101,7 +101,7 @@
             "freshness": "fresh",
             "freshness_detail": {
               "status": "fresh",
-              "age_days": 70,
+              "age_days": 71,
               "cadence": "quarterly",
               "score": 100,
               "fresh_days": 135,
@@ -132,7 +132,7 @@
             "freshness": "stale",
             "freshness_detail": {
               "status": "stale",
-              "age_days": 69,
+              "age_days": 70,
               "cadence": "weekly",
               "score": 25,
               "fresh_days": 10,
@@ -158,7 +158,7 @@
             "freshness": "stale",
             "freshness_detail": {
               "status": "stale",
-              "age_days": 69,
+              "age_days": 70,
               "cadence": "weekly",
               "score": 25,
               "fresh_days": 10,
@@ -184,7 +184,7 @@
             "freshness": "stale",
             "freshness_detail": {
               "status": "stale",
-              "age_days": 68,
+              "age_days": 69,
               "cadence": "daily",
               "score": 25,
               "fresh_days": 5,
@@ -202,7 +202,7 @@
               "low": 0,
               "high": 50
             },
-            "as_of": "2026-09-04",
+            "as_of": "2026-09-08",
             "note": "Accepted SRF tranche amount in recent repo operations. Zero is an observed value when no SRF tranche is used.",
             "cadence": "daily",
             "refresh": "daily",
@@ -210,7 +210,7 @@
             "freshness": "fresh",
             "freshness_detail": {
               "status": "fresh",
-              "age_days": 4,
+              "age_days": 1,
               "cadence": "daily",
               "score": 100,
               "fresh_days": 5,
@@ -241,7 +241,7 @@
             "freshness": "aging",
             "freshness_detail": {
               "status": "aging",
-              "age_days": 85,
+              "age_days": 86,
               "cadence": "manual",
               "score": 70,
               "fresh_days": 45,
@@ -259,7 +259,7 @@
               "low": -0.12,
               "high": 0.08
             },
-            "as_of": "2026-09-08",
+            "as_of": "2026-09-09",
             "note": "Index call-share minus equity call-share. This is a free volume proxy, not an IV-skew truth source.",
             "cadence": "daily",
             "refresh": "daily",
@@ -285,7 +285,7 @@
               "low": 0,
               "high": 1
             },
-            "as_of": "2026-09-08",
+            "as_of": "2026-09-09",
             "note": "Composite of SPX/SPXW call share and SPX/SPXW share of all Cboe option volume.",
             "cadence": "daily",
             "refresh": "daily",
@@ -1055,12 +1055,12 @@
         "sofr_rrp_spread_bp": 14.000000000000012,
         "sofr_rrp_spread_as_of": "2026-07-02",
         "srf_usage_usd_bn": 0.0,
-        "srf_usage_as_of": "2026-09-04",
+        "srf_usage_as_of": "2026-09-08",
         "source": "FRED CSV and New York Fed Markets API",
         "errors": {}
       },
       "options_mechanical_bid": {
-        "as_of": "2026-09-08",
+        "as_of": "2026-09-09",
         "spx_call_share": 0.466076254566638,
         "spx_total_volume": 4796198.0,
         "spx_share_of_all_volume": 0.3366053919487258,
@@ -1225,7 +1225,7 @@
       "return_1m": 0.15328946038236801,
       "return_3m": 0.17677616899477555,
       "distance_50dma": 0.08348103096372705,
-      "distance_200dma": 0.6765990068064731,
+      "distance_200dma": 0.6765990061735894,
       "drawdown_from_52w_high": -0.16217875231829515,
       "range_52w": {
         "high": 1213.3734130859375
@@ -1268,7 +1268,7 @@
           },
           {
             "name": "Distance From 200DMA",
-            "value": 0.6765990068064731,
+            "value": 0.6765990061735894,
             "score": 70.6,
             "source": "auto: Yahoo Finance chart API",
             "note": "Price extension above long trend.",
@@ -1453,7 +1453,7 @@
       "forward_63d": null
     },
     "calibration": {
-      "history_start": "2017-09-05T00:00:00",
+      "history_start": "2017-09-08T00:00:00",
       "history_end": "2026-09-04T00:00:00",
       "event_count": 20,
       "best_threshold": 13,
@@ -1464,9 +1464,9 @@
           "events": 20,
           "avg_days_from_low": -23.25,
           "median_days_from_low": -5.5,
-          "avg_fwd_21d": 0.00954787186002834,
+          "avg_fwd_21d": 0.009547885638336372,
           "hit_rate_21d": 0.55,
-          "avg_fwd_63d": 0.06812942713980848,
+          "avg_fwd_63d": 0.06812948201981064,
           "hit_rate_63d": 0.8
         },
         {
@@ -1475,9 +1475,9 @@
           "events": 20,
           "avg_days_from_low": -22.0,
           "median_days_from_low": -3.0,
-          "avg_fwd_21d": 0.0063979329891552085,
+          "avg_fwd_21d": 0.006397991601206887,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.06577581787097829,
+          "avg_fwd_63d": 0.0657759162737067,
           "hit_rate_63d": 0.8
         },
         {
@@ -1486,9 +1486,9 @@
           "events": 20,
           "avg_days_from_low": -20.55,
           "median_days_from_low": 1.0,
-          "avg_fwd_21d": 0.010511399351424694,
+          "avg_fwd_21d": 0.010511368532937415,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.06850554223546444,
+          "avg_fwd_63d": 0.068505556947561,
           "hit_rate_63d": 0.8
         },
         {
@@ -1497,9 +1497,9 @@
           "events": 20,
           "avg_days_from_low": -16.473684210526315,
           "median_days_from_low": 5.0,
-          "avg_fwd_21d": 0.029557038546107764,
+          "avg_fwd_21d": 0.02955705959633834,
           "hit_rate_21d": 0.5789473684210527,
-          "avg_fwd_63d": 0.09325390248381554,
+          "avg_fwd_63d": 0.09325390366544117,
           "hit_rate_63d": 0.7368421052631579
         },
         {
@@ -1508,9 +1508,9 @@
           "events": 20,
           "avg_days_from_low": -16.470588235294116,
           "median_days_from_low": 6.0,
-          "avg_fwd_21d": 0.030422447996333365,
+          "avg_fwd_21d": 0.030422410391410765,
           "hit_rate_21d": 0.7058823529411765,
-          "avg_fwd_63d": 0.08521107964439564,
+          "avg_fwd_63d": 0.0852111221988136,
           "hit_rate_63d": 0.8235294117647058
         },
         {
@@ -1519,9 +1519,9 @@
           "events": 20,
           "avg_days_from_low": -18.46153846153846,
           "median_days_from_low": 7.0,
-          "avg_fwd_21d": 0.043654141620221965,
+          "avg_fwd_21d": 0.04365415742715894,
           "hit_rate_21d": 0.8461538461538461,
-          "avg_fwd_63d": 0.10954687323594987,
+          "avg_fwd_63d": 0.10954688538413797,
           "hit_rate_63d": 0.7692307692307693
         },
         {
@@ -1530,9 +1530,9 @@
           "events": 20,
           "avg_days_from_low": -69.0,
           "median_days_from_low": -6.0,
-          "avg_fwd_21d": 0.01231220320234383,
+          "avg_fwd_21d": 0.012312321238418411,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.09272015491561716,
+          "avg_fwd_63d": 0.0927202409125531,
           "hit_rate_63d": 0.75
         },
         {
@@ -1541,9 +1541,9 @@
           "events": 20,
           "avg_days_from_low": -63.333333333333336,
           "median_days_from_low": -18.0,
-          "avg_fwd_21d": -0.016834086483272854,
+          "avg_fwd_21d": -0.016834038186531026,
           "hit_rate_21d": 0.3333333333333333,
-          "avg_fwd_63d": 0.0929344305253526,
+          "avg_fwd_63d": 0.0929344066261889,
           "hit_rate_63d": 0.6666666666666666
         },
         {
@@ -1552,9 +1552,9 @@
           "events": 20,
           "avg_days_from_low": -72.0,
           "median_days_from_low": -72.0,
-          "avg_fwd_21d": 0.009248920503240776,
+          "avg_fwd_21d": 0.009249087536261857,
           "hit_rate_21d": 0.5,
-          "avg_fwd_63d": 0.08200650960040373,
+          "avg_fwd_63d": 0.08200658061157501,
           "hit_rate_63d": 0.5
         },
         {
@@ -1563,18 +1563,18 @@
           "events": 20,
           "avg_days_from_low": 71.0,
           "median_days_from_low": 71.0,
-          "avg_fwd_21d": 0.09175378073080265,
+          "avg_fwd_21d": 0.0917535488923591,
           "hit_rate_21d": 1.0,
-          "avg_fwd_63d": 0.13653989343485184,
+          "avg_fwd_63d": 0.1365396566325625,
           "hit_rate_63d": 1.0
         }
       ],
       "walk_forward": {
         "tested_events": 16,
         "triggered_events": 10,
-        "avg_fwd_21d": 0.03549777355979228,
+        "avg_fwd_21d": 0.035497803654074324,
         "hit_rate_21d": 0.8,
-        "avg_fwd_63d": 0.10336281388624632,
+        "avg_fwd_63d": 0.1033628217684066,
         "hit_rate_63d": 0.7
       }
     },
@@ -1734,7 +1734,7 @@
       {
         "name": "QQQ Price Confirmation",
         "value": 718.9600219726562,
-        "score": 23.87171065452887,
+        "score": 23.871710581865724,
         "source": "auto: Yahoo Finance chart API",
         "range": {
           "low": "low risk",
@@ -1748,7 +1748,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 4,
+          "age_days": 5,
           "cadence": "daily",
           "score": 100,
           "fresh_days": 5,
@@ -1776,7 +1776,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 55,
+          "age_days": 56,
           "cadence": "monthly",
           "score": 100,
           "fresh_days": 75,
@@ -1804,7 +1804,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 4,
+          "age_days": 5,
           "cadence": "daily",
           "score": 100,
           "fresh_days": 5,
@@ -1830,7 +1830,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 4,
+          "age_days": 5,
           "cadence": "daily",
           "score": 100,
           "fresh_days": 5,
@@ -1856,7 +1856,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 4,
+          "age_days": 5,
           "cadence": "daily",
           "score": 100,
           "fresh_days": 5,
@@ -1884,7 +1884,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 70,
+          "age_days": 71,
           "cadence": "quarterly",
           "score": 100,
           "fresh_days": 135,
@@ -1910,7 +1910,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 70,
+          "age_days": 71,
           "cadence": "quarterly",
           "score": 100,
           "fresh_days": 135,
@@ -1936,7 +1936,7 @@
         "freshness": "stale",
         "freshness_detail": {
           "status": "stale",
-          "age_days": 69,
+          "age_days": 70,
           "cadence": "weekly",
           "score": 25,
           "fresh_days": 10,
@@ -1962,7 +1962,7 @@
         "freshness": "stale",
         "freshness_detail": {
           "status": "stale",
-          "age_days": 69,
+          "age_days": 70,
           "cadence": "weekly",
           "score": 25,
           "fresh_days": 10,
@@ -1988,7 +1988,7 @@
         "freshness": "stale",
         "freshness_detail": {
           "status": "stale",
-          "age_days": 68,
+          "age_days": 69,
           "cadence": "daily",
           "score": 25,
           "fresh_days": 5,
@@ -2006,7 +2006,7 @@
           "low": 0,
           "high": 50
         },
-        "as_of": "2026-09-04",
+        "as_of": "2026-09-08",
         "note": "Accepted SRF tranche amount in recent repo operations. Zero is an observed value when no SRF tranche is used.",
         "cadence": "daily",
         "refresh": "daily",
@@ -2014,7 +2014,7 @@
         "freshness": "fresh",
         "freshness_detail": {
           "status": "fresh",
-          "age_days": 4,
+          "age_days": 1,
           "cadence": "daily",
           "score": 100,
           "fresh_days": 5,
@@ -2040,7 +2040,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 85,
+          "age_days": 86,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2058,7 +2058,7 @@
           "low": -0.12,
           "high": 0.08
         },
-        "as_of": "2026-09-08",
+        "as_of": "2026-09-09",
         "note": "Index call-share minus equity call-share. This is a free volume proxy, not an IV-skew truth source.",
         "cadence": "daily",
         "refresh": "daily",
@@ -2084,7 +2084,7 @@
           "low": 0,
           "high": 1
         },
-        "as_of": "2026-09-08",
+        "as_of": "2026-09-09",
         "note": "Composite of SPX/SPXW call share and SPX/SPXW share of all Cboe option volume.",
         "cadence": "daily",
         "refresh": "daily",
@@ -2122,7 +2122,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 97,
+          "age_days": 98,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2148,7 +2148,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 97,
+          "age_days": 98,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2174,7 +2174,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 97,
+          "age_days": 98,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2202,7 +2202,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 97,
+          "age_days": 98,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2228,7 +2228,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 97,
+          "age_days": 98,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2254,7 +2254,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 97,
+          "age_days": 98,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2282,7 +2282,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 97,
+          "age_days": 98,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2308,7 +2308,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 97,
+          "age_days": 98,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2336,7 +2336,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 116,
+          "age_days": 117,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2362,7 +2362,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 116,
+          "age_days": 117,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2388,7 +2388,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 116,
+          "age_days": 117,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2416,7 +2416,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 97,
+          "age_days": 98,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2442,7 +2442,7 @@
         "freshness": "aging",
         "freshness_detail": {
           "status": "aging",
-          "age_days": 97,
+          "age_days": 98,
           "cadence": "manual",
           "score": 70,
           "fresh_days": 45,
@@ -2461,12 +2461,12 @@
   "history": [
     {
       "date": "2025-08-25",
-      "close": 567.58642578125,
+      "close": 567.5863647460938,
       "volume": 34044700
     },
     {
       "date": "2025-08-26",
-      "close": 569.8653564453125,
+      "close": 569.8654174804688,
       "volume": 34103000
     },
     {
@@ -2476,12 +2476,12 @@
     },
     {
       "date": "2025-08-28",
-      "close": 574.3140258789062,
+      "close": 574.31396484375,
       "volume": 46787900
     },
     {
       "date": "2025-08-29",
-      "close": 567.666015625,
+      "close": 567.6660766601562,
       "volume": 56030400
     },
     {
@@ -2501,7 +2501,7 @@
     },
     {
       "date": "2025-09-05",
-      "close": 573.298828125,
+      "close": 573.2988891601562,
       "volume": 68342500
     },
     {
@@ -2511,22 +2511,22 @@
     },
     {
       "date": "2025-09-09",
-      "close": 577.7275390625,
+      "close": 577.7276000976562,
       "volume": 44007600
     },
     {
       "date": "2025-09-10",
-      "close": 577.9166870117188,
+      "close": 577.9166259765625,
       "volume": 49308000
     },
     {
       "date": "2025-09-11",
-      "close": 581.2803955078125,
+      "close": 581.2804565429688,
       "volume": 44745800
     },
     {
       "date": "2025-09-12",
-      "close": 583.8480834960938,
+      "close": 583.8479614257812,
       "volume": 50745900
     },
     {
@@ -2536,12 +2536,12 @@
     },
     {
       "date": "2025-09-16",
-      "close": 588.3463745117188,
+      "close": 588.3463134765625,
       "volume": 36942100
     },
     {
       "date": "2025-09-17",
-      "close": 587.1720581054688,
+      "close": 587.172119140625,
       "volume": 69384800
     },
     {
@@ -2561,7 +2561,7 @@
     },
     {
       "date": "2025-09-23",
-      "close": 596.0228881835938,
+      "close": 596.02294921875,
       "volume": 64635500
     },
     {
@@ -2576,7 +2576,7 @@
     },
     {
       "date": "2025-09-26",
-      "close": 593.8009643554688,
+      "close": 593.801025390625,
       "volume": 54337400
     },
     {
@@ -2656,12 +2656,12 @@
     },
     {
       "date": "2025-10-20",
-      "close": 609.3143310546875,
+      "close": 609.3142700195312,
       "volume": 45761700
     },
     {
       "date": "2025-10-21",
-      "close": 609.1549072265625,
+      "close": 609.1549682617188,
       "volume": 44538200
     },
     {
@@ -2676,7 +2676,7 @@
     },
     {
       "date": "2025-10-24",
-      "close": 614.8540649414062,
+      "close": 614.8541259765625,
       "volume": 47632500
     },
     {
@@ -2691,12 +2691,12 @@
     },
     {
       "date": "2025-10-29",
-      "close": 633.4561767578125,
+      "close": 633.4562377929688,
       "volume": 67422800
     },
     {
       "date": "2025-10-30",
-      "close": 623.7715454101562,
+      "close": 623.7716064453125,
       "volume": 61628600
     },
     {
@@ -2706,7 +2706,7 @@
     },
     {
       "date": "2025-11-03",
-      "close": 629.7796630859375,
+      "close": 629.779541015625,
       "volume": 37154300
     },
     {
@@ -2716,17 +2716,17 @@
     },
     {
       "date": "2025-11-05",
-      "close": 621.0116577148438,
+      "close": 621.01171875,
       "volume": 48688500
     },
     {
       "date": "2025-11-06",
-      "close": 609.44384765625,
+      "close": 609.4439086914062,
       "volume": 72115100
     },
     {
       "date": "2025-11-07",
-      "close": 607.5209350585938,
+      "close": 607.5208740234375,
       "volume": 81835400
     },
     {
@@ -2751,7 +2751,7 @@
     },
     {
       "date": "2025-11-14",
-      "close": 606.64404296875,
+      "close": 606.6441040039062,
       "volume": 80087300
     },
     {
@@ -2761,7 +2761,7 @@
     },
     {
       "date": "2025-11-18",
-      "close": 594.1397705078125,
+      "close": 594.1398315429688,
       "volume": 83327300
     },
     {
@@ -2786,7 +2786,7 @@
     },
     {
       "date": "2025-11-25",
-      "close": 606.674072265625,
+      "close": 606.6740112304688,
       "volume": 57560900
     },
     {
@@ -2806,7 +2806,7 @@
     },
     {
       "date": "2025-12-02",
-      "close": 619.7362670898438,
+      "close": 619.736328125,
       "volume": 54541800
     },
     {
@@ -2816,17 +2816,17 @@
     },
     {
       "date": "2025-12-04",
-      "close": 620.6728515625,
+      "close": 620.6729125976562,
       "volume": 47067800
     },
     {
       "date": "2025-12-05",
-      "close": 623.2036743164062,
+      "close": 623.20361328125,
       "volume": 53614200
     },
     {
       "date": "2025-12-08",
-      "close": 622.0079956054688,
+      "close": 622.008056640625,
       "volume": 43462400
     },
     {
@@ -2841,7 +2841,7 @@
     },
     {
       "date": "2025-12-11",
-      "close": 623.3033447265625,
+      "close": 623.3032836914062,
       "volume": 58272800
     },
     {
@@ -2856,7 +2856,7 @@
     },
     {
       "date": "2025-12-16",
-      "close": 609.5235595703125,
+      "close": 609.5236206054688,
       "volume": 55152800
     },
     {
@@ -3785,42 +3785,42 @@
           "source": "auto: FRED WRESBAL / Federal Reserve H.4.1",
           "freshness": "stale",
           "as_of": "2026-07-01",
-          "age_days": 69
+          "age_days": 70
         },
         {
           "name": "Treasury General Account",
           "source": "auto: FRED WTREGEN / Treasury General Account",
           "freshness": "stale",
           "as_of": "2026-07-01",
-          "age_days": 69
+          "age_days": 70
         },
         {
           "name": "SOFR - ON RRP Spread",
           "source": "auto: FRED SOFR minus RRPONTSYAWARD",
           "freshness": "stale",
           "as_of": "2026-07-02",
-          "age_days": 68
+          "age_days": 69
         },
         {
           "name": "Bank Reserves",
           "source": "auto: FRED WRESBAL / Federal Reserve H.4.1",
           "freshness": "stale",
           "as_of": "2026-07-01",
-          "age_days": 69
+          "age_days": 70
         },
         {
           "name": "Treasury General Account",
           "source": "auto: FRED WTREGEN / Treasury General Account",
           "freshness": "stale",
           "as_of": "2026-07-01",
-          "age_days": 69
+          "age_days": 70
         },
         {
           "name": "SOFR - ON RRP Spread",
           "source": "auto: FRED SOFR minus RRPONTSYAWARD",
           "freshness": "stale",
           "as_of": "2026-07-02",
-          "age_days": 68
+          "age_days": 69
         }
       ],
       "low_confidence_used": [
