@@ -1,0 +1,33 @@
+{
+  "change": "真实归档测试隔离修复收尾",
+  "stage": "pytest",
+  "exit_code": 0,
+  "duration_seconds": 524.15,
+  "counts": {
+    "tests": 1242,
+    "passed": 1242,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "failures": [],
+  "database": true,
+  "environment": {
+    "python": "/srv/cargoq/projects/value-investing-system-l110c5/.venv/bin/python",
+    "python_version": "3.13.5",
+    "dependencies": {
+      "pytest": "8.4.2",
+      "psycopg": "3.3.5",
+      "SQLAlchemy": "2.0.52",
+      "alembic": "1.19.2",
+      "jsonschema": "4.26.0",
+      "setuptools": "84.0.0"
+    },
+    "ready": true,
+    "database_configured": true,
+    "effective_uid": 1000,
+    "network_namespace": "net:[4026531840]"
+  },
+  "evidence": "/srv/cargoq/projects/value-investing-system-l110c5/var/test-runs/20260909T031258.223381Z-2440968",
+  "remaining": "business acceptance continues"
+}

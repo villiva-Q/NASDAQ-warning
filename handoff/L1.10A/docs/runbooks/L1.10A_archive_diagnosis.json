@@ -1,0 +1,6335 @@
+{
+  "companies": [
+    {
+      "cik": "0000021344",
+      "fields": [
+        {
+          "accession_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2022-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 9519000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3I",
+              "fy": 2024,
+              "val": 11883000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 9366000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 13938000000
+            }
+          ],
+          "context": "instant",
+          "metric": "cash_and_cash_equivalents",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 13938000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD",
+          "taxonomy": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 8929000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 2854000000
+            }
+          ],
+          "context": "duration",
+          "metric": "cfo",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 2854000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD",
+          "taxonomy": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 1001000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 1261000000
+            }
+          ],
+          "context": "duration",
+          "metric": "capex",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 1261000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/PaymentsToAcquirePropertyPlantAndEquipment/units/USD",
+          "taxonomy": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 8741000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 3087000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 8436000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 2848000000
+            }
+          ],
+          "context": "duration",
+          "metric": "net_income",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 8436000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 2848000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/NetIncomeLoss/units/USD",
+          "taxonomy": "us-gaap:NetIncomeLoss",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 9038000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 3270000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 7283000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 2510000000
+            }
+          ],
+          "context": "duration",
+          "metric": "ebit",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 7283000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 2510000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/OperatingIncomeLoss/units/USD",
+          "taxonomy": "us-gaap:OperatingIncomeLoss",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 177000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 207000000
+            }
+          ],
+          "context": "duration",
+          "metric": "stock_based_compensation",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 207000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/ShareBasedCompensation/units/USD",
+          "taxonomy": "us-gaap:ShareBasedCompensation",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-10-22",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 4307797138
+            }
+          ],
+          "context": "instant",
+          "metric": "basic_shares",
+          "reason": "report_end_or_fiscal_context_mismatch",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/dei/EntityCommonStockSharesOutstanding/units/shares",
+          "taxonomy": "dei:EntityCommonStockSharesOutstanding",
+          "unit": "shares"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 4342000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 4339000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 4321000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 4323000000
+            }
+          ],
+          "context": "duration",
+          "metric": "diluted_shares",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 4321000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 4323000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/WeightedAverageNumberOfDilutedSharesOutstanding/units/shares",
+          "taxonomy": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "unit": "shares"
+        }
+      ],
+      "filing": {
+        "acceptanceDateTime": "2024-10-24T15:55:23.000Z",
+        "accessionNumber": "0000021344-24-000060",
+        "filingDate": "2024-10-24",
+        "form": "10-Q",
+        "fp": "Q3",
+        "fy": "2024",
+        "reportDate": "2024-09-27"
+      },
+      "industry_route": "supported",
+      "sources": [
+        {
+          "archive_member": "bb/bba8e18ac1874dd0a7ed0034b5a1685f846d6e753f83605d760e018fdffcb8ea/body",
+          "endpoint": "submissions",
+          "sha256": "96cbd37cf397ce556d7925bc5c84524e02c85ef9886c53194816a719d37bb175"
+        },
+        {
+          "archive_member": "f4/f40d95a27b45227ea55e5728f2c46bb570e3a640b50583b3adb11003ca07c3d9/body",
+          "endpoint": "companyfacts",
+          "sha256": "97aef99b976f1f158b463dcb04efc4bb88449a8707b07711aebaec5571104ebd"
+        }
+      ],
+      "ticker": "KO",
+      "unmapped_source_candidates": [
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 1136000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1738000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleDebtSecuritiesAmortizedCostBasis",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 38000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsAmortizedCost",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 44000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1199000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsAmortizedCost",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1171000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 173000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsAmortizedCost",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 164000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 328000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearAmortizedCost",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 326000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 1175000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1751000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecurities",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 1179000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1784000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesTradingAndEquitySecuritiesFvNiCost",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 26000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 26000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesUnrealizedGainLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 33445000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 40404000000
+            }
+          ],
+          "taxonomy": "us-gaap:LongTermDebtFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 6013000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 11298000000
+            }
+          ],
+          "taxonomy": "us-gaap:ProceedsFromIssuanceOfDebt",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 8717000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 3083000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 8436000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 2850000000
+            }
+          ],
+          "taxonomy": "us-gaap:ProfitLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2022-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 306000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3I",
+              "fy": 2024,
+              "val": 327000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 326000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 223000000
+            }
+          ],
+          "taxonomy": "us-gaap:RestrictedCashAndCashEquivalents",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 34905000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 11953000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 35517000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 11854000000
+            }
+          ],
+          "taxonomy": "us-gaap:Revenues",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 17000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 15000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 11000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 12000000
+            }
+          ],
+          "taxonomy": "us-gaap:WeightedAverageNumberDilutedSharesOutstandingAdjustment",
+          "unit": "shares"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 4325000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 4324000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 4310000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 4311000000
+            }
+          ],
+          "taxonomy": "us-gaap:WeightedAverageNumberOfSharesOutstandingBasic",
+          "unit": "shares"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 26000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 25000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleDebtSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 28000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 58000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleDebtSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 1134000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1705000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtSecurities",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 0
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 1000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesTradingUnrealizedGain",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 2000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 1000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesTradingUnrealizedLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 41000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 46000000
+            }
+          ],
+          "taxonomy": "us-gaap:TradingSecuritiesDebt",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 43000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 46000000
+            }
+          ],
+          "taxonomy": "us-gaap:TradingSecuritiesDebtAmortizedCost",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 331000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtAndEquitySecuritiesGainLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 2000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 0
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 14000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 9000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleRealizedGain",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 7000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 3000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 10000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-06-29",
+              "val": 1000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleRealizedLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 35547000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 42994000000
+            }
+          ],
+          "taxonomy": "us-gaap:LongTermDebtAndCapitalLeaseObligations",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 1960000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1067000000
+            }
+          ],
+          "taxonomy": "us-gaap:LongTermDebtAndCapitalLeaseObligationsCurrent",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-12-31",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 37507000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 44061000000
+            }
+          ],
+          "taxonomy": "us-gaap:LongTermDebtAndCapitalLeaseObligationsIncludingCurrentMaturities",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2023-09-29",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 4794000000
+            },
+            {
+              "accn": "0000021344-24-000060",
+              "end": "2024-09-27",
+              "filed": "2024-10-24",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 7925000000
+            }
+          ],
+          "taxonomy": "us-gaap:RepaymentsOfDebtAndCapitalLeaseObligations",
+          "unit": "USD"
+        }
+      ]
+    },
+    {
+      "cik": "0000018230",
+      "fields": [
+        {
+          "accession_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 6978000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 5638000000
+            }
+          ],
+          "context": "instant",
+          "metric": "cash_and_cash_equivalents",
+          "reason": "selected_by_baseline",
+          "report_end_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 5638000000
+            }
+          ],
+          "selected": {
+            "context": "CY2024Q3I",
+            "currency": "USD",
+            "metric": "cash_and_cash_equivalents",
+            "period_end": "2024-09-30",
+            "period_start": null,
+            "reporting_period": "quarterly",
+            "source": "sec_companyfacts",
+            "taxonomy": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+            "time_context": "instant",
+            "unit_kind": "currency",
+            "unit_scale": 1,
+            "value": 5638000000
+          },
+          "source_pointer": "/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD",
+          "taxonomy": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 8882000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 8642000000
+            }
+          ],
+          "context": "duration",
+          "metric": "cfo",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 8642000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD",
+          "taxonomy": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 1061000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 1285000000
+            }
+          ],
+          "context": "duration",
+          "metric": "capex",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 1285000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/PaymentsToAcquirePropertyPlantAndEquipment/units/USD",
+          "taxonomy": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [],
+          "context": "duration",
+          "metric": "net_income",
+          "reason": "no_selected_accession_observation",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/NetIncomeLoss/units/USD",
+          "taxonomy": "us-gaap:NetIncomeLoss",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 9832000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 3449000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 10148000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 3147000000
+            }
+          ],
+          "context": "duration",
+          "metric": "ebit",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 10148000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 3147000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/OperatingIncomeLoss/units/USD",
+          "taxonomy": "us-gaap:OperatingIncomeLoss",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [],
+          "context": "duration",
+          "metric": "stock_based_compensation",
+          "reason": "no_selected_accession_observation",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/ShareBasedCompensation/units/USD",
+          "taxonomy": "us-gaap:ShareBasedCompensation",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 482802488
+            }
+          ],
+          "context": "instant",
+          "metric": "basic_shares",
+          "reason": "selected_by_baseline",
+          "report_end_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 482802488
+            }
+          ],
+          "selected": {
+            "context": "CY2024Q3I",
+            "currency": null,
+            "metric": "basic_shares",
+            "period_end": "2024-09-30",
+            "period_start": null,
+            "reporting_period": "quarterly",
+            "source": "sec_companyfacts",
+            "taxonomy": "dei:EntityCommonStockSharesOutstanding",
+            "time_context": "instant",
+            "unit_kind": "shares",
+            "unit_scale": 1,
+            "value": 482802488
+          },
+          "source_pointer": "/facts/dei/EntityCommonStockSharesOutstanding/units/shares",
+          "taxonomy": "dei:EntityCommonStockSharesOutstanding",
+          "unit": "shares"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 515700000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 512600000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 491700000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 486700000
+            }
+          ],
+          "context": "duration",
+          "metric": "diluted_shares",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 491700000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 486700000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/WeightedAverageNumberOfDilutedSharesOutstanding/units/shares",
+          "taxonomy": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "unit": "shares"
+        }
+      ],
+      "filing": {
+        "acceptanceDateTime": "2024-11-06T15:40:15.000Z",
+        "accessionNumber": "0000018230-24-000053",
+        "filingDate": "2024-11-06",
+        "form": "10-Q",
+        "fp": "Q3",
+        "fy": "2024",
+        "reportDate": "2024-09-30"
+      },
+      "industry_route": "supported",
+      "sources": [
+        {
+          "archive_member": "13/13d0ca77e0f5a566976b7e7c26457130a536c5bd60778ccd7b3f5b2f27beec39/body",
+          "endpoint": "submissions",
+          "sha256": "4a1d68efa3b6db837faa2148cde1ff733f7375c4e5065fa3b32a1f99ac822e90"
+        },
+        {
+          "archive_member": "e7/e7b0ce0a208cc5c4f2dbf6d27e4e84b0ad0435cfc937763b8986cbe9bd392ad5/body",
+          "endpoint": "companyfacts",
+          "sha256": "f88c89890d17da17bea2dd68e56dcddc640e58a67e7c94b81d754fb3ce4c1f7d"
+        }
+      ],
+      "ticker": "CAT",
+      "unmapped_source_candidates": [
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 3871000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 3842000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleDebtSecuritiesAmortizedCostBasis",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 288000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsAmortizedCost",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 293000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1588000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsAmortizedCost",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1586000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 113000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsAmortizedCost",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 113000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1260000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearAmortizedCost",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1260000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 3797000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 3826000000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtSecurities",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3I",
+              "fy": 2024,
+              "val": 509100000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 482800000
+            }
+          ],
+          "taxonomy": "us-gaap:CommonStockSharesOutstanding",
+          "unit": "shares"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 1333000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 197000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 1395000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 222000000
+            }
+          ],
+          "taxonomy": "us-gaap:ContractWithCustomerLiabilityRevenueRecognized",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 31751000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 10583000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 29878000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 10066000000
+            }
+          ],
+          "taxonomy": "us-gaap:CostOfRevenue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": -15000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 6000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 30000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 18000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtAndEquitySecuritiesGainLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": -74000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": -16000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleAccumulatedGrossUnrealizedGainLossBeforeTax",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 1541000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1276000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleContinuousUnrealizedLossPosition12MonthsOrLonger",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 85000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 52000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleContinuousUnrealizedLossPosition12MonthsOrLongerAccumulatedLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 809000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 167000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleContinuousUnrealizedLossPositionLessThan12Months",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 0
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 0
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleContinuousUnrealizedLossPositionLessThan12MonthsAccumulatedLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 0
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 0
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 0
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 0
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleRealizedGain",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 1000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 1000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 2000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 0
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleRealizedLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 2350000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 1443000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleUnrealizedLossPosition",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 85000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 52000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleUnrealizedLossPositionAccumulatedLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-12-31",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 1900000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 0
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesHeldToMaturityAmortizedCostAfterAllowanceForCreditLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": -1726000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": -848000000
+            }
+          ],
+          "taxonomy": "us-gaap:ProceedsFromRepaymentsOfShortTermDebtMaturingInThreeMonthsOrLess",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 710000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 271000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 917000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 257000000
+            }
+          ],
+          "taxonomy": "us-gaap:ProceedsFromSaleOfAvailableForSaleSecuritiesDebt",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 7659000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 2793000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 7998000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 2463000000
+            }
+          ],
+          "taxonomy": "us-gaap:ProfitLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 14100000000
+            }
+          ],
+          "taxonomy": "us-gaap:RevenueRemainingPerformanceObligation",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 49990000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 16810000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 48594000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 16106000000
+            }
+          ],
+          "taxonomy": "us-gaap:Revenues",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 315000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 106000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 325000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 110000000
+            }
+          ],
+          "taxonomy": "us-gaap:SalesTypeLeaseRevenue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 513000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 509800000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 489000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 484200000
+            }
+          ],
+          "taxonomy": "us-gaap:WeightedAverageNumberOfSharesOutstandingBasic",
+          "unit": "shares"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2023-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 6360000000
+            },
+            {
+              "accn": "0000018230-24-000053",
+              "end": "2024-09-30",
+              "filed": "2024-11-06",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 7579000000
+            }
+          ],
+          "taxonomy": "us-gaap:ProceedsFromDebtMaturingInMoreThanThreeMonths",
+          "unit": "USD"
+        }
+      ]
+    },
+    {
+      "cik": "0001640147",
+      "fields": [
+        {
+          "accession_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2023Q2I",
+              "fy": 2025,
+              "val": 755192000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 1762749000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 1282045000
+            }
+          ],
+          "context": "instant",
+          "metric": "cash_and_cash_equivalents",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 1282045000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD",
+          "taxonomy": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2023-02-01",
+              "val": 382635000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": 425333000
+            }
+          ],
+          "context": "duration",
+          "metric": "cfo",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": 425333000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD",
+          "taxonomy": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2023-02-01",
+              "val": 13268000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": 21562000
+            }
+          ],
+          "context": "duration",
+          "metric": "capex",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": 21562000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/PaymentsToAcquirePropertyPlantAndEquipment/units/USD",
+          "taxonomy": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2023-02-01",
+              "val": -452494000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2023Q2",
+              "fy": 2025,
+              "start": "2023-05-01",
+              "val": -226867000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": -633887000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-05-01",
+              "val": -316899000
+            }
+          ],
+          "context": "duration",
+          "metric": "net_income",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": -633887000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-05-01",
+              "val": -316899000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/NetIncomeLoss/units/USD",
+          "taxonomy": "us-gaap:NetIncomeLoss",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2023-02-01",
+              "val": -558645000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2023Q2",
+              "fy": 2025,
+              "start": "2023-05-01",
+              "val": -285407000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": -703875000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-05-01",
+              "val": -355303000
+            }
+          ],
+          "context": "duration",
+          "metric": "ebit",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": -703875000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-05-01",
+              "val": -355303000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/OperatingIncomeLoss/units/USD",
+          "taxonomy": "us-gaap:OperatingIncomeLoss",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2023-02-01",
+              "val": 564231000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": 687936000
+            }
+          ],
+          "context": "duration",
+          "metric": "stock_based_compensation",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": 687936000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/ShareBasedCompensation/units/USD",
+          "taxonomy": "us-gaap:ShareBasedCompensation",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-08-20",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q3I",
+              "fy": 2025,
+              "val": 335200000
+            }
+          ],
+          "context": "instant",
+          "metric": "basic_shares",
+          "reason": "report_end_or_fiscal_context_mismatch",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/dei/EntityCommonStockSharesOutstanding/units/shares",
+          "taxonomy": "dei:EntityCommonStockSharesOutstanding",
+          "unit": "shares"
+        },
+        {
+          "accession_observations": [],
+          "context": "duration",
+          "metric": "diluted_shares",
+          "reason": "no_selected_accession_observation",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/WeightedAverageNumberOfDilutedSharesOutstanding/units/shares",
+          "taxonomy": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "unit": "shares"
+        }
+      ],
+      "filing": {
+        "acceptanceDateTime": "2024-08-29T20:18:21.000Z",
+        "accessionNumber": "0001640147-24-000207",
+        "filingDate": "2024-08-29",
+        "form": "10-Q",
+        "fp": "Q2",
+        "fy": "2025",
+        "reportDate": "2024-07-31"
+      },
+      "industry_route": "supported",
+      "sources": [
+        {
+          "archive_member": "22/2258a1a10a34c693608cdbb038c1a9f0201a4a68ea6456d5a14c276bf7490649/body",
+          "endpoint": "submissions",
+          "sha256": "c8c070669b546e79c29badab96853b34b3905a60a8c4a2213647c1d7c54d3b1c"
+        },
+        {
+          "archive_member": "81/813bc82150bf36f6082b28d05c2c702c32af20e5a199dd48bfee192976257413/body",
+          "endpoint": "companyfacts",
+          "sha256": "fd490f784c700f2df4f7c2a3f50bc27b8e6ba4f60a801baef23b093ade334bd8"
+        }
+      ],
+      "ticker": "SNOW",
+      "unmapped_source_candidates": [
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 2958000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 2019000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleDebtSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 8193000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 4368000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleDebtSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 3005041000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 2648217000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleDebtSecuritiesAmortizedCostBasis",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 2645868000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDate",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 1948462000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 2999806000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 2645868000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtSecurities",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 2083499000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 1948462000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtSecuritiesCurrent",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 916307000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 697406000
+            }
+          ],
+          "taxonomy": "us-gaap:AvailableForSaleSecuritiesDebtSecuritiesNoncurrent",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 1331708000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 979821000
+            }
+          ],
+          "taxonomy": "us-gaap:CashAndCashEquivalentsFairValueDisclosure",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2023-02-01",
+              "val": 896400000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2023Q2",
+              "fy": 2025,
+              "start": "2023-05-01",
+              "val": 524000000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": 1200000000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-05-01",
+              "val": 642700000
+            }
+          ],
+          "taxonomy": "us-gaap:ContractWithCustomerLiabilityRevenueRecognized",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 513815000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 609540000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleContinuousUnrealizedLossPosition12MonthsOrLonger",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 5465000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 3128000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleContinuousUnrealizedLossPosition12MonthsOrLongerAccumulatedLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 1395409000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 1011610000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleContinuousUnrealizedLossPositionLessThan12Months",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 2728000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 1240000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleContinuousUnrealizedLossPositionLessThan12MonthsAccumulatedLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 1909224000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 1621150000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleUnrealizedLossPosition",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 8193000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 4368000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtSecuritiesAvailableForSaleUnrealizedLossPositionAccumulatedLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-01-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "val": 0
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 0
+            }
+          ],
+          "taxonomy": "us-gaap:PreferredStockSharesOutstanding",
+          "unit": "shares"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2023-02-01",
+              "val": 1297617000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2023Q2",
+              "fy": 2025,
+              "start": "2023-05-01",
+              "val": 674018000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": 1697532000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-05-01",
+              "val": 868823000
+            }
+          ],
+          "taxonomy": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2024Q2I",
+              "fy": 2025,
+              "val": 5200000000
+            }
+          ],
+          "taxonomy": "us-gaap:RevenueRemainingPerformanceObligation",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2023-02-01",
+              "val": -453384000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2023-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "frame": "CY2023Q2",
+              "fy": 2025,
+              "start": "2023-05-01",
+              "val": -227320000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-02-01",
+              "val": -635586000
+            },
+            {
+              "accn": "0001640147-24-000207",
+              "end": "2024-07-31",
+              "filed": "2024-08-29",
+              "form": "10-Q",
+              "fp": "Q2",
+              "fy": 2025,
+              "start": "2024-05-01",
+              "val": -317770000
+            }
+          ],
+          "taxonomy": "us-gaap:ProfitLoss",
+          "unit": "USD"
+        }
+      ]
+    },
+    {
+      "cik": "0000813828",
+      "fields": [
+        {
+          "accession_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-12-31",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 2460000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 2443000000
+            }
+          ],
+          "context": "instant",
+          "metric": "cash_and_cash_equivalents",
+          "reason": "selected_by_baseline",
+          "report_end_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 2443000000
+            }
+          ],
+          "selected": {
+            "context": "CY2024Q3I",
+            "currency": "USD",
+            "metric": "cash_and_cash_equivalents",
+            "period_end": "2024-09-30",
+            "period_start": null,
+            "reporting_period": "quarterly",
+            "source": "sec_companyfacts",
+            "taxonomy": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+            "time_context": "instant",
+            "unit_kind": "currency",
+            "unit_scale": 1,
+            "value": 2443000000
+          },
+          "source_pointer": "/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD",
+          "taxonomy": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 31000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 584000000
+            }
+          ],
+          "context": "duration",
+          "metric": "cfo",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 584000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD",
+          "taxonomy": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 213000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 151000000
+            }
+          ],
+          "context": "duration",
+          "metric": "capex",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 151000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/PaymentsToAcquirePropertyPlantAndEquipment/units/USD",
+          "taxonomy": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": -1122000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 295000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": -5966000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 1000000
+            }
+          ],
+          "context": "duration",
+          "metric": "net_income",
+          "reason": "selected_by_baseline",
+          "report_end_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": -5966000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 1000000
+            }
+          ],
+          "selected": {
+            "context": "CY2024Q3",
+            "currency": "USD",
+            "metric": "net_income",
+            "period_end": "2024-09-30",
+            "period_start": "2024-07-01",
+            "reporting_period": "quarterly",
+            "source": "sec_companyfacts",
+            "taxonomy": "us-gaap:NetIncomeLoss",
+            "time_context": "duration",
+            "unit_kind": "currency",
+            "unit_scale": 1,
+            "value": 1000000
+          },
+          "source_pointer": "/facts/us-gaap/NetIncomeLoss/units/USD",
+          "taxonomy": "us-gaap:NetIncomeLoss",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": -855000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 621000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": -5398000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 337000000
+            }
+          ],
+          "context": "duration",
+          "metric": "ebit",
+          "reason": "selected_by_baseline",
+          "report_end_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": -5398000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 337000000
+            }
+          ],
+          "selected": {
+            "context": "CY2024Q3",
+            "currency": "USD",
+            "metric": "ebit",
+            "period_end": "2024-09-30",
+            "period_start": "2024-07-01",
+            "reporting_period": "quarterly",
+            "source": "sec_companyfacts",
+            "taxonomy": "us-gaap:OperatingIncomeLoss",
+            "time_context": "duration",
+            "unit_kind": "currency",
+            "unit_scale": 1,
+            "value": 337000000
+          },
+          "source_pointer": "/facts/us-gaap/OperatingIncomeLoss/units/USD",
+          "taxonomy": "us-gaap:OperatingIncomeLoss",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 131000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 175000000
+            }
+          ],
+          "context": "duration",
+          "metric": "stock_based_compensation",
+          "reason": "baseline_requires_frame_but_source_has_none",
+          "report_end_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 175000000
+            }
+          ],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/ShareBasedCompensation/units/USD",
+          "taxonomy": "us-gaap:ShareBasedCompensation",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [],
+          "context": "instant",
+          "metric": "basic_shares",
+          "reason": "no_selected_accession_observation",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/dei/EntityCommonStockSharesOutstanding/units/shares",
+          "taxonomy": "dei:EntityCommonStockSharesOutstanding",
+          "unit": "shares"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 651000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 652000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 663000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 670000000
+            }
+          ],
+          "context": "duration",
+          "metric": "diluted_shares",
+          "reason": "selected_by_baseline",
+          "report_end_observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 663000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 670000000
+            }
+          ],
+          "selected": {
+            "context": "CY2024Q3",
+            "currency": null,
+            "metric": "diluted_shares",
+            "period_end": "2024-09-30",
+            "period_start": "2024-07-01",
+            "reporting_period": "quarterly",
+            "source": "sec_companyfacts",
+            "taxonomy": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+            "time_context": "duration",
+            "unit_kind": "shares",
+            "unit_scale": 1,
+            "value": 670000000
+          },
+          "source_pointer": "/facts/us-gaap/WeightedAverageNumberOfDilutedSharesOutstanding/units/shares",
+          "taxonomy": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "unit": "shares"
+        }
+      ],
+      "filing": {
+        "acceptanceDateTime": "2024-11-08T14:53:42.000Z",
+        "accessionNumber": "0000813828-24-000079",
+        "filingDate": "2024-11-08",
+        "form": "10-Q",
+        "fp": "Q3",
+        "fy": "2024",
+        "reportDate": "2024-09-30"
+      },
+      "industry_route": "supported",
+      "sources": [
+        {
+          "archive_member": "ff/ffa45e63403513c303c88859e14e4103a29289f9476bd94700f2fd43364d0711/body",
+          "endpoint": "submissions",
+          "sha256": "4f96cbc65306b717be483066cbca08475a56703a90a481b1b9aee4f5f0de8c18"
+        },
+        {
+          "archive_member": "45/457af6a6c44f774e39ee1b7ebc9af3d90aa08e81a938ad037737cc041283139d/body",
+          "endpoint": "companyfacts",
+          "sha256": "baa838b2881cdc10a49c107f63ea26b570b955e4ab8f51a557891ca15da5b8b6"
+        }
+      ],
+      "ticker": "PARA",
+      "unmapped_source_candidates": [
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 800000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 600000000
+            }
+          ],
+          "taxonomy": "us-gaap:ContractWithCustomerLiabilityRevenueRecognized",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-12-31",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 14602000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 14620000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtAndCapitalLeaseObligations",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-12-31",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 15100000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 15100000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtInstrumentFaceAmount",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-12-31",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 13600000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 13400000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtInstrumentFairValue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-12-31",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 419000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 405000000
+            }
+          ],
+          "taxonomy": "us-gaap:DebtInstrumentUnamortizedDiscountPremiumNet",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-12-31",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 14601000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 14495000000
+            }
+          ],
+          "taxonomy": "us-gaap:LongTermDebtAndCapitalLeaseObligations",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-12-31",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 1000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 125000000
+            }
+          ],
+          "taxonomy": "us-gaap:LongTermDebtAndCapitalLeaseObligationsCurrent",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": -1093000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 309000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": -5927000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 21000000
+            }
+          ],
+          "taxonomy": "us-gaap:ProfitLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 239000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 0
+            }
+          ],
+          "taxonomy": "us-gaap:RepaymentsOfDebt",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 22014000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 7133000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 21229000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 6731000000
+            }
+          ],
+          "taxonomy": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 7000000000
+            }
+          ],
+          "taxonomy": "us-gaap:RevenueRemainingPerformanceObligation",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-12-31",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "val": 81000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3I",
+              "fy": 2024,
+              "val": 76000000
+            }
+          ],
+          "taxonomy": "us-gaap:UnamortizedDebtIssuanceExpense",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 651000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2023Q3",
+              "fy": 2024,
+              "start": "2023-07-01",
+              "val": 652000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 663000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "frame": "CY2024Q3",
+              "fy": 2024,
+              "start": "2024-07-01",
+              "val": 667000000
+            }
+          ],
+          "taxonomy": "us-gaap:WeightedAverageNumberOfSharesOutstandingBasic",
+          "unit": "shares"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2023-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2023-01-01",
+              "val": 45000000
+            },
+            {
+              "accn": "0000813828-24-000079",
+              "end": "2024-09-30",
+              "filed": "2024-11-08",
+              "form": "10-Q",
+              "fp": "Q3",
+              "fy": 2024,
+              "start": "2024-01-01",
+              "val": 0
+            }
+          ],
+          "taxonomy": "us-gaap:ProceedsFromIssuanceOfDebt",
+          "unit": "USD"
+        }
+      ]
+    },
+    {
+      "cik": "0001046179",
+      "fields": [
+        {
+          "accession_observations": [],
+          "context": "instant",
+          "metric": "cash_and_cash_equivalents",
+          "reason": "taxonomy_or_unit_absent_in_archive",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/CashAndCashEquivalentsAtCarryingValue/units/USD",
+          "taxonomy": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [],
+          "context": "duration",
+          "metric": "cfo",
+          "reason": "taxonomy_or_unit_absent_in_archive",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/NetCashProvidedByUsedInOperatingActivities/units/USD",
+          "taxonomy": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [],
+          "context": "duration",
+          "metric": "capex",
+          "reason": "taxonomy_or_unit_absent_in_archive",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/PaymentsToAcquirePropertyPlantAndEquipment/units/USD",
+          "taxonomy": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [],
+          "context": "duration",
+          "metric": "net_income",
+          "reason": "taxonomy_or_unit_absent_in_archive",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/NetIncomeLoss/units/USD",
+          "taxonomy": "us-gaap:NetIncomeLoss",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [],
+          "context": "duration",
+          "metric": "ebit",
+          "reason": "taxonomy_or_unit_absent_in_archive",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/OperatingIncomeLoss/units/USD",
+          "taxonomy": "us-gaap:OperatingIncomeLoss",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [],
+          "context": "duration",
+          "metric": "stock_based_compensation",
+          "reason": "taxonomy_or_unit_absent_in_archive",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/ShareBasedCompensation/units/USD",
+          "taxonomy": "us-gaap:ShareBasedCompensation",
+          "unit": "USD"
+        },
+        {
+          "accession_observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023Q4I",
+              "fy": 2023,
+              "val": 25932070992
+            }
+          ],
+          "context": "instant",
+          "metric": "basic_shares",
+          "reason": "selected_by_baseline",
+          "report_end_observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023Q4I",
+              "fy": 2023,
+              "val": 25932070992
+            }
+          ],
+          "selected": {
+            "context": "CY2023Q4I",
+            "currency": null,
+            "metric": "basic_shares",
+            "period_end": "2023-12-31",
+            "period_start": null,
+            "reporting_period": "annual",
+            "source": "sec_companyfacts",
+            "taxonomy": "dei:EntityCommonStockSharesOutstanding",
+            "time_context": "instant",
+            "unit_kind": "shares",
+            "unit_scale": 1,
+            "value": 25932070992
+          },
+          "source_pointer": "/facts/dei/EntityCommonStockSharesOutstanding/units/shares",
+          "taxonomy": "dei:EntityCommonStockSharesOutstanding",
+          "unit": "shares"
+        },
+        {
+          "accession_observations": [],
+          "context": "duration",
+          "metric": "diluted_shares",
+          "reason": "taxonomy_or_unit_absent_in_archive",
+          "report_end_observations": [],
+          "selected": null,
+          "source_pointer": "/facts/us-gaap/WeightedAverageNumberOfDilutedSharesOutstanding/units/shares",
+          "taxonomy": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "unit": "shares"
+        }
+      ],
+      "filing": {
+        "acceptanceDateTime": "2024-04-18T10:27:53.000Z",
+        "accessionNumber": "0001193125-24-099840",
+        "filingDate": "2024-04-18",
+        "form": "20-F",
+        "fp": "FY",
+        "fy": "2023",
+        "reportDate": "2023-12-31"
+      },
+      "industry_route": "supported",
+      "sources": [
+        {
+          "archive_member": "aa/aa452bc7d838bff4989de1d56e7cffa2ad5994328932d1a45cfd95011e9b4361/body",
+          "endpoint": "submissions",
+          "sha256": "ab365395fee6f6909a0c97af1e7b4516de17cfd363ac99e8d1b9e1bd91f3bf24"
+        },
+        {
+          "archive_member": "74/74d9a76289443d0e7bed375b21661be603a7eec1260df4aadea4a8416476ff45/body",
+          "endpoint": "companyfacts",
+          "sha256": "de9f70f5b67b733eb16f926833553ff624146f419ef4692c745e8df9084b8ca8"
+        }
+      ],
+      "ticker": "TSM",
+      "unmapped_source_candidates": [
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 25930300000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 25929400000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 25929300000
+            }
+          ],
+          "taxonomy": "ifrs-full:AdjustedWeightedAverageShares",
+          "unit": "shares"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2020-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2020Q4I",
+              "fy": 2023,
+              "val": 660170600000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "val": 1064990200000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "val": 1342814100000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "val": 1465427800000
+            }
+          ],
+          "taxonomy": "ifrs-full:CashAndCashEquivalents",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2022Q4I",
+              "fy": 2023,
+              "val": 43854200000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "val": 47858500000
+            }
+          ],
+          "taxonomy": "ifrs-full:CashAndCashEquivalents",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2022Q4I",
+              "fy": 2023,
+              "val": 1337900000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "val": 1351800000
+            }
+          ],
+          "taxonomy": "ifrs-full:CashAndCashEquivalentsAmountContributedToFairValueOfPlanAssets",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 1112160700000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 1610599200000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 1241967300000
+            }
+          ],
+          "taxonomy": "ifrs-full:CashFlowsFromUsedInOperatingActivities",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 40560700000
+            }
+          ],
+          "taxonomy": "ifrs-full:CashFlowsFromUsedInOperatingActivities",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2022Q4I",
+              "fy": 2023,
+              "val": 129727400000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "val": 145960600000
+            }
+          ],
+          "taxonomy": "ifrs-full:CorporateDebtInstrumentsHeld",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2022Q4I",
+              "fy": 2023,
+              "val": 2128100000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "val": 2387200000
+            }
+          ],
+          "taxonomy": "ifrs-full:DebtInstrumentsAmountContributedToFairValueOfPlanAssets",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": -7583800000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 58397000000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": -8338800000
+            }
+          ],
+          "taxonomy": "ifrs-full:EffectOfExchangeRateChangesOnCashAndCashEquivalents",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": -272400000
+            }
+          ],
+          "taxonomy": "ifrs-full:EffectOfExchangeRateChangesOnCashAndCashEquivalents",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2022Q4I",
+              "fy": 2023,
+              "val": 2451600000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "val": 50800000
+            }
+          ],
+          "taxonomy": "ifrs-full:GovernmentDebtInstrumentsHeld",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 404819600000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 277823900000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 122613700000
+            }
+          ],
+          "taxonomy": "ifrs-full:IncreaseDecreaseInCashAndCashEquivalents",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 4004300000
+            }
+          ],
+          "taxonomy": "ifrs-full:IncreaseDecreaseInCashAndCashEquivalents",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 2192500000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 2582300000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 4190200000
+            }
+          ],
+          "taxonomy": "ifrs-full:InterestRevenueForFinancialAssetsMeasuredAtFairValueThroughOtherComprehensiveIncome",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 737700000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 414300000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 88700000
+            }
+          ],
+          "taxonomy": "ifrs-full:PaymentsForDebtIssueCosts",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 2900000
+            }
+          ],
+          "taxonomy": "ifrs-full:PaymentsForDebtIssueCosts",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 592880600000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 993294700000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 851027700000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLoss",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 27793200000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 521400000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 371300000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": -712300000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLossAttributableToNoncontrollingInterests",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": -23300000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLossAttributableToNoncontrollingInterests",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 592359200000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 992923400000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 851740000000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 27816500000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 663036000000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 1144072200000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 979316500000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLossBeforeTax",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 31982900000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLossBeforeTax",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 592359200000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 992923400000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 851740000000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLossFromContinuingOperationsAttributableToOrdinaryEquityHoldersOfParentEntity",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 649980900000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 1121278900000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 921465600000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLossFromOperatingActivities",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 30093600000
+            }
+          ],
+          "taxonomy": "ifrs-full:ProfitLossFromOperatingActivities",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 1587415000000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 2263891300000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 2161735800000
+            }
+          ],
+          "taxonomy": "ifrs-full:Revenue",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 70598800000
+            }
+          ],
+          "taxonomy": "ifrs-full:Revenue",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 1587415000000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 2263891300000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 2161735800000
+            }
+          ],
+          "taxonomy": "ifrs-full:RevenueFromContractsWithCustomers",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 362300000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 266800000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 464100000
+            }
+          ],
+          "taxonomy": "ifrs-full:RevenueFromDividends",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 15200000
+            }
+          ],
+          "taxonomy": "ifrs-full:RevenueFromDividends",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 5708800000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 22422200000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 60293900000
+            }
+          ],
+          "taxonomy": "ifrs-full:RevenueFromInterest",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 1969100000
+            }
+          ],
+          "taxonomy": "ifrs-full:RevenueFromInterest",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 5512700000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 7679800000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 4800200000
+            }
+          ],
+          "taxonomy": "ifrs-full:ShareOfProfitLossOfAssociatesAccountedForUsingEquityMethod",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 156800000
+            }
+          ],
+          "taxonomy": "ifrs-full:ShareOfProfitLossOfAssociatesAccountedForUsingEquityMethod",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 89852900000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 157955900000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 0
+            }
+          ],
+          "taxonomy": "ifrs-full:TaxEffectOfRevenuesExemptFromTaxation2011",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": -414200000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 138800000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": -338000000
+            }
+          ],
+          "taxonomy": "ifrs-full:OtherAdjustmentsToReconcileProfitLoss",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2023",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": -11000000
+            }
+          ],
+          "taxonomy": "ifrs-full:OtherAdjustmentsToReconcileProfitLoss",
+          "unit": "USD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 827900000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 7051400000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 47545900000
+            }
+          ],
+          "taxonomy": "ifrs-full:RevenueFromGovernmentGrants",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2021-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2021",
+              "fy": 2023,
+              "start": "2021-01-01",
+              "val": 2834800000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2022-01-01",
+              "val": 17831300000
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "start": "2023-01-01",
+              "val": 49740000000
+            }
+          ],
+          "taxonomy": "ifrs-full:InterestIncomeOnCashAndCashEquivalents",
+          "unit": "TWD"
+        },
+        {
+          "observations": [
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2022-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "frame": "CY2022Q4I",
+              "fy": 2023,
+              "val": 0
+            },
+            {
+              "accn": "0001193125-24-099840",
+              "end": "2023-12-31",
+              "filed": "2024-04-18",
+              "form": "20-F",
+              "fp": "FY",
+              "fy": 2023,
+              "val": 10898700000
+            }
+          ],
+          "taxonomy": "ifrs-full:OtherDebtInstrumentsHeld",
+          "unit": "TWD"
+        }
+      ]
+    },
+    {
+      "cik": "0000019617",
+      "fields": [],
+      "filing": null,
+      "filing_selection_error": "SEC submissions has no cutoff-visible annual or quarterly filing",
+      "historical_submission_files": [
+        {
+          "filingCount": 2120,
+          "filingFrom": "2025-08-04",
+          "filingTo": "2025-09-02",
+          "name": "CIK0000019617-submissions-001.json"
+        },
+        {
+          "filingCount": 2008,
+          "filingFrom": "2025-07-01",
+          "filingTo": "2025-08-02",
+          "name": "CIK0000019617-submissions-002.json"
+        },
+        {
+          "filingCount": 2030,
+          "filingFrom": "2025-05-23",
+          "filingTo": "2025-06-29",
+          "name": "CIK0000019617-submissions-003.json"
+        },
+        {
+          "filingCount": 2049,
+          "filingFrom": "2025-04-15",
+          "filingTo": "2025-05-21",
+          "name": "CIK0000019617-submissions-004.json"
+        },
+        {
+          "filingCount": 2046,
+          "filingFrom": "2025-03-12",
+          "filingTo": "2025-04-13",
+          "name": "CIK0000019617-submissions-005.json"
+        },
+        {
+          "filingCount": 2040,
+          "filingFrom": "2025-02-06",
+          "filingTo": "2025-03-10",
+          "name": "CIK0000019617-submissions-006.json"
+        },
+        {
+          "filingCount": 2043,
+          "filingFrom": "2024-12-31",
+          "filingTo": "2025-02-04",
+          "name": "CIK0000019617-submissions-007.json"
+        },
+        {
+          "filingCount": 2037,
+          "filingFrom": "2024-11-26",
+          "filingTo": "2024-12-29",
+          "name": "CIK0000019617-submissions-008.json"
+        },
+        {
+          "filingCount": 2034,
+          "filingFrom": "2024-10-23",
+          "filingTo": "2024-11-24",
+          "name": "CIK0000019617-submissions-009.json"
+        },
+        {
+          "filingCount": 2004,
+          "filingFrom": "2024-09-16",
+          "filingTo": "2024-10-21",
+          "name": "CIK0000019617-submissions-010.json"
+        },
+        {
+          "filingCount": 2031,
+          "filingFrom": "2024-08-08",
+          "filingTo": "2024-09-14",
+          "name": "CIK0000019617-submissions-011.json"
+        },
+        {
+          "filingCount": 2085,
+          "filingFrom": "2024-07-05",
+          "filingTo": "2024-08-06",
+          "name": "CIK0000019617-submissions-012.json"
+        },
+        {
+          "filingCount": 2033,
+          "filingFrom": "2024-06-04",
+          "filingTo": "2024-07-03",
+          "name": "CIK0000019617-submissions-013.json"
+        },
+        {
+          "filingCount": 2011,
+          "filingFrom": "2024-04-30",
+          "filingTo": "2024-06-02",
+          "name": "CIK0000019617-submissions-014.json"
+        },
+        {
+          "filingCount": 2032,
+          "filingFrom": "2024-03-21",
+          "filingTo": "2024-04-28",
+          "name": "CIK0000019617-submissions-015.json"
+        },
+        {
+          "filingCount": 2044,
+          "filingFrom": "2024-02-08",
+          "filingTo": "2024-03-19",
+          "name": "CIK0000019617-submissions-016.json"
+        },
+        {
+          "filingCount": 2029,
+          "filingFrom": "2024-01-03",
+          "filingTo": "2024-02-06",
+          "name": "CIK0000019617-submissions-017.json"
+        },
+        {
+          "filingCount": 2001,
+          "filingFrom": "2023-11-22",
+          "filingTo": "2024-01-01",
+          "name": "CIK0000019617-submissions-018.json"
+        },
+        {
+          "filingCount": 2041,
+          "filingFrom": "2023-10-17",
+          "filingTo": "2023-11-20",
+          "name": "CIK0000019617-submissions-019.json"
+        },
+        {
+          "filingCount": 2040,
+          "filingFrom": "2023-09-08",
+          "filingTo": "2023-10-15",
+          "name": "CIK0000019617-submissions-020.json"
+        },
+        {
+          "filingCount": 2005,
+          "filingFrom": "2023-08-04",
+          "filingTo": "2023-09-06",
+          "name": "CIK0000019617-submissions-021.json"
+        },
+        {
+          "filingCount": 2065,
+          "filingFrom": "2023-06-29",
+          "filingTo": "2023-08-02",
+          "name": "CIK0000019617-submissions-022.json"
+        },
+        {
+          "filingCount": 2025,
+          "filingFrom": "2023-05-16",
+          "filingTo": "2023-06-27",
+          "name": "CIK0000019617-submissions-023.json"
+        },
+        {
+          "filingCount": 2019,
+          "filingFrom": "2023-04-05",
+          "filingTo": "2023-05-14",
+          "name": "CIK0000019617-submissions-024.json"
+        },
+        {
+          "filingCount": 2033,
+          "filingFrom": "2023-03-01",
+          "filingTo": "2023-04-03",
+          "name": "CIK0000019617-submissions-025.json"
+        },
+        {
+          "filingCount": 2002,
+          "filingFrom": "2023-01-18",
+          "filingTo": "2023-02-27",
+          "name": "CIK0000019617-submissions-026.json"
+        },
+        {
+          "filingCount": 2002,
+          "filingFrom": "2022-12-01",
+          "filingTo": "2023-01-16",
+          "name": "CIK0000019617-submissions-027.json"
+        },
+        {
+          "filingCount": 2005,
+          "filingFrom": "2022-10-12",
+          "filingTo": "2022-11-29",
+          "name": "CIK0000019617-submissions-028.json"
+        },
+        {
+          "filingCount": 2004,
+          "filingFrom": "2022-09-07",
+          "filingTo": "2022-10-10",
+          "name": "CIK0000019617-submissions-029.json"
+        },
+        {
+          "filingCount": 2131,
+          "filingFrom": "2022-08-02",
+          "filingTo": "2022-09-05",
+          "name": "CIK0000019617-submissions-030.json"
+        },
+        {
+          "filingCount": 2007,
+          "filingFrom": "2022-06-22",
+          "filingTo": "2022-07-31",
+          "name": "CIK0000019617-submissions-031.json"
+        },
+        {
+          "filingCount": 2033,
+          "filingFrom": "2022-05-06",
+          "filingTo": "2022-06-20",
+          "name": "CIK0000019617-submissions-032.json"
+        },
+        {
+          "filingCount": 2016,
+          "filingFrom": "2022-03-29",
+          "filingTo": "2022-05-04",
+          "name": "CIK0000019617-submissions-033.json"
+        },
+        {
+          "filingCount": 2053,
+          "filingFrom": "2022-02-03",
+          "filingTo": "2022-03-27",
+          "name": "CIK0000019617-submissions-034.json"
+        },
+        {
+          "filingCount": 2049,
+          "filingFrom": "2021-12-10",
+          "filingTo": "2022-02-01",
+          "name": "CIK0000019617-submissions-035.json"
+        },
+        {
+          "filingCount": 2002,
+          "filingFrom": "2021-10-18",
+          "filingTo": "2021-12-08",
+          "name": "CIK0000019617-submissions-036.json"
+        },
+        {
+          "filingCount": 2001,
+          "filingFrom": "2021-08-24",
+          "filingTo": "2021-10-16",
+          "name": "CIK0000019617-submissions-037.json"
+        },
+        {
+          "filingCount": 2014,
+          "filingFrom": "2021-06-09",
+          "filingTo": "2021-08-22",
+          "name": "CIK0000019617-submissions-038.json"
+        },
+        {
+          "filingCount": 2001,
+          "filingFrom": "2021-04-09",
+          "filingTo": "2021-06-07",
+          "name": "CIK0000019617-submissions-039.json"
+        },
+        {
+          "filingCount": 2019,
+          "filingFrom": "2021-02-10",
+          "filingTo": "2021-04-07",
+          "name": "CIK0000019617-submissions-040.json"
+        },
+        {
+          "filingCount": 2049,
+          "filingFrom": "2020-12-02",
+          "filingTo": "2021-02-08",
+          "name": "CIK0000019617-submissions-041.json"
+        },
+        {
+          "filingCount": 2022,
+          "filingFrom": "2020-09-02",
+          "filingTo": "2020-11-30",
+          "name": "CIK0000019617-submissions-042.json"
+        },
+        {
+          "filingCount": 2054,
+          "filingFrom": "2020-05-29",
+          "filingTo": "2020-08-31",
+          "name": "CIK0000019617-submissions-043.json"
+        },
+        {
+          "filingCount": 2031,
+          "filingFrom": "2020-03-09",
+          "filingTo": "2020-05-27",
+          "name": "CIK0000019617-submissions-044.json"
+        },
+        {
+          "filingCount": 2007,
+          "filingFrom": "2019-12-31",
+          "filingTo": "2020-03-07",
+          "name": "CIK0000019617-submissions-045.json"
+        },
+        {
+          "filingCount": 2093,
+          "filingFrom": "2019-10-02",
+          "filingTo": "2019-12-29",
+          "name": "CIK0000019617-submissions-046.json"
+        },
+        {
+          "filingCount": 2019,
+          "filingFrom": "2019-06-28",
+          "filingTo": "2019-09-30",
+          "name": "CIK0000019617-submissions-047.json"
+        },
+        {
+          "filingCount": 2038,
+          "filingFrom": "2019-03-04",
+          "filingTo": "2019-06-26",
+          "name": "CIK0000019617-submissions-048.json"
+        },
+        {
+          "filingCount": 2022,
+          "filingFrom": "2018-11-09",
+          "filingTo": "2019-03-02",
+          "name": "CIK0000019617-submissions-049.json"
+        },
+        {
+          "filingCount": 2004,
+          "filingFrom": "2018-07-03",
+          "filingTo": "2018-11-07",
+          "name": "CIK0000019617-submissions-050.json"
+        },
+        {
+          "filingCount": 2022,
+          "filingFrom": "2018-02-28",
+          "filingTo": "2018-07-01",
+          "name": "CIK0000019617-submissions-051.json"
+        },
+        {
+          "filingCount": 2002,
+          "filingFrom": "2017-10-10",
+          "filingTo": "2018-02-26",
+          "name": "CIK0000019617-submissions-052.json"
+        },
+        {
+          "filingCount": 2004,
+          "filingFrom": "2017-05-17",
+          "filingTo": "2017-10-08",
+          "name": "CIK0000019617-submissions-053.json"
+        },
+        {
+          "filingCount": 2020,
+          "filingFrom": "2016-12-28",
+          "filingTo": "2017-05-15",
+          "name": "CIK0000019617-submissions-054.json"
+        },
+        {
+          "filingCount": 2037,
+          "filingFrom": "2016-07-11",
+          "filingTo": "2016-12-26",
+          "name": "CIK0000019617-submissions-055.json"
+        },
+        {
+          "filingCount": 2011,
+          "filingFrom": "2016-01-04",
+          "filingTo": "2016-07-09",
+          "name": "CIK0000019617-submissions-056.json"
+        },
+        {
+          "filingCount": 2037,
+          "filingFrom": "2015-07-02",
+          "filingTo": "2016-01-02",
+          "name": "CIK0000019617-submissions-057.json"
+        },
+        {
+          "filingCount": 2010,
+          "filingFrom": "2015-01-23",
+          "filingTo": "2015-06-30",
+          "name": "CIK0000019617-submissions-058.json"
+        },
+        {
+          "filingCount": 2007,
+          "filingFrom": "2014-07-15",
+          "filingTo": "2015-01-21",
+          "name": "CIK0000019617-submissions-059.json"
+        },
+        {
+          "filingCount": 2008,
+          "filingFrom": "2014-01-02",
+          "filingTo": "2014-07-13",
+          "name": "CIK0000019617-submissions-060.json"
+        },
+        {
+          "filingCount": 2010,
+          "filingFrom": "2013-04-30",
+          "filingTo": "2013-12-31",
+          "name": "CIK0000019617-submissions-061.json"
+        },
+        {
+          "filingCount": 2015,
+          "filingFrom": "2012-08-30",
+          "filingTo": "2013-04-28",
+          "name": "CIK0000019617-submissions-062.json"
+        },
+        {
+          "filingCount": 2000,
+          "filingFrom": "2011-10-06",
+          "filingTo": "2012-08-28",
+          "name": "CIK0000019617-submissions-063.json"
+        },
+        {
+          "filingCount": 2000,
+          "filingFrom": "2010-10-19",
+          "filingTo": "2011-10-04",
+          "name": "CIK0000019617-submissions-064.json"
+        },
+        {
+          "filingCount": 2002,
+          "filingFrom": "2009-05-15",
+          "filingTo": "2010-10-17",
+          "name": "CIK0000019617-submissions-065.json"
+        },
+        {
+          "filingCount": 2018,
+          "filingFrom": "2008-04-29",
+          "filingTo": "2009-05-13",
+          "name": "CIK0000019617-submissions-066.json"
+        },
+        {
+          "filingCount": 2001,
+          "filingFrom": "2007-07-12",
+          "filingTo": "2008-04-27",
+          "name": "CIK0000019617-submissions-067.json"
+        },
+        {
+          "filingCount": 2018,
+          "filingFrom": "2006-02-08",
+          "filingTo": "2007-07-10",
+          "name": "CIK0000019617-submissions-068.json"
+        },
+        {
+          "filingCount": 2000,
+          "filingFrom": "1999-07-22",
+          "filingTo": "2006-02-06",
+          "name": "CIK0000019617-submissions-069.json"
+        },
+        {
+          "filingCount": 493,
+          "filingFrom": "1994-01-20",
+          "filingTo": "1999-07-20",
+          "name": "CIK0000019617-submissions-070.json"
+        }
+      ],
+      "industry_route": "unsupported_verify",
+      "sources": [
+        {
+          "archive_member": "1b/1b0b331efff4a25e2fa8361d3132fd301c3045bf146b3849f20d7afd94642987/body",
+          "endpoint": "submissions",
+          "sha256": "51275fb553fac8e13e8ee0e8996f5da9638300b34a638430d21feb75156b64e3"
+        },
+        {
+          "archive_member": "1e/1ecfa4f8cb0c39ea37e6129f5923975badcbaa2234dcaa253308a668c48e1d46/body",
+          "endpoint": "companyfacts",
+          "sha256": "20990f3a18a6e6607972a5cf6a389aa9180e520e7c4b38a5693e484cad95cf09"
+        }
+      ],
+      "ticker": "JPM",
+      "unmapped_source_candidates": []
+    }
+  ],
+  "cutoff": "2024-11-18T00:00:00Z",
+  "diagnostic_only": true
+}

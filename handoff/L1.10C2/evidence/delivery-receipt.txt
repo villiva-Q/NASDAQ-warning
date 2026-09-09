@@ -1,0 +1,56 @@
+L1.10C-2 final branch delivery receipt
+Date: 2026-09-06 (Australia/Melbourne)
+
+Scope
+- Documentation-only final commit; no business implementation or test changes.
+- Ordinary non-force push of only codex/l110c2-sec-history-v3-entry.
+- No main merge, deployment, staging/production action, or real trading.
+
+Commit
+- Baseline: 4ec977cc80871dfff23ad6a0231a25be2b720b0f
+- Prior implementation HEAD: 027f22077c219d7ddd8cde50c3b0f06bac83bc44
+- Final documentation commit: b4b838bd0db8385e83217b90fa9acaec0916ca5e
+- Summary: docs: finalize L1.10C-2 delivery record
+- Files: docs/runbooks/L1.10C2_review.md; docs/runbooks/L1.10C2_delivery.md
+- git diff --cached --check before commit: exit 0
+- git diff --check after commit: exit 0
+
+Push
+- Origin: /srv/git/value-investing-system.git
+- RefSpec: refs/heads/codex/l110c2-sec-history-v3-entry:refs/heads/codex/l110c2-sec-history-v3-entry
+- Mode: ordinary non-force push
+- Exit code: 0
+- Result: new remote branch created
+
+Executed command record (outputs contain no credentials)
+- git -c safe.directory=/srv/cargoq/projects/value-investing-system-l110c2 commit -m "docs: finalize L1.10C-2 delivery record"; exit 0
+- git --git-dir=/srv/git/value-investing-system.git rev-parse refs/heads/main; before-push exit 0
+- git --git-dir=/srv/git/value-investing-system.git rev-parse refs/heads/codex/l110c2-sec-history-v3-entry; before-push exit 128 (branch absent)
+- git -c safe.directory=/srv/cargoq/projects/value-investing-system-l110c2 push origin refs/heads/codex/l110c2-sec-history-v3-entry:refs/heads/codex/l110c2-sec-history-v3-entry; exit 0
+- git -c safe.directory=/srv/cargoq/projects/value-investing-system-l110c2 rev-parse HEAD; exit 0
+- git --git-dir=/srv/git/value-investing-system.git rev-parse refs/heads/codex/l110c2-sec-history-v3-entry; exit 0
+- git -c safe.directory=/srv/cargoq/projects/value-investing-system-l110c2 ls-remote --refs origin refs/heads/codex/l110c2-sec-history-v3-entry; exit 0
+- git --git-dir=/srv/git/value-investing-system.git rev-parse refs/heads/main; after-push exit 0
+
+Read-back
+- Local HEAD: b4b838bd0db8385e83217b90fa9acaec0916ca5e (exit 0)
+- Bare repository branch: b4b838bd0db8385e83217b90fa9acaec0916ca5e (exit 0)
+- Origin ref via git ls-remote --refs: b4b838bd0db8385e83217b90fa9acaec0916ca5e (exit 0)
+- Three-way equality: yes
+- Local remote-tracking ref was not auto-created by push; direct origin ref read-back above is authoritative.
+
+Main control
+- Bare main before push: 4ec977cc80871dfff23ad6a0231a25be2b720b0f (exit 0)
+- Bare main after push: 4ec977cc80871dfff23ad6a0231a25be2b720b0f (exit 0)
+- Main unchanged: yes
+
+Final worktree
+- Branch: codex/l110c2-sec-history-v3-entry
+- git status --short --branch: ## codex/l110c2-sec-history-v3-entry
+- Tracked worktree clean: yes
+
+Evidence limits retained
+- Historical full regression was recorded as 945 passed, but its complete raw log was not saved.
+- Historical migration base->head->base->head was recorded successful, but its complete raw log was not saved.
+- The earlier psql failure command and detailed SQL raw log were not saved and were not reconstructed.
+- The sole reviewer conclusion on 083839910e6e335d57a3149958455b0b456528f8 remains "not approved; additional acceptance evidence insufficient". Later fixes and targeted validation are not a second reviewer approval.

@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0-draft",
+  "status": "draft",
+  "architecture": "docker-first-vm-optional",
+  "scope": "NUC host L1.7 staging preparation only; no L2 or production deployment",
+  "amendments": [
+    {
+      "date": "2026-08-29",
+      "stage": "N2-A",
+      "reason": "Post-N1 scope correction",
+      "original_n1_preserved": true,
+      "current_nuc_pre_scope": "L1.7 only",
+      "layer_2": "future/not-deployed pending H1 and separate technical selection approval"
+    }
+  ],
+  "compose_projects": {
+    "layer_1": "value-investing-l1-staging",
+    "layer_2": {
+      "project_name_reserved": "value-investing-l2-staging",
+      "status": "future/not-deployed",
+      "create_directories_networks_volumes_containers": false,
+      "approval_gate": "H1 passed plus L2 technical selection plus separate D3 approval"
+    },
+    "production": {
+      "status": "not_deployed",
+      "require_distinct_project_network_database_volumes_directories_credentials": true
+    }
+  },
+  "resource_budget": {
+    "total_logical_cpu_max": 4,
+    "memory_target_gib": 16,
+    "memory_hard_limit_gib": 24,
+    "layer_1_concurrency": 1,
+    "layer_2_concurrency_initial": 1,
+    "layer_2_concurrency_max_after_evidence": 2,
+    "first_week_mode": "low_concurrency_with_cpu_memory_io_temperature_and_protected_service_observation"
+  },
+  "network": {
+    "layer_1": {
+      "dedicated_compose_bridge": true,
+      "host_network": false,
+      "database_host_publish": false,
+      "internal_api_host_publish": false
+    },
+    "layer_2": {
+      "dedicated_compose_bridge": true,
+      "host_network": false,
+      "database_host_publish": false,
+      "qdrant_host_publish": false,
+      "internal_api_host_publish": false
+    },
+    "cross_layer_contract": "versioned_candidate_manifest",
+    "direct_cross_layer_database_access": false,
+    "cloudflared_publication": "disabled_by_default_requires_separate_D3",
+    "tailscale_publication": "disabled_by_default_requires_separate_D3",
+    "protect_br0_and_jason_vm": true
+  },
+  "ports": {
+    "postgresql_container_tcp": 5432,
+    "qdrant_container_tcp": [6333, 6334],
+    "host_published_by_default": [],
+    "diagnostic_binding_if_separately_approved": "127.0.0.1 only"
+  },
+  "storage": {
+    "local_nvme": {
+      "root": "/srv/value-investing",
+      "contains": [
+        "PostgreSQL data and WAL",
+        "task state queues leases and locks",
+        "hot object and Parquet working sets",
+        "runtime caches",
+        "current and recent rollback releases",
+        "most recent usable logical database backup"
+      ]
+    },
+    "nas": {
+      "mount_root_not_exposed_to_containers": "/mnt/nas",
+      "access": "archive job only; approved research subdirectory only",
+      "contains": [
+        "large raw filings",
+        "cold Parquet partitions",
+        "historical replay data",
+        "published reports and manifests",
+        "logical database backups",
+        "retired release artifacts"
+      ],
+      "forbidden": [
+        "PostgreSQL data",
+        "WAL",
+        "locks",
+        "container volumes",
+        "transactional working directories",
+        "secrets"
+      ],
+      "archive_protocol": [
+        "write temporary partial file",
+        "verify SHA-256 and size",
+        "atomic rename or completion marker",
+        "record archive manifest",
+        "restore and verify before local retention deletion"
+      ],
+      "capacity_warning_percent": 80
+    }
+  },
+  "volumes": {
+    "layer_1": ["dedicated_postgresql", "dedicated_application_state"],
+    "layer_2": ["dedicated_postgresql", "dedicated_qdrant", "dedicated_application_state"],
+    "shared_between_layers": [],
+    "shared_with_existing_containers": []
+  },
+  "runtime_requirements": {
+    "image_reference": "pinned_version_or_digest",
+    "full_commit_sha_required": true,
+    "healthcheck_required": true,
+    "structured_logging_required": true,
+    "stop_grace_period_required": true,
+    "explicit_restart_policy_required": true,
+    "cpu_memory_pids_limits_required": true,
+    "read_only_rootfs_preferred_where_compatible": true,
+    "drop_all_capabilities_then_add_minimum": true,
+    "no_new_privileges": true
+  },
+  "forbidden": {
+    "mounts": [
+      "/var/run/docker.sock",
+      "/root/.openclaw",
+      "trading directories",
+      "trading credentials",
+      "entire /mnt/nas"
+    ],
+    "capabilities_and_namespaces": [
+      "privileged",
+      "network_mode: host",
+      "host PID namespace",
+      "host IPC namespace",
+      "unbounded Linux capabilities"
+    ],
+    "deployment_patterns": [
+      "mutable latest-only images",
+      "branch name as release identity",
+      "in-place release mutation",
+      "arbitrary shell assembled from free text",
+      "Docker socket mounted into deploy or research containers"
+    ]
+  },
+  "staging_production_isolation": {
+    "distinct": [
+      "Compose project names",
+      "networks",
+      "databases",
+      "volumes",
+      "host directories",
+      "credentials",
+      "release pointers"
+    ],
+    "production_status": "out_of_scope_and_not_authorized"
+  },
+  "gates": {
+    "N3_required": [
+      "approved D3 cards",
+      "protected configuration baseline",
+      "second management path",
+      "24-hour observation started and no immediate adverse evidence",
+      "approved directory and deployment identity design",
+      "approved Git and full-SHA release design",
+      "Compose static validation",
+      "br0 and jason-vm before-after validation procedure"
+    ],
+    "deferred_if_not_used": [
+      "Cloudflare Access verification",
+      "new VM",
+      "root OpenClaw or Syncthing migration"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+html,
+body {
+  margin: 0;
+  background: #101a2a;
+  color: #fbfaf6;
+  font-family: system-ui, sans-serif;
+}
+
+main {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
