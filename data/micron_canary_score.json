@@ -10,7 +10,7 @@
     "return_1m": 0.014129532764324493,
     "return_3m": 0.006021628020545622,
     "distance_50dma": 0.009733044227192345,
-    "distance_200dma": 0.4026254639943603,
+    "distance_200dma": 0.40262546429788193,
     "drawdown_from_52w_high": -0.18488408649737353,
     "range_52w": {
       "high": 1213.3734130859375
@@ -53,7 +53,7 @@
         },
         {
           "name": "Distance From 200DMA",
-          "value": 0.4026254639943603,
+          "value": 0.40262546429788193,
           "score": 45.7,
           "source": "auto: Yahoo Finance chart API",
           "note": "Price extension above long trend.",
