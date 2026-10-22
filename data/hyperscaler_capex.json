@@ -176,7 +176,7 @@
   "companies": {
     "MSFT": {
       "cik": "0000789019",
-      "entity": "MICROSOFT CORPORATION",
+      "entity": "Microsoft Corporation",
       "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
       "series": [
         {
