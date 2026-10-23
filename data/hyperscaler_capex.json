@@ -597,17 +597,6 @@
       "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
       "series": [
         {
-          "start": "2023-06-30",
-          "end": "2023-09-30",
-          "fy": 2023,
-          "fp": "Q3",
-          "quarter": "2023Q3",
-          "value": 6543000000.0,
-          "filed": "2023-10-26",
-          "form": "10-Q",
-          "method": "derived_from_ytd"
-        },
-        {
           "start": "2023-09-30",
           "end": "2023-12-31",
           "fy": 2023,
@@ -725,6 +714,17 @@
           "quarter": "2026Q2",
           "value": 36172000000.0,
           "filed": "2026-07-30",
+          "form": "10-Q",
+          "method": "derived_from_ytd"
+        },
+        {
+          "start": "2026-06-30",
+          "end": "2026-09-30",
+          "fy": 2026,
+          "fp": "Q3",
+          "quarter": "2026Q3",
+          "value": 33942000000.0,
+          "filed": "2026-10-22",
           "form": "10-Q",
           "method": "derived_from_ytd"
         }
