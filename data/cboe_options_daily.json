@@ -1,60 +1,60 @@
 {
-  "as_of": "2026-10-23",
-  "spx_call_share": 0.46141594471734054,
-  "spx_total_volume": 5613044.0,
-  "spx_share_of_all_volume": 0.4403240816318206,
-  "index_total_volume": 6621705.0,
-  "index_call_share": 0.4954080557801956,
-  "equity_call_share": 0.6583024613171796,
-  "call_skew_proxy": -0.16289440553698403,
+  "as_of": "2026-10-24",
+  "spx_call_share": 0.4475038112460266,
+  "spx_total_volume": 5989511.0,
+  "spx_share_of_all_volume": 0.41470084265228585,
+  "index_total_volume": 7696019.0,
+  "index_call_share": 0.4944822771357503,
+  "equity_call_share": 0.5933618275425656,
+  "call_skew_proxy": -0.09887955040681529,
   "products": {
     "SUM OF ALL PRODUCTS": {
-      "call_volume": 6831027.0,
-      "put_volume": 5916502.0,
-      "total_volume": 12747529.0,
-      "call_share": 0.5358706773681393
+      "call_volume": 7427065.0,
+      "put_volume": 7015903.0,
+      "total_volume": 14442968.0,
+      "call_share": 0.5142339857015539
     },
     "INDEX OPTIONS": {
-      "call_volume": 3280446.0,
-      "put_volume": 3341259.0,
-      "total_volume": 6621705.0,
-      "call_share": 0.4954080557801956
+      "call_volume": 3805545.0,
+      "put_volume": 3890474.0,
+      "total_volume": 7696019.0,
+      "call_share": 0.4944822771357503
     },
     "EXCHANGE TRADED PRODUCTS": {
-      "call_volume": 1227375.0,
-      "put_volume": 1369363.0,
-      "total_volume": 2596738.0,
-      "call_share": 0.4726603145946953
+      "call_volume": 1510805.0,
+      "put_volume": 1678930.0,
+      "total_volume": 3189735.0,
+      "call_share": 0.4736459298342966
     },
     "EQUITY OPTIONS": {
-      "call_volume": 2323206.0,
-      "put_volume": 1205880.0,
-      "total_volume": 3529086.0,
-      "call_share": 0.6583024613171796
+      "call_volume": 2110715.0,
+      "put_volume": 1446499.0,
+      "total_volume": 3557214.0,
+      "call_share": 0.5933618275425656
     },
     "CBOE VOLATILITY INDEX (VIX)": {
-      "call_volume": 495497.0,
-      "put_volume": 89874.0,
-      "total_volume": 585371.0,
-      "call_share": 0.8464665998144766
+      "call_volume": 895454.0,
+      "put_volume": 364008.0,
+      "total_volume": 1259462.0,
+      "call_share": 0.7109813555311713
     },
     "SPX + SPXW": {
-      "call_volume": 2589948.0,
-      "put_volume": 3023096.0,
-      "total_volume": 5613044.0,
-      "call_share": 0.46141594471734054
+      "call_volume": 2680329.0,
+      "put_volume": 3309182.0,
+      "total_volume": 5989511.0,
+      "call_share": 0.4475038112460266
     },
     "OEX": {
       "call_volume": 0.0,
-      "put_volume": 0.0,
-      "total_volume": 0.0,
-      "call_share": null
+      "put_volume": 2.0,
+      "total_volume": 2.0,
+      "call_share": 0.0
     },
     "MRUT": {
-      "call_volume": 50.0,
-      "put_volume": 20.0,
-      "total_volume": 70.0,
-      "call_share": 0.7142857142857143
+      "call_volume": 12.0,
+      "put_volume": 33.0,
+      "total_volume": 45.0,
+      "call_share": 0.26666666666666666
     },
     "MXEA": {
       "call_volume": 0.0,
@@ -87,16 +87,16 @@
       "call_share": null
     },
     "CBTX": {
-      "call_volume": 4.0,
-      "put_volume": 2.0,
-      "total_volume": 6.0,
-      "call_share": 0.6666666666666666
+      "call_volume": 45.0,
+      "put_volume": 46.0,
+      "total_volume": 91.0,
+      "call_share": 0.4945054945054945
     },
     "MBTX": {
-      "call_volume": 3.0,
+      "call_volume": 0.0,
       "put_volume": 0.0,
-      "total_volume": 3.0,
-      "call_share": 1.0
+      "total_volume": 0.0,
+      "call_share": null
     },
     "SPEQX": {
       "call_volume": 0.0,
@@ -105,34 +105,34 @@
       "call_share": null
     },
     "SPEQW": {
-      "call_volume": 0.0,
+      "call_volume": 1.0,
       "put_volume": 0.0,
-      "total_volume": 0.0,
-      "call_share": null
+      "total_volume": 1.0,
+      "call_share": 1.0
     },
     "MGTN": {
-      "call_volume": 22.0,
-      "put_volume": 6.0,
-      "total_volume": 28.0,
-      "call_share": 0.7857142857142857
+      "call_volume": 17.0,
+      "put_volume": 5.0,
+      "total_volume": 22.0,
+      "call_share": 0.7727272727272727
     },
     "MGTNW": {
-      "call_volume": 2420.0,
-      "put_volume": 264.0,
-      "total_volume": 2684.0,
-      "call_share": 0.9016393442622951
+      "call_volume": 106.0,
+      "put_volume": 251.0,
+      "total_volume": 357.0,
+      "call_share": 0.2969187675070028
     },
     "DJX": {
-      "call_volume": 61.0,
-      "put_volume": 34.0,
-      "total_volume": 95.0,
-      "call_share": 0.6421052631578947
+      "call_volume": 211.0,
+      "put_volume": 293.0,
+      "total_volume": 504.0,
+      "call_share": 0.41865079365079366
     },
     "DJXW": {
-      "call_volume": 164.0,
-      "put_volume": 489.0,
-      "total_volume": 653.0,
-      "call_share": 0.25114854517611024
+      "call_volume": 864.0,
+      "put_volume": 413.0,
+      "total_volume": 1277.0,
+      "call_share": 0.6765857478465153
     },
     "XSPBX": {
       "call_volume": 0.0,
@@ -141,10 +141,10 @@
       "call_share": null
     },
     "XSPBW": {
-      "call_volume": 132.0,
-      "put_volume": 189.0,
-      "total_volume": 321.0,
-      "call_share": 0.411214953271028
+      "call_volume": 306.0,
+      "put_volume": 185.0,
+      "total_volume": 491.0,
+      "call_share": 0.6232179226069247
     },
     "KPI BINARY OPTIONS": {
       "call_volume": 0.0,
