@@ -176,20 +176,9 @@
   "companies": {
     "MSFT": {
       "cik": "0000789019",
-      "entity": "Microsoft Corporation",
+      "entity": "MICROSOFT CORPORATION",
       "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
       "series": [
-        {
-          "start": "2024-07-01",
-          "end": "2024-09-30",
-          "fy": 2026,
-          "fp": "Q1",
-          "quarter": "2024Q3",
-          "value": 14923000000.0,
-          "filed": "2025-10-29",
-          "form": "10-Q",
-          "method": "standalone"
-        },
         {
           "start": "2023-09-30",
           "end": "2024-12-31",
@@ -248,11 +237,11 @@
         {
           "start": "2025-07-01",
           "end": "2025-09-30",
-          "fy": 2026,
+          "fy": 2027,
           "fp": "Q1",
           "quarter": "2025Q3",
           "value": 19394000000.0,
-          "filed": "2025-10-29",
+          "filed": "2026-10-28",
           "form": "10-Q",
           "method": "standalone"
         },
@@ -310,6 +299,17 @@
           "filed": "2026-07-29",
           "form": "10-K",
           "method": "derived_from_annual"
+        },
+        {
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "fy": 2027,
+          "fp": "Q1",
+          "quarter": "2026Q3",
+          "value": 39367000000.0,
+          "filed": "2026-10-28",
+          "form": "10-Q",
+          "method": "standalone"
         }
       ]
     },
