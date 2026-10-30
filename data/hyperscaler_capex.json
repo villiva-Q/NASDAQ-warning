@@ -17,19 +17,6 @@
   "qoq_delta": 0.5872009978156938,
   "series": [
     {
-      "quarter": "2023Q3",
-      "end": "2023-09-30",
-      "total_usd": 49473000000.0,
-      "total_usd_bn": 49.473,
-      "company_count": 4,
-      "companies": {
-        "MSFT": 9917000000.0,
-        "AMZN": 12479000000.0,
-        "GOOGL": 8055000000.0,
-        "META": 6543000000.0
-      }
-    },
-    {
       "quarter": "2023Q4",
       "end": "2023-12-31",
       "total_usd": 56376000000.0,
@@ -170,6 +157,18 @@
         "AMZN": 73392000000.0,
         "GOOGL": 63401000000.0,
         "META": 36172000000.0
+      }
+    },
+    {
+      "quarter": "2026Q3",
+      "end": "2026-09-30",
+      "total_usd": 124664000000.0,
+      "total_usd_bn": 124.664,
+      "company_count": 3,
+      "companies": {
+        "MSFT": 39367000000.0,
+        "GOOGL": 51355000000.0,
+        "META": 33942000000.0
       }
     }
   ],
@@ -458,17 +457,6 @@
       "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
       "series": [
         {
-          "start": "2023-06-30",
-          "end": "2023-09-30",
-          "fy": 2023,
-          "fp": "Q3",
-          "quarter": "2023Q3",
-          "value": 8055000000.0,
-          "filed": "2023-10-25",
-          "form": "10-Q",
-          "method": "derived_from_ytd"
-        },
-        {
           "start": "2023-09-30",
           "end": "2023-12-31",
           "fy": 2023,
@@ -586,6 +574,17 @@
           "quarter": "2026Q2",
           "value": 63401000000.0,
           "filed": "2026-07-23",
+          "form": "10-Q",
+          "method": "derived_from_ytd"
+        },
+        {
+          "start": "2026-06-30",
+          "end": "2026-09-30",
+          "fy": 2026,
+          "fp": "Q3",
+          "quarter": "2026Q3",
+          "value": 51355000000.0,
+          "filed": "2026-10-29",
           "form": "10-Q",
           "method": "derived_from_ytd"
         }
